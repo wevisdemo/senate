@@ -7,6 +7,7 @@ import {
 import { RouterHead } from "./components/RouterHead";
 
 import "./global.css";
+import "@wevisdemo/ui/styles/index.css";
 
 export default component$(() => {
   /**
@@ -24,7 +25,7 @@ export default component$(() => {
         <link rel="manifest" href="/manifest.json" />
         <RouterHead />
       </head>
-      <body>
+      <body class="wv-ibmplex">
         <RouterOutlet />
         <ServiceWorkerRegister />
       </body>

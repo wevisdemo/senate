@@ -430,6 +430,11 @@
     "@typescript-eslint/types" "5.56.0"
     eslint-visitor-keys "^3.3.0"
 
+"@wevisdemo/ui@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@wevisdemo/ui/-/ui-6.0.0.tgz#1364793ef167f8bd50540a23442963fd4e99c49e"
+  integrity sha512-j7/+ABFRFcojF6uHIBw7GdiUdOw8UPLDnt+D9LDrkYMSrww/TMar653wxxaFnzZonzV6h1O/e/ZYj5WYk53BXg==
+
 acorn-jsx@^5.0.0, acorn-jsx@^5.3.2:
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-5.3.2.tgz#7ed5bb55908b3b2f1bc55c6af1653bada7f07937"

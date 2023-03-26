@@ -1,0 +1,10 @@
+import { component$ } from "@builder.io/qwik";
+import { useLocation, useNavigate } from "@builder.io/qwik-city";
+import QWvNavbar from "./react/QWvNavbar";
+
+export default component$(() => {
+  const loc = useLocation();
+  const nav = useNavigate();
+
+  return <QWvNavbar pathname={loc.url.pathname} nav={nav} />;
+});

@@ -4,4 +4,22 @@
  */
 @tailwind base;
 @tailwind components;
+
+/* WvFix */
+.wv_button {
+  border-width: 2px;
+}
+
+a {
+  color: #3904e9;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+body {
+  background: #fffcf1;
+}
+
 @tailwind utilities;
