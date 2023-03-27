@@ -15,8 +15,8 @@ export const RouterHead = component$(() => {
       <base href={loc.url.href} />
 
       <link rel="canonical" href={loc.url.href} />
-      <link rel="manifest" href="/manifest.json" />
-      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <link rel="manifest" href="./manifest.json" />
+      <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
 
       <title>{head.title}</title>
 

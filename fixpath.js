@@ -42,4 +42,4 @@ function traverseDirectory(directoryPath) {
   });
 }
 
-// traverseDirectory(directoryPath);
+traverseDirectory(directoryPath);

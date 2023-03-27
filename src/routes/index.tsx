@@ -9,7 +9,7 @@ export default component$(() => {
         <div class="mx-auto flex w-[60%] gap-[100px]">
           <img
             class="hidden md:block md:w-[40%]"
-            src="/header.png"
+            src="./imgs/header.png"
             alt=""
             width="752"
             height="1848"
@@ -49,7 +49,7 @@ export default component$(() => {
                 <span class="mt-auto flex items-center gap-[15px] font-bold transition-transform group-hover:translate-x-[10px] group-hover:underline">
                   สำรวจ
                   <img
-                    src="/rarr.svg"
+                    src="./imgs/rarr.svg"
                     alt=""
                     width="22"
                     height="16"
@@ -66,7 +66,7 @@ export default component$(() => {
                 <span class="mt-auto flex items-center gap-[15px] font-bold transition-transform group-hover:translate-x-[10px] group-hover:underline">
                   สำรวจ
                   <img
-                    src="/rarr.svg"
+                    src="./imgs/rarr.svg"
                     alt=""
                     width="22"
                     height="16"
@@ -83,7 +83,7 @@ export default component$(() => {
                 <span class="mt-auto flex items-center gap-[15px] font-bold transition-transform group-hover:translate-x-[10px] group-hover:underline">
                   สำรวจ
                   <img
-                    src="/rarr.svg"
+                    src="./imgs/rarr.svg"
                     alt=""
                     width="22"
                     height="16"
@@ -97,7 +97,7 @@ export default component$(() => {
               ลองสำรวจปัญหาต่าง ๆ ของ ส.ว. กันที่นี่
               <img
                 class="mx-auto mt-[8px] block"
-                src="/darr.svg"
+                src="./imgs/darr.svg"
                 alt=""
                 width="16"
                 height="31"
@@ -132,7 +132,7 @@ export default component$(() => {
         <div class="mx-auto flex w-[60%] flex-col gap-[64px] md:flex-row">
           <img
             class="aspect-square w-full object-contain md:w-1/2"
-            src="/footer.png"
+            src="./imgs/footer.png"
             alt=""
             width="752"
             height="752"
