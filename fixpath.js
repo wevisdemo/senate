@@ -25,6 +25,8 @@ function traverseDirectory(directoryPath) {
       return;
     }
 
+    if (directoryPath.includes("imgs")) return;
+
     files.forEach(function (file) {
       const filePath = path.join(directoryPath, file);
       fs.stat(filePath, function (err, stats) {
