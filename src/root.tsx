@@ -6,8 +6,8 @@ import {
 } from "@builder.io/qwik-city";
 import { RouterHead } from "./components/RouterHead";
 
-import "./global.css";
 import "@wevisdemo/ui/styles/index.css";
+import "./global.css";
 
 export default component$(() => {
   /**
@@ -24,7 +24,7 @@ export default component$(() => {
         <link rel="manifest" href="/manifest.json" />
         <RouterHead />
       </head>
-      <body class="wv-ibmplex">
+      <body>
         <RouterOutlet />
         <ServiceWorkerRegister />
       </body>

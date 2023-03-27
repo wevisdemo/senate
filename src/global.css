@@ -7,19 +7,15 @@
 
 /* WvFix */
 .wv_button {
-  border-width: 2px;
+  @apply border-2;
 }
 
 a {
-  color: #3904e9;
+  @apply text-wv hover:underline;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
-body {
-  background: #fffcf1;
+.nobr {
+  @apply whitespace-nowrap;
 }
 
 @tailwind utilities;

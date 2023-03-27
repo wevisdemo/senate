@@ -6,9 +6,7 @@ export default component$(() => {
   return (
     <>
       <Navbar />
-      <main>
-        <Slot />
-      </main>
+      <Slot />
       <QWvFooter />
     </>
   );
