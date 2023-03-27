@@ -1,1 +1,0 @@
-import{$ as n,m as l,x as r}from"./q-0ca940c2.js";const s=()=>n(r,{children:[l("h1",null,{class:"text-lg font-bold"},"Senate",3,null),l("p",null,null,"ชวนอ่านและค้นหาเรื่องราวการสืบทอดอำนาจของ คสช. ผ่านกลไกที่ให้อำนาจ ส.ว. กำหนดทิศทางการเมืองไทย เมื่อผลเลือกตั้งของประชาชนถูกทำให้ไร้ความหมาย",3,null)]},3,"H1_0");export{s as s_xYL1qOwPyDI};
