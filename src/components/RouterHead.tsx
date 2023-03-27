@@ -10,11 +10,15 @@ export const RouterHead = component$(() => {
 
   return (
     <>
-      <title>{head.title}</title>
+      <meta charSet="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <base href={loc.url.href} />
 
       <link rel="canonical" href={loc.url.href} />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="manifest" href="/manifest.json" />
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+      <title>{head.title}</title>
 
       {head.meta.map((m) => (
         <meta key={m.key} {...m} />
