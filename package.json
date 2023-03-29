@@ -46,6 +46,7 @@
     "vite-tsconfig-paths": "3.5.0"
   },
   "dependencies": {
-    "@wevisdemo/ui": "^6.0.0"
+    "@wevisdemo/ui": "^6.0.0",
+    "motion": "^10.15.5"
   }
 }

@@ -52,6 +52,9 @@ module.exports = {
         "Noto Color Emoji",
       ],
     },
+    screens: {
+      md: "1024px",
+    },
     colors: {
       transparent: "transparent",
       current: "currentColor",
@@ -59,10 +62,41 @@ module.exports = {
       white: colors.white,
       wv: "#3904e9",
       bg: "#fffcf1",
+      senate: {
+        green: "#177932",
+        blue: "#1152b5",
+        pink: "#ffa9d1",
+      },
+      vote: {
+        เห็น: "#60C1AF",
+        ไม่เห็น: "#F92D46",
+        งด: "#C5C5C5",
+        ไม่ลง: "#FFFFFF",
+        ไม่เข้า: "#000000",
+      },
     },
     spacing: {
-      // always use custom size
+      0: "0",
+      4: "4px",
+      10: "10px",
+      20: "20px",
+      30: "30px",
+      40: "40px",
+      50: "50px",
+      60: "60px",
+      100: "100px",
+      120: "120px",
       text: "80%",
+    },
+    borderWidth: {
+      DEFAULT: "1px",
+      0: "0",
+      1: "1px",
+      2: "2px",
+    },
+    borderRadius: {
+      10: "10px",
+      full: "9999px",
     },
   },
   plugins: [],

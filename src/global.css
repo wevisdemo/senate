@@ -5,6 +5,25 @@
 @tailwind base;
 @tailwind components;
 
+*,
+::before,
+::after {
+  @apply relative;
+}
+
+html {
+  @apply overflow-x-hidden scroll-smooth;
+}
+
+.container {
+  /* @apply mx-auto w-[calc(100%_-_40px)] max-w-[1440px] md:w-[calc(100%_-_200px)]; */
+  @apply mx-auto w-[calc(100%_-_40px)] max-w-[1280px] md:w-[calc(100%_-_200px)];
+}
+
+.nobr {
+  @apply whitespace-nowrap;
+}
+
 /* WvFix */
 .wv_button {
   @apply border-2;
@@ -12,10 +31,6 @@
 
 a {
   @apply text-wv hover:underline;
-}
-
-.nobr {
-  @apply whitespace-nowrap;
 }
 
 @tailwind utilities;
