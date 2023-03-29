@@ -32,8 +32,7 @@ export default component$(() => {
             <h1 class="wv-h2 mb-20 hidden font-kondolar font-black md:block">
               <span class="nobr">แลหลัง</span>
               <br />
-              <span class="nobr">เหลียวหน้า</span>
-              <span class="nobr">ส.ว.</span>
+              <span class="nobr">เหลียวหน้า</span> <span class="nobr">ส.ว.</span>
             </h1>
             <p class="wv-h6 mb-20 font-kondolar">
               ต่อให้เลือกตั้งอีกกี่ครั้ง ปัญหาประชาธิปไตยไทยก็จะยังคงอยู่

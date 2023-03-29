@@ -24,7 +24,7 @@ const Ch1Infinity = component$(() => {
               el,
               {
                 opacity: [0, 1],
-                transform: ["translateY(10px)", "translateY(0)"],
+                transform: ["translateY(20px)", "translateY(0)"],
               },
               {
                 duration: 0.5,
@@ -43,6 +43,13 @@ const Ch1Infinity = component$(() => {
         class="absolute top-0 h-full w-auto object-cover"
         src="./imgs/ch1-infinity.svg"
         alt=""
+        width="1099"
+        height="2366"
+        loading="lazy"
+        decoding="async"
+        style={{
+          clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
+        }}
       />
       <div class="mx-auto flex aspect-square w-[calc(100%_-_40px)] min-w-[280px] max-w-[337px] flex-col items-center justify-center gap-10 overflow-hidden rounded-full bg-black p-30 text-center text-white opacity-0">
         <img
