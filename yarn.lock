@@ -504,10 +504,10 @@
     "@typescript-eslint/types" "5.56.0"
     eslint-visitor-keys "^3.3.0"
 
-"@wevisdemo/ui@^6.0.0":
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/@wevisdemo/ui/-/ui-6.1.0.tgz#ae2a976af9cb623e7db612bf48515b252142a324"
-  integrity sha512-siQntn1hChXIIWT1v9ASphMNiX3DCG+uU5j1feeAd/VfRLlLTXicAI5n+N8ZNA8qsfMW1n1Epsr4ZBDCy46maA==
+"@wevisdemo/ui@^6.1.1":
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/@wevisdemo/ui/-/ui-6.1.1.tgz#57b4fcc055a2d256bf101d0e2d3c79b606199fb3"
+  integrity sha512-UjrHYhuDIe3TJ2vLHH0oS1iC0fuANUN4VneOSasyWEaBlAVq1g9Hf0pTWCsA264n3g+dhiu8E99VUVyQq7QZ8w==
 
 acorn-jsx@^5.0.0, acorn-jsx@^5.3.2:
   version "5.3.2"

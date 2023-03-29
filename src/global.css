@@ -41,11 +41,6 @@ html {
   animation: reveal 1s forwards;
 }
 
-/* WvFix */
-.wv_button {
-  @apply border-2;
-}
-
 a {
   @apply text-wv hover:underline;
 }

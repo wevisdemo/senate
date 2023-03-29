@@ -11,7 +11,7 @@ export default component$(() => {
   return (
     <>
       <header class="bg-black pb-30 text-white md:pt-100 md:pb-60">
-        <h1 class="wv-h2 !py-20 text-center font-kondolar font-black md:hidden">
+        <h1 class="wv-h2 py-20 text-center font-kondolar font-black md:hidden">
           <span class="nobr">แลหลัง</span>
           <br />
           <span class="nobr">เหลียวหน้า</span> <span class="nobr">ส.ว.</span>
@@ -29,17 +29,17 @@ export default component$(() => {
             />
           </div>
           <div class="flex-1 text-center md:text-left">
-            <h1 class="wv-h2 !mb-20 hidden font-kondolar font-black md:block">
+            <h1 class="wv-h2 mb-20 hidden font-kondolar font-black md:block">
               <span class="nobr">แลหลัง</span>
               <br />
               <span class="nobr">เหลียวหน้า</span>
               <span class="nobr">ส.ว.</span>
             </h1>
-            <p class="wv-h6 !mb-20 font-kondolar">
+            <p class="wv-h6 mb-20 font-kondolar">
               ต่อให้เลือกตั้งอีกกี่ครั้ง ปัญหาประชาธิปไตยไทยก็จะยังคงอยู่
               ถ้าที่มาและอำนาจของ ส.ว. ยังไม่ถูกแก้ไข
             </p>
-            <p class="wv-b3 !mb-20">
+            <p class="wv-b3 mb-20">
               หลังการเลือกตั้งทั่วไป 2566 สมาชิกวุฒิสภา (ส.ว.) ชุดแรกของรัฐธรรมนูญ 2560
               หรือ <strong>&ldquo;ส.ว.ชุดพิเศษ&rdquo;</strong>{" "}
               ที่แต่งตั้งโดยคณะรักษาความสงบแห่งชาติ (คสช.)
@@ -59,7 +59,7 @@ export default component$(() => {
           </div>
         </div>
         <div class="container">
-          <p class="wv-h7 !mb-20 text-center font-kondolar font-black">ข้ามไปสำรวจ</p>
+          <p class="wv-h7 mb-20 text-center font-kondolar font-black">ข้ามไปสำรวจ</p>
           <div class="flex flex-col gap-20 md:flex-row">
             <JumpToContent
               id="ch1"
@@ -204,10 +204,10 @@ export default component$(() => {
           loading="lazy"
           decoding="async"
         />
-        <h2 class="wv-h4 container !mb-50 text-center font-kondolar font-black">
+        <h2 class="wv-h4 container mb-50 text-center font-kondolar font-black">
           ส.ว. ในรัฐธรรมนูญ 2560 คือปัญหาของประชาธิปไตยไทย
         </h2>
-        <p class="wv-b2 container !mb-[75px] text-center font-bold">
+        <p class="wv-b2 container mb-[75px] text-center font-bold">
           เลือกตั้ง&apos;66 ประชาชนเลือกนายกฯ ผ่านการเลือก ส.ส. ดังนั้นแล้ว มติของ ส.ว.
           ต้องเคารพเจตจํานงของเสียงข้างมาก ส.ว. ต้องลงคะแนน ให้กับแคนดิเดตนายกฯ
           จากพรรคการเมืองที่รวบรวมเสียงส่วนใหญ่ของ ส.ส. ได้เท่านั้น
