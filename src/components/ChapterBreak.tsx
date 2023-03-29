@@ -1,4 +1,4 @@
-import { $, component$, Slot, useSignal, useVisibleTask$ } from "@builder.io/qwik";
+import { component$, Slot, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import { inView, stagger, timeline } from "motion";
 
 interface ChapterBreakProps {
@@ -12,50 +12,46 @@ const ChapterBreak = component$(({ part, title }: ChapterBreakProps) => {
   const elImgContainer = useSignal<HTMLDivElement>();
   const elTitleContainer = useSignal<HTMLDivElement>();
 
-  const playAnimation = $(() => {
-    if (elPartContainer.value && elImgContainer.value && elTitleContainer.value) {
-      const [elPartText, elPartNumber] = elPartContainer.value.children;
-      const [elImg] = elImgContainer.value.children;
-      timeline([
-        [
-          elPartText,
-          { transform: ["translateY(100%)", "translateY(0)"], opacity: [0, 1] },
-          { duration: 0.5 },
-        ],
-        [
-          elPartNumber,
-          { transform: ["translateY(20%)", "translateY(0)"], opacity: [0, 1] },
-          { duration: 0.5, at: 0.1 },
-        ],
-        [
-          elImg,
-          { transform: ["translateY(10%)", "translateY(0)"], opacity: [0, 1] },
-          { duration: 0.5, at: 0.3 },
-        ],
-        [
-          [...elTitleContainer.value.children],
-          {
-            transform: ["translateY(100%)", "translateY(0)"],
-            clipPath: [
-              "polygon(0 0, 100% 0, 100% 0%, 0 0%)",
-              "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-            ],
-            opacity: [1, 1],
-          },
-          { duration: 0.5, at: 0.5, delay: stagger(0.1) },
-        ],
-      ]);
-    }
-  });
-
   useVisibleTask$(() => {
     if (elChapterBreakContainer.value)
       inView(
         elChapterBreakContainer.value,
         () => {
-          playAnimation();
+          if (elPartContainer.value && elImgContainer.value && elTitleContainer.value) {
+            const [elPartText, elPartNumber] = elPartContainer.value.children;
+            const [elImg] = elImgContainer.value.children;
+            timeline([
+              [
+                elPartText,
+                { transform: ["translateY(100%)", "translateY(0)"], opacity: [0, 1] },
+                { duration: 0.5 },
+              ],
+              [
+                elPartNumber,
+                { transform: ["translateY(20%)", "translateY(0)"], opacity: [0, 1] },
+                { duration: 0.5, at: 0.1 },
+              ],
+              [
+                elImg,
+                { transform: ["translateY(10%)", "translateY(0)"], opacity: [0, 1] },
+                { duration: 0.5, at: 0.3 },
+              ],
+              [
+                [...elTitleContainer.value.children],
+                {
+                  transform: ["translateY(100%)", "translateY(0)"],
+                  clipPath: [
+                    "polygon(0 0, 100% 0, 100% 0%, 0 0%)",
+                    "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+                  ],
+                  opacity: [1, 1],
+                },
+                { duration: 0.5, at: 0.5, delay: stagger(0.1) },
+              ],
+            ]);
+          }
         },
-        { amount: 0.9 }
+        { amount: 0.99 }
       );
   });
 

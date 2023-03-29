@@ -24,6 +24,23 @@ html {
   @apply whitespace-nowrap;
 }
 
+/* https://twitter.com/shuding_/status/1556357928176730113 */
+@keyframes reveal {
+  0% {
+    mask: linear-gradient(90deg, #000 25%, #000000e6 50%, #00000000) 150% 0 / 400%
+      no-repeat;
+    opacity: 0.2;
+  }
+  100% {
+    mask: linear-gradient(90deg, #000 25%, #000000e6 50%, #00000000) 0 / 400% no-repeat;
+    opacity: 1;
+  }
+}
+
+.reveal {
+  animation: reveal 1s forwards;
+}
+
 /* WvFix */
 .wv_button {
   @apply border-2;

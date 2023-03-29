@@ -1,9 +1,11 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 
+import Ch1Infinity from "~/components/chapter1/Ch1Infinity";
 import ChapterBreak from "~/components/ChapterBreak";
 import JumpToContent from "~/components/JumpToContent";
 import QWvSharer from "~/components/react/QWvSharer";
+import TitleBlock from "~/components/TitleBlock";
 
 export default component$(() => {
   return (
@@ -83,97 +85,114 @@ export default component$(() => {
         </clipPath>
       </svg> */}
       <main class="min-h-[50vh] bg-bg">
-        <ChapterBreak
-          part={1}
-          title={[
-            "ส.ว.",
-            " ",
-            "เลือก",
-            "โดย",
-            " ",
-            "คสช.",
-            "-",
-            "เป็น",
-            "ใคร",
-            " ",
-            "มา",
-            "จาก",
-            "ไหน",
-            "บ้าง",
-            "?",
-          ]}
-        >
+        <section>
+          <ChapterBreak
+            part={1}
+            title={[
+              "ส.ว.",
+              " ",
+              "เลือก",
+              "โดย",
+              " ",
+              "คสช.",
+              "-",
+              "เป็น",
+              "ใคร",
+              " ",
+              "มา",
+              "จาก",
+              "ไหน",
+              "บ้าง",
+              "?",
+            ]}
+          >
+            <img
+              class="h-[225px] w-auto opacity-0"
+              src="./imgs/ch1.webp"
+              alt=""
+              width={253}
+              height={225}
+              loading="lazy"
+              decoding="async"
+            />
+          </ChapterBreak>
           <img
-            class="h-[225px] w-auto opacity-0"
-            src="./imgs/ch1.webp"
+            class="my-60 mx-auto h-auto w-[87.5%] max-w-[632px]"
+            src="./imgs/ch1-break.webp"
             alt=""
-            width={253}
-            height={225}
+            width={632}
+            height={122}
             loading="lazy"
             decoding="async"
           />
-        </ChapterBreak>
-        <div class="h-screen">
-          <h1 class="text-lg font-bold">Senate</h1>
-          <p>
-            ชวนอ่านและค้นหาเรื่องราวการสืบทอดอำนาจของ คสช. ผ่านกลไกที่ให้อำนาจ ส.ว.
-            กำหนดทิศทางการเมืองไทย เมื่อผลเลือกตั้งของประชาชนถูกทำให้ไร้ความหมาย
+          <TitleBlock>
+            เลือกตั้ง&apos;66 ส.ว. ชุดเดิม
+            <br />
+            ยังมีอำนาจเลือก &ldquo;นายกฯ&rdquo; คนใหม่
+          </TitleBlock>
+          <p class="wv-b2 container mb-60 text-center">
+            เมื่อวาระของ ส.ว. คือ 5 ปี ส.ว. ชุดปัจจุบันจะทำงานไปจนถึง 11 พฤษภาคม 2567
+            ซึ่งเป็นจุดที่น่ากังวลของการเมืองไทยในอนาคต เนื่องจาก…
           </p>
-        </div>
-        <ChapterBreak
-          part={2}
-          title={[
-            "ส.ว.",
-            " ",
-            "ตัดสินใจ",
-            "อะไร",
-            "-",
-            "แทน",
-            "ประชาชน",
-            "ไป",
-            "แล้ว",
-            "บ้าง",
-            "?",
-          ]}
-        >
-          <img
-            class="h-[273px] w-auto opacity-0"
-            src="./imgs/ch2.webp"
-            alt=""
-            width={261}
-            height={273}
-            loading="lazy"
-            decoding="async"
-          />
-        </ChapterBreak>
-        <div class="h-screen">
-          <h1 class="text-lg font-bold">Senate</h1>
-          <p>
-            ชวนอ่านและค้นหาเรื่องราวการสืบทอดอำนาจของ คสช. ผ่านกลไกที่ให้อำนาจ ส.ว.
-            กำหนดทิศทางการเมืองไทย เมื่อผลเลือกตั้งของประชาชนถูกทำให้ไร้ความหมาย
+          <Ch1Infinity />
+          <TitleBlock>ที่มาของ ส.ว.</TitleBlock>
+          <p class="wv-b2 container mb-30 text-center">
+            ส.ว. ในรัฐธรรมนูญ 2560 ล้วนมีที่มาเกี่ยวข้องกับ คสช. ไม่ว่าจะมาจากการคัดเลือก
+            โดยตรงหรือโดยอ้อม
           </p>
-        </div>
-        <ChapterBreak
-          part={3}
-          title={["ปัญหา", " ", "ส.ว.", "-", "เรา", "ทำ", "อะไร", "ได้", "บ้าง", "?"]}
-        >
-          <img
-            class="h-[232px] w-auto opacity-0"
-            src="./imgs/ch3.webp"
-            alt=""
-            width={255}
-            height={232}
-            loading="lazy"
-            decoding="async"
-          />
-        </ChapterBreak>
-        <div class="h-screen">
-          <h1 class="text-lg font-bold">Senate</h1>
-          <p>
-            ชวนอ่านและค้นหาเรื่องราวการสืบทอดอำนาจของ คสช. ผ่านกลไกที่ให้อำนาจ ส.ว.
-            กำหนดทิศทางการเมืองไทย เมื่อผลเลือกตั้งของประชาชนถูกทำให้ไร้ความหมาย
+          <p class="wv-h3 container mb-30 text-center font-kondolar font-black">
+            เส้นทางของ ส.ว.
           </p>
-        </div>
+          <p class="wv-h6 container mb-60 text-center font-kondolar font-bold">
+            ส.ว. ทั้งหมด 250 ที่นั่ง ประกอบไปด้วย 3 ประเภท
+          </p>
+        </section>
+        <section>
+          <ChapterBreak
+            part={2}
+            title={[
+              "ส.ว.",
+              " ",
+              "ตัดสินใจ",
+              "อะไร",
+              "-",
+              "แทน",
+              "ประชาชน",
+              "ไป",
+              "แล้ว",
+              "บ้าง",
+              "?",
+            ]}
+          >
+            <img
+              class="h-[273px] w-auto opacity-0"
+              src="./imgs/ch2.webp"
+              alt=""
+              width={261}
+              height={273}
+              loading="lazy"
+              decoding="async"
+            />
+          </ChapterBreak>
+          <div class="h-screen"></div>
+        </section>
+        <section>
+          <ChapterBreak
+            part={3}
+            title={["ปัญหา", " ", "ส.ว.", "-", "เรา", "ทำ", "อะไร", "ได้", "บ้าง", "?"]}
+          >
+            <img
+              class="h-[232px] w-auto opacity-0"
+              src="./imgs/ch3.webp"
+              alt=""
+              width={255}
+              height={232}
+              loading="lazy"
+              decoding="async"
+            />
+          </ChapterBreak>
+          <div class="h-screen"></div>
+        </section>
       </main>
       <footer class="bg-black py-120 text-white">
         <img
