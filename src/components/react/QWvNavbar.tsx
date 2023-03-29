@@ -26,6 +26,6 @@ export default qwikify$(
     );
   },
   {
-    eagerness: "load",
+    eagerness: "hover",
   }
 );
