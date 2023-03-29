@@ -2,8 +2,11 @@ const fs = require("fs");
 const path = require("path");
 
 const directoryPath = path.join(__dirname, "/dist");
+const SKIP_EXT = ["png", "jpg", "webp"];
 
 function replaceInFile(filePath) {
+  if (SKIP_EXT.some((ext) => filePath.includes("." + ext))) return;
+
   fs.readFile(filePath, "utf8", function (err, data) {
     if (err) {
       console.error(`Error reading file: ${filePath}`, err);

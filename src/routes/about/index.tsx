@@ -1,6 +1,5 @@
 /* eslint-disable qwik/no-react-props */
 /** @jsxImportSource react */
-import type { DocumentHead } from "@builder.io/qwik-city";
 import { qwikify$ } from "@builder.io/qwik-react";
 
 import WvButton from "@wevisdemo/ui/react/button";
@@ -184,14 +183,3 @@ export default qwikify$(
   ),
   { eagerness: "idle" }
 );
-
-export const head: DocumentHead = {
-  title: "Senate — WeVis",
-  meta: [
-    {
-      name: "description",
-      content:
-        "ชวนอ่านและค้นหาเรื่องราวการสืบทอดอำนาจของ คสช. ผ่านกลไกที่ให้อำนาจ ส.ว. กำหนดทิศทางการเมืองไทย เมื่อผลเลือกตั้งของประชาชนถูกทำให้ไร้ความหมาย",
-    },
-  ],
-};
