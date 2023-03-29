@@ -11,6 +11,7 @@ const DESC =
 export const RouterHead = component$(() => {
   const head = useDocumentHead();
   const loc = useLocation();
+  const hrefWithoutAbout = loc.url.href.replace("about/", "");
 
   return (
     <>
@@ -19,8 +20,8 @@ export const RouterHead = component$(() => {
       <base href={loc.url.href} />
 
       <link rel="canonical" href={loc.url.href} />
-      <link rel="manifest" href={`${loc.url.href}manifest.json`} />
-      <link rel="icon" type="image/svg+xml" href={`${loc.url.href}favicon.svg`} />
+      <link rel="manifest" href={`${hrefWithoutAbout}manifest.json`} />
+      <link rel="icon" type="image/svg+xml" href={`${hrefWithoutAbout}favicon.svg`} />
 
       <title>{TITLE}</title>
       <meta name="description" content={DESC} />
@@ -29,14 +30,14 @@ export const RouterHead = component$(() => {
       <meta property="og:type" content="website" />
       <meta property="og:title" content={TITLE} />
       <meta property="og:description" content={DESC} />
-      <meta property="og:image" content={`${loc.url.href}og.png`} />
+      <meta property="og:image" content={`${hrefWithoutAbout}og.png`} />
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta property="twitter:domain" content={new URL(loc.url.href).hostname} />
+      <meta property="twitter:domain" content={loc.url.hostname} />
       <meta property="twitter:url" content={loc.url.href} />
       <meta name="twitter:title" content={TITLE} />
       <meta name="twitter:description" content={DESC} />
-      <meta name="twitter:image" content={`${loc.url.href}og.png`} />
+      <meta name="twitter:image" content={`${hrefWithoutAbout}og.png`} />
 
       {head.meta.map((m) => (
         <meta key={m.key} {...m} />
