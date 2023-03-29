@@ -24,7 +24,7 @@ export default component$(() => {
               alt=""
               width="311"
               height="778"
-              loading="lazy"
+              loading="eager"
               decoding="async"
             />
           </div>
