@@ -3,10 +3,10 @@
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { qwikify$ } from "@builder.io/qwik-react";
 
+import WvButton from "@wevisdemo/ui/react/button";
+import WvButtonGroup from "@wevisdemo/ui/react/button-group";
 import WvContainer from "@wevisdemo/ui/react/container";
 import WvParagraphGroup from "@wevisdemo/ui/react/paragraph-group";
-import WvButtonGroup from "@wevisdemo/ui/react/button-group";
-import WvButton from "@wevisdemo/ui/react/button";
 import WvSharer from "@wevisdemo/ui/react/sharer";
 
 export default qwikify$(
@@ -182,7 +182,7 @@ export default qwikify$(
       <WvSharer center />
     </WvContainer>
   ),
-  { eagerness: "load" }
+  { eagerness: "idle" }
 );
 
 export const head: DocumentHead = {
