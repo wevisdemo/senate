@@ -3,8 +3,12 @@ import { component$ } from "@builder.io/qwik";
 import Ch1Infinity from "~/components/chapter1/Ch1Infinity";
 import ChapterBreak from "~/components/ChapterBreak";
 import JumpToContent from "~/components/JumpToContent";
+import Lottie from "~/components/Lottie";
 import QWvSharer from "~/components/react/QWvSharer";
 import TitleBlock from "~/components/TitleBlock";
+import Ch3BasicCondition from "~/components/chapter3/Ch3BasicCondition";
+import Ch3ExtendCondition from "~/components/chapter3/Ch3ExtendCondition";
+import { Ch3FixImg } from "~/components/chapter3/Ch3FixImg";
 
 export default component$(() => {
   return (
@@ -189,18 +193,73 @@ export default component$(() => {
               decoding="async"
             />
           </ChapterBreak>
-          <div class="h-screen"></div>
+          <TitleBlock class="mt-100">
+            แล้วจะแก้ไขปัญหา ส.ว. ที่ส่งผลกระทบต่อการเมืองประเทศไทยได้อย่างไร?
+          </TitleBlock>
+          <p class="wv-b2 container mb-60 text-center">
+            <strong>“การแก้ไขเรื่องที่มาและอำนาจของ ส.ว.”</strong>{" "}
+            คือสิ่งที่ถูกพูดถึงมาตลอด โดยมีการนำเสนอหลากหลายแนวทาง
+          </p>
+          <p class="wv-h4 container text-center font-kondolar font-black">
+            Model เกี่ยวกับการแก้ไขปัญหาเรื่องที่มา และอำนาจของ ส.ว.
+          </p>
+          <details>
+            <summary>ยกเลิก ส.ว. เปลี่ยนเป็นสภาเดี่ยว</summary>
+            LOL
+          </details>
+          <details>
+            <summary>“ลดอำนาจ ส.ว.” สภาคู่ แต่อำนาจของ ส.ว.ต้องสัมพันธ์กับที่มา</summary>
+            LOL
+          </details>
+          <details>
+            <summary>
+              “เปลี่ยนที่มา ส.ว.” สภาคู่ แต่ที่มา ส.ว. ยึดโยงกับประชาชนมากขึ้น
+            </summary>
+            LOL
+          </details>
+          <Ch3FixImg />
+          <p class="wv-h4 container mb-20 text-center font-kondolar font-black">
+            วิธีการตามกฎหมายต้องเสนออย่างไร
+          </p>
+          <p class="wv-h5 container mb-20 text-center font-kondolar font-black">
+            แนวทางการแก้ไขบทบัญญัติในรัฐธรรมนูญ
+          </p>
+          <p class="wv-b3 container mb-20 text-center md:mb-60">
+            การแก้ไขในเรื่องที่มาและอำนาจของ ส.ว. เป็นการแก้ไขตัวเนื้อหาในรัฐธรรมนูญ 2560
+            เนื่องจากรัฐธรรมนูญเป็นกฎหมายสูงสุดและเป็นแม่บทที่กำหนดโครงสร้าง กลไก
+            และหลักการพื้นฐานในการปกครองประเทศ
+            การแก้ไขเพิ่มเติมรัฐธรรมนูญจึงต้องมีกระบวนการไว้เป็นการเฉพาะและแตกต่างออกไปจากการแก้ไขบทบัญญัติของกฎหมายทั่วไป
+            โดยกระบวนการแก้ไขถูกกำหนดไว้ในหมวด 15 การแก้ไขเพิ่มเติมรัฐธรรมนูญ มาตรา 256
+          </p>
+          <div class="container flex flex-col gap-20 md:flex-row">
+            <div class="flex-1">
+              <p class="wv-h5 mb-10 text-center font-kondolar font-black">
+                เงื่อนไขพื้นฐาน
+              </p>
+              <p class="wv-b2 mb-10 text-center font-bold">
+                ผู้มีสิทธิยื่นแก้ไขเพิ่มเติม
+              </p>
+              <Ch3BasicCondition />
+            </div>
+            <div class="flex-1">
+              <p class="wv-h5 mb-10 text-center font-kondolar font-black">
+                เงื่อนไขการพิจารณาแก้ไขเพิ่มเติม
+              </p>
+              <p class="wv-b2 mb-10 text-center font-bold">ขั้นตอนการแก้ไข</p>
+              <Ch3ExtendCondition />
+            </div>
+          </div>
+          <p class="wv-h4 container mb-80 mt-60 text-center font-kondolar font-black">
+            ช่องทางการเสนอแก้ไขรัฐธรรมนูญเกี่ยวกับที่มา และอำนาจของ ส.ว.
+          </p>
         </section>
       </main>
       <footer class="bg-black py-120 text-white">
-        <img
-          class="mx-auto mb-50 h-auto w-[80%] max-w-[333px]"
-          src="./imgs/footer.webp"
-          alt=""
-          width="333"
-          height="333"
-          loading="lazy"
-          decoding="async"
+        <Lottie
+          src="./imgs/lotties/summary.json"
+          width="333px"
+          height="333px"
+          clazz="mx-auto mb-50 h-auto !w-[80%] max-w-[333px]"
         />
         <h2 class="wv-h4 container mb-50 text-center font-kondolar font-black">
           ส.ว. ในรัฐธรรมนูญ 2560 คือปัญหาของประชาธิปไตยไทย

@@ -1,21 +1,25 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import { animate, inView, scroll } from "motion";
+import Lottie from "~/components/Lottie";
 
 const Ch1Infinity = component$(() => {
   const elContainer = useSignal<HTMLDivElement>();
+  const currentLottieInview = useSignal<number[]>([]);
 
   useVisibleTask$(() => {
     if (elContainer.value) {
       const [elBg, ...elContent] = elContainer.value.children;
-      scroll(
-        animate(elBg, {
-          clipPath: [
-            "polygon(0 0, 100% 0, 100% 0, 0 0)",
-            "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-          ],
-        }),
-        { target: elContainer.value, offset: ["start 0.6", "end 0.9"] }
-      );
+      if (window.getComputedStyle(elBg).display !== "none") {
+        scroll(
+          animate(elBg, {
+            clipPath: [
+              "polygon(0 0, 100% 0, 100% 0, 0 0)",
+              "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+            ],
+          }),
+          { target: elContainer.value, offset: ["start 0.6", "end 0.9"] }
+        );
+      }
       [...elContent].forEach((el) => {
         inView(
           el,
@@ -30,6 +34,10 @@ const Ch1Infinity = component$(() => {
                 duration: 0.5,
               }
             );
+            const lottieData = (el as HTMLDivElement).dataset.lottie;
+            if (lottieData) {
+              currentLottieInview.value = [...currentLottieInview.value, +lottieData];
+            }
           },
           { amount: 0.99 }
         );
@@ -39,27 +47,31 @@ const Ch1Infinity = component$(() => {
 
   return (
     <div ref={elContainer} class="mb-60 flex flex-col items-center gap-10 py-40">
-      <img
-        class="absolute top-0 h-full w-auto object-cover"
-        src="./imgs/ch1-infinity.svg"
-        alt=""
-        width="1099"
-        height="2366"
-        loading="lazy"
-        decoding="async"
+      <svg
+        class="absolute top-0 hidden h-full w-auto object-cover md:block"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 149 320"
         style={{
           clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
+          willChange: "clip-path",
         }}
-      />
-      <div class="mx-auto flex aspect-square w-[calc(100%_-_40px)] min-w-[280px] max-w-[337px] flex-col items-center justify-center gap-10 overflow-hidden rounded-full bg-black p-30 text-center text-white opacity-0">
-        <img
-          class="mb-10"
-          src="./imgs/process0.webp"
-          alt=""
-          width={112}
-          height={112}
-          loading="lazy"
-          decoding="async"
+      >
+        <path
+          fill="#FFA9D1"
+          d="M126.587 297.783c29.057-29.275 29.057-76.731.34-106.006l-84.509-85.144c-17.366-17.496-17.366-46.443.34-63.94 8.35-8.412 19.7-13.118 31.73-13.118 12.03 0 23.381 4.706 31.732 13.46 17.366 17.497 17.366 46.444-.34 63.94L83.504 129.52l20.706 20.861 22.716-22.886c28.73-28.946 29.056-76.388.339-105.662-29.07-28.946-76.495-29.275-105.554 0C7.685 35.965 0 54.473 0 74.664c0 20.191 7.685 39.044 21.71 53.174l84.509 85.144c17.366 17.497 17.366 46.444-.339 63.94-17.705 17.496-46.097 17.497-63.462-.342-17.366-17.496-17.366-46.443.339-63.939l22.376-22.545-20.706-20.862-22.376 22.545C8.025 205.91 0 225.089 0 244.953c0 19.85 7.685 38.7 21.71 52.831C35.737 311.915 54.447 319.658 74.148 320c19.701-.342 38.414-8.086 52.439-22.217z"
+        />
+      </svg>
+      <div
+        data-lottie="1"
+        class="mx-auto flex aspect-square w-[calc(100%_-_40px)] min-w-[280px] max-w-[337px] flex-col items-center justify-center gap-10 overflow-hidden rounded-full bg-black p-30 text-center text-white opacity-0"
+      >
+        <Lottie
+          src="./imgs/lotties/process/01.json"
+          width="112px"
+          height="112px"
+          delayMs={250}
+          play={currentLottieInview.value.includes(1)}
         />
         <p class="wv-h8 font-kondolar font-bold">
           ส.ว. ชุดปัจจุบันที่แต่งตั้งตามกระบวน การในบทเฉพาะกาลของรัฐธรรมนูญ
@@ -96,15 +108,16 @@ const Ch1Infinity = component$(() => {
         loading="lazy"
         decoding="async"
       />
-      <div class="mx-auto flex w-[calc(100%_-_40px)] min-w-[280px] max-w-[337px] flex-col items-center justify-center gap-10 overflow-hidden rounded-10 border bg-white py-30 px-20 text-center opacity-0">
-        <img
-          class="mb-10"
-          src="./imgs/process1.webp"
-          alt=""
-          width={112}
-          height={112}
-          loading="lazy"
-          decoding="async"
+      <div
+        data-lottie="2"
+        class="mx-auto flex w-[calc(100%_-_40px)] min-w-[280px] max-w-[337px] flex-col items-center justify-center gap-10 overflow-hidden rounded-10 border bg-white py-30 px-20 text-center opacity-0"
+      >
+        <Lottie
+          src="./imgs/lotties/process/02.json"
+          width="112px"
+          height="112px"
+          delayMs={250}
+          play={currentLottieInview.value.includes(2)}
         />
         <p class="wv-h8 font-kondolar font-bold">
           สามารถโหวตเลือก นายกรัฐมนตรีในสมัยหน้า ได้อีก 1 ครั้ง
@@ -141,15 +154,16 @@ const Ch1Infinity = component$(() => {
         loading="lazy"
         decoding="async"
       />
-      <div class="mx-auto flex w-[calc(100%_-_40px)] min-w-[280px] max-w-[337px] flex-col items-center justify-center gap-10 overflow-hidden rounded-10 border bg-white py-30 px-20 text-center opacity-0">
-        <img
-          class="mb-10"
-          src="./imgs/process2.webp"
-          alt=""
-          width={112}
-          height={112}
-          loading="lazy"
-          decoding="async"
+      <div
+        data-lottie="3"
+        class="mx-auto flex w-[calc(100%_-_40px)] min-w-[280px] max-w-[337px] flex-col items-center justify-center gap-10 overflow-hidden rounded-10 border bg-white py-30 px-20 text-center opacity-0"
+      >
+        <Lottie
+          src="./imgs/lotties/process/03.json"
+          width="112px"
+          height="112px"
+          delayMs={250}
+          play={currentLottieInview.value.includes(3)}
         />
         <p class="wv-h8 font-kondolar font-bold">
           คัดเลือก ส.ว. ชุดใหม่ที่ ตามกระบวนการในบททั่วไปของรัฐธรรมนูญ
@@ -165,19 +179,20 @@ const Ch1Infinity = component$(() => {
         loading="lazy"
         decoding="async"
       />
-      <div class="mx-auto flex w-[calc(100%_-_40px)] min-w-[280px] max-w-[337px] flex-col items-center justify-center gap-10 overflow-hidden rounded-10 border bg-white py-30 px-20 text-center opacity-0">
-        <img
-          class="mb-10"
-          src="./imgs/process3.webp"
-          alt=""
-          width={112}
-          height={112}
-          loading="lazy"
-          decoding="async"
+      <div
+        data-lottie="4"
+        class="mx-auto flex w-[calc(100%_-_40px)] min-w-[280px] max-w-[337px] flex-col items-center justify-center gap-10 overflow-hidden rounded-10 border bg-white py-30 px-20 text-center opacity-0"
+      >
+        <Lottie
+          src="./imgs/lotties/process/04.json"
+          width="112px"
+          height="112px"
+          delayMs={250}
+          play={currentLottieInview.value.includes(4)}
         />
         <p class="wv-h8 font-kondolar font-bold">
           ที่มาของ ส.ว. ในรัฐธรรมนูญ 2560 บททั่วไปที่จะมีการคัด
-          เลือกหลังโหวตนายกฯครั้งหน้ามีโอกาสที่จะเอื้อให้เกิดการ “จัดฮั้ว”
+          เลือกหลังโหวตนายกฯครั้งหน้ามีโอกาสที่จะเอื้อให้เกิดการ &ldquo;จัดฮั้ว&rdquo;
           ซึ่งส่งผลให้ได้กลุ่มคนที่จะเข้ามาสนับสนุนรัฐบาล คสช. แปลงรูปต่อไป
         </p>
       </div>
@@ -190,15 +205,16 @@ const Ch1Infinity = component$(() => {
         loading="lazy"
         decoding="async"
       />
-      <div class="mx-auto flex aspect-square w-[calc(100%_-_40px)] min-w-[280px] max-w-[337px] flex-col items-center justify-center gap-10 overflow-hidden rounded-full bg-black p-30 text-center text-white opacity-0">
-        <img
-          class="mb-10"
-          src="./imgs/process4.webp"
-          alt=""
-          width={180}
-          height={180}
-          loading="lazy"
-          decoding="async"
+      <div
+        data-lottie="5"
+        class="mx-auto flex aspect-square w-[calc(100%_-_40px)] min-w-[280px] max-w-[337px] flex-col items-center justify-center gap-10 overflow-hidden rounded-full bg-black p-30 text-center text-white opacity-0"
+      >
+        <Lottie
+          src="./imgs/lotties/process/05.json"
+          width="180px"
+          height="180px"
+          delayMs={250}
+          play={currentLottieInview.value.includes(5)}
         />
         <p class="wv-h8 mb-10 font-kondolar font-bold">ระบบ ส.ว.ดำเนินต่อไป</p>
       </div>

@@ -1,7 +1,11 @@
 import { component$, Slot, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import { inView } from "motion";
 
-const TitleBlock = component$(() => {
+interface TitleBlockProps {
+  class?: string;
+}
+
+const TitleBlock = component$((props: TitleBlockProps) => {
   const elTextContainer = useSignal<HTMLDivElement>();
 
   useVisibleTask$(() => {
@@ -19,7 +23,11 @@ const TitleBlock = component$(() => {
   });
 
   return (
-    <div class="wv-h4 container mb-60 rounded-10 bg-black text-center font-kondolar font-black text-bg">
+    <div
+      class={`wv-h4 container mb-60 rounded-10 bg-black text-center font-kondolar font-black text-white ${
+        props.class ?? ""
+      }`}
+    >
       <span class="block py-20 px-40 opacity-0" ref={elTextContainer}>
         <Slot />
       </span>
