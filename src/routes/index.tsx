@@ -1,14 +1,14 @@
 import { component$ } from "@builder.io/qwik";
 
 import Ch1Infinity from "~/components/chapter1/Ch1Infinity";
+import Ch3BasicCondition from "~/components/chapter3/Ch3BasicCondition";
+import Ch3ExtendCondition from "~/components/chapter3/Ch3ExtendCondition";
+import Ch3FixImg from "~/components/chapter3/Ch3FixImg";
 import ChapterBreak from "~/components/ChapterBreak";
 import JumpToContent from "~/components/JumpToContent";
 import Lottie from "~/components/Lottie";
 import QWvSharer from "~/components/react/QWvSharer";
 import TitleBlock from "~/components/TitleBlock";
-import Ch3BasicCondition from "~/components/chapter3/Ch3BasicCondition";
-import Ch3ExtendCondition from "~/components/chapter3/Ch3ExtendCondition";
-import { Ch3FixImg } from "~/components/chapter3/Ch3FixImg";
 
 export default component$(() => {
   return (
@@ -30,6 +30,12 @@ export default component$(() => {
               loading="eager"
               decoding="async"
             />
+            {/* <Lottie
+              clazz="mx-auto !h-full max-h-[778px] !w-full max-w-[311px]"
+              src="./imgs/lotties/intro.json"
+              width="311px"
+              height="778px"
+            /> */}
           </div>
           <div class="flex-1 text-center md:text-left">
             <h1 class="wv-h2 mb-20 hidden font-kondolar font-black md:block">
@@ -108,14 +114,11 @@ export default component$(() => {
               "?",
             ]}
           >
-            <img
-              class="h-[225px] w-auto opacity-0"
-              src="./imgs/ch1.webp"
-              alt=""
-              width={253}
-              height={225}
-              loading="lazy"
-              decoding="async"
+            <Lottie
+              clazz="!w-auto opacity-0"
+              src="./imgs/lotties/chapter/01.json"
+              width="253px"
+              height="225px"
             />
           </ChapterBreak>
           <img
