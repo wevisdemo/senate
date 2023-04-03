@@ -180,7 +180,35 @@ export default component$(() => {
               decoding="async"
             />
           </ChapterBreak>
-          <div class="h-screen"></div>
+          <TitleBlock class="mt-100">
+            อำนาจของ ส.ว. ผ่านการโหวตสามารถกำหนดทิศทางการเมือง
+          </TitleBlock>
+          <img
+            class="mx-auto mb-60 h-[200px] w-auto"
+            src="./imgs/vote.svg"
+            alt=""
+            width={180}
+            height={200}
+            loading="lazy"
+            decoding="async"
+          />
+          <Lottie
+            src="./imgs/lotties/textslide.json"
+            loop
+            width="457px"
+            height="125px"
+            clazz="mx-auto mb-60 h-auto !w-[80%] max-w-[457px]"
+          />
+          <p class="wv-b2 container mb-60 text-center">
+            รัฐธรรมนูญ 2560 ให้อำนาจ ส.ว.
+            เหล่านี้มากถึงขนาดที่สามารถกำหนดทิศทางของการเมืองไทยได้
+            <br />
+            <br />
+            เมื่อพิจารณาผลโหวตของ ส.ว. ต่อมติต่าง ๆ ที่มีความสำคัญในสภา จะพบว่า
+            คนเหล่านี้มักใช้อำนาจของตนออกเสียงสนับสนุนรัฐบาล คสช. แปลงรูปบ่อยครั้ง
+            โดยสามารถแยกกลุ่มมติที่เอื้อประโยชน์ได้ 2 กลุ่ม ได้แก่{" "}
+            <strong>มติในที่ประชุมวุฒิสภา และ มติในที่ประชุมรัฐสภา</strong>
+          </p>
         </section>
         <section>
           <ChapterBreak
