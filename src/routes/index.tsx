@@ -2,6 +2,7 @@ import { component$ } from "@builder.io/qwik";
 
 import Ch1Infinity from "~/components/chapter1/Ch1Infinity";
 import Ch3BasicCondition from "~/components/chapter3/Ch3BasicCondition";
+import Ch3Constitution from "~/components/chapter3/Ch3Constitution";
 import Ch3ExtendCondition from "~/components/chapter3/Ch3ExtendCondition";
 import Ch3FixImg from "~/components/chapter3/Ch3FixImg";
 import ChapterBreak from "~/components/ChapterBreak";
@@ -200,7 +201,7 @@ export default component$(() => {
             แล้วจะแก้ไขปัญหา ส.ว. ที่ส่งผลกระทบต่อการเมืองประเทศไทยได้อย่างไร?
           </TitleBlock>
           <p class="wv-b2 container mb-60 text-center">
-            <strong>“การแก้ไขเรื่องที่มาและอำนาจของ ส.ว.”</strong>{" "}
+            <strong>&ldquo;การแก้ไขเรื่องที่มาและอำนาจของ ส.ว.&rdquo;</strong>{" "}
             คือสิ่งที่ถูกพูดถึงมาตลอด โดยมีการนำเสนอหลากหลายแนวทาง
           </p>
           <p class="wv-h4 container text-center font-kondolar font-black">
@@ -211,12 +212,14 @@ export default component$(() => {
             LOL
           </details>
           <details>
-            <summary>“ลดอำนาจ ส.ว.” สภาคู่ แต่อำนาจของ ส.ว.ต้องสัมพันธ์กับที่มา</summary>
+            <summary>
+              &ldquo;ลดอำนาจ ส.ว.&rdquo; สภาคู่ แต่อำนาจของ ส.ว.ต้องสัมพันธ์กับที่มา
+            </summary>
             LOL
           </details>
           <details>
             <summary>
-              “เปลี่ยนที่มา ส.ว.” สภาคู่ แต่ที่มา ส.ว. ยึดโยงกับประชาชนมากขึ้น
+              &ldquo;เปลี่ยนที่มา ส.ว.&rdquo; สภาคู่ แต่ที่มา ส.ว. ยึดโยงกับประชาชนมากขึ้น
             </summary>
             LOL
           </details>
@@ -255,6 +258,94 @@ export default component$(() => {
           <p class="wv-h4 container mb-80 mt-60 text-center font-kondolar font-black">
             ช่องทางการเสนอแก้ไขรัฐธรรมนูญเกี่ยวกับที่มา และอำนาจของ ส.ว.
           </p>
+          <div class="container flex flex-col gap-40 pb-120 md:flex-row">
+            <div class="flex-1">
+              <div class="wv-b6 mx-auto mb-20 h-20 w-20 rounded-full bg-black text-center font-bold leading-[20px] text-white">
+                1
+              </div>
+              <img
+                class="mx-auto mb-20 h-[112px] w-auto"
+                src="./imgs/constitution.svg"
+                alt=""
+                width={112}
+                height={112}
+                loading="lazy"
+                decoding="async"
+              />
+              <p class="wv-h6 mb-40 text-center font-kondolar font-black">
+                กรณีแก้ไขบทบัญญัติ เรื่องที่มา และอำนาจ ส.ว. ในรัฐธรรมนูญ 2560 บทเฉพาะกาล
+              </p>
+              <p class="wv-h7 mb-10 text-center font-kondolar font-black">
+                สำรวจตามผู้เสนอ
+              </p>
+              <p class="mb-10 flex items-center gap-10">
+                <span class="wv-h7 inline-block font-kondolar font-black">
+                  ภาคประชาชน
+                </span>
+                <small class="wv-b4 inline-block font-ibmplex font-normal">3 ร่าง</small>
+              </p>
+              <Ch3Constitution side="ภาคประชาชน" />
+              <p class="mb-10 flex items-center gap-10">
+                <span class="wv-h7 inline-block font-kondolar font-black">
+                  ฝ่ายรัฐบาล
+                </span>
+                <small class="wv-b4 inline-block font-ibmplex font-normal">1 ร่าง</small>
+              </p>
+              <Ch3Constitution side="ฝ่ายรัฐบาล" />
+              <p class="mb-10 flex items-center gap-10">
+                <span class="wv-h7 inline-block font-kondolar font-black">ฝ่ายค้าน</span>
+                <small class="wv-b4 inline-block font-ibmplex font-normal">2 ร่าง</small>
+              </p>
+              <Ch3Constitution side="ฝ่ายค้าน" />
+              <p class="mb-10 flex items-center gap-10">
+                <span class="wv-h7 inline-block font-kondolar font-black">
+                  เสนอร่วมฝ่าย
+                </span>
+                <small class="wv-b4 inline-block font-ibmplex font-normal">2 ร่าง</small>
+              </p>
+              <Ch3Constitution side="เสนอร่วมฝ่าย" />
+            </div>
+            <div class="flex-1">
+              <div class="wv-b6 mx-auto mb-20 h-20 w-20 rounded-full bg-black text-center font-bold leading-[20px] text-white">
+                2
+              </div>
+              <img
+                class="mx-auto mb-20 h-[112px] w-auto"
+                src="./imgs/constitution.svg"
+                alt=""
+                width={112}
+                height={112}
+                loading="lazy"
+                decoding="async"
+              />
+              <p class="wv-h6 mb-40 text-center font-kondolar font-black">
+                กรณีแก้ไขบทบัญญัติ เรื่องที่มา และอำนาจ ส.ว. ในรัฐธรรมนูญ 2560 บททั่วไป
+              </p>
+              <div class="rounded-10 bg-black p-20 text-white">
+                <p class="wv-h7 mb-10 flex items-center justify-center gap-10 font-kondolar font-black">
+                  <svg
+                    fill="none"
+                    width="43"
+                    height="43"
+                    viewBox="0 0 43 43"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M22.392 15.305l13.71-13.711 5.16 5.16-14.008 13.711-.73.715.73.714 14.009 13.711-5.153 5.153L22.4 26.749l-.715-.73-.715.73L7.26 40.758l-5.161-5.16 13.71-13.711.708-.707-.708-.707L2.1 6.762l5.168-5.168 13.71 13.71.708.708.707-.707z"
+                      fill="#FFA9D1"
+                      stroke="#000"
+                      strokeWidth="2"
+                    />
+                  </svg>
+                  ยังไม่มีใครเคยทำ
+                </p>
+                <p class="text-center">
+                  เพราะปัญหาเรื่องที่มาและอำนาจของ ส.ว. ที่ต้องถูกแก้ไข
+                  ถูกระบุไว้ในบทเฉพาะกาล
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
       <footer class="bg-black py-120 text-white">

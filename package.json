@@ -46,6 +46,7 @@
     "vite-tsconfig-paths": "3.5.0"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.13",
     "@wevisdemo/ui": "^6.1.1",
     "lottie-web": "^5.10.2",
     "motion": "^10.15.5"
