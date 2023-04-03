@@ -31,10 +31,11 @@ const ChapterBreak = component$(({ part, title }: ChapterBreakProps) => {
                 { transform: ["translateY(20%)", "translateY(0)"], opacity: [0, 1] },
                 { duration: 0.5, at: 0.1 },
               ],
+              [elImg, { opacity: [0, 1] }, { duration: 1, at: 0.3 }],
               [
                 elImg,
-                { transform: ["scale(.9)", "scale(1)"], opacity: [0, 1] },
-                { duration: 0.5, at: 0.3 },
+                { transform: ["scale(.8)", "scale(1)"] },
+                { duration: 1.5, at: 0.3, easing: "ease-out" },
               ],
               [
                 [...elTitleContainer.value.children],
