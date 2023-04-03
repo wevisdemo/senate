@@ -181,5 +181,5 @@ export default qwikify$(
       <WvSharer center />
     </WvContainer>
   ),
-  { eagerness: "idle" }
+  { eagerness: "load" }
 );
