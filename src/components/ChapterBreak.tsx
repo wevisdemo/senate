@@ -14,6 +14,12 @@ const ChapterBreak = component$(({ part, title }: ChapterBreakProps) => {
 
   useVisibleTask$(() => {
     if (elChapterBreakContainer.value) {
+      const threshold = Math.min(
+        0.99,
+        document.getElementById("100vh")!.getBoundingClientRect().height /
+          elChapterBreakContainer.value.getBoundingClientRect().height -
+          0.1
+      );
       inView(
         elChapterBreakContainer.value,
         () => {
@@ -53,9 +59,7 @@ const ChapterBreak = component$(({ part, title }: ChapterBreakProps) => {
           }
         },
         {
-          /* FIXME - when 100vh < element height, this will not trigger */
-          // elChapterBreakContainer.value.getBoundingClientRect().height
-          amount: 0.99,
+          amount: threshold,
         }
       );
     }
