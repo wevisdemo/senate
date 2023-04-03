@@ -13,7 +13,7 @@ const ChapterBreak = component$(({ part, title }: ChapterBreakProps) => {
   const elTitleContainer = useSignal<HTMLDivElement>();
 
   useVisibleTask$(() => {
-    if (elChapterBreakContainer.value)
+    if (elChapterBreakContainer.value) {
       inView(
         elChapterBreakContainer.value,
         () => {
@@ -33,7 +33,7 @@ const ChapterBreak = component$(({ part, title }: ChapterBreakProps) => {
               ],
               [
                 elImg,
-                { transform: ["scale(.95)", "scale(1)"], opacity: [0, 1] },
+                { transform: ["scale(.9)", "scale(1)"], opacity: [0, 1] },
                 { duration: 0.5, at: 0.3 },
               ],
               [
@@ -51,8 +51,13 @@ const ChapterBreak = component$(({ part, title }: ChapterBreakProps) => {
             ]);
           }
         },
-        { amount: 0.99 }
+        {
+          /* FIXME - when 100vh < element height, this will not trigger */
+          // elChapterBreakContainer.value.getBoundingClientRect().height
+          amount: 0.99,
+        }
       );
+    }
   });
 
   return (
