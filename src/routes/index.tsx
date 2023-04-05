@@ -148,7 +148,7 @@ const Chapter1 = (
       ]}
     >
       <Lottie
-        clazz="!w-auto opacity-0"
+        clazz="opacity-0"
         src="./imgs/lotties/chapter/01.json"
         width="253px"
         height="225px"
