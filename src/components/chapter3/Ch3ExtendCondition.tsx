@@ -32,28 +32,34 @@ const Ch3ExtendCondition = component$(() => {
     }
   });
 
+  useVisibleTask$(
+    () => {
+      if (el1.value && el2.value && el3.value && el4.value && el5.value) {
+        const elTxts = [el1.value, el2.value, el3.value, el4.value, el5.value];
+        elTxts.forEach((el) => {
+          el.classList.add("opacity-0");
+        });
+      }
+    },
+    { strategy: "document-idle" }
+  );
+
   return (
     <>
-      <p ref={el1} class="mb-10 border bg-white p-10 text-center opacity-0 md:text-left">
+      <p ref={el1} class="mb-10 border bg-white p-10 text-center md:text-left">
         <span class="block font-bold">วาระ 1 ขั้นรับหลักการ</span>{" "}
         ต้องเห็นชอบไม่น้อยกว่าครึ่งหนึ่งของทั้งสองสภา
         และมีเงื่อนไขพิเศษให้ในจำนวนนี้ต้องได้เสียงเห็นชอบจาก ส.ว. ไม่น้อยกว่า 1 ใน 3
         ของจำนวน สว. ทั้งหมดเท่าที่มีอยู่
       </p>
-      <div
-        ref={el2}
-        class="mb-10 h-30 bg-[url(/imgs/darr.svg)] bg-repeat-space opacity-0"
-      ></div>
-      <p ref={el3} class="mb-10 border bg-white p-10 text-center opacity-0 md:text-left">
+      <div ref={el2} class="bg-repeat-arrow mb-10 h-30 bg-[url(/imgs/darr.svg)]"></div>
+      <p ref={el3} class="mb-10 border bg-white p-10 text-center md:text-left">
         <span class="font-bold">วาระ 2</span> พิจารณาเรียงลำดับมาตรา ส.ส .+ ส.ว.
         เอาเสียงข้างมากของทั้งสองสภา และต้องเปิดให้ประชาชนที่เข้าชื่อแสดงความเห็นด้วย
         ในกรณีเป็นร่างที่ประชาชนเสนอ
       </p>
-      <div
-        ref={el4}
-        class="mb-10 h-30 bg-[url(/imgs/darr.svg)] bg-repeat-space opacity-0"
-      ></div>
-      <p ref={el5} class="border bg-white p-10 text-center opacity-0 md:text-left">
+      <div ref={el4} class="bg-repeat-arrow mb-10 h-30 bg-[url(/imgs/darr.svg)]"></div>
+      <p ref={el5} class="border bg-white p-10 text-center md:text-left">
         <span class="font-bold">วาระ 3</span> ขั้นสุดท้าย
         ต้องได้รับเสียงเห็นชอบเกินครึ่งหนึ่งของทั้งสองสภา แต่มีเงื่อนไขพิเศษกำหนดให้ต้องมี
         ส.ส. จากพรรคที่ไม่มีสมาชิกเป็นรัฐมนตรี ประธานสภาผู้แทนราษฎร

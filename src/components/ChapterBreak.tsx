@@ -65,6 +65,20 @@ const ChapterBreak = component$(({ part, title }: ChapterBreakProps) => {
     }
   });
 
+  useVisibleTask$(
+    () => {
+      if (elPartContainer.value && elImgContainer.value && elTitleContainer.value)
+        [
+          ...elPartContainer.value.children,
+          ...elImgContainer.value.children,
+          ...elTitleContainer.value.children,
+        ].forEach((el) => el.classList.add("opacity-0"));
+    },
+    {
+      strategy: "document-idle",
+    }
+  );
+
   return (
     <div
       ref={elChapterBreakContainer}
@@ -75,8 +89,8 @@ const ChapterBreak = component$(({ part, title }: ChapterBreakProps) => {
         ref={elPartContainer}
         class="text-center font-kondolar font-black leading-none"
       >
-        <span class="wv-h9 mb-[12px] block opacity-0">Part</span>
-        <span class="block text-[100px] opacity-0">{part}</span>
+        <span class="wv-h9 mb-[12px] block">Part</span>
+        <span class="block text-[100px]">{part}</span>
       </div>
       <div ref={elImgContainer} class="flex h-full items-center">
         <Slot />
@@ -89,7 +103,7 @@ const ChapterBreak = component$(({ part, title }: ChapterBreakProps) => {
           ch === "-" ? (
             <br key={i} />
           ) : (
-            <span class="inline-block whitespace-pre opacity-0" key={i}>
+            <span class="inline-block whitespace-pre" key={i}>
               {ch}
             </span>
           )

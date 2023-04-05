@@ -86,4 +86,8 @@ a {
   @apply text-wv hover:underline;
 }
 
+.bg-repeat-arrow {
+  background-repeat: space no-repeat;
+}
+
 @tailwind utilities;

@@ -31,11 +31,23 @@ const Ch3BasicCondition = component$(() => {
     }
   });
 
+  useVisibleTask$(
+    () => {
+      if (elTxt1.value && elTxt2.value && elTxt3.value && elTxt4.value) {
+        const elTxts = [elTxt1.value, elTxt2.value, elTxt3.value, elTxt4.value];
+        elTxts.forEach((el) => {
+          el.classList.add("opacity-0");
+        });
+      }
+    },
+    { strategy: "document-idle" }
+  );
+
   return (
     <>
       <div
         ref={elTxt1}
-        class="wv-b5 mb-15 flex items-center gap-10 bg-black px-20 py-10 font-bold text-white opacity-0"
+        class="wv-b5 mb-15 flex items-center gap-10 bg-black px-20 py-10 font-bold text-white"
       >
         <img
           src="./imgs/cabinet.webp"
@@ -49,7 +61,7 @@ const Ch3BasicCondition = component$(() => {
       </div>
       <div
         ref={elTxt2}
-        class="wv-b5 mb-15 flex items-center gap-10 bg-black px-20 py-10 text-white opacity-0"
+        class="wv-b5 mb-15 flex items-center gap-10 bg-black px-20 py-10 text-white"
       >
         <img
           src="./imgs/mp.webp"
@@ -65,7 +77,7 @@ const Ch3BasicCondition = component$(() => {
       </div>
       <div
         ref={elTxt3}
-        class="wv-b5 mb-15 flex items-center gap-10 bg-black px-20 py-10 text-white opacity-0"
+        class="wv-b5 mb-15 flex items-center gap-10 bg-black px-20 py-10 text-white"
       >
         <div class="flex flex-[0_0_60px] flex-col gap-10">
           <img
@@ -92,7 +104,7 @@ const Ch3BasicCondition = component$(() => {
       </div>
       <div
         ref={elTxt4}
-        class="wv-b5 flex items-center gap-10 bg-black px-20 py-10 text-white opacity-0"
+        class="wv-b5 flex items-center gap-10 bg-black px-20 py-10 text-white"
       >
         <img
           src="./imgs/people.webp"
