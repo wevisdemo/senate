@@ -1,0 +1,1 @@
+import{W as r}from"./q-0bb6aac5.js";import{j as t}from"./q-66195155.js";import"./q-a19ff742.js";import"./q-542df9bc.js";const p=()=>t.jsx(r,{allowCopyLink:!0,light:!0,center:!0});export{p as s_dJbfVE9x8jY};
