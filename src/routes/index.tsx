@@ -50,21 +50,12 @@ const Header = (
     </h1>
     <div class="container mx-auto mb-20 flex flex-col gap-20 md:mb-[48px] md:flex-row">
       <div class="flex-1">
-        <img
-          class="mx-auto h-full max-h-[778px] w-full max-w-[311px] object-contain object-top"
-          src="./imgs/header.webp"
-          alt=""
-          width="311"
-          height="778"
-          loading="eager"
-          decoding="async"
+        <Lottie
+          clazz="mx-auto !h-full max-h-[778px] !w-full max-w-[311px]"
+          src="./imgs/lotties/intro.json"
+          width="311px"
+          height="778px"
         />
-        {/* <Lottie
-      clazz="mx-auto !h-full max-h-[778px] !w-full max-w-[311px]"
-      src="./imgs/lotties/intro.json"
-      width="311px"
-      height="778px"
-    /> */}
       </div>
       <div class="flex-1 text-center md:text-left">
         <h1 class="wv-h2 mb-20 hidden font-kondolar font-black md:block">
@@ -147,12 +138,7 @@ const Chapter1 = (
         "?",
       ]}
     >
-      <Lottie
-        clazz="opacity-0"
-        src="./imgs/lotties/chapter/01.json"
-        width="253px"
-        height="225px"
-      />
+      <Lottie src="./imgs/lotties/chapter/01.json" width="320px" height="320px" />
     </ChapterBreak>
     <img
       class="my-60 mx-auto h-auto w-[87.5%] max-w-[632px]"
@@ -212,15 +198,7 @@ const Chapter2 = (
         "?",
       ]}
     >
-      <img
-        class="h-[273px] w-auto opacity-0"
-        src="./imgs/ch2.webp"
-        alt=""
-        width={261}
-        height={273}
-        loading="lazy"
-        decoding="async"
-      />
+      <Lottie src="./imgs/lotties/chapter/02.json" width="320px" height="320px" />
     </ChapterBreak>
     <TitleBlock class="mt-100">
       อำนาจของ ส.ว. ผ่านการโหวตสามารถกำหนดทิศทางการเมือง
@@ -460,15 +438,7 @@ const Chapter3 = (
       part={3}
       title={["ปัญหา", " ", "ส.ว.", "-", "เรา", "ทำ", "อะไร", "ได้", "บ้าง", "?"]}
     >
-      <img
-        class="h-[232px] w-auto opacity-0"
-        src="./imgs/ch3.webp"
-        alt=""
-        width={255}
-        height={232}
-        loading="lazy"
-        decoding="async"
-      />
+      <Lottie src="./imgs/lotties/chapter/03.json" width="320px" height="320px" />
     </ChapterBreak>
     <TitleBlock class="mt-100">
       แล้วจะแก้ไขปัญหา ส.ว. ที่ส่งผลกระทบต่อการเมืองประเทศไทยได้อย่างไร?
