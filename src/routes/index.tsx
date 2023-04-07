@@ -47,13 +47,13 @@ export default component$(() => {
 
 const Header = (
   <header class="bg-black pb-30 text-white md:pt-100 md:pb-60">
-    <h1 class="wv-h2 py-20 text-center font-kondolar font-black md:hidden">
+    <h1 class="wv-h2 container py-20 text-center font-kondolar font-black md:hidden">
       <span class="nobr">แลหลัง</span>
       <br />
       <span class="nobr">เหลียวหน้า</span> <span class="nobr">ส.ว.</span>
     </h1>
     <div class="container mx-auto mb-20 flex flex-col gap-20 md:mb-[48px] md:flex-row">
-      <div class="flex-1">
+      <div class="flex-1 overflow-x-hidden">
         <Lottie
           clazz="mx-auto max-h-[778px] max-w-[311px]"
           src="./imgs/lotties/intro.json"
@@ -249,7 +249,7 @@ const Chapter1 = (
           </span>
         </p>
       </div>
-      <div class="flex flex-1 items-center justify-center">
+      <div class="flex flex-1 items-center justify-center overflow-x-hidden">
         <Lottie src="./imgs/lotties/bubblechart.json" width="350px" height="344px" />
       </div>
     </div>
