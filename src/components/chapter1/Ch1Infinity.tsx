@@ -2,6 +2,8 @@ import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import { animate, inView, scroll } from "motion";
 import Lottie from "~/components/Lottie";
 
+// FIXME: Show me if js not enabled
+
 const Ch1Infinity = component$(() => {
   const elContainer = useSignal<HTMLDivElement>();
   const currentLottieInview = useSignal<number[]>([]);

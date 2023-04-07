@@ -1,20 +1,20 @@
 import { component$ } from "@builder.io/qwik";
 
+import ChapterBreak from "~/components/ChapterBreak";
+import JumpToContent from "~/components/JumpToContent";
+import Lottie from "~/components/Lottie";
+import TitleBlock from "~/components/TitleBlock";
+import Ch1Chart from "~/components/chapter1/Ch1Chart";
+import Ch1Divider from "~/components/chapter1/Ch1Divider";
 import Ch1Infinity from "~/components/chapter1/Ch1Infinity";
+import Ch1Video from "~/components/chapter1/Ch1Video";
 import Ch3BasicCondition from "~/components/chapter3/Ch3BasicCondition";
 import Ch3Constitution from "~/components/chapter3/Ch3Constitution";
 import Ch3ExtendCondition from "~/components/chapter3/Ch3ExtendCondition";
 import Ch3FixImg from "~/components/chapter3/Ch3FixImg";
 import Ch3GeneralConstitution from "~/components/chapter3/Ch3GeneralConstitution";
-import ChapterBreak from "~/components/ChapterBreak";
-import JumpToContent from "~/components/JumpToContent";
-import Lottie from "~/components/Lottie";
-import QWvSharer from "~/components/react/QWvSharer";
-import TitleBlock from "~/components/TitleBlock";
 import Ch3Letter from "~/components/chapter3/Ch3Letter";
-import Ch1Divider from "~/components/chapter1/Ch1Divider";
-import Ch1Video from "~/components/chapter1/Ch1Video";
-import Ch1Chart from "~/components/chapter1/Ch1Chart";
+import QWvSharer from "~/components/react/QWvSharer";
 
 export default component$(() => {
   return (

@@ -1,4 +1,5 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
+import { inView } from "motion";
 
 interface Ch1ChartProps {
   who: string;
@@ -13,6 +14,28 @@ const MAX_NUM = 130;
 
 const Ch1Chart = component$<Ch1ChartProps>(
   ({ who, number, desc, series1, series2, series3 }) => {
+    const elBar = useSignal<HTMLDivElement>();
+
+    useVisibleTask$(
+      () => {
+        if (elBar.value) {
+          elBar.value.classList.add("scale-x-0");
+          inView(
+            elBar.value,
+            () => {
+              if (elBar.value) elBar.value.classList.remove("scale-x-0");
+            },
+            {
+              amount: 0.99,
+            }
+          );
+        }
+      },
+      {
+        strategy: "document-idle",
+      }
+    );
+
     return (
       <div class="mb-5">
         <p class="mb-5 flex flex-wrap items-baseline gap-x-10">
@@ -20,7 +43,10 @@ const Ch1Chart = component$<Ch1ChartProps>(
           <span class="wv-b3 font-bold">{number} คน</span>
           {desc && <span class="wv-b4 nobr">{desc}</span>}
         </p>
-        <div class="flex h-40 w-full">
+        <div
+          ref={elBar}
+          class="flex h-40 w-full origin-left transition-transform duration-500"
+        >
           {series1 && (
             <div
               class="bg-senate-green"
