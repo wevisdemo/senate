@@ -10,10 +10,11 @@ export interface LottieProps {
   delayMs?: number;
   play?: boolean;
   clazz?: string;
+  threshold?: number;
 }
 
 const Lottie = component$(
-  ({ src, width, height, loop, delayMs, play, clazz }: LottieProps) => {
+  ({ src, width, height, loop, delayMs, play, clazz, threshold }: LottieProps) => {
     const lottieCtrlData: { ctrl: any } = { ctrl: null };
     const elContainer = useSignal<HTMLDivElement>();
 
@@ -32,6 +33,12 @@ const Lottie = component$(
                 });
 
                 elContainer.value.classList.add("!w-auto");
+                const realThreshold = Math.min(
+                  threshold ?? 0.99,
+                  document.getElementById("100vh")!.getBoundingClientRect().height /
+                    elContainer.value.getBoundingClientRect().height -
+                    0.1
+                );
 
                 inView(
                   elContainer.value,
@@ -42,7 +49,7 @@ const Lottie = component$(
                     }
                   },
                   {
-                    amount: 0.99,
+                    amount: realThreshold,
                   }
                 );
               }

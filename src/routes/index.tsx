@@ -52,10 +52,11 @@ const Header = (
     <div class="container mx-auto mb-20 flex flex-col gap-20 md:mb-[48px] md:flex-row">
       <div class="flex-1">
         <Lottie
-          clazz="mx-auto !h-full max-h-[778px] !w-full max-w-[311px]"
+          clazz="mx-auto max-h-[778px] max-w-[311px]"
           src="./imgs/lotties/intro.json"
           width="311px"
           height="778px"
+          threshold={0.1}
         />
       </div>
       <div class="flex-1 text-center md:text-left">
