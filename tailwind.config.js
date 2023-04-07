@@ -100,6 +100,12 @@ module.exports = {
       10: "10px",
       full: "9999px",
     },
+    extend: {
+      gridTemplateRows: {
+        "0fr": "0fr",
+        "1fr": "1fr",
+      },
+    },
   },
   plugins: [],
 };

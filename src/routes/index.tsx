@@ -11,6 +11,7 @@ import JumpToContent from "~/components/JumpToContent";
 import Lottie from "~/components/Lottie";
 import QWvSharer from "~/components/react/QWvSharer";
 import TitleBlock from "~/components/TitleBlock";
+import Ch3Letter from "~/components/chapter3/Ch3Letter";
 
 export default component$(() => {
   return (
@@ -447,25 +448,286 @@ const Chapter3 = (
       <strong>&ldquo;การแก้ไขเรื่องที่มาและอำนาจของ ส.ว.&rdquo;</strong>{" "}
       คือสิ่งที่ถูกพูดถึงมาตลอด โดยมีการนำเสนอหลากหลายแนวทาง
     </p>
-    <p class="wv-h4 container text-center font-kondolar font-black">
+    <p class="wv-h4 container mb-60 text-center font-kondolar font-black">
       Model เกี่ยวกับการแก้ไขปัญหาเรื่องที่มา และอำนาจของ ส.ว.
     </p>
-    <details>
-      <summary>ยกเลิก ส.ว. เปลี่ยนเป็นสภาเดี่ยว</summary>
-      LOL
-    </details>
-    <details>
-      <summary>
-        &ldquo;ลดอำนาจ ส.ว.&rdquo; สภาคู่ แต่อำนาจของ ส.ว.ต้องสัมพันธ์กับที่มา
-      </summary>
-      LOL
-    </details>
-    <details>
-      <summary>
-        &ldquo;เปลี่ยนที่มา ส.ว.&rdquo; สภาคู่ แต่ที่มา ส.ว. ยึดโยงกับประชาชนมากขึ้น
-      </summary>
-      LOL
-    </details>
+    <div class="flex flex-col">
+      <Ch3Letter title="ยกเลิก ส.ว.เปลี่ยนเป็นสภาเดี่ยว" lottieName="01">
+        <div class="border-b border-dashed pt-10 pb-20">
+          <p class="wv-h8 mb-10 w-full text-center font-kondolar font-black">สรุป</p>
+          <p class="wv-b4">
+            <span class="font-bold">ระบบสภาเดี่ยว</span>{" "}
+            คือระบบรัฐสภาที่มีเพียงสภาผู้แทนราษฎร (ส.ส.)
+            ที่มาจากการเลือกตั้งโดยตรงของประชาชนทำหน้าที่ตรากฎหมายของประเทศและตรวจสอบถ่วงดุลรัฐบาล
+            โดยไม่มีสภาบนหรือ สมาชิกวุฒิสภา (ส.ว.) ซึ่งจะแตกต่างจากระบบสภาคู่ ที่ต้องมี
+            ส.ว. ร่วมทำหน้าที่ในสภาด้วย
+          </p>
+        </div>
+        <div class="pt-20 pb-20">
+          <p class="wv-h8 mb-20 w-full text-center font-kondolar font-black">
+            ตัวอย่างประเทศ
+          </p>
+          <ul>
+            <li class="mb-10 flex items-start gap-10">
+              <img
+                src="./imgs/flags/tw.svg"
+                alt=""
+                width={30}
+                height={30}
+                loading="lazy"
+                decoding="async"
+              />
+              <p>
+                <strong class="wv-h9 font-kondolar font-bold">ไต้หวัน</strong>
+                <br />
+                <span class="wv-b4">ใช้ระบบสภาเดี่ยวอย่างเป็นทางการใน ค.ศ. 2005</span>
+              </p>
+            </li>
+            <li class="mb-10 flex items-start gap-10">
+              <img
+                src="./imgs/flags/nz.svg"
+                alt=""
+                width={30}
+                height={30}
+                loading="lazy"
+                decoding="async"
+              />
+              <p>
+                <strong class="wv-h9 font-kondolar font-bold">นิวซีแลนด์</strong>
+                <br />
+                <span class="wv-b4">&apos;1950</span>
+              </p>
+            </li>
+            <li class="mb-10 flex items-start gap-10">
+              <img
+                src="./imgs/flags/kr.svg"
+                alt=""
+                width={30}
+                height={30}
+                loading="lazy"
+                decoding="async"
+              />
+              <p>
+                <strong class="wv-h9 font-kondolar font-bold">เกาหลีใต้</strong>
+                <br />
+                <span class="wv-b4">เคยมี ส.ว. ระหว่าง ค.ศ. 1960-1961</span>
+              </p>
+            </li>
+            <li class="mb-10 flex items-start gap-10">
+              <img
+                src="./imgs/flags/dk.svg"
+                alt=""
+                width={30}
+                height={30}
+                loading="lazy"
+                decoding="async"
+              />
+              <p>
+                <strong class="wv-h9 font-kondolar font-bold">เดนมาร์ก</strong>
+                <br />
+                <span class="wv-b4">ยกเลิก ส.ว. ในปี ค.ศ. 1953</span>
+              </p>
+            </li>
+            <li class="flex items-start gap-10">
+              <img
+                src="./imgs/flags/se.svg"
+                alt=""
+                width={30}
+                height={30}
+                loading="lazy"
+                decoding="async"
+              />
+              <p>
+                <strong class="wv-h9 font-kondolar font-bold">สวีเดน</strong>
+                <br />
+                <span class="wv-b4">
+                  ควบรวม ส.ส. และ ส.ว. เป็นสภาเดี่ยวในปี ค.ศ. 1970
+                </span>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </Ch3Letter>
+      <Ch3Letter
+        title="&ldquo;ลดอำนาจ ส.ว.&rdquo; สภาคู่ แต่อำนาจของ ส.ว.ต้องสัมพันธ์กับที่มา"
+        lottieName="02"
+      >
+        <div class="border-b border-dashed pt-10 pb-20">
+          <p class="wv-h8 mb-10 w-full text-center font-kondolar font-black">สรุป</p>
+          <ul class="wv-b4 list-disc">
+            <li class="ml-[2ch]">
+              <span class="font-bold">
+                Model ที่มุ่งลดอำนาจของ ส.ว. ให้สัมพันธ์กับที่มา
+              </span>{" "}
+              หาก ส.ว. มากจากการแต่งตั้ง ส.ว.
+              จะมีอำนาจหน้าที่เพียงแค่จัดทำข้อเสนอแนะด้านกฎหมายและนโยบายให้ ส.ส.
+              ยับยั้งร่างกฎหมาย ซึ่งถือว่า ส.ว. จะมีอำนาจอย่างจำกัด
+              เพราะไม่ได้มาจากการเลือกตั้งโดยประชาชน
+            </li>
+            <li class="ml-[2ch]">
+              ส.ว. จาก model นี้สามารถมีหลายประเภท เช่น ส.ว. ตัวแทนกลุ่มวิชาชีพ และ ส.ว.
+              ตัวแทนกลุ่มทางสังคมต่าง ๆ เป็นต้น
+            </li>
+          </ul>
+        </div>
+        <div class="pt-20 pb-20">
+          <p class="wv-h8 mb-20 w-full text-center font-kondolar font-black">
+            ตัวอย่างประเทศ
+          </p>
+          <ul>
+            <li class="mb-10 flex items-start gap-10">
+              <img
+                src="./imgs/flags/gb.svg"
+                alt=""
+                width={30}
+                height={30}
+                loading="lazy"
+                decoding="async"
+              />
+              <div>
+                <p>
+                  <strong class="wv-h9 font-kondolar font-bold">สหราชอาณาจักร</strong>
+                  <br />
+                  <span class="font-bold">
+                    มี ส.ว. มาจากการแต่งตั้งโดยคำแนะนำของรัฐบาล
+                  </span>
+                </p>
+                <ul class="list-disc">
+                  <li class="ml-[2ch]">
+                    มีอำนาจในการตรวจสอบและเสนอกฎหมายของรัฐบาลและสภาล่าง
+                  </li>
+                  <li class="ml-[2ch]">มีอำนาจในการพิจารณาร่างกฎหมาย</li>
+                  <li class="ml-[2ch]">
+                    ไม่มีอำนาจยับยั้งกฎหมายได้เพียงแต่ชะลอออกไปได้มากถึง 2 ปี
+                  </li>
+                  <li class="ml-[2ch]">
+                    ไม่มีอำนาจแก้ไขร่างกฎหมายที่เกี่ยวข้องกับการเงิน
+                    ทำได้แค่ให้ความเห็นชอบยืนตาม ส.ส. เท่านั้น
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="mb-10 flex items-start gap-10">
+              <img
+                src="./imgs/flags/de.svg"
+                alt=""
+                width={30}
+                height={30}
+                loading="lazy"
+                decoding="async"
+              />
+              <div>
+                <p>
+                  <strong class="wv-h9 font-kondolar font-bold">เยอรมนี</strong>
+                  <br />
+                  <span class="font-bold">มี ส.ว. มาจากการแต่งตั้งโดยรัฐบาลของมลรัฐ</span>
+                </p>
+                <ul class="list-disc">
+                  <li class="ml-[2ch]">
+                    มีอำนาจในการปกปองผลประโยชนของมลรัฐต่าง ๆ ใหพ้นจากรัฐบาลสหพันธ์และส.ส.
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </Ch3Letter>
+      <Ch3Letter
+        title="&ldquo;เปลี่ยนที่มา ส.ว.&rdquo; สภาคู่ แต่ที่มา ส.ว. ยึดโยงกับประชาชนมากขึ้น"
+        lottieName="03"
+      >
+        <div class="border-b border-dashed pt-10 pb-20">
+          <p class="wv-h8 mb-10 w-full text-center font-kondolar font-black">สรุป</p>
+          <p class="wv-b4">
+            <strong>
+              Model ที่คำนึงถึงความสมดุลของที่มาของ ส.ว. ว่าต้องมีความยึดโยงกับประชาชน
+            </strong>{" "}
+            คือ ส.ว. ต้อง มาจากการเลือกตั้งโดยประชาชน
+            และไม่จำเป็นต้องคำนึงถึงอำนาจหน้าที่ของ ส.ว. ว่ามีมากหรือน้อย
+            เพราะมีความชอบธรรมในการใช้อำนาจหน้าที่ดังกล่าวแทนประชาชนจากการเลือกตั้งแล้ว
+          </p>
+        </div>
+        <div class="pt-20 pb-20">
+          <p class="wv-h8 mb-20 w-full text-center font-kondolar font-black">
+            ตัวอย่างประเทศ
+          </p>
+          <ul>
+            <li class="mb-10 flex items-start gap-10">
+              <img
+                src="./imgs/flags/us.svg"
+                alt=""
+                width={30}
+                height={30}
+                loading="lazy"
+                decoding="async"
+              />
+              <div>
+                <p>
+                  <strong class="wv-h9 font-kondolar font-bold">สหรัฐอเมริกา</strong>
+                  <br />
+                  <span class="font-bold">
+                    มี ส.ว. มาจากการเลือกตั้งเป็นตัวแทนมลรัฐ
+                    (ส.ว.มีอำนาจมากในระดับเดียวกับ ส.ส.)
+                  </span>
+                </p>
+                <ul class="list-disc">
+                  <li class="ml-[2ch]">
+                    มีอำนาจในการตรวจสอบและออกกฎหมายได้เช่นเดียวกับ ส.ส.
+                  </li>
+                  <li class="ml-[2ch]">
+                    มีอำนาจในการให้สัตยาบันในสนธิสัญญาที่ลงนามโดยประธานาธิบดี
+                  </li>
+                  <li class="ml-[2ch]">
+                    มีอำนาจที่จะพิจารณาและดำเนินการตามกฎหมายในการรับรองหรือแต่งตั้งเจ้าหน้าที่รัฐ
+                    รวมถึงการควบคุมหน่วยงานต่าง ๆ ของรัฐ
+                  </li>
+                  <li class="ml-[2ch]">
+                    มีอำนาจรับรองสมาชิกคณะรัฐมนตรีในรัฐบาลกลางของกระทรวงต่าง ๆ
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="mb-10 flex items-start gap-10">
+              <img
+                src="./imgs/flags/jp.svg"
+                alt=""
+                width={30}
+                height={30}
+                loading="lazy"
+                decoding="async"
+              />
+              <div>
+                <p>
+                  <strong class="wv-h9 font-kondolar font-bold">ญี่ปุ่น</strong>
+                  <br />
+                  <span class="font-bold">
+                    มี ส.ว. จากการเลือกตั้งเป็นตัวแทนของจังหวัด (ส.ว. มีอำนาจมาก แต่ ส.ส.
+                    มีอำนาจเหนือกว่าหากความเห็นไม่ตรงกัน)
+                  </span>
+                </p>
+                <ul class="list-disc">
+                  <li class="ml-[2ch]">
+                    มีอำนาจทักท้วงหน่วงเหนี่ยวฝ่ายบริหารและสภาผู้แทนราษฎร
+                    พิจารณากลั่นกรองกฎหมายและตรวจสอบถ่วงดุลฝ่ายบริหารให้เป็นไปอย่างมีประสิทธิภาพ
+                  </li>
+                  <li class="ml-[2ch]">
+                    มีสิทธิในการร่วมพิจารณาร่างกฏหมาย แต่ไม่มีสิทธิอนุมัติออกกฏหมาย
+                  </li>
+                  <li class="ml-[2ch]">
+                    มีสิทธิในการแก้ไขร่างกฏหมายที่ผ่านความเห็นชอบของ ส.ส.
+                    แล้วส่งกลับคืนเพื่อพิจารณาใหม่ หากได้รับความเห็นชอบจากเสียง 2 ใน 3 ของ
+                    ส.ส. ร่างกฏหมายนั้นจะถูกตราเป็นกฏหมาย
+                  </li>
+                  <li class="ml-[2ch]">
+                    มีสิทธิในการร่วมพิจารณางบประมาณ แต่ไม่มีสิทธิในการอนุมัติงบประมาณ
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </Ch3Letter>
+    </div>
     <Ch3FixImg />
     <p class="wv-h4 container mb-20 text-center font-kondolar font-black">
       วิธีการตามกฎหมายต้องเสนออย่างไร
