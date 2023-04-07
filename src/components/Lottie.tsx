@@ -56,7 +56,7 @@ const Lottie = component$(
               }
             },
             {
-              margin: "-500px 0px 0px 0px",
+              margin: "500px 0px 500px 0px",
             }
           );
         }
