@@ -44,8 +44,9 @@ const Lottie = component$(
                   elContainer.value,
                   () => {
                     if (play === undefined) {
-                      if (delayMs) setTimeout(() => lottieCtrlData.ctrl.play(), delayMs);
-                      else lottieCtrlData.ctrl.play();
+                      if (delayMs)
+                        setTimeout(() => lottieCtrlData.ctrl?.play?.(), delayMs);
+                      else lottieCtrlData.ctrl?.play?.();
                     }
                   },
                   {
@@ -69,8 +70,8 @@ const Lottie = component$(
       useVisibleTask$(({ track }) => {
         track(() => play);
         if (play) {
-          if (delayMs) setTimeout(() => lottieCtrlData.ctrl.play(), delayMs);
-          else lottieCtrlData.ctrl.play();
+          if (delayMs) setTimeout(() => lottieCtrlData.ctrl?.play?.(), delayMs);
+          else lottieCtrlData.ctrl?.play?.();
         }
       });
     }
