@@ -100,4 +100,40 @@ a {
   will-change: grid-template-rows;
 }
 
+.ch1-senate-path-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-color, #c5c5c5) #e5e2d8;
+}
+
+.ch1-senate-path-scrollbar::-webkit-scrollbar {
+  height: 8px;
+}
+
+.ch1-senate-path-scrollbar::-webkit-scrollbar-track {
+  background: #e5e2d8;
+  @apply mx-20 md:mx-100;
+  border-radius: 4px;
+}
+
+.ch1-senate-path-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--scroll-color, #c5c5c5);
+  border-radius: 4px;
+}
+
+.ch1-senate-path-scrollbar > img {
+  margin-bottom: 4px;
+}
+
+.scroll-blue {
+  --scroll-color: #88a7d3;
+}
+
+.scroll-green {
+  --scroll-color: #8bbb91;
+}
+
+.scroll-pink {
+  --scroll-color: #ffd3e1;
+}
+
 @tailwind utilities;

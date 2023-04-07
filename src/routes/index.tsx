@@ -12,6 +12,9 @@ import Lottie from "~/components/Lottie";
 import QWvSharer from "~/components/react/QWvSharer";
 import TitleBlock from "~/components/TitleBlock";
 import Ch3Letter from "~/components/chapter3/Ch3Letter";
+import Ch1Divider from "~/components/chapter1/Ch1Divider";
+import Ch1Video from "~/components/chapter1/Ch1Video";
+import Ch1Chart from "~/components/chapter1/Ch1Chart";
 
 export default component$(() => {
   return (
@@ -169,9 +172,162 @@ const Chapter1 = (
     <p class="wv-h3 container mb-30 text-center font-kondolar font-black">
       เส้นทางของ ส.ว.
     </p>
-    <p class="wv-h6 container mb-60 text-center font-kondolar font-bold">
+    <p class="wv-h6 container mb-50 text-center font-kondolar font-bold">
       ส.ว. ทั้งหมด 250 ที่นั่ง ประกอบไปด้วย 3 ประเภท
     </p>
+    <Ch1Divider text="คัดเลือกโดยตรง" />
+    <div class="ch1-senate-path-scrollbar scroll-green mt-20 mb-10 overflow-x-auto px-20 md:px-100">
+      <img
+        class="mx-auto h-[147px] w-[1048px] max-w-none object-contain"
+        src="./imgs/senate-path/01.webp"
+        alt=""
+        width={1048}
+        height={147}
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+    <div class="ch1-senate-path-scrollbar scroll-blue mt-10 mb-20 overflow-x-auto px-20 md:px-100">
+      <img
+        class="mx-auto h-[211px] w-[1048px] max-w-none object-contain"
+        src="./imgs/senate-path/02.webp"
+        alt=""
+        width={1048}
+        height={211}
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+    <Ch1Divider text="คัดเลือกโดยอ้อม" />
+    <div class="ch1-senate-path-scrollbar scroll-pink mt-20 mb-[130px] overflow-x-auto px-20 md:px-100">
+      <img
+        class="mx-auto h-[248px] w-[1048px] max-w-none object-contain"
+        src="./imgs/senate-path/03.webp"
+        alt=""
+        width={1048}
+        height={248}
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+    <TitleBlock class="!mb-30">อาชีพและความเกี่ยวข้องกับ คสช.</TitleBlock>
+    <p class="wv-b2 container mb-30 text-center">
+      ซึ่ง ส.ว. เหล่านี้ มาจากหลากหลายสาขาอาชีพและหลายคนเกี่ยวข้องกับ คสช. ก่อนจะมาเป็น
+      ส.ว.
+    </p>
+    <Lottie src="./imgs/lotties/googly-eye.json" width="242px" height="104px" />
+    <p class="wv-h4 container mt-30 mb-40 text-center font-kondolar font-black">
+      สำรวจ ส.ว. ตามประเภทอาชีพ และความเกี่ยวข้องกับ คสช.
+    </p>
+    <TitleBlock class="!mb-20">ความเกี่ยวพันระหว่าง ส.ว. และ คสช.</TitleBlock>
+    <div class="container mb-30 flex flex-col gap-20 md:mt-[130px] md:flex-row">
+      <div class="flex flex-1 items-center justify-center">
+        <img
+          src="./imgs/nepo.webp"
+          alt=""
+          width={304}
+          height={150}
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div class="flex flex-1 items-center justify-center">
+        <Ch1Video />
+      </div>
+    </div>
+    <div class="container mb-30 flex flex-col items-center justify-center gap-20 md:flex-row">
+      <div class="flex-1 p-20">
+        <p class="flex flex-col gap-10 text-center font-kondolar md:text-left">
+          <span class="wv-h4 block font-black">ตามรัฐธรรมนูญ &apos;60</span>
+          <span class="wv-h2 block font-black">80% ของ ส.ว.</span>
+          <span class="wv-h8 block">
+            หรือ <span class="font-bold">200</span>/250 คน
+          </span>
+          <span class="wv-h7 block">
+            ถูกคัดเลือกโดย ค.ส.ช. โดยตรง และอีก 20% ถูกคัดเลือกโดยอ้อม แต่ในทางปฏิบัติแล้ว{" "}
+            <span class="font-bold">ส.ว. ทุกตำแหน่งผ่านการคัดเลือกโดย คสช.</span>
+          </span>
+        </p>
+      </div>
+      <div class="flex flex-1 items-center justify-center">
+        <Lottie src="./imgs/lotties/bubblechart.json" width="350px" height="344px" />
+      </div>
+    </div>
+    <div class="container mb-30 flex flex-col items-center justify-center gap-20 md:flex-row">
+      <div class="flex-1 p-20">
+        <Lottie
+          src="./imgs/lotties/senate.json"
+          width="200px"
+          height="200px"
+          clazz="mb-10"
+          loop
+        />
+        <p class="flex flex-col gap-10 text-center font-kondolar md:text-left">
+          <span class="wv-h2 block font-black">52.12%</span>
+          <span class="wv-h8 block">
+            หรือ <span class="font-bold">135</span>/259 คน
+          </span>
+          <span class="wv-h7 block">
+            ของ ส.ว. ทั้งหมดเคยเป็นผู้มีส่วนเกี่ยวข้องกับ คสช. มาก่อน
+          </span>
+        </p>
+      </div>
+      <div class="flex-1">
+        <div class="wv-h5 mb-20 w-full bg-white px-40 py-20 text-center font-kondolar font-black">
+          ผู้มีส่วนเกี่ยวข้องกับ คสช. ประกอบไปด้วย
+        </div>
+        <div class="mb-20 md:px-40">
+          <Ch1Chart
+            who="สายนิติบัญญัติ"
+            number={130}
+            desc="สนช., สปช., สปท., กรธ."
+            series1={2}
+            series2={120}
+            series3={8}
+          />
+          <Ch1Chart who="สายบริหาร" number={12} desc="ครม. ยุคประยุทธ์ 1" series2={12} />
+          <Ch1Chart who="สมาชิก คสช." number={3} series1={1} series2={2} />
+          <Ch1Chart who="สายนิติบัญญัติ, สมาชิก คสช. " number={4} series1={4} />
+          <Ch1Chart who="สายนิติบัญญัติ, สายนิติบริหาร" number={3} series2={3} />
+          <Ch1Chart who="สายบริหาร, สมาชิก คสช." number={2} series2={2} />
+        </div>
+        <ul class="flex flex-wrap justify-center gap-x-20 gap-y-10">
+          <li class="flex items-center gap-10">
+            <span class="h-20 w-20 rounded-full border bg-senate-green" />
+            <span class="wv-b4 font-bold">ส.ว. โดยตำแหน่ง</span>
+          </li>
+          <li class="flex items-center gap-10">
+            <span class="h-20 w-20 rounded-full border bg-senate-blue" />
+            <span class="wv-b4 font-bold">ส.ว. เลือกโดยคสช.</span>
+          </li>
+          <li class="flex items-center gap-10">
+            <span class="h-20 w-20 rounded-full border bg-senate-pink" />
+            <span class="wv-b4 font-bold">ส.ว. เลือกกันเอง</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="container mb-100 flex flex-col items-center justify-center gap-20 md:mb-[260px] md:flex-row">
+      <div class="flex flex-1 items-center justify-center">
+        <img
+          src="./imgs/popular-job.webp"
+          alt=""
+          width={295}
+          height={322}
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div class="flex flex-1 items-center justify-center">
+        <p class="flex flex-col gap-10 rounded-10 bg-senate-pink p-30 text-center font-kondolar md:text-left">
+          <span class="wv-h2 font-black">xx.xx% </span>
+          <span class="wv-h8">
+            หรือ <span class="font-bold">xx</span>/xxx คน
+          </span>
+          <span class="wv-h6">ของ ส.ว. อยู่ในกลุ่มอาชีพทหาร</span>
+        </p>
+      </div>
+    </div>
   </section>
 );
 
