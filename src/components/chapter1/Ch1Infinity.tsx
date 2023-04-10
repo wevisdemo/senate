@@ -2,50 +2,59 @@ import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import { animate, inView, scroll } from "motion";
 import Lottie from "~/components/Lottie";
 
-// FIXME: Show me if js not enabled
-
 const Ch1Infinity = component$(() => {
   const elContainer = useSignal<HTMLDivElement>();
   const currentLottieInview = useSignal<number[]>([]);
 
-  useVisibleTask$(() => {
-    if (elContainer.value) {
-      const [elBg, ...elContent] = elContainer.value.children;
-      if (window.getComputedStyle(elBg).display !== "none") {
-        scroll(
-          animate(elBg, {
-            clipPath: [
-              "polygon(0 0, 100% 0, 100% 0, 0 0)",
-              "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-            ],
-          }),
-          { target: elContainer.value, offset: ["start 0.6", "end 0.9"] }
-        );
-      }
-      [...elContent].forEach((el) => {
-        inView(
-          el,
-          () => {
-            animate(
-              el,
-              {
-                opacity: [0, 1],
-                transform: ["translateY(20px)", "translateY(0)"],
-              },
-              {
-                duration: 0.5,
+  useVisibleTask$(
+    () => {
+      if (elContainer.value) {
+        const [elBg, ...elContent] = elContainer.value.children;
+
+        // Infinity
+        if (window.getComputedStyle(elBg).display !== "none") {
+          (elBg as HTMLElement).style.clipPath = "polygon(0 0, 100% 0, 100% 0, 0 0)";
+
+          scroll(
+            animate(elBg, {
+              clipPath: [
+                "polygon(0 0, 100% 0, 100% 0, 0 0)",
+                "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+              ],
+            }),
+            { target: elContainer.value, offset: ["start 0.6", "end 0.9"] }
+          );
+        }
+
+        // Contents
+        [...elContent].forEach((el) => {
+          el.classList.add("opacity-0");
+
+          inView(
+            el,
+            () => {
+              animate(
+                el,
+                {
+                  opacity: [0, 1],
+                  transform: ["translateY(20px)", "translateY(0)"],
+                },
+                {
+                  duration: 0.5,
+                }
+              );
+              const lottieData = (el as HTMLDivElement).dataset.lottie;
+              if (lottieData) {
+                currentLottieInview.value = [...currentLottieInview.value, +lottieData];
               }
-            );
-            const lottieData = (el as HTMLDivElement).dataset.lottie;
-            if (lottieData) {
-              currentLottieInview.value = [...currentLottieInview.value, +lottieData];
-            }
-          },
-          { amount: 0.99 }
-        );
-      });
-    }
-  });
+            },
+            { amount: 0.99 }
+          );
+        });
+      }
+    },
+    { strategy: "document-idle" }
+  );
 
   return (
     <div ref={elContainer} class="mb-60 flex flex-col items-center gap-10 py-40">
@@ -55,7 +64,6 @@ const Ch1Infinity = component$(() => {
         fill="none"
         viewBox="0 0 149 320"
         style={{
-          clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
           willChange: "clip-path",
         }}
       >
@@ -66,7 +74,7 @@ const Ch1Infinity = component$(() => {
       </svg>
       <div
         data-lottie="1"
-        class="mx-auto flex aspect-square w-[calc(100%_-_40px)] min-w-[280px] max-w-[337px] flex-col items-center justify-center gap-10 overflow-hidden rounded-full bg-black p-30 text-center text-white opacity-0"
+        class="mx-auto flex aspect-square w-[calc(100%_-_40px)] min-w-[280px] max-w-[337px] flex-col items-center justify-center gap-10 overflow-hidden rounded-full bg-black p-30 text-center text-white"
       >
         <Lottie
           src="./imgs/lotties/process/01.json"
@@ -81,7 +89,6 @@ const Ch1Infinity = component$(() => {
         <p class="wv-h9 mb-10">มาตรา 269</p>
       </div>
       <img
-        class="opacity-0"
         src="./imgs/darr.svg"
         alt=""
         width={49}
@@ -89,7 +96,7 @@ const Ch1Infinity = component$(() => {
         loading="lazy"
         decoding="async"
       />
-      <div class="flex items-center gap-4 rounded-full bg-black py-4 px-20 text-white opacity-0">
+      <div class="flex items-center gap-4 rounded-full bg-black py-4 px-20 text-white">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="#fff"
@@ -102,7 +109,6 @@ const Ch1Infinity = component$(() => {
         <span class="wv-b4 font-bold">อยู่ในวาระ</span>
       </div>
       <img
-        class="opacity-0"
         src="./imgs/darr.svg"
         alt=""
         width={49}
@@ -112,7 +118,7 @@ const Ch1Infinity = component$(() => {
       />
       <div
         data-lottie="2"
-        class="mx-auto flex w-[calc(100%_-_40px)] min-w-[280px] max-w-[337px] flex-col items-center justify-center gap-10 overflow-hidden rounded-10 border bg-white py-30 px-20 text-center opacity-0"
+        class="mx-auto flex w-[calc(100%_-_40px)] min-w-[280px] max-w-[337px] flex-col items-center justify-center gap-10 overflow-hidden rounded-10 border bg-white py-30 px-20 text-center"
       >
         <Lottie
           src="./imgs/lotties/process/02.json"
@@ -127,7 +133,6 @@ const Ch1Infinity = component$(() => {
         <p class="wv-h9">มาตรา 272</p>
       </div>
       <img
-        class="opacity-0"
         src="./imgs/darr.svg"
         alt=""
         width={49}
@@ -135,7 +140,7 @@ const Ch1Infinity = component$(() => {
         loading="lazy"
         decoding="async"
       />
-      <div class="flex items-center gap-4 rounded-full bg-black py-4 px-20 text-white opacity-0">
+      <div class="flex items-center gap-4 rounded-full bg-black py-4 px-20 text-white">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="#fff"
@@ -148,7 +153,6 @@ const Ch1Infinity = component$(() => {
         <span class="wv-b4 font-bold">อยู่ในวาระ</span>
       </div>
       <img
-        class="opacity-0"
         src="./imgs/darr.svg"
         alt=""
         width={49}
@@ -158,7 +162,7 @@ const Ch1Infinity = component$(() => {
       />
       <div
         data-lottie="3"
-        class="mx-auto flex w-[calc(100%_-_40px)] min-w-[280px] max-w-[337px] flex-col items-center justify-center gap-10 overflow-hidden rounded-10 border bg-white py-30 px-20 text-center opacity-0"
+        class="mx-auto flex w-[calc(100%_-_40px)] min-w-[280px] max-w-[337px] flex-col items-center justify-center gap-10 overflow-hidden rounded-10 border bg-white py-30 px-20 text-center"
       >
         <Lottie
           src="./imgs/lotties/process/03.json"
@@ -173,7 +177,6 @@ const Ch1Infinity = component$(() => {
         <p class="wv-h9">มาตรา 107</p>
       </div>
       <img
-        class="opacity-0"
         src="./imgs/darr.svg"
         alt=""
         width={49}
@@ -183,7 +186,7 @@ const Ch1Infinity = component$(() => {
       />
       <div
         data-lottie="4"
-        class="mx-auto flex w-[calc(100%_-_40px)] min-w-[280px] max-w-[337px] flex-col items-center justify-center gap-10 overflow-hidden rounded-10 border bg-white py-30 px-20 text-center opacity-0"
+        class="mx-auto flex w-[calc(100%_-_40px)] min-w-[280px] max-w-[337px] flex-col items-center justify-center gap-10 overflow-hidden rounded-10 border bg-white py-30 px-20 text-center"
       >
         <Lottie
           src="./imgs/lotties/process/04.json"
@@ -199,7 +202,6 @@ const Ch1Infinity = component$(() => {
         </p>
       </div>
       <img
-        class="opacity-0"
         src="./imgs/darr.svg"
         alt=""
         width={49}
@@ -209,7 +211,7 @@ const Ch1Infinity = component$(() => {
       />
       <div
         data-lottie="5"
-        class="mx-auto flex aspect-square w-[calc(100%_-_40px)] min-w-[280px] max-w-[337px] flex-col items-center justify-center gap-10 overflow-hidden rounded-full bg-black p-30 text-center text-white opacity-0"
+        class="mx-auto flex aspect-square w-[calc(100%_-_40px)] min-w-[280px] max-w-[337px] flex-col items-center justify-center gap-10 overflow-hidden rounded-full bg-black p-30 text-center text-white"
       >
         <Lottie
           src="./imgs/lotties/process/05.json"
