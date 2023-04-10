@@ -136,4 +136,12 @@ a {
   --scroll-color: #ffd3e1;
 }
 
+.scrollbar-none {
+  scrollbar-width: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
 @tailwind utilities;

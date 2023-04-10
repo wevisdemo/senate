@@ -53,14 +53,25 @@ const Header = (
       <span class="nobr">เหลียวหน้า</span> <span class="nobr">ส.ว.</span>
     </h1>
     <div class="container mx-auto mb-20 flex flex-col gap-20 md:mb-[48px] md:flex-row">
-      <div class="flex-1 overflow-x-hidden">
+      <div class="flex-1 overflow-hidden">
         <Lottie
-          clazz="mx-auto max-h-[778px] max-w-[311px]"
+          class="mx-auto max-h-[778px] max-w-[311px]"
           src="./imgs/lotties/intro.json"
           width="311px"
           height="778px"
           threshold={0.1}
-        />
+          hasFallback
+        >
+          <img
+            class="mx-auto h-full max-h-[778px] w-full max-w-[311px] object-contain object-top"
+            src="./imgs/header.webp"
+            alt=""
+            width="311"
+            height="778"
+            loading="eager"
+            decoding="async"
+          />
+        </Lottie>
       </div>
       <div class="flex-1 text-center md:text-left">
         <h1 class="wv-h2 mb-20 hidden font-kondolar font-black md:block">
@@ -259,7 +270,7 @@ const Chapter1 = (
           src="./imgs/lotties/senate.json"
           width="200px"
           height="200px"
-          clazz="mb-10"
+          class="mb-10"
           loop
         />
         <p class="flex flex-col gap-10 text-center font-kondolar md:text-left">
@@ -375,7 +386,7 @@ const Chapter2 = (
       loop
       width="457px"
       height="125px"
-      clazz="mx-auto mb-60 h-auto !w-[80%] max-w-[457px]"
+      class="mx-auto mb-60 h-auto !w-[80%] max-w-[457px]"
     />
     <p class="wv-b2 container mb-60 text-center">
       รัฐธรรมนูญ 2560 ให้อำนาจ ส.ว.
@@ -990,7 +1001,7 @@ const Footer = (
       src="./imgs/lotties/summary.json"
       width="333px"
       height="333px"
-      clazz="mx-auto mb-50 h-auto !w-[80%] max-w-[333px]"
+      class="mx-auto mb-50 h-auto !w-[80%] max-w-[333px]"
     />
     <h2 class="wv-h4 container mb-50 text-center font-kondolar font-black">
       ส.ว. ในรัฐธรรมนูญ 2560 คือปัญหาของประชาธิปไตยไทย

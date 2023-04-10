@@ -1,4 +1,4 @@
-import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
+import { Slot, component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import lottie from "lottie-web";
 import { inView } from "motion";
 
@@ -9,12 +9,23 @@ export interface LottieProps {
   loop?: boolean;
   delayMs?: number;
   play?: boolean;
-  clazz?: string;
+  class?: string;
   threshold?: number;
+  hasFallback?: boolean;
 }
 
 const Lottie = component$(
-  ({ src, width, height, loop, delayMs, play, clazz, threshold }: LottieProps) => {
+  ({
+    src,
+    width,
+    height,
+    loop,
+    delayMs,
+    play,
+    class: clazz,
+    threshold,
+    hasFallback,
+  }: LottieProps) => {
     const lottieCtrlData: { ctrl: any } = { ctrl: null };
     const elContainer = useSignal<HTMLDivElement>();
 
@@ -25,6 +36,8 @@ const Lottie = component$(
             elContainer.value,
             () => {
               if (elContainer.value) {
+                if (hasFallback) elContainer.value.children[0].classList.add("hidden");
+
                 lottieCtrlData.ctrl = lottie.loadAnimation({
                   container: elContainer.value,
                   loop: loop ?? false,
@@ -76,7 +89,21 @@ const Lottie = component$(
       });
     }
 
-    return <div ref={elContainer} class={clazz} style={{ width, height }}></div>;
+    return hasFallback ? (
+      <div
+        ref={elContainer}
+        class={"scrollbar-none " + (clazz ?? "")}
+        style={{ width, height }}
+      >
+        <Slot />
+      </div>
+    ) : (
+      <div
+        ref={elContainer}
+        class={"scrollbar-none " + (clazz ?? "")}
+        style={{ width, height }}
+      />
+    );
   }
 );
 

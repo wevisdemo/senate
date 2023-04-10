@@ -44,7 +44,7 @@ const Ch3Letter = component$<Ch3LetterProps>(({ title, lottieName }) => {
         <Slot />
       </QLetter>
       <Lottie
-        clazz="absolute bottom-[115px] left-1/2 -translate-x-1/2"
+        class="absolute bottom-[115px] left-1/2 -translate-x-1/2"
         src={`./imgs/lotties/model/${lottieName}.json`}
         height="160px"
         width="160px"
