@@ -1,5 +1,8 @@
 import { component$ } from "@builder.io/qwik";
 
+import PEOPLE from "~/data/people";
+import VOTELOG from "~/data/votelog";
+
 import ChapterBreak from "~/components/ChapterBreak";
 import JumpToContent from "~/components/JumpToContent";
 import Lottie from "~/components/Lottie";
@@ -275,9 +278,11 @@ const Chapter1 = (
           loop
         />
         <p class="flex flex-col gap-10 text-center font-kondolar md:text-left">
-          <span class="wv-h2 block font-black">52.12%</span>
+          <span class="wv-h2 block font-black">
+            {Math.round((PEOPLE.withNcpo / PEOPLE.total) * 1e4) / 1e2}%
+          </span>
           <span class="wv-h8 block">
-            หรือ <span class="font-bold">135</span>/259 คน
+            หรือ <span class="font-bold">{PEOPLE.withNcpo}</span>/{PEOPLE.total} คน
           </span>
           <span class="wv-h7 block">
             ของ ส.ว. ทั้งหมดเคยเป็นผู้มีส่วนเกี่ยวข้องกับ คสช. มาก่อน
@@ -291,17 +296,27 @@ const Chapter1 = (
         <div class="mb-20 md:px-40">
           <Ch1Chart
             who="สายนิติบัญญัติ"
-            number={130}
             desc="สนช., สปช., สปท., กรธ."
-            series1={2}
-            series2={120}
-            series3={8}
+            data={PEOPLE.ncpoType.สายนิติบัญญัติ}
           />
-          <Ch1Chart who="สายบริหาร" number={12} desc="ครม. ยุคประยุทธ์ 1" series2={12} />
-          <Ch1Chart who="สมาชิก คสช." number={3} series1={1} series2={2} />
-          <Ch1Chart who="สายนิติบัญญัติ, สมาชิก คสช. " number={4} series1={4} />
-          <Ch1Chart who="สายนิติบัญญัติ, สายนิติบริหาร" number={3} series2={3} />
-          <Ch1Chart who="สายบริหาร, สมาชิก คสช." number={2} series2={2} />
+          <Ch1Chart
+            who="สายบริหาร"
+            desc="ครม. ยุคประยุทธ์ 1"
+            data={PEOPLE.ncpoType.สายบริหาร}
+          />
+          <Ch1Chart who="สมาชิก คสช." data={PEOPLE.ncpoType["สมาชิก คสช."]} />
+          <Ch1Chart
+            who="สายนิติบัญญัติ, สมาชิก คสช."
+            data={PEOPLE.ncpoType["สมาชิก คสช.,สายนิติบัญญัติ"]}
+          />
+          <Ch1Chart
+            who="สายนิติบัญญัติ, สายนิติบริหาร"
+            data={PEOPLE.ncpoType["สายบริหาร,สายนิติบัญญัติ"]}
+          />
+          <Ch1Chart
+            who="สายบริหาร, สมาชิก คสช."
+            data={PEOPLE.ncpoType["สมาชิก คสช.,สายบริหาร"]}
+          />
         </div>
         <ul class="flex flex-wrap justify-center gap-x-20 gap-y-10">
           <li class="flex items-center gap-10">
@@ -332,9 +347,11 @@ const Chapter1 = (
       </div>
       <div class="flex flex-1 items-center justify-center">
         <p class="flex flex-col gap-10 rounded-10 bg-senate-pink p-30 text-center font-kondolar md:text-left">
-          <span class="wv-h2 font-black">xx.xx% </span>
+          <span class="wv-h2 font-black">
+            {Math.round((PEOPLE.jobs.ทหาร / PEOPLE.total) * 1e4) / 1e2}%
+          </span>
           <span class="wv-h8">
-            หรือ <span class="font-bold">xx</span>/xxx คน
+            หรือ <span class="font-bold">{PEOPLE.jobs.ทหาร}</span>/{PEOPLE.total} คน
           </span>
           <span class="wv-h6">ของ ส.ว. อยู่ในกลุ่มอาชีพทหาร</span>
         </p>
@@ -436,7 +453,7 @@ const Chapter2 = (
             <span class="wv-h9 mb-10 block text-center font-kondolar font-black">
               ตั้งบุคคลในโครงสร้างค้ำจุน คสช.
             </span>
-            <span class="b5">9 มติ</span>
+            <span class="b5">{VOTELOG.senate.keepNcpo} มติ</span>
           </div>
           <div class="flex-1">
             <img
@@ -451,7 +468,7 @@ const Chapter2 = (
             <span class="wv-h9 mb-10 block text-center font-kondolar font-black">
               ยุทธศาสตร์ชาติ
             </span>
-            <span class="b5">4 มติ</span>
+            <span class="b5">{VOTELOG.senate.nationStrat} มติ</span>
           </div>
           <div class="flex-1">
             <img
@@ -466,7 +483,7 @@ const Chapter2 = (
             <span class="wv-h9 mb-10 block text-center font-kondolar font-black">
               ประชามติแก้รัฐธรรมนูญ
             </span>
-            <span class="b5">2 มติ</span>
+            <span class="b5">{VOTELOG.senate.consVote} มติ</span>
           </div>
         </div>
       </div>
@@ -535,7 +552,7 @@ const Chapter2 = (
             <span class="wv-h9 mb-10 block text-center font-kondolar font-black">
               เลือกนายกรัฐมนตรี
             </span>
-            <span class="b5">1 มติ</span>
+            <span class="b5">{VOTELOG.parliament.selectPm} มติ</span>
           </div>
           <div class="flex-1">
             <img
@@ -550,7 +567,7 @@ const Chapter2 = (
             <span class="wv-h9 mb-10 block text-center font-kondolar font-black">
               ร่างแก้รัฐธรรมนูญ
             </span>
-            <span class="b5">27 มติ</span>
+            <span class="b5">{VOTELOG.parliament.consDraft} มติ</span>
           </div>
           <div class="flex-1">
             <img
@@ -565,7 +582,7 @@ const Chapter2 = (
             <span class="wv-h9 mb-10 block text-center font-kondolar font-black">
               ประชามติแก้รัฐธรรมนูญ
             </span>
-            <span class="b5">2 มติ</span>
+            <span class="b5">{VOTELOG.parliament.consVote} มติ</span>
           </div>
         </div>
       </div>
