@@ -19,7 +19,9 @@
     "lint": "eslint \"src/**/*.ts*\"",
     "preview": "qwik build preview && vite preview --open",
     "start": "vite --open --mode ssr",
-    "qwik": "qwik"
+    "qwik": "qwik",
+    "fetch": "node data/fetch.mjs",
+    "compile": "node data/process.mjs"
   },
   "devDependencies": {
     "@builder.io/qwik": "0.24.0",
@@ -34,6 +36,7 @@
     "autoprefixer": "^10.4.13",
     "eslint": "8.36.0",
     "eslint-plugin-qwik": "0.24.0",
+    "node-fetch": "^3.3.1",
     "postcss": "^8.4.16",
     "prettier": "^2.8.7",
     "prettier-plugin-tailwindcss": "^0.2.5",
