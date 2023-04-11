@@ -20,237 +20,237 @@
       "captures": true,
       "parent": "s_zH94hIe0Ick"
     },
-    "s_08RBwZwbUYw": {
-      "origin": "components/TitleBlock.tsx",
-      "displayName": "TitleBlock_component_useVisibleTask_1",
-      "canonicalFilename": "s_08rbwzwbuyw",
-      "hash": "08RBwZwbUYw",
-      "ctxKind": "function",
-      "ctxName": "useVisibleTask$",
-      "captures": true,
-      "parent": "s_ovjEOtCKC8g"
-    },
-    "s_0lbfjdLUNdI": {
-      "origin": "components/chapter1/Ch1Video.tsx",
-      "displayName": "Ch1Video_component_useVisibleTask",
-      "canonicalFilename": "s_0lbfjdlundi",
-      "hash": "0lbfjdLUNdI",
-      "ctxKind": "function",
-      "ctxName": "useVisibleTask$",
-      "captures": true,
-      "parent": "s_ijvkKbzByC4"
-    },
-    "s_6ioOxXsAllg": {
-      "origin": "components/chapter1/Ch1Infinity.tsx",
-      "displayName": "Ch1Infinity_component_useVisibleTask",
-      "canonicalFilename": "s_6iooxxsallg",
-      "hash": "6ioOxXsAllg",
-      "ctxKind": "function",
-      "ctxName": "useVisibleTask$",
-      "captures": true,
-      "parent": "s_fObZRlAxyfw"
-    },
-    "s_7VI0iZlyrr0": {
-      "origin": "components/chapter3/Ch3Letter.tsx",
-      "displayName": "Ch3Letter_component_useVisibleTask",
-      "canonicalFilename": "s_7vi0izlyrr0",
-      "hash": "7VI0iZlyrr0",
-      "ctxKind": "function",
-      "ctxName": "useVisibleTask$",
-      "captures": true,
-      "parent": "s_Ma0BDisFImA"
-    },
-    "s_89jL6XIAe0c": {
-      "origin": "components/chapter3/Ch3GeneralConstitution.tsx",
-      "displayName": "Ch3GeneralConstitution_component_useVisibleTask",
-      "canonicalFilename": "s_89jl6xiae0c",
-      "hash": "89jL6XIAe0c",
-      "ctxKind": "function",
-      "ctxName": "useVisibleTask$",
-      "captures": true,
-      "parent": "s_KXUsGqdIjok"
-    },
-    "s_AdYWXqI3JTc": {
-      "origin": "components/TitleBlock.tsx",
-      "displayName": "TitleBlock_component_useVisibleTask",
-      "canonicalFilename": "s_adywxqi3jtc",
-      "hash": "AdYWXqI3JTc",
-      "ctxKind": "function",
-      "ctxName": "useVisibleTask$",
-      "captures": true,
-      "parent": "s_ovjEOtCKC8g"
-    },
-    "s_IBnu8s0pYJg": {
-      "origin": "components/chapter3/Ch3Constitution.tsx",
-      "displayName": "Ch3Constitution_component_useVisibleTask_1",
-      "canonicalFilename": "s_ibnu8s0pyjg",
-      "hash": "IBnu8s0pYJg",
-      "ctxKind": "function",
-      "ctxName": "useVisibleTask$",
-      "captures": true,
-      "parent": "s_7Hs0A5p0Glg"
-    },
-    "s_PkxqWH9qjAY": {
-      "origin": "components/ChapterBreak.tsx",
-      "displayName": "ChapterBreak_component_useVisibleTask",
-      "canonicalFilename": "s_pkxqwh9qjay",
-      "hash": "PkxqWH9qjAY",
-      "ctxKind": "function",
-      "ctxName": "useVisibleTask$",
-      "captures": true,
-      "parent": "s_kLwZE4e1Kw4"
-    },
-    "s_UmJ62zZhn7o": {
-      "origin": "components/ChapterBreak.tsx",
-      "displayName": "ChapterBreak_component_useVisibleTask_1",
-      "canonicalFilename": "s_umj62zzhn7o",
-      "hash": "UmJ62zZhn7o",
-      "ctxKind": "function",
-      "ctxName": "useVisibleTask$",
-      "captures": true,
-      "parent": "s_kLwZE4e1Kw4"
-    },
-    "s_WJLMpOVzl2Q": {
-      "origin": "components/chapter3/Ch3BasicCondition.tsx",
-      "displayName": "Ch3BasicCondition_component_useVisibleTask",
-      "canonicalFilename": "s_wjlmpovzl2q",
-      "hash": "WJLMpOVzl2Q",
-      "ctxKind": "function",
-      "ctxName": "useVisibleTask$",
-      "captures": true,
-      "parent": "s_grzj7HYqno8"
-    },
-    "s_aLrEeNy6bE8": {
-      "origin": "components/chapter3/Ch3Constitution.tsx",
-      "displayName": "Ch3Constitution_component_useVisibleTask",
-      "canonicalFilename": "s_alreeny6be8",
-      "hash": "aLrEeNy6bE8",
-      "ctxKind": "function",
-      "ctxName": "useVisibleTask$",
-      "captures": true,
-      "parent": "s_7Hs0A5p0Glg"
-    },
-    "s_bDJx8yhf3GY": {
-      "origin": "components/chapter2/Ch2Compare.tsx",
-      "displayName": "Ch2Compare_component_useVisibleTask",
-      "canonicalFilename": "s_bdjx8yhf3gy",
-      "hash": "bDJx8yhf3GY",
-      "ctxKind": "function",
-      "ctxName": "useVisibleTask$",
-      "captures": true,
-      "parent": "s_O9K4z7vy70U"
-    },
-    "s_dReKMVELfUc": {
-      "origin": "components/chapter3/Ch3ExtendCondition.tsx",
-      "displayName": "Ch3ExtendCondition_component_useVisibleTask",
-      "canonicalFilename": "s_drekmvelfuc",
-      "hash": "dReKMVELfUc",
-      "ctxKind": "function",
-      "ctxName": "useVisibleTask$",
-      "captures": true,
-      "parent": "s_ulk0rmQB0gk"
-    },
-    "s_iFx57w0Goa8": {
+    "s_0vHSIa1k90I": {
       "origin": "components/chapter3/Ch3ExtendCondition.tsx",
       "displayName": "Ch3ExtendCondition_component_useVisibleTask_1",
-      "canonicalFilename": "s_ifx57w0goa8",
-      "hash": "iFx57w0Goa8",
+      "canonicalFilename": "s_0vhsia1k90i",
+      "hash": "0vHSIa1k90I",
       "ctxKind": "function",
       "ctxName": "useVisibleTask$",
       "captures": true,
-      "parent": "s_ulk0rmQB0gk"
+      "parent": "s_5DkaON6b1ms"
     },
-    "s_mOkEkIcoGi0": {
-      "origin": "components/Lottie.tsx",
-      "displayName": "Lottie_component_useVisibleTask",
-      "canonicalFilename": "s_mokekicogi0",
-      "hash": "mOkEkIcoGi0",
-      "ctxKind": "function",
-      "ctxName": "useVisibleTask$",
-      "captures": true,
-      "parent": "s_46ehbxf4oEU"
-    },
-    "s_mpHBqK08v8E": {
-      "origin": "components/chapter3/Ch3BasicCondition.tsx",
-      "displayName": "Ch3BasicCondition_component_useVisibleTask_1",
-      "canonicalFilename": "s_mphbqk08v8e",
-      "hash": "mpHBqK08v8E",
-      "ctxKind": "function",
-      "ctxName": "useVisibleTask$",
-      "captures": true,
-      "parent": "s_grzj7HYqno8"
-    },
-    "s_rJW5dfhxwwI": {
-      "origin": "components/chapter3/Ch3FixImg.tsx",
-      "displayName": "Ch3FixImg_component_useVisibleTask",
-      "canonicalFilename": "s_rjw5dfhxwwi",
-      "hash": "rJW5dfhxwwI",
-      "ctxKind": "function",
-      "ctxName": "useVisibleTask$",
-      "captures": true,
-      "parent": "s_dHMCVc5GbSo"
-    },
-    "s_wo63prFBQ34": {
+    "s_4K9D0Wrs7JE": {
       "origin": "components/Lottie.tsx",
       "displayName": "Lottie_component_useVisibleTask_1",
-      "canonicalFilename": "s_wo63prfbq34",
-      "hash": "wo63prFBQ34",
+      "canonicalFilename": "s_4k9d0wrs7je",
+      "hash": "4K9D0Wrs7JE",
       "ctxKind": "function",
       "ctxName": "useVisibleTask$",
       "captures": true,
-      "parent": "s_46ehbxf4oEU"
+      "parent": "s_DKxUXpbhfow"
     },
-    "s_zqOJ6heKB4M": {
+    "s_4iKEAlrWuEY": {
+      "origin": "components/ChapterBreak.tsx",
+      "displayName": "ChapterBreak_component_useVisibleTask",
+      "canonicalFilename": "s_4ikealrwuey",
+      "hash": "4iKEAlrWuEY",
+      "ctxKind": "function",
+      "ctxName": "useVisibleTask$",
+      "captures": true,
+      "parent": "s_1hWqXw50tx4"
+    },
+    "s_AKm0q40kLHs": {
+      "origin": "components/TitleBlock.tsx",
+      "displayName": "TitleBlock_component_useVisibleTask_1",
+      "canonicalFilename": "s_akm0q40klhs",
+      "hash": "AKm0q40kLHs",
+      "ctxKind": "function",
+      "ctxName": "useVisibleTask$",
+      "captures": true,
+      "parent": "s_J0O64Q0VesE"
+    },
+    "s_AhDhuzKH1Pg": {
+      "origin": "components/chapter3/Ch3GeneralConstitution.tsx",
+      "displayName": "Ch3GeneralConstitution_component_useVisibleTask",
+      "canonicalFilename": "s_ahdhuzkh1pg",
+      "hash": "AhDhuzKH1Pg",
+      "ctxKind": "function",
+      "ctxName": "useVisibleTask$",
+      "captures": true,
+      "parent": "s_glT5dow2VvQ"
+    },
+    "s_BrSOwlW4fyM": {
+      "origin": "components/chapter3/Ch3BasicCondition.tsx",
+      "displayName": "Ch3BasicCondition_component_useVisibleTask",
+      "canonicalFilename": "s_brsowlw4fym",
+      "hash": "BrSOwlW4fyM",
+      "ctxKind": "function",
+      "ctxName": "useVisibleTask$",
+      "captures": true,
+      "parent": "s_g5lP60Ekm0g"
+    },
+    "s_H9pmNoSBuKI": {
       "origin": "components/chapter1/Ch1Chart.tsx",
       "displayName": "Ch1Chart_component_useVisibleTask",
-      "canonicalFilename": "s_zqoj6hekb4m",
-      "hash": "zqOJ6heKB4M",
+      "canonicalFilename": "s_h9pmnosbuki",
+      "hash": "H9pmNoSBuKI",
       "ctxKind": "function",
       "ctxName": "useVisibleTask$",
       "captures": true,
-      "parent": "s_e5iq6bTbGRs"
+      "parent": "s_XtWms2Jk7x4"
     },
-    "s_18lKPZC20pU": {
-      "origin": "components/RouterHead.tsx",
-      "displayName": "RouterHead_component",
-      "canonicalFilename": "s_18lkpzc20pu",
-      "hash": "18lKPZC20pU",
+    "s_M8EYOpffTVc": {
+      "origin": "components/chapter1/Ch1Infinity.tsx",
+      "displayName": "Ch1Infinity_component_useVisibleTask",
+      "canonicalFilename": "s_m8eyopfftvc",
+      "hash": "M8EYOpffTVc",
       "ctxKind": "function",
-      "ctxName": "component$",
-      "captures": false
+      "ctxName": "useVisibleTask$",
+      "captures": true,
+      "parent": "s_30T2B7deCus"
     },
-    "s_3sccYCDd1Z0": {
-      "origin": "root.tsx",
-      "displayName": "root_component",
-      "canonicalFilename": "s_3sccycdd1z0",
-      "hash": "3sccYCDd1Z0",
+    "s_PROWAbZ7uiw": {
+      "origin": "components/chapter3/Ch3BasicCondition.tsx",
+      "displayName": "Ch3BasicCondition_component_useVisibleTask_1",
+      "canonicalFilename": "s_prowabz7uiw",
+      "hash": "PROWAbZ7uiw",
       "ctxKind": "function",
-      "ctxName": "component$",
-      "captures": false
+      "ctxName": "useVisibleTask$",
+      "captures": true,
+      "parent": "s_g5lP60Ekm0g"
     },
-    "s_46ehbxf4oEU": {
+    "s_RNdDKmlRQzk": {
       "origin": "components/Lottie.tsx",
-      "displayName": "Lottie_component",
-      "canonicalFilename": "s_46ehbxf4oeu",
-      "hash": "46ehbxf4oEU",
+      "displayName": "Lottie_component_useVisibleTask",
+      "canonicalFilename": "s_rnddkmlrqzk",
+      "hash": "RNdDKmlRQzk",
+      "ctxKind": "function",
+      "ctxName": "useVisibleTask$",
+      "captures": true,
+      "parent": "s_DKxUXpbhfow"
+    },
+    "s_USvbBCyITnQ": {
+      "origin": "components/chapter2/Ch2Compare.tsx",
+      "displayName": "Ch2Compare_component_useVisibleTask",
+      "canonicalFilename": "s_usvbbcyitnq",
+      "hash": "USvbBCyITnQ",
+      "ctxKind": "function",
+      "ctxName": "useVisibleTask$",
+      "captures": true,
+      "parent": "s_0uPukBVxx1U"
+    },
+    "s_Wmlbm8i0bL8": {
+      "origin": "components/chapter3/Ch3Constitution.tsx",
+      "displayName": "Ch3Constitution_component_useVisibleTask_1",
+      "canonicalFilename": "s_wmlbm8i0bl8",
+      "hash": "Wmlbm8i0bL8",
+      "ctxKind": "function",
+      "ctxName": "useVisibleTask$",
+      "captures": true,
+      "parent": "s_qmd7Z4k2uIU"
+    },
+    "s_ctzgtRXsI8E": {
+      "origin": "components/chapter1/Ch1Video.tsx",
+      "displayName": "Ch1Video_component_useVisibleTask",
+      "canonicalFilename": "s_ctzgtrxsi8e",
+      "hash": "ctzgtRXsI8E",
+      "ctxKind": "function",
+      "ctxName": "useVisibleTask$",
+      "captures": true,
+      "parent": "s_woOL2wWADmk"
+    },
+    "s_djGQeWR7NQk": {
+      "origin": "components/chapter3/Ch3Letter.tsx",
+      "displayName": "Ch3Letter_component_useVisibleTask",
+      "canonicalFilename": "s_djgqewr7nqk",
+      "hash": "djGQeWR7NQk",
+      "ctxKind": "function",
+      "ctxName": "useVisibleTask$",
+      "captures": true,
+      "parent": "s_r7HT9T9Ex9s"
+    },
+    "s_hTwv5CADAcU": {
+      "origin": "components/TitleBlock.tsx",
+      "displayName": "TitleBlock_component_useVisibleTask",
+      "canonicalFilename": "s_htwv5cadacu",
+      "hash": "hTwv5CADAcU",
+      "ctxKind": "function",
+      "ctxName": "useVisibleTask$",
+      "captures": true,
+      "parent": "s_J0O64Q0VesE"
+    },
+    "s_kcOGUtwwHXQ": {
+      "origin": "components/chapter3/Ch3ExtendCondition.tsx",
+      "displayName": "Ch3ExtendCondition_component_useVisibleTask",
+      "canonicalFilename": "s_kcogutwwhxq",
+      "hash": "kcOGUtwwHXQ",
+      "ctxKind": "function",
+      "ctxName": "useVisibleTask$",
+      "captures": true,
+      "parent": "s_5DkaON6b1ms"
+    },
+    "s_m0WlHFwv1uY": {
+      "origin": "components/ChapterBreak.tsx",
+      "displayName": "ChapterBreak_component_useVisibleTask_1",
+      "canonicalFilename": "s_m0wlhfwv1uy",
+      "hash": "m0WlHFwv1uY",
+      "ctxKind": "function",
+      "ctxName": "useVisibleTask$",
+      "captures": true,
+      "parent": "s_1hWqXw50tx4"
+    },
+    "s_mb0CK0SnseQ": {
+      "origin": "components/chapter3/Ch3FixImg.tsx",
+      "displayName": "Ch3FixImg_component_useVisibleTask",
+      "canonicalFilename": "s_mb0ck0snseq",
+      "hash": "mb0CK0SnseQ",
+      "ctxKind": "function",
+      "ctxName": "useVisibleTask$",
+      "captures": true,
+      "parent": "s_dy0G4tGFKUA"
+    },
+    "s_sdTagn8R0yw": {
+      "origin": "components/chapter3/Ch3Constitution.tsx",
+      "displayName": "Ch3Constitution_component_useVisibleTask",
+      "canonicalFilename": "s_sdtagn8r0yw",
+      "hash": "sdTagn8R0yw",
+      "ctxKind": "function",
+      "ctxName": "useVisibleTask$",
+      "captures": true,
+      "parent": "s_qmd7Z4k2uIU"
+    },
+    "s_0uPukBVxx1U": {
+      "origin": "components/chapter2/Ch2Compare.tsx",
+      "displayName": "Ch2Compare_component",
+      "canonicalFilename": "s_0upukbvxx1u",
+      "hash": "0uPukBVxx1U",
       "ctxKind": "function",
       "ctxName": "component$",
       "captures": false
     },
-    "s_6QuTbOIAmLY": {
+    "s_1hWqXw50tx4": {
+      "origin": "components/ChapterBreak.tsx",
+      "displayName": "ChapterBreak_component",
+      "canonicalFilename": "s_1hwqxw50tx4",
+      "hash": "1hWqXw50tx4",
+      "ctxKind": "function",
+      "ctxName": "component$",
+      "captures": false
+    },
+    "s_30T2B7deCus": {
+      "origin": "components/chapter1/Ch1Infinity.tsx",
+      "displayName": "Ch1Infinity_component",
+      "canonicalFilename": "s_30t2b7decus",
+      "hash": "30T2B7deCus",
+      "ctxKind": "function",
+      "ctxName": "component$",
+      "captures": false
+    },
+    "s_5DkaON6b1ms": {
+      "origin": "components/chapter3/Ch3ExtendCondition.tsx",
+      "displayName": "Ch3ExtendCondition_component",
+      "canonicalFilename": "s_5dkaon6b1ms",
+      "hash": "5DkaON6b1ms",
+      "ctxKind": "function",
+      "ctxName": "component$",
+      "captures": false
+    },
+    "s_8eVg8MyNURk": {
       "origin": "components/JumpToContent.tsx",
       "displayName": "JumpToContent_component",
-      "canonicalFilename": "s_6qutboiamly",
-      "hash": "6QuTbOIAmLY",
-      "ctxKind": "function",
-      "ctxName": "component$",
-      "captures": false
-    },
-    "s_7Hs0A5p0Glg": {
-      "origin": "components/chapter3/Ch3Constitution.tsx",
-      "displayName": "Ch3Constitution_component",
-      "canonicalFilename": "s_7hs0a5p0glg",
-      "hash": "7Hs0A5p0Glg",
+      "canonicalFilename": "s_8evg8mynurk",
+      "hash": "8eVg8MyNURk",
       "ctxKind": "function",
       "ctxName": "component$",
       "captures": false
@@ -264,38 +264,29 @@
       "ctxName": "component$",
       "captures": false
     },
-    "s_Gs05USd4I4g": {
-      "origin": "components/chapter1/Ch1Divider.tsx",
-      "displayName": "Ch1Divider_component",
-      "canonicalFilename": "s_gs05usd4i4g",
-      "hash": "Gs05USd4I4g",
+    "s_DKxUXpbhfow": {
+      "origin": "components/Lottie.tsx",
+      "displayName": "Lottie_component",
+      "canonicalFilename": "s_dkxuxpbhfow",
+      "hash": "DKxUXpbhfow",
       "ctxKind": "function",
       "ctxName": "component$",
       "captures": false
     },
-    "s_KXUsGqdIjok": {
-      "origin": "components/chapter3/Ch3GeneralConstitution.tsx",
-      "displayName": "Ch3GeneralConstitution_component",
-      "canonicalFilename": "s_kxusgqdijok",
-      "hash": "KXUsGqdIjok",
+    "s_FiH2jvy0DEA": {
+      "origin": "components/Navbar.tsx",
+      "displayName": "Navbar_component",
+      "canonicalFilename": "s_fih2jvy0dea",
+      "hash": "FiH2jvy0DEA",
       "ctxKind": "function",
       "ctxName": "component$",
       "captures": false
     },
-    "s_Ma0BDisFImA": {
-      "origin": "components/chapter3/Ch3Letter.tsx",
-      "displayName": "Ch3Letter_component",
-      "canonicalFilename": "s_ma0bdisfima",
-      "hash": "Ma0BDisFImA",
-      "ctxKind": "function",
-      "ctxName": "component$",
-      "captures": false
-    },
-    "s_O9K4z7vy70U": {
-      "origin": "components/chapter2/Ch2Compare.tsx",
-      "displayName": "Ch2Compare_component",
-      "canonicalFilename": "s_o9k4z7vy70u",
-      "hash": "O9K4z7vy70U",
+    "s_J0O64Q0VesE": {
+      "origin": "components/TitleBlock.tsx",
+      "displayName": "TitleBlock_component",
+      "canonicalFilename": "s_j0o64q0vese",
+      "hash": "J0O64Q0VesE",
       "ctxKind": "function",
       "ctxName": "component$",
       "captures": false
@@ -309,101 +300,110 @@
       "ctxName": "component$",
       "captures": false
     },
-    "s_VkLNXphUh5s": {
-      "origin": "routes/layout.tsx",
-      "displayName": "layout_component",
-      "canonicalFilename": "s_vklnxphuh5s",
-      "hash": "VkLNXphUh5s",
-      "ctxKind": "function",
-      "ctxName": "component$",
-      "captures": false
-    },
-    "s_dHMCVc5GbSo": {
-      "origin": "components/chapter3/Ch3FixImg.tsx",
-      "displayName": "Ch3FixImg_component",
-      "canonicalFilename": "s_dhmcvc5gbso",
-      "hash": "dHMCVc5GbSo",
-      "ctxKind": "function",
-      "ctxName": "component$",
-      "captures": false
-    },
-    "s_e5iq6bTbGRs": {
+    "s_XtWms2Jk7x4": {
       "origin": "components/chapter1/Ch1Chart.tsx",
       "displayName": "Ch1Chart_component",
-      "canonicalFilename": "s_e5iq6btbgrs",
-      "hash": "e5iq6bTbGRs",
+      "canonicalFilename": "s_xtwms2jk7x4",
+      "hash": "XtWms2Jk7x4",
       "ctxKind": "function",
       "ctxName": "component$",
       "captures": false
     },
-    "s_fObZRlAxyfw": {
-      "origin": "components/chapter1/Ch1Infinity.tsx",
-      "displayName": "Ch1Infinity_component",
-      "canonicalFilename": "s_fobzrlaxyfw",
-      "hash": "fObZRlAxyfw",
-      "ctxKind": "function",
-      "ctxName": "component$",
-      "captures": false
-    },
-    "s_grzj7HYqno8": {
-      "origin": "components/chapter3/Ch3BasicCondition.tsx",
-      "displayName": "Ch3BasicCondition_component",
-      "canonicalFilename": "s_grzj7hyqno8",
-      "hash": "grzj7HYqno8",
-      "ctxKind": "function",
-      "ctxName": "component$",
-      "captures": false
-    },
-    "s_ijvkKbzByC4": {
-      "origin": "components/chapter1/Ch1Video.tsx",
-      "displayName": "Ch1Video_component",
-      "canonicalFilename": "s_ijvkkbzbyc4",
-      "hash": "ijvkKbzByC4",
-      "ctxKind": "function",
-      "ctxName": "component$",
-      "captures": false
-    },
-    "s_kLwZE4e1Kw4": {
-      "origin": "components/ChapterBreak.tsx",
-      "displayName": "ChapterBreak_component",
-      "canonicalFilename": "s_klwze4e1kw4",
-      "hash": "kLwZE4e1Kw4",
-      "ctxKind": "function",
-      "ctxName": "component$",
-      "captures": false
-    },
-    "s_ovjEOtCKC8g": {
-      "origin": "components/TitleBlock.tsx",
-      "displayName": "TitleBlock_component",
-      "canonicalFilename": "s_ovjeotckc8g",
-      "hash": "ovjEOtCKC8g",
-      "ctxKind": "function",
-      "ctxName": "component$",
-      "captures": false
-    },
-    "s_qJ0s4sH5iHo": {
-      "origin": "components/Navbar.tsx",
-      "displayName": "Navbar_component",
-      "canonicalFilename": "s_qj0s4sh5iho",
-      "hash": "qJ0s4sH5iHo",
-      "ctxKind": "function",
-      "ctxName": "component$",
-      "captures": false
-    },
-    "s_ulk0rmQB0gk": {
-      "origin": "components/chapter3/Ch3ExtendCondition.tsx",
-      "displayName": "Ch3ExtendCondition_component",
-      "canonicalFilename": "s_ulk0rmqb0gk",
-      "hash": "ulk0rmQB0gk",
-      "ctxKind": "function",
-      "ctxName": "component$",
-      "captures": false
-    },
-    "s_xYL1qOwPyDI": {
+    "s_bcsqMmq34wA": {
       "origin": "routes/index.tsx",
       "displayName": "routes_component",
-      "canonicalFilename": "s_xyl1qowpydi",
-      "hash": "xYL1qOwPyDI",
+      "canonicalFilename": "s_bcsqmmq34wa",
+      "hash": "bcsqMmq34wA",
+      "ctxKind": "function",
+      "ctxName": "component$",
+      "captures": false
+    },
+    "s_dy0G4tGFKUA": {
+      "origin": "components/chapter3/Ch3FixImg.tsx",
+      "displayName": "Ch3FixImg_component",
+      "canonicalFilename": "s_dy0g4tgfkua",
+      "hash": "dy0G4tGFKUA",
+      "ctxKind": "function",
+      "ctxName": "component$",
+      "captures": false
+    },
+    "s_f1zQoEscqbs": {
+      "origin": "root.tsx",
+      "displayName": "root_component",
+      "canonicalFilename": "s_f1zqoescqbs",
+      "hash": "f1zQoEscqbs",
+      "ctxKind": "function",
+      "ctxName": "component$",
+      "captures": false
+    },
+    "s_fOCFtoC9d5A": {
+      "origin": "routes/layout.tsx",
+      "displayName": "layout_component",
+      "canonicalFilename": "s_focftoc9d5a",
+      "hash": "fOCFtoC9d5A",
+      "ctxKind": "function",
+      "ctxName": "component$",
+      "captures": false
+    },
+    "s_g5lP60Ekm0g": {
+      "origin": "components/chapter3/Ch3BasicCondition.tsx",
+      "displayName": "Ch3BasicCondition_component",
+      "canonicalFilename": "s_g5lp60ekm0g",
+      "hash": "g5lP60Ekm0g",
+      "ctxKind": "function",
+      "ctxName": "component$",
+      "captures": false
+    },
+    "s_glT5dow2VvQ": {
+      "origin": "components/chapter3/Ch3GeneralConstitution.tsx",
+      "displayName": "Ch3GeneralConstitution_component",
+      "canonicalFilename": "s_glt5dow2vvq",
+      "hash": "glT5dow2VvQ",
+      "ctxKind": "function",
+      "ctxName": "component$",
+      "captures": false
+    },
+    "s_i5ZL09b3emg": {
+      "origin": "components/chapter1/Ch1Divider.tsx",
+      "displayName": "Ch1Divider_component",
+      "canonicalFilename": "s_i5zl09b3emg",
+      "hash": "i5ZL09b3emg",
+      "ctxKind": "function",
+      "ctxName": "component$",
+      "captures": false
+    },
+    "s_lZL5rgk0N0w": {
+      "origin": "components/RouterHead.tsx",
+      "displayName": "RouterHead_component",
+      "canonicalFilename": "s_lzl5rgk0n0w",
+      "hash": "lZL5rgk0N0w",
+      "ctxKind": "function",
+      "ctxName": "component$",
+      "captures": false
+    },
+    "s_qmd7Z4k2uIU": {
+      "origin": "components/chapter3/Ch3Constitution.tsx",
+      "displayName": "Ch3Constitution_component",
+      "canonicalFilename": "s_qmd7z4k2uiu",
+      "hash": "qmd7Z4k2uIU",
+      "ctxKind": "function",
+      "ctxName": "component$",
+      "captures": false
+    },
+    "s_r7HT9T9Ex9s": {
+      "origin": "components/chapter3/Ch3Letter.tsx",
+      "displayName": "Ch3Letter_component",
+      "canonicalFilename": "s_r7ht9t9ex9s",
+      "hash": "r7HT9T9Ex9s",
+      "ctxKind": "function",
+      "ctxName": "component$",
+      "captures": false
+    },
+    "s_woOL2wWADmk": {
+      "origin": "components/chapter1/Ch1Video.tsx",
+      "displayName": "Ch1Video_component",
+      "canonicalFilename": "s_wool2wwadmk",
+      "hash": "woOL2wWADmk",
       "ctxKind": "function",
       "ctxName": "component$",
       "captures": false
@@ -427,20 +427,29 @@
       "captures": false,
       "parent": "s_zH94hIe0Ick"
     },
-    "s_1wzXtPoweZc": {
+    "s_06SslG70bZo": {
       "origin": "components/react/QWvNavbar.tsx",
       "displayName": "QWvNavbar_qwikify",
-      "canonicalFilename": "s_1wzxtpowezc",
-      "hash": "1wzXtPoweZc",
+      "canonicalFilename": "s_06sslg70bzo",
+      "hash": "06SslG70bZo",
       "ctxKind": "function",
       "ctxName": "qwikify$",
       "captures": false
     },
-    "s_2ljQzovtSxY": {
+    "s_3Mz20Qk84hg": {
       "origin": "routes/about/index.tsx",
       "displayName": "about_qwikify",
-      "canonicalFilename": "s_2ljqzovtsxy",
-      "hash": "2ljQzovtSxY",
+      "canonicalFilename": "s_3mz20qk84hg",
+      "hash": "3Mz20Qk84hg",
+      "ctxKind": "function",
+      "ctxName": "qwikify$",
+      "captures": false
+    },
+    "s_53LfLGTry0M": {
+      "origin": "components/react/QLetter.tsx",
+      "displayName": "QLetter_qwikify",
+      "canonicalFilename": "s_53lflgtry0m",
+      "hash": "53LfLGTry0M",
       "ctxKind": "function",
       "ctxName": "qwikify$",
       "captures": false
@@ -454,51 +463,42 @@
       "ctxName": "activate",
       "captures": true
     },
-    "s_RpP92KOWcOo": {
-      "origin": "components/react/QLetter.tsx",
-      "displayName": "QLetter_qwikify",
-      "canonicalFilename": "s_rpp92kowcoo",
-      "hash": "RpP92KOWcOo",
-      "ctxKind": "function",
-      "ctxName": "qwikify$",
-      "captures": false
-    },
-    "s_XclpHpAVvoc": {
-      "origin": "components/react/QWvFooter.tsx",
-      "displayName": "QWvFooter_qwikify",
-      "canonicalFilename": "s_xclphpavvoc",
-      "hash": "XclpHpAVvoc",
-      "ctxKind": "function",
-      "ctxName": "qwikify$",
-      "captures": false
-    },
-    "s_dJbfVE9x8jY": {
-      "origin": "components/react/QWvSharer.tsx",
-      "displayName": "QWvSharer_qwikify",
-      "canonicalFilename": "s_djbfve9x8jy",
-      "hash": "dJbfVE9x8jY",
-      "ctxKind": "function",
-      "ctxName": "qwikify$",
-      "captures": false
-    },
-    "s_gr92WWF6Sp0": {
+    "s_B10cFaXfvFc": {
       "origin": "components/react/popovers/QConstitutionPopover.tsx",
       "displayName": "QConstitutionPopover_qwikify",
-      "canonicalFilename": "s_gr92wwf6sp0",
-      "hash": "gr92WWF6Sp0",
+      "canonicalFilename": "s_b10cfaxfvfc",
+      "hash": "B10cFaXfvFc",
       "ctxKind": "function",
       "ctxName": "qwikify$",
       "captures": false
     },
-    "s_C4C49H9K0w8": {
+    "s_M0meepMhOPs": {
+      "origin": "components/react/QWvSharer.tsx",
+      "displayName": "QWvSharer_qwikify",
+      "canonicalFilename": "s_m0meepmhops",
+      "hash": "M0meepMhOPs",
+      "ctxKind": "function",
+      "ctxName": "qwikify$",
+      "captures": false
+    },
+    "s_MrnsGvtaZL4": {
+      "origin": "components/react/QWvFooter.tsx",
+      "displayName": "QWvFooter_qwikify",
+      "canonicalFilename": "s_mrnsgvtazl4",
+      "hash": "MrnsGvtaZL4",
+      "ctxKind": "function",
+      "ctxName": "qwikify$",
+      "captures": false
+    },
+    "s_9TFxkfCfVOI": {
       "origin": "components/JumpToContent.tsx",
       "displayName": "JumpToContent_component_jump",
-      "canonicalFilename": "s_c4c49h9k0w8",
-      "hash": "C4C49H9K0w8",
+      "canonicalFilename": "s_9tfxkfcfvoi",
+      "hash": "9TFxkfCfVOI",
       "ctxKind": "function",
       "ctxName": "$",
       "captures": true,
-      "parent": "s_6QuTbOIAmLY"
+      "parent": "s_8eVg8MyNURk"
     },
     "s_KnNE9eL0qfc": {
       "origin": "../node_modules/@builder.io/qwik-city/index.qwik.mjs",
@@ -522,142 +522,121 @@
     }
   },
   "mapping": {
-    "s_02wMImzEAbk": "q-422ecd17.js",
-    "s_EWIT9ENzUX0": "q-8eb478dc.js",
-    "s_08RBwZwbUYw": "q-9f04ea0e.js",
-    "s_0lbfjdLUNdI": "q-dadc727f.js",
-    "s_6ioOxXsAllg": "q-5ce9e5f8.js",
-    "s_7VI0iZlyrr0": "q-aec42704.js",
-    "s_89jL6XIAe0c": "q-01f667ea.js",
-    "s_AdYWXqI3JTc": "q-9f04ea0e.js",
-    "s_IBnu8s0pYJg": "q-90db6b78.js",
-    "s_PkxqWH9qjAY": "q-779f02e6.js",
-    "s_UmJ62zZhn7o": "q-779f02e6.js",
-    "s_WJLMpOVzl2Q": "q-f3570336.js",
-    "s_aLrEeNy6bE8": "q-90db6b78.js",
-    "s_bDJx8yhf3GY": "q-b1b12948.js",
-    "s_dReKMVELfUc": "q-46373902.js",
-    "s_iFx57w0Goa8": "q-46373902.js",
-    "s_mOkEkIcoGi0": "q-f3809131.js",
-    "s_mpHBqK08v8E": "q-f3570336.js",
-    "s_rJW5dfhxwwI": "q-07bc40ef.js",
-    "s_wo63prFBQ34": "q-f3809131.js",
-    "s_zqOJ6heKB4M": "q-4fb94be3.js",
-    "s_18lKPZC20pU": "q-368f4bc6.js",
-    "s_3sccYCDd1Z0": "q-5398a29a.js",
-    "s_46ehbxf4oEU": "q-f3809131.js",
-    "s_6QuTbOIAmLY": "q-b7f64b07.js",
-    "s_7Hs0A5p0Glg": "q-90db6b78.js",
-    "s_AKetNByE5TM": "q-c5df85d7.js",
-    "s_Gs05USd4I4g": "q-afad33d8.js",
-    "s_KXUsGqdIjok": "q-01f667ea.js",
-    "s_Ma0BDisFImA": "q-aec42704.js",
-    "s_O9K4z7vy70U": "q-b1b12948.js",
-    "s_TxCFOy819ag": "q-422ecd17.js",
-    "s_VkLNXphUh5s": "q-b05824a0.js",
-    "s_dHMCVc5GbSo": "q-07bc40ef.js",
-    "s_e5iq6bTbGRs": "q-4fb94be3.js",
-    "s_fObZRlAxyfw": "q-5ce9e5f8.js",
-    "s_grzj7HYqno8": "q-f3570336.js",
-    "s_ijvkKbzByC4": "q-dadc727f.js",
-    "s_kLwZE4e1Kw4": "q-779f02e6.js",
-    "s_ovjEOtCKC8g": "q-9f04ea0e.js",
-    "s_qJ0s4sH5iHo": "q-2821dda8.js",
-    "s_ulk0rmQB0gk": "q-46373902.js",
-    "s_xYL1qOwPyDI": "q-547342ad.js",
-    "s_zH94hIe0Ick": "q-8eb478dc.js",
-    "s_hkT84xKSMLE": "q-8eb478dc.js",
-    "s_1wzXtPoweZc": "q-8560e27b.js",
-    "s_2ljQzovtSxY": "q-ec975c51.js",
-    "s_6LYztwGzxAA": "q-e5e18f0e.js",
-    "s_RpP92KOWcOo": "q-16841b8d.js",
-    "s_XclpHpAVvoc": "q-0f44e536.js",
-    "s_dJbfVE9x8jY": "q-ffe31450.js",
-    "s_gr92WWF6Sp0": "q-31134a81.js",
-    "s_C4C49H9K0w8": "q-b7f64b07.js",
-    "s_KnNE9eL0qfc": "q-c5df85d7.js",
-    "s_fX0bDjeJa0E": "q-422ecd17.js"
+    "s_02wMImzEAbk": "q-b3ccdbbb.js",
+    "s_EWIT9ENzUX0": "q-8bf83684.js",
+    "s_0vHSIa1k90I": "q-2e06b344.js",
+    "s_4K9D0Wrs7JE": "q-62cd3b5c.js",
+    "s_4iKEAlrWuEY": "q-20663fd7.js",
+    "s_AKm0q40kLHs": "q-806731ce.js",
+    "s_AhDhuzKH1Pg": "q-d206d541.js",
+    "s_BrSOwlW4fyM": "q-1d05b7a0.js",
+    "s_H9pmNoSBuKI": "q-2ed992b5.js",
+    "s_M8EYOpffTVc": "q-31b90b21.js",
+    "s_PROWAbZ7uiw": "q-1d05b7a0.js",
+    "s_RNdDKmlRQzk": "q-62cd3b5c.js",
+    "s_USvbBCyITnQ": "q-120500ad.js",
+    "s_Wmlbm8i0bL8": "q-1aad462e.js",
+    "s_ctzgtRXsI8E": "q-54192151.js",
+    "s_djGQeWR7NQk": "q-df56c9fd.js",
+    "s_hTwv5CADAcU": "q-806731ce.js",
+    "s_kcOGUtwwHXQ": "q-2e06b344.js",
+    "s_m0WlHFwv1uY": "q-20663fd7.js",
+    "s_mb0CK0SnseQ": "q-6e2e95bb.js",
+    "s_sdTagn8R0yw": "q-1aad462e.js",
+    "s_0uPukBVxx1U": "q-120500ad.js",
+    "s_1hWqXw50tx4": "q-20663fd7.js",
+    "s_30T2B7deCus": "q-31b90b21.js",
+    "s_5DkaON6b1ms": "q-2e06b344.js",
+    "s_8eVg8MyNURk": "q-7c1a3fb4.js",
+    "s_AKetNByE5TM": "q-817a90aa.js",
+    "s_DKxUXpbhfow": "q-62cd3b5c.js",
+    "s_FiH2jvy0DEA": "q-c7e763e4.js",
+    "s_J0O64Q0VesE": "q-806731ce.js",
+    "s_TxCFOy819ag": "q-b3ccdbbb.js",
+    "s_XtWms2Jk7x4": "q-2ed992b5.js",
+    "s_bcsqMmq34wA": "q-3ac9bc61.js",
+    "s_dy0G4tGFKUA": "q-6e2e95bb.js",
+    "s_f1zQoEscqbs": "q-59738ba4.js",
+    "s_fOCFtoC9d5A": "q-f31fdf37.js",
+    "s_g5lP60Ekm0g": "q-1d05b7a0.js",
+    "s_glT5dow2VvQ": "q-d206d541.js",
+    "s_i5ZL09b3emg": "q-3436b466.js",
+    "s_lZL5rgk0N0w": "q-9b19cd3f.js",
+    "s_qmd7Z4k2uIU": "q-1aad462e.js",
+    "s_r7HT9T9Ex9s": "q-df56c9fd.js",
+    "s_woOL2wWADmk": "q-54192151.js",
+    "s_zH94hIe0Ick": "q-8bf83684.js",
+    "s_hkT84xKSMLE": "q-8bf83684.js",
+    "s_06SslG70bZo": "q-01515e98.js",
+    "s_3Mz20Qk84hg": "q-08825c9c.js",
+    "s_53LfLGTry0M": "q-93a664ee.js",
+    "s_6LYztwGzxAA": "q-748c4de8.js",
+    "s_B10cFaXfvFc": "q-533b81ab.js",
+    "s_M0meepMhOPs": "q-e86cf4f3.js",
+    "s_MrnsGvtaZL4": "q-ba4a8f85.js",
+    "s_9TFxkfCfVOI": "q-7c1a3fb4.js",
+    "s_KnNE9eL0qfc": "q-817a90aa.js",
+    "s_fX0bDjeJa0E": "q-b3ccdbbb.js"
   },
   "bundles": {
-    "q-01f667ea.js": {
-      "size": 1250,
+    "q-01515e98.js": {
+      "size": 5838,
       "imports": [
-        "q-5e7a7789.js",
-        "q-d5377a27.js"
+        "q-8241c1d6.js",
+        "q-acf3af51.js",
+        "q-e35b735b.js"
       ],
       "origins": [
-        "src/entry_Ch3GeneralConstitution.js",
-        "src/s_89jl6xiae0c.js",
-        "src/s_kxusgqdijok.js"
+        "node_modules/@wevisdemo/ui/react/nav-button.js",
+        "node_modules/@wevisdemo/ui/react/navbar.js",
+        "src/entry_QWvNavbar.js",
+        "src/s_06sslg70bzo.js"
       ],
       "symbols": [
-        "s_89jL6XIAe0c",
-        "s_KXUsGqdIjok"
+        "s_06SslG70bZo"
       ]
     },
-    "q-07bc40ef.js": {
-      "size": 766,
+    "q-07f1a0d3.js": {
+      "size": 6226,
       "imports": [
-        "q-0ee514bf.js",
-        "q-5e7a7789.js",
-        "q-85974b4d.js",
-        "q-d5377a27.js"
+        "q-8241c1d6.js"
       ],
       "origins": [
-        "src/entry_Ch3FixImg.js",
-        "src/s_dhmcvc5gbso.js",
-        "src/s_rjw5dfhxwwi.js"
+        "node_modules/@headlessui/react/dist/components/keyboard.js",
+        "node_modules/@headlessui/react/dist/hooks/use-event.js",
+        "node_modules/@headlessui/react/dist/hooks/use-id.js",
+        "node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.js",
+        "node_modules/@headlessui/react/dist/hooks/use-latest-value.js",
+        "node_modules/@headlessui/react/dist/hooks/use-resolve-button-type.js",
+        "node_modules/@headlessui/react/dist/hooks/use-server-handoff-complete.js",
+        "node_modules/@headlessui/react/dist/hooks/use-sync-refs.js",
+        "node_modules/@headlessui/react/dist/internal/open-closed.js",
+        "node_modules/@headlessui/react/dist/utils/bugs.js",
+        "node_modules/@headlessui/react/dist/utils/class-names.js",
+        "node_modules/@headlessui/react/dist/utils/env.js",
+        "node_modules/@headlessui/react/dist/utils/match.js",
+        "node_modules/@headlessui/react/dist/utils/owner.js",
+        "node_modules/@headlessui/react/dist/utils/render.js"
+      ]
+    },
+    "q-08825c9c.js": {
+      "size": 9346,
+      "imports": [
+        "q-8241c1d6.js",
+        "q-9a70204c.js",
+        "q-acf3af51.js",
+        "q-e35b735b.js"
+      ],
+      "origins": [
+        "node_modules/@wevisdemo/ui/react/button-group.js",
+        "node_modules/@wevisdemo/ui/react/button.js",
+        "node_modules/@wevisdemo/ui/react/container.js",
+        "node_modules/@wevisdemo/ui/react/paragraph-group.js",
+        "src/entry_about.js",
+        "src/s_3mz20qk84hg.js"
       ],
       "symbols": [
-        "s_dHMCVc5GbSo",
-        "s_rJW5dfhxwwI"
-      ]
-    },
-    "q-0b727f95.js": {
-      "size": 40900,
-      "imports": [
-        "q-1f857f64.js",
-        "q-5e7a7789.js"
-      ],
-      "dynamicImports": [
-        "q-01f667ea.js",
-        "q-07bc40ef.js",
-        "q-46373902.js",
-        "q-4fb94be3.js",
-        "q-547342ad.js",
-        "q-5ce9e5f8.js",
-        "q-779f02e6.js",
-        "q-90db6b78.js",
-        "q-9f04ea0e.js",
-        "q-aec42704.js",
-        "q-afad33d8.js",
-        "q-b1b12948.js",
-        "q-b7f64b07.js",
-        "q-dadc727f.js",
-        "q-f3570336.js",
-        "q-f3809131.js",
-        "q-ffe31450.js"
-      ],
-      "origins": [
-        "src/components/ChapterBreak.tsx",
-        "src/components/JumpToContent.tsx",
-        "src/components/Lottie.tsx",
-        "src/components/TitleBlock.tsx",
-        "src/components/chapter1/Ch1Chart.tsx",
-        "src/components/chapter1/Ch1Divider.tsx",
-        "src/components/chapter1/Ch1Infinity.tsx",
-        "src/components/chapter1/Ch1Video.tsx",
-        "src/components/chapter2/Ch2Compare.tsx",
-        "src/components/chapter3/Ch3BasicCondition.tsx",
-        "src/components/chapter3/Ch3Constitution.tsx",
-        "src/components/chapter3/Ch3ExtendCondition.tsx",
-        "src/components/chapter3/Ch3FixImg.tsx",
-        "src/components/chapter3/Ch3GeneralConstitution.tsx",
-        "src/components/chapter3/Ch3Letter.tsx",
-        "src/components/react/QWvSharer.tsx",
-        "src/data/people.ts",
-        "src/data/votelog.ts",
-        "src/routes/index.tsx"
+        "s_3Mz20Qk84hg"
       ]
     },
     "q-0ee514bf.js": {
@@ -703,90 +682,239 @@
         "node_modules/@motionone/utils/dist/wrap.es.js"
       ]
     },
-    "q-0f44e536.js": {
-      "size": 7620,
+    "q-120500ad.js": {
+      "size": 3495,
       "imports": [
-        "q-1f857f64.js",
-        "q-31b1b72f.js",
-        "q-5e7a7789.js"
+        "q-0ee514bf.js",
+        "q-8241c1d6.js",
+        "q-85974b4d.js",
+        "q-94b80d03.js",
+        "q-d5377a27.js",
+        "q-e35b735b.js"
       ],
       "origins": [
-        "node_modules/@wevisdemo/ui/react/footer.js",
-        "src/entry_QWvFooter.js",
-        "src/s_xclphpavvoc.js"
+        "src/entry_Ch2Compare.js",
+        "src/s_0upukbvxx1u.js",
+        "src/s_usvbbcyitnq.js"
       ],
       "symbols": [
-        "s_XclpHpAVvoc"
+        "s_0uPukBVxx1U",
+        "s_USvbBCyITnQ"
       ]
     },
-    "q-16841b8d.js": {
-      "size": 5829,
+    "q-1aad462e.js": {
+      "size": 1341,
       "imports": [
-        "q-1f857f64.js",
-        "q-31b1b72f.js",
-        "q-31d3a5a3.js",
-        "q-5e7a7789.js"
-      ],
-      "origins": [
-        "node_modules/@headlessui/react/dist/components/disclosure/disclosure.js",
-        "node_modules/@headlessui/react/dist/utils/start-transition.js",
-        "src/entry_QLetter.js",
-        "src/s_rpp92kowcoo.js"
-      ],
-      "symbols": [
-        "s_RpP92KOWcOo"
-      ]
-    },
-    "q-1f857f64.js": {
-      "size": 8434,
-      "imports": [
-        "q-5e7a7789.js"
+        "q-0ee514bf.js",
+        "q-8241c1d6.js",
+        "q-85974b4d.js",
+        "q-94b80d03.js",
+        "q-d5377a27.js",
+        "q-e35b735b.js"
       ],
       "dynamicImports": [
-        "q-8eb478dc.js",
-        "q-e5e18f0e.js"
+        "q-533b81ab.js"
       ],
       "origins": [
-        "node_modules/@builder.io/qwik-react/lib/index.qwik.mjs",
-        "node_modules/react/cjs/react.production.min.js",
-        "node_modules/react/index.js"
-      ]
-    },
-    "q-27ccbbe4.js": {
-      "size": 13489,
-      "imports": [
-        "q-1f857f64.js"
-      ],
-      "origins": [
-        "node_modules/@wevisdemo/ui/react/sharer.js"
-      ]
-    },
-    "q-2821dda8.js": {
-      "size": 487,
-      "imports": [
-        "q-1f857f64.js",
-        "q-5398a29a.js",
-        "q-5e7a7789.js"
-      ],
-      "dynamicImports": [
-        "q-8560e27b.js"
-      ],
-      "origins": [
-        "src/components/react/QWvNavbar.tsx",
-        "src/entry_Navbar.js",
-        "src/s_qj0s4sh5iho.js"
+        "src/components/react/popovers/QConstitutionPopover.tsx",
+        "src/entry_Ch3Constitution.js",
+        "src/s_qmd7z4k2uiu.js",
+        "src/s_sdtagn8r0yw.js",
+        "src/s_wmlbm8i0bl8.js"
       ],
       "symbols": [
-        "s_qJ0s4sH5iHo"
+        "s_qmd7Z4k2uIU",
+        "s_sdTagn8R0yw",
+        "s_Wmlbm8i0bL8"
       ]
     },
-    "q-31134a81.js": {
+    "q-1c5d4d96.js": {
+      "size": 202,
+      "imports": [
+        "q-e35b735b.js"
+      ],
+      "dynamicImports": [
+        "q-f31fdf37.js"
+      ],
+      "origins": [
+        "src/routes/layout.tsx"
+      ]
+    },
+    "q-1d05b7a0.js": {
+      "size": 2509,
+      "imports": [
+        "q-0ee514bf.js",
+        "q-85974b4d.js",
+        "q-d5377a27.js",
+        "q-e35b735b.js"
+      ],
+      "origins": [
+        "src/entry_Ch3BasicCondition.js",
+        "src/s_brsowlw4fym.js",
+        "src/s_g5lp60ekm0g.js",
+        "src/s_prowabz7uiw.js"
+      ],
+      "symbols": [
+        "s_BrSOwlW4fyM",
+        "s_g5lP60Ekm0g",
+        "s_PROWAbZ7uiw"
+      ]
+    },
+    "q-20663fd7.js": {
+      "size": 4448,
+      "imports": [
+        "q-0ee514bf.js",
+        "q-4b8363ab.js",
+        "q-d5377a27.js",
+        "q-e35b735b.js"
+      ],
+      "origins": [
+        "node_modules/@motionone/dom/dist/timeline/index.es.js",
+        "node_modules/@motionone/dom/dist/timeline/utils/calc-time.es.js",
+        "node_modules/@motionone/dom/dist/timeline/utils/edit.es.js",
+        "node_modules/@motionone/dom/dist/timeline/utils/sort.es.js",
+        "node_modules/hey-listen/dist/hey-listen.es.js",
+        "src/entry_ChapterBreak.js",
+        "src/s_1hwqxw50tx4.js",
+        "src/s_4ikealrwuey.js",
+        "src/s_m0wlhfwv1uy.js"
+      ],
+      "symbols": [
+        "s_1hWqXw50tx4",
+        "s_4iKEAlrWuEY",
+        "s_m0WlHFwv1uY"
+      ]
+    },
+    "q-2e06b344.js": {
+      "size": 2329,
+      "imports": [
+        "q-0ee514bf.js",
+        "q-85974b4d.js",
+        "q-d5377a27.js",
+        "q-e35b735b.js"
+      ],
+      "origins": [
+        "src/entry_Ch3ExtendCondition.js",
+        "src/s_0vhsia1k90i.js",
+        "src/s_5dkaon6b1ms.js",
+        "src/s_kcogutwwhxq.js"
+      ],
+      "symbols": [
+        "s_0vHSIa1k90I",
+        "s_5DkaON6b1ms",
+        "s_kcOGUtwwHXQ"
+      ]
+    },
+    "q-2ed992b5.js": {
+      "size": 1366,
+      "imports": [
+        "q-d5377a27.js",
+        "q-e35b735b.js"
+      ],
+      "origins": [
+        "src/entry_Ch1Chart.js",
+        "src/s_h9pmnosbuki.js",
+        "src/s_xtwms2jk7x4.js"
+      ],
+      "symbols": [
+        "s_H9pmNoSBuKI",
+        "s_XtWms2Jk7x4"
+      ]
+    },
+    "q-31b90b21.js": {
+      "size": 11692,
+      "imports": [
+        "q-0ee514bf.js",
+        "q-4b8363ab.js",
+        "q-8241c1d6.js",
+        "q-85974b4d.js",
+        "q-94b80d03.js",
+        "q-d5377a27.js",
+        "q-e35b735b.js"
+      ],
+      "origins": [
+        "node_modules/@motionone/dom/dist/gestures/resize/handle-element.es.js",
+        "node_modules/@motionone/dom/dist/gestures/resize/handle-window.es.js",
+        "node_modules/@motionone/dom/dist/gestures/resize/index.es.js",
+        "node_modules/@motionone/dom/dist/gestures/scroll/index.es.js",
+        "node_modules/@motionone/dom/dist/gestures/scroll/info.es.js",
+        "node_modules/@motionone/dom/dist/gestures/scroll/offsets/edge.es.js",
+        "node_modules/@motionone/dom/dist/gestures/scroll/offsets/index.es.js",
+        "node_modules/@motionone/dom/dist/gestures/scroll/offsets/inset.es.js",
+        "node_modules/@motionone/dom/dist/gestures/scroll/offsets/offset.es.js",
+        "node_modules/@motionone/dom/dist/gestures/scroll/offsets/presets.es.js",
+        "node_modules/@motionone/dom/dist/gestures/scroll/on-scroll-handler.es.js",
+        "node_modules/@motionone/utils/dist/velocity.es.js",
+        "src/entry_Ch1Infinity.js",
+        "src/s_30t2b7decus.js",
+        "src/s_m8eyopfftvc.js"
+      ],
+      "symbols": [
+        "s_30T2B7deCus",
+        "s_M8EYOpffTVc"
+      ]
+    },
+    "q-3436b466.js": {
+      "size": 375,
+      "imports": [
+        "q-e35b735b.js"
+      ],
+      "origins": [
+        "src/entry_Ch1Divider.js",
+        "src/s_i5zl09b3emg.js"
+      ],
+      "symbols": [
+        "s_i5ZL09b3emg"
+      ]
+    },
+    "q-3ac9bc61.js": {
+      "size": 373,
+      "imports": [
+        "q-8241c1d6.js",
+        "q-94b80d03.js",
+        "q-e35b735b.js"
+      ],
+      "origins": [
+        "src/entry_routes.js",
+        "src/s_bcsqmmq34wa.js"
+      ],
+      "symbols": [
+        "s_bcsqMmq34wA"
+      ]
+    },
+    "q-45aab3b6.js": {
+      "size": 2536,
+      "origins": [
+        "node_modules/@builder.io/qwik-city/service-worker.mjs",
+        "src/routes/service-worker.ts"
+      ]
+    },
+    "q-4b8363ab.js": {
+      "size": 346,
+      "origins": [
+        "node_modules/tslib/tslib.es6.js"
+      ]
+    },
+    "q-52ba5527.js": {
+      "size": 299,
+      "imports": [
+        "q-8241c1d6.js",
+        "q-e35b735b.js"
+      ],
+      "dynamicImports": [
+        "q-08825c9c.js"
+      ],
+      "origins": [
+        "src/routes/about/index.tsx"
+      ]
+    },
+    "q-533b81ab.js": {
       "size": 26466,
       "imports": [
-        "q-1f857f64.js",
-        "q-31b1b72f.js",
-        "q-31d3a5a3.js",
-        "q-5e7a7789.js"
+        "q-07f1a0d3.js",
+        "q-8241c1d6.js",
+        "q-acf3af51.js",
+        "q-e35b735b.js"
       ],
       "origins": [
         "node_modules/@headlessui/react/dist/components/popover/popover.js",
@@ -808,272 +936,162 @@
         "node_modules/@headlessui/react/dist/utils/micro-task.js",
         "node_modules/@headlessui/react/dist/utils/once.js",
         "src/entry_QConstitutionPopover.js",
-        "src/s_gr92wwf6sp0.js"
+        "src/s_b10cfaxfvfc.js"
       ],
       "symbols": [
-        "s_gr92WWF6Sp0"
+        "s_B10cFaXfvFc"
       ]
     },
-    "q-31b1b72f.js": {
-      "size": 954,
+    "q-54192151.js": {
+      "size": 802,
       "imports": [
-        "q-1f857f64.js"
+        "q-d5377a27.js",
+        "q-e35b735b.js"
       ],
       "origins": [
-        "node_modules/react/cjs/react-jsx-runtime.production.min.js",
-        "node_modules/react/jsx-runtime.js"
-      ]
-    },
-    "q-31d3a5a3.js": {
-      "size": 6226,
-      "imports": [
-        "q-1f857f64.js"
-      ],
-      "origins": [
-        "node_modules/@headlessui/react/dist/components/keyboard.js",
-        "node_modules/@headlessui/react/dist/hooks/use-event.js",
-        "node_modules/@headlessui/react/dist/hooks/use-id.js",
-        "node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.js",
-        "node_modules/@headlessui/react/dist/hooks/use-latest-value.js",
-        "node_modules/@headlessui/react/dist/hooks/use-resolve-button-type.js",
-        "node_modules/@headlessui/react/dist/hooks/use-server-handoff-complete.js",
-        "node_modules/@headlessui/react/dist/hooks/use-sync-refs.js",
-        "node_modules/@headlessui/react/dist/internal/open-closed.js",
-        "node_modules/@headlessui/react/dist/utils/bugs.js",
-        "node_modules/@headlessui/react/dist/utils/class-names.js",
-        "node_modules/@headlessui/react/dist/utils/env.js",
-        "node_modules/@headlessui/react/dist/utils/match.js",
-        "node_modules/@headlessui/react/dist/utils/owner.js",
-        "node_modules/@headlessui/react/dist/utils/render.js"
-      ]
-    },
-    "q-368f4bc6.js": {
-      "size": 2174,
-      "imports": [
-        "q-5398a29a.js",
-        "q-5e7a7789.js"
-      ],
-      "origins": [
-        "src/entry_RouterHead.js",
-        "src/s_18lkpzc20pu.js"
+        "src/entry_Ch1Video.js",
+        "src/s_ctzgtrxsi8e.js",
+        "src/s_wool2wwadmk.js"
       ],
       "symbols": [
-        "s_18lKPZC20pU"
+        "s_ctzgtRXsI8E",
+        "s_woOL2wWADmk"
       ]
     },
-    "q-3ad4ccae.js": {
-      "size": 207,
+    "q-59738ba4.js": {
+      "size": 5363,
       "imports": [
-        "q-5e7a7789.js"
+        "q-e35b735b.js"
       ],
       "dynamicImports": [
-        "q-b05824a0.js"
-      ],
-      "origins": [
-        "src/routes/layout.tsx"
-      ]
-    },
-    "q-3c4258e2.js": {
-      "size": 58,
-      "imports": [
-        "q-5e7a7789.js"
-      ]
-    },
-    "q-422ecd17.js": {
-      "size": 2625,
-      "imports": [
-        "q-5398a29a.js",
-        "q-5e7a7789.js"
-      ],
-      "dynamicImports": [
-        "q-0b727f95.js",
-        "q-3ad4ccae.js",
-        "q-c79d2ec1.js",
-        "q-fd389e40.js"
-      ],
-      "origins": [
-        "@qwik-city-plan",
-        "src/entry_QwikCityProvider.js",
-        "src/s_02wmimzeabk.js",
-        "src/s_fx0bdjeja0e.js",
-        "src/s_txcfoy819ag.js"
-      ],
-      "symbols": [
-        "s_02wMImzEAbk",
-        "s_fX0bDjeJa0E",
-        "s_TxCFOy819ag"
-      ]
-    },
-    "q-45aab3b6.js": {
-      "size": 2536,
-      "origins": [
-        "node_modules/@builder.io/qwik-city/service-worker.mjs",
-        "src/routes/service-worker.ts"
-      ]
-    },
-    "q-46373902.js": {
-      "size": 2324,
-      "imports": [
-        "q-0ee514bf.js",
-        "q-5e7a7789.js",
-        "q-85974b4d.js",
-        "q-d5377a27.js"
-      ],
-      "origins": [
-        "src/entry_Ch3ExtendCondition.js",
-        "src/s_drekmvelfuc.js",
-        "src/s_ifx57w0goa8.js",
-        "src/s_ulk0rmqb0gk.js"
-      ],
-      "symbols": [
-        "s_dReKMVELfUc",
-        "s_iFx57w0Goa8",
-        "s_ulk0rmQB0gk"
-      ]
-    },
-    "q-4b8363ab.js": {
-      "size": 346,
-      "origins": [
-        "node_modules/tslib/tslib.es6.js"
-      ]
-    },
-    "q-4fb94be3.js": {
-      "size": 1366,
-      "imports": [
-        "q-5e7a7789.js",
-        "q-d5377a27.js"
-      ],
-      "origins": [
-        "src/entry_Ch1Chart.js",
-        "src/s_e5iq6btbgrs.js",
-        "src/s_zqoj6hekb4m.js"
-      ],
-      "symbols": [
-        "s_e5iq6bTbGRs",
-        "s_zqOJ6heKB4M"
-      ]
-    },
-    "q-5398a29a.js": {
-      "size": 5328,
-      "imports": [
-        "q-5e7a7789.js"
-      ],
-      "dynamicImports": [
-        "q-368f4bc6.js",
-        "q-422ecd17.js",
-        "q-c5df85d7.js"
+        "q-817a90aa.js",
+        "q-9b19cd3f.js",
+        "q-b3ccdbbb.js"
       ],
       "origins": [
         "@qwik-city-sw-register",
         "node_modules/@builder.io/qwik-city/index.qwik.mjs",
         "src/components/RouterHead.tsx",
         "src/entry_root.js",
-        "src/s_3sccycdd1z0.js"
+        "src/s_f1zqoescqbs.js"
       ],
       "symbols": [
-        "s_3sccYCDd1Z0"
+        "s_f1zQoEscqbs"
       ]
     },
-    "q-547342ad.js": {
-      "size": 378,
+    "q-62cd3b5c.js": {
+      "size": 299548,
       "imports": [
-        "q-0b727f95.js",
-        "q-1f857f64.js",
-        "q-5e7a7789.js"
+        "q-8241c1d6.js",
+        "q-d5377a27.js",
+        "q-e35b735b.js"
       ],
       "origins": [
-        "src/entry_routes.js",
-        "src/s_xyl1qowpydi.js"
+        "node_modules/lottie-web/build/player/lottie.js",
+        "src/entry_Lottie.js",
+        "src/s_4k9d0wrs7je.js",
+        "src/s_dkxuxpbhfow.js",
+        "src/s_rnddkmlrqzk.js"
       ],
       "symbols": [
-        "s_xYL1qOwPyDI"
+        "s_4K9D0Wrs7JE",
+        "s_DKxUXpbhfow",
+        "s_RNdDKmlRQzk"
       ]
     },
-    "q-5ce9e5f8.js": {
-      "size": 11692,
+    "q-6e2e95bb.js": {
+      "size": 766,
       "imports": [
-        "q-0b727f95.js",
         "q-0ee514bf.js",
-        "q-1f857f64.js",
-        "q-4b8363ab.js",
-        "q-5e7a7789.js",
         "q-85974b4d.js",
-        "q-d5377a27.js"
+        "q-d5377a27.js",
+        "q-e35b735b.js"
       ],
       "origins": [
-        "node_modules/@motionone/dom/dist/gestures/resize/handle-element.es.js",
-        "node_modules/@motionone/dom/dist/gestures/resize/handle-window.es.js",
-        "node_modules/@motionone/dom/dist/gestures/resize/index.es.js",
-        "node_modules/@motionone/dom/dist/gestures/scroll/index.es.js",
-        "node_modules/@motionone/dom/dist/gestures/scroll/info.es.js",
-        "node_modules/@motionone/dom/dist/gestures/scroll/offsets/edge.es.js",
-        "node_modules/@motionone/dom/dist/gestures/scroll/offsets/index.es.js",
-        "node_modules/@motionone/dom/dist/gestures/scroll/offsets/inset.es.js",
-        "node_modules/@motionone/dom/dist/gestures/scroll/offsets/offset.es.js",
-        "node_modules/@motionone/dom/dist/gestures/scroll/offsets/presets.es.js",
-        "node_modules/@motionone/dom/dist/gestures/scroll/on-scroll-handler.es.js",
-        "node_modules/@motionone/utils/dist/velocity.es.js",
-        "src/entry_Ch1Infinity.js",
-        "src/s_6iooxxsallg.js",
-        "src/s_fobzrlaxyfw.js"
+        "src/entry_Ch3FixImg.js",
+        "src/s_dy0g4tgfkua.js",
+        "src/s_mb0ck0snseq.js"
       ],
       "symbols": [
-        "s_6ioOxXsAllg",
-        "s_fObZRlAxyfw"
+        "s_dy0G4tGFKUA",
+        "s_mb0CK0SnseQ"
       ]
     },
-    "q-5e7a7789.js": {
-      "size": 47917,
+    "q-748c4de8.js": {
+      "size": 109,
+      "imports": [
+        "q-e35b735b.js"
+      ],
+      "origins": [
+        "src/entry_useWakeupSignal.js",
+        "src/s_6lyztwgzxaa.js"
+      ],
+      "symbols": [
+        "s_6LYztwGzxAA"
+      ]
+    },
+    "q-7c1a3fb4.js": {
+      "size": 1039,
+      "imports": [
+        "q-e35b735b.js"
+      ],
+      "origins": [
+        "src/entry_JumpToContent.js",
+        "src/s_8evg8mynurk.js",
+        "src/s_9tfxkfcfvoi.js"
+      ],
+      "symbols": [
+        "s_8eVg8MyNURk",
+        "s_9TFxkfCfVOI"
+      ]
+    },
+    "q-806731ce.js": {
+      "size": 940,
+      "imports": [
+        "q-d5377a27.js",
+        "q-e35b735b.js"
+      ],
+      "origins": [
+        "src/entry_TitleBlock.js",
+        "src/s_akm0q40klhs.js",
+        "src/s_htwv5cadacu.js",
+        "src/s_j0o64q0vese.js"
+      ],
+      "symbols": [
+        "s_AKm0q40kLHs",
+        "s_hTwv5CADAcU",
+        "s_J0O64Q0VesE"
+      ]
+    },
+    "q-817a90aa.js": {
+      "size": 765,
+      "imports": [
+        "q-59738ba4.js",
+        "q-e35b735b.js"
+      ],
+      "origins": [
+        "src/entry_RouterOutlet.js",
+        "src/s_aketnbye5tm.js",
+        "src/s_knne9el0qfc.js"
+      ],
+      "symbols": [
+        "s_AKetNByE5TM",
+        "s_KnNE9eL0qfc"
+      ]
+    },
+    "q-8241c1d6.js": {
+      "size": 8434,
+      "imports": [
+        "q-e35b735b.js"
+      ],
       "dynamicImports": [
-        "q-5398a29a.js"
+        "q-748c4de8.js",
+        "q-8bf83684.js"
       ],
       "origins": [
-        "node_modules/@builder.io/qwik/core.min.mjs",
-        "node_modules/@wevisdemo/ui/styles/index.css",
-        "src/global.css",
-        "src/root.tsx"
-      ]
-    },
-    "q-779f02e6.js": {
-      "size": 4442,
-      "imports": [
-        "q-0ee514bf.js",
-        "q-4b8363ab.js",
-        "q-5e7a7789.js",
-        "q-d5377a27.js"
-      ],
-      "origins": [
-        "node_modules/@motionone/dom/dist/timeline/index.es.js",
-        "node_modules/@motionone/dom/dist/timeline/utils/calc-time.es.js",
-        "node_modules/@motionone/dom/dist/timeline/utils/edit.es.js",
-        "node_modules/@motionone/dom/dist/timeline/utils/sort.es.js",
-        "node_modules/hey-listen/dist/hey-listen.es.js",
-        "src/entry_ChapterBreak.js",
-        "src/s_klwze4e1kw4.js",
-        "src/s_pkxqwh9qjay.js",
-        "src/s_umj62zzhn7o.js"
-      ],
-      "symbols": [
-        "s_kLwZE4e1Kw4",
-        "s_PkxqWH9qjAY",
-        "s_UmJ62zZhn7o"
-      ]
-    },
-    "q-8560e27b.js": {
-      "size": 5838,
-      "imports": [
-        "q-1f857f64.js",
-        "q-31b1b72f.js",
-        "q-5e7a7789.js"
-      ],
-      "origins": [
-        "node_modules/@wevisdemo/ui/react/nav-button.js",
-        "node_modules/@wevisdemo/ui/react/navbar.js",
-        "src/entry_QWvNavbar.js",
-        "src/s_1wzxtpowezc.js"
-      ],
-      "symbols": [
-        "s_1wzXtPoweZc"
+        "node_modules/@builder.io/qwik-react/lib/index.qwik.mjs",
+        "node_modules/react/cjs/react.production.min.js",
+        "node_modules/react/index.js"
       ]
     },
     "q-85974b4d.js": {
@@ -1088,11 +1106,11 @@
         "node_modules/motion/dist/animate.es.js"
       ]
     },
-    "q-8eb478dc.js": {
+    "q-8bf83684.js": {
       "size": 135485,
       "imports": [
-        "q-1f857f64.js",
-        "q-5e7a7789.js"
+        "q-8241c1d6.js",
+        "q-e35b735b.js"
       ],
       "origins": [
         "node_modules/react-dom/cjs/react-dom.production.min.js",
@@ -1111,169 +1129,178 @@
         "s_zH94hIe0Ick"
       ]
     },
-    "q-90db6b78.js": {
-      "size": 1346,
+    "q-93a664ee.js": {
+      "size": 5829,
       "imports": [
-        "q-0b727f95.js",
-        "q-0ee514bf.js",
-        "q-1f857f64.js",
-        "q-5e7a7789.js",
-        "q-85974b4d.js",
-        "q-d5377a27.js"
+        "q-07f1a0d3.js",
+        "q-8241c1d6.js",
+        "q-acf3af51.js",
+        "q-e35b735b.js"
+      ],
+      "origins": [
+        "node_modules/@headlessui/react/dist/components/disclosure/disclosure.js",
+        "node_modules/@headlessui/react/dist/utils/start-transition.js",
+        "src/entry_QLetter.js",
+        "src/s_53lflgtry0m.js"
+      ],
+      "symbols": [
+        "s_53LfLGTry0M"
+      ]
+    },
+    "q-94b80d03.js": {
+      "size": 40900,
+      "imports": [
+        "q-8241c1d6.js",
+        "q-e35b735b.js"
       ],
       "dynamicImports": [
-        "q-31134a81.js"
+        "q-120500ad.js",
+        "q-1aad462e.js",
+        "q-1d05b7a0.js",
+        "q-20663fd7.js",
+        "q-2e06b344.js",
+        "q-2ed992b5.js",
+        "q-31b90b21.js",
+        "q-3436b466.js",
+        "q-3ac9bc61.js",
+        "q-54192151.js",
+        "q-62cd3b5c.js",
+        "q-6e2e95bb.js",
+        "q-7c1a3fb4.js",
+        "q-806731ce.js",
+        "q-d206d541.js",
+        "q-df56c9fd.js",
+        "q-e86cf4f3.js"
       ],
       "origins": [
-        "src/components/react/popovers/QConstitutionPopover.tsx",
-        "src/entry_Ch3Constitution.js",
-        "src/s_7hs0a5p0glg.js",
-        "src/s_alreeny6be8.js",
-        "src/s_ibnu8s0pyjg.js"
-      ],
-      "symbols": [
-        "s_7Hs0A5p0Glg",
-        "s_aLrEeNy6bE8",
-        "s_IBnu8s0pYJg"
+        "src/components/ChapterBreak.tsx",
+        "src/components/JumpToContent.tsx",
+        "src/components/Lottie.tsx",
+        "src/components/TitleBlock.tsx",
+        "src/components/chapter1/Ch1Chart.tsx",
+        "src/components/chapter1/Ch1Divider.tsx",
+        "src/components/chapter1/Ch1Infinity.tsx",
+        "src/components/chapter1/Ch1Video.tsx",
+        "src/components/chapter2/Ch2Compare.tsx",
+        "src/components/chapter3/Ch3BasicCondition.tsx",
+        "src/components/chapter3/Ch3Constitution.tsx",
+        "src/components/chapter3/Ch3ExtendCondition.tsx",
+        "src/components/chapter3/Ch3FixImg.tsx",
+        "src/components/chapter3/Ch3GeneralConstitution.tsx",
+        "src/components/chapter3/Ch3Letter.tsx",
+        "src/components/react/QWvSharer.tsx",
+        "src/data/people.ts",
+        "src/data/votelog.ts",
+        "src/routes/index.tsx"
       ]
     },
-    "q-9f04ea0e.js": {
-      "size": 950,
+    "q-9a70204c.js": {
+      "size": 13489,
       "imports": [
-        "q-5e7a7789.js",
-        "q-d5377a27.js"
+        "q-8241c1d6.js"
       ],
       "origins": [
-        "src/entry_TitleBlock.js",
-        "src/s_08rbwzwbuyw.js",
-        "src/s_adywxqi3jtc.js",
-        "src/s_ovjeotckc8g.js"
-      ],
-      "symbols": [
-        "s_08RBwZwbUYw",
-        "s_AdYWXqI3JTc",
-        "s_ovjEOtCKC8g"
+        "node_modules/@wevisdemo/ui/react/sharer.js"
       ]
     },
-    "q-aec42704.js": {
-      "size": 2746,
+    "q-9b19cd3f.js": {
+      "size": 2166,
       "imports": [
-        "q-0b727f95.js",
-        "q-0ee514bf.js",
-        "q-1f857f64.js",
-        "q-5e7a7789.js",
-        "q-85974b4d.js",
-        "q-d5377a27.js"
+        "q-59738ba4.js",
+        "q-e35b735b.js"
+      ],
+      "origins": [
+        "src/entry_RouterHead.js",
+        "src/s_lzl5rgk0n0w.js"
+      ],
+      "symbols": [
+        "s_lZL5rgk0N0w"
+      ]
+    },
+    "q-acf3af51.js": {
+      "size": 954,
+      "imports": [
+        "q-8241c1d6.js"
+      ],
+      "origins": [
+        "node_modules/react/cjs/react-jsx-runtime.production.min.js",
+        "node_modules/react/jsx-runtime.js"
+      ]
+    },
+    "q-b3ccdbbb.js": {
+      "size": 2513,
+      "imports": [
+        "q-59738ba4.js",
+        "q-e35b735b.js"
       ],
       "dynamicImports": [
-        "q-16841b8d.js"
+        "q-1c5d4d96.js",
+        "q-52ba5527.js",
+        "q-94b80d03.js",
+        "q-edc78638.js"
       ],
       "origins": [
-        "src/components/react/QLetter.tsx",
-        "src/entry_Ch3Letter.js",
-        "src/s_7vi0izlyrr0.js",
-        "src/s_ma0bdisfima.js"
+        "@qwik-city-plan",
+        "src/entry_QwikCityProvider.js",
+        "src/s_02wmimzeabk.js",
+        "src/s_fx0bdjeja0e.js",
+        "src/s_txcfoy819ag.js"
       ],
       "symbols": [
-        "s_7VI0iZlyrr0",
-        "s_Ma0BDisFImA"
+        "s_02wMImzEAbk",
+        "s_fX0bDjeJa0E",
+        "s_TxCFOy819ag"
       ]
     },
-    "q-afad33d8.js": {
-      "size": 375,
+    "q-ba4a8f85.js": {
+      "size": 7620,
       "imports": [
-        "q-5e7a7789.js"
+        "q-8241c1d6.js",
+        "q-acf3af51.js",
+        "q-e35b735b.js"
       ],
       "origins": [
-        "src/entry_Ch1Divider.js",
-        "src/s_gs05usd4i4g.js"
+        "node_modules/@wevisdemo/ui/react/footer.js",
+        "src/entry_QWvFooter.js",
+        "src/s_mrnsgvtazl4.js"
       ],
       "symbols": [
-        "s_Gs05USd4I4g"
+        "s_MrnsGvtaZL4"
       ]
     },
-    "q-b05824a0.js": {
-      "size": 533,
+    "q-c7e763e4.js": {
+      "size": 487,
       "imports": [
-        "q-1f857f64.js",
-        "q-5e7a7789.js"
+        "q-59738ba4.js",
+        "q-8241c1d6.js",
+        "q-e35b735b.js"
       ],
       "dynamicImports": [
-        "q-0f44e536.js",
-        "q-2821dda8.js"
+        "q-01515e98.js"
       ],
       "origins": [
-        "src/components/Navbar.tsx",
-        "src/components/react/QWvFooter.tsx",
-        "src/entry_layout.js",
-        "src/s_vklnxphuh5s.js"
+        "src/components/react/QWvNavbar.tsx",
+        "src/entry_Navbar.js",
+        "src/s_fih2jvy0dea.js"
       ],
       "symbols": [
-        "s_VkLNXphUh5s"
+        "s_FiH2jvy0DEA"
       ]
     },
-    "q-b1b12948.js": {
-      "size": 3490,
+    "q-d206d541.js": {
+      "size": 1250,
       "imports": [
-        "q-0b727f95.js",
-        "q-0ee514bf.js",
-        "q-1f857f64.js",
-        "q-5e7a7789.js",
-        "q-85974b4d.js",
-        "q-d5377a27.js"
+        "q-d5377a27.js",
+        "q-e35b735b.js"
       ],
       "origins": [
-        "src/entry_Ch2Compare.js",
-        "src/s_bdjx8yhf3gy.js",
-        "src/s_o9k4z7vy70u.js"
+        "src/entry_Ch3GeneralConstitution.js",
+        "src/s_ahdhuzkh1pg.js",
+        "src/s_glt5dow2vvq.js"
       ],
       "symbols": [
-        "s_bDJx8yhf3GY",
-        "s_O9K4z7vy70U"
-      ]
-    },
-    "q-b7f64b07.js": {
-      "size": 1039,
-      "imports": [
-        "q-5e7a7789.js"
-      ],
-      "origins": [
-        "src/entry_JumpToContent.js",
-        "src/s_6qutboiamly.js",
-        "src/s_c4c49h9k0w8.js"
-      ],
-      "symbols": [
-        "s_6QuTbOIAmLY",
-        "s_C4C49H9K0w8"
-      ]
-    },
-    "q-c5df85d7.js": {
-      "size": 756,
-      "imports": [
-        "q-5398a29a.js",
-        "q-5e7a7789.js"
-      ],
-      "origins": [
-        "src/entry_RouterOutlet.js",
-        "src/s_aketnbye5tm.js",
-        "src/s_knne9el0qfc.js"
-      ],
-      "symbols": [
-        "s_AKetNByE5TM",
-        "s_KnNE9eL0qfc"
-      ]
-    },
-    "q-c79d2ec1.js": {
-      "size": 299,
-      "imports": [
-        "q-1f857f64.js",
-        "q-5e7a7789.js"
-      ],
-      "dynamicImports": [
-        "q-ec975c51.js"
-      ],
-      "origins": [
-        "src/routes/about/index.tsx"
+        "s_AhDhuzKH1Pg",
+        "s_glT5dow2VvQ"
       ]
     },
     "q-d5377a27.js": {
@@ -1284,99 +1311,68 @@
         "node_modules/@motionone/utils/dist/is-function.es.js"
       ]
     },
-    "q-dadc727f.js": {
-      "size": 802,
-      "imports": [
-        "q-5e7a7789.js",
-        "q-d5377a27.js"
-      ],
-      "origins": [
-        "src/entry_Ch1Video.js",
-        "src/s_0lbfjdlundi.js",
-        "src/s_ijvkkbzbyc4.js"
-      ],
-      "symbols": [
-        "s_0lbfjdLUNdI",
-        "s_ijvkKbzByC4"
-      ]
-    },
-    "q-e5e18f0e.js": {
-      "size": 109,
-      "imports": [
-        "q-5e7a7789.js"
-      ],
-      "origins": [
-        "src/entry_useWakeupSignal.js",
-        "src/s_6lyztwgzxaa.js"
-      ],
-      "symbols": [
-        "s_6LYztwGzxAA"
-      ]
-    },
-    "q-ec975c51.js": {
-      "size": 9346,
-      "imports": [
-        "q-1f857f64.js",
-        "q-27ccbbe4.js",
-        "q-31b1b72f.js",
-        "q-5e7a7789.js"
-      ],
-      "origins": [
-        "node_modules/@wevisdemo/ui/react/button-group.js",
-        "node_modules/@wevisdemo/ui/react/button.js",
-        "node_modules/@wevisdemo/ui/react/container.js",
-        "node_modules/@wevisdemo/ui/react/paragraph-group.js",
-        "src/entry_about.js",
-        "src/s_2ljqzovtsxy.js"
-      ],
-      "symbols": [
-        "s_2ljQzovtSxY"
-      ]
-    },
-    "q-f3570336.js": {
-      "size": 2509,
+    "q-df56c9fd.js": {
+      "size": 2746,
       "imports": [
         "q-0ee514bf.js",
-        "q-5e7a7789.js",
+        "q-8241c1d6.js",
         "q-85974b4d.js",
-        "q-d5377a27.js"
+        "q-94b80d03.js",
+        "q-d5377a27.js",
+        "q-e35b735b.js"
+      ],
+      "dynamicImports": [
+        "q-93a664ee.js"
       ],
       "origins": [
-        "src/entry_Ch3BasicCondition.js",
-        "src/s_grzj7hyqno8.js",
-        "src/s_mphbqk08v8e.js",
-        "src/s_wjlmpovzl2q.js"
+        "src/components/react/QLetter.tsx",
+        "src/entry_Ch3Letter.js",
+        "src/s_djgqewr7nqk.js",
+        "src/s_r7ht9t9ex9s.js"
       ],
       "symbols": [
-        "s_grzj7HYqno8",
-        "s_mpHBqK08v8E",
-        "s_WJLMpOVzl2Q"
+        "s_djGQeWR7NQk",
+        "s_r7HT9T9Ex9s"
       ]
     },
-    "q-f3809131.js": {
-      "size": 299548,
+    "q-df9a84d2.js": {
+      "size": 58,
       "imports": [
-        "q-1f857f64.js",
-        "q-5e7a7789.js",
-        "q-d5377a27.js"
-      ],
-      "origins": [
-        "node_modules/lottie-web/senate/build/player/lottie.js",
-        "src/entry_Lottie.js",
-        "src/s_46ehbxf4oeu.js",
-        "src/s_mokekicogi0.js",
-        "src/s_wo63prfbq34.js"
-      ],
-      "symbols": [
-        "s_46ehbxf4oEU",
-        "s_mOkEkIcoGi0",
-        "s_wo63prFBQ34"
+        "q-e35b735b.js"
       ]
     },
-    "q-fd389e40.js": {
+    "q-e35b735b.js": {
+      "size": 48297,
+      "dynamicImports": [
+        "q-59738ba4.js"
+      ],
+      "origins": [
+        "node_modules/@builder.io/qwik/core.min.mjs",
+        "node_modules/@wevisdemo/ui/styles/index.css",
+        "src/global.css",
+        "src/root.tsx"
+      ]
+    },
+    "q-e86cf4f3.js": {
+      "size": 207,
+      "imports": [
+        "q-8241c1d6.js",
+        "q-9a70204c.js",
+        "q-acf3af51.js",
+        "q-e35b735b.js"
+      ],
+      "origins": [
+        "src/entry_QWvSharer.js",
+        "src/s_m0meepmhops.js"
+      ],
+      "symbols": [
+        "s_M0meepMhOPs"
+      ]
+    },
+    "q-edc78638.js": {
       "size": 112,
       "imports": [
-        "q-5e7a7789.js"
+        "q-e35b735b.js"
       ],
       "dynamicImports": [
         "q-45aab3b6.js"
@@ -1385,20 +1381,24 @@
         "@qwik-city-entries"
       ]
     },
-    "q-ffe31450.js": {
-      "size": 207,
+    "q-f31fdf37.js": {
+      "size": 533,
       "imports": [
-        "q-1f857f64.js",
-        "q-27ccbbe4.js",
-        "q-31b1b72f.js",
-        "q-5e7a7789.js"
+        "q-8241c1d6.js",
+        "q-e35b735b.js"
+      ],
+      "dynamicImports": [
+        "q-ba4a8f85.js",
+        "q-c7e763e4.js"
       ],
       "origins": [
-        "src/entry_QWvSharer.js",
-        "src/s_djbfve9x8jy.js"
+        "src/components/Navbar.tsx",
+        "src/components/react/QWvFooter.tsx",
+        "src/entry_layout.js",
+        "src/s_focftoc9d5a.js"
       ],
       "symbols": [
-        "s_dJbfVE9x8jY"
+        "s_fOCFtoC9d5A"
       ]
     }
   },
@@ -1408,7 +1408,7 @@
       "location": "head",
       "attributes": {
         "rel": "stylesheet",
-        "href": "/senate/build/q-f59028eb.css"
+        "href": "/build/q-f59028eb.css"
       }
     }
   ],
@@ -1422,7 +1422,7 @@
     }
   },
   "platform": {
-    "qwik": "0.24.0",
+    "qwik": "0.101.0",
     "vite": "",
     "rollup": "3.20.2",
     "env": "node",
