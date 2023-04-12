@@ -6,18 +6,24 @@ const Ch3FixImg = component$(() => {
 
   useVisibleTask$(() => {
     if (elImg.value)
-      inView(elImg.value, () => {
-        if (elImg.value) {
-          animate(
-            elImg.value,
-            {
-              transform: ["rotate(90deg)", "rotate(0deg)"],
-              opacity: [0, 1],
-            },
-            { duration: 0.5 }
-          );
+      inView(
+        elImg.value,
+        () => {
+          if (elImg.value) {
+            animate(
+              elImg.value,
+              {
+                transform: ["rotate(90deg)", "rotate(0deg)"],
+                opacity: [0, 1],
+              },
+              { duration: 0.5 }
+            );
+          }
+        },
+        {
+          amount: 0.99,
         }
-      });
+      );
   });
 
   return (

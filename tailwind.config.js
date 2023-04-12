@@ -71,9 +71,11 @@ module.exports = {
         เห็น: "#60C1AF",
         ไม่เห็น: "#F92D46",
         งด: "#C5C5C5",
-        ไม่ลง: "#FFFFFF",
-        ไม่เข้า: "#000000",
+        ไม่ลง: "#eee",
+        ไม่เข้า: "#000",
       },
+      พลังประชารัฐ: "#2276EF",
+      ก้าวไกล: "#FF711E",
     },
     spacing: {
       0: "0",
@@ -105,6 +107,9 @@ module.exports = {
       gridTemplateRows: {
         "0fr": "0fr",
         "1fr": "1fr",
+      },
+      gridTemplateColumns: {
+        choosepm: "1fr auto auto",
       },
     },
   },

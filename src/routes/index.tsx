@@ -7,18 +7,22 @@ import ChapterBreak from "~/components/ChapterBreak";
 import JumpToContent from "~/components/JumpToContent";
 import Lottie from "~/components/Lottie";
 import TitleBlock from "~/components/TitleBlock";
+import QWvSharer from "~/components/react/QWvSharer";
+
 import Ch1Chart from "~/components/chapter1/Ch1Chart";
 import Ch1Divider from "~/components/chapter1/Ch1Divider";
 import Ch1Infinity from "~/components/chapter1/Ch1Infinity";
 import Ch1Video from "~/components/chapter1/Ch1Video";
+
+import Ch2Compare from "~/components/chapter2/Ch2Compare";
+import Ch2Explore from "~/components/chapter2/Ch2Explore";
+
 import Ch3BasicCondition from "~/components/chapter3/Ch3BasicCondition";
 import Ch3Constitution from "~/components/chapter3/Ch3Constitution";
 import Ch3ExtendCondition from "~/components/chapter3/Ch3ExtendCondition";
 import Ch3FixImg from "~/components/chapter3/Ch3FixImg";
 import Ch3GeneralConstitution from "~/components/chapter3/Ch3GeneralConstitution";
 import Ch3Letter from "~/components/chapter3/Ch3Letter";
-import QWvSharer from "~/components/react/QWvSharer";
-import Ch2Compare from "~/components/chapter2/Ch2Compare";
 
 export default component$(() => {
   return (
@@ -608,7 +612,8 @@ const Chapter2 = (
         decoding="async"
       />
     </div>
-    <TitleBlock>ผลการลงมติของ ส.ว. ในวุฒิสภาและรัฐสภา</TitleBlock>
+    <TitleBlock class="!mb-30">ผลการลงมติของ ส.ว. ในวุฒิสภาและรัฐสภา</TitleBlock>
+    <Ch2Explore />
     <Ch2Compare />
   </section>
 );

@@ -136,6 +136,11 @@ a {
   --scroll-color: #ffd3e1;
 }
 
+.chart-series {
+  width: calc(var(--val, 0) / var(--max, 1) * 100%);
+  height: 20px;
+}
+
 .scrollbar-none {
   scrollbar-width: none;
 }
