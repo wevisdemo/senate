@@ -8,4 +8,5 @@ Run these commands on root directory.
 
 ## Troubleshooting
 
-- **ncpoType** Hard coded at line 26
+- **ncpoType** Hard coded in `process.mjs` at line 26
+- **choosePm** Hard coded in `process.mjs` at line 89 & 90

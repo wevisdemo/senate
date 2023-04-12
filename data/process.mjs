@@ -66,17 +66,52 @@ const compilePeople = () => {
   saveForImport("people.ts", JSON.stringify(data.local));
 };
 
+const VOTE_ENUM = [
+  "เห็นด้วย",
+  "ไม่เห็นด้วย",
+  "งดออกเสียง",
+  "ไม่ลงคะแนนเสียง",
+  "ไม่เข้าร่วมประชุม",
+];
+
+const formatPeopleVote = (peopleVoteData) => {
+  const reduced = peopleVoteData.reduce(
+    (all, current) => {
+      if (SENATE_ID.includes(current.nc_9rqw__People_id)) {
+        all.senate[VOTE_ENUM.indexOf(current.Status)]++;
+        all.senate[5]++;
+      } else {
+        all.mp[VOTE_ENUM.indexOf(current.Status)]++;
+        all.mp[5]++;
+      }
+
+      return all;
+    },
+    {
+      senate: [0, 0, 0, 0, 0, 0],
+      mp: [0, 0, 0, 0, 0, 0],
+    }
+  );
+
+  Object.keys(reduced).forEach((k) => {
+    if (reduced[k][5] === 0) delete reduced[k];
+  });
+
+  return reduced;
+};
+
 const compileVotelog = () => {
   const data = {
     fetch: {
-      list: {},
-      voteEnum: [
-        "เห็นด้วย",
-        "ไม่เห็นด้วย",
-        "งดออกเสียง",
-        "ไม่ลงคะแนนเสียง",
-        "ไม่เข้าร่วมประชุม",
-      ],
+      senate: {
+        keepNcpo: [],
+        nationStrat: [],
+        consVote: [],
+      },
+      parliament: {
+        consDraft: [],
+        consVote: [],
+      },
     },
     local: {
       senate: {
@@ -86,8 +121,8 @@ const compileVotelog = () => {
         consVote: 0,
       },
       parliament: {
-        total: 0,
-        selectPm: 0,
+        total: 1,
+        selectPm: 1,
         consDraft: 0,
         consVote: 0,
       },
@@ -96,62 +131,8 @@ const compileVotelog = () => {
 
   const { list } = VOTELOG_DATA;
 
-  data.fetch.list = list.map((e) => {
-    if (e.Meeting === "ประชุมร่วมกันของรัฐสภา") {
-      data.local.parliament.total++;
-      switch (e.SenateVoteType) {
-        case "เลือกนายกรัฐมนตรี":
-          data.local.parliament.selectPm++;
-          break;
-        case "ร่างแก้รัฐธรรมนูญ":
-          data.local.parliament.consDraft++;
-          break;
-        case "ประชามติแก้รัฐธรรมนูญ":
-          data.local.parliament.consVote++;
-          break;
-      }
-    } else {
-      data.local.senate.total++;
-      switch (e.SenateVoteType) {
-        case "ตั้งศาลรัฐธรรมนูญ":
-          data.local.senate.keepNcpo++;
-          break;
-        case "ยุทธศาสตร์ชาติ":
-          data.local.senate.nationStrat++;
-          break;
-        case "ประชามติแก้รัฐธรรมนูญ":
-          data.local.senate.consVote++;
-          break;
-      }
-    }
-
-    const formatPeopleVote = (peopleVoteData) => {
-      const reduced = peopleVoteData.reduce(
-        (all, current) => {
-          if (SENATE_ID.includes(current.nc_9rqw__People_id)) {
-            all.senate[data.fetch.voteEnum.indexOf(current.Status)]++;
-            all.senate[5]++;
-          } else {
-            all.mp[data.fetch.voteEnum.indexOf(current.Status)]++;
-            all.mp[5]++;
-          }
-
-          return all;
-        },
-        {
-          senate: [0, 0, 0, 0, 0, 0],
-          mp: [0, 0, 0, 0, 0, 0],
-        }
-      );
-
-      Object.keys(reduced).forEach((k) => {
-        if (reduced[k][5] === 0) delete reduced[k];
-      });
-
-      return reduced;
-    };
-
-    return {
+  list.forEach((e) => {
+    const formattedData = {
       ...e,
       VoteDate: e.VoteDate.split("-")
         .map((e) => +e)
@@ -159,7 +140,39 @@ const compileVotelog = () => {
         .join("."),
       IsPassed: +!!e.IsPassed,
       PeopleVotes: e.PeopleVotes.length ? formatPeopleVote(e.PeopleVotes) : undefined,
+      Meeting: undefined,
+      SenateVoteType: undefined,
     };
+
+    if (e.Meeting === "ประชุมร่วมกันของรัฐสภา") {
+      data.local.parliament.total++;
+      switch (e.SenateVoteType) {
+        case "ร่างแก้รัฐธรรมนูญ":
+          data.local.parliament.consDraft++;
+          data.fetch.parliament.consDraft.push(formattedData);
+          break;
+        case "ประชามติแก้รัฐธรรมนูญ":
+          data.local.parliament.consVote++;
+          data.fetch.parliament.consVote.push(formattedData);
+          break;
+      }
+    } else {
+      data.local.senate.total++;
+      switch (e.SenateVoteType) {
+        case "ตั้งศาลรัฐธรรมนูญ":
+          data.local.senate.keepNcpo++;
+          data.fetch.senate.keepNcpo.push(formattedData);
+          break;
+        case "ยุทธศาสตร์ชาติ":
+          data.local.senate.nationStrat++;
+          data.fetch.senate.nationStrat.push(formattedData);
+          break;
+        case "ประชามติแก้รัฐธรรมนูญ":
+          data.local.senate.consVote++;
+          data.fetch.senate.consVote.push(formattedData);
+          break;
+      }
+    }
   });
 
   saveForFetch("votelog.json", JSON.stringify(data.fetch));
