@@ -52,7 +52,7 @@ const Ch2Explore = component$(() => {
   return (
     <div class="container mb-60">
       <TabSelect id="votelog" secondBtnText="ดูรายชื่อมติ" onChange={changeTabIndex}>
-        <span class="wv-b3 flex flex-wrap items-center gap-4">
+        <span class="wv-b3 nobr flex items-center gap-4">
           คลิก
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -80,9 +80,9 @@ const Ch2Explore = component$(() => {
         มติในที่ประชุมวุฒิสภา ({VOTELOG.senate.total})
       </p>
 
-      <div class="mb-30 flex gap-20">
+      <div class="mb-30 flex flex-col gap-20 md:flex-row">
         <div class="flex-1">
-          <div class="mb-20 flex gap-20">
+          <div class="mb-20 flex flex-col items-center gap-20 md:flex-row md:items-start">
             <div class="max-w-[160px] text-center">
               <img
                 class="mx-auto mb-10 block"
@@ -98,7 +98,7 @@ const Ch2Explore = component$(() => {
               </span>
               <span class="b5">{VOTELOG.senate.keepNcpo} มติ</span>
             </div>
-            <div class="mb-auto flex flex-1 flex-wrap gap-10">
+            <div class="flex flex-wrap gap-10">
               {data.value.senate.keepNcpo.length
                 ? data.value.senate.keepNcpo.map((d) => (
                     <QVotelog
@@ -114,7 +114,7 @@ const Ch2Explore = component$(() => {
                 : Array(VOTELOG.senate.keepNcpo).fill(<LoadingPaper />)}
             </div>
           </div>
-          <div class="flex gap-20">
+          <div class="mb-20 flex flex-col items-center gap-20 md:flex-row md:items-start">
             <div class="max-w-[160px] text-center">
               <img
                 class="mx-auto mb-10 block"
@@ -130,7 +130,7 @@ const Ch2Explore = component$(() => {
               </span>
               <span class="b5">{VOTELOG.senate.consVote} มติ</span>
             </div>
-            <div class="mb-auto flex flex-1 flex-wrap gap-10">
+            <div class="flex flex-wrap gap-10">
               {data.value.senate.consVote.length
                 ? data.value.senate.consVote.map((d) => (
                     <QVotelog
@@ -147,7 +147,7 @@ const Ch2Explore = component$(() => {
             </div>
           </div>
         </div>
-        <div class="flex flex-1 gap-20">
+        <div class="flex flex-1 flex-col items-center gap-20 md:flex-row md:items-start">
           <div class="max-w-[160px] text-center">
             <img
               class="mx-auto mb-10 block"
@@ -163,7 +163,7 @@ const Ch2Explore = component$(() => {
             </span>
             <span class="b5">{VOTELOG.senate.nationStrat} มติ</span>
           </div>
-          <div class="mb-auto flex flex-1 flex-wrap gap-10">
+          <div class="flex flex-wrap gap-10">
             {data.value.senate.nationStrat.length
               ? data.value.senate.nationStrat.map((d) => (
                   <QVotelog
@@ -185,9 +185,9 @@ const Ch2Explore = component$(() => {
         มติในที่ประชุมร่วมของรัฐสภา ({VOTELOG.parliament.total})
       </p>
 
-      <div class="flex gap-20">
+      <div class="flex flex-col gap-20 md:flex-row">
         <div class="flex-1">
-          <div class="mb-20 flex gap-20">
+          <div class="mb-20 flex flex-col items-center gap-20 md:flex-row md:items-start">
             <div class="max-w-[160px] text-center">
               <img
                 class="mx-auto mb-10 block"
@@ -203,11 +203,9 @@ const Ch2Explore = component$(() => {
               </span>
               <span class="b5">{VOTELOG.parliament.selectPm} มติ</span>
             </div>
-            <div class="flex flex-1">
-              <QChoosePm />
-            </div>
+            <QChoosePm />
           </div>
-          <div class="flex gap-20">
+          <div class="flex flex-col items-center gap-20 md:flex-row md:items-start">
             <div class="max-w-[160px] text-center">
               <img
                 class="mx-auto mb-10 block"
@@ -240,7 +238,7 @@ const Ch2Explore = component$(() => {
             </div>
           </div>
         </div>
-        <div class="flex flex-1 gap-20">
+        <div class="flex flex-1 flex-col items-center gap-20 md:flex-row md:items-start">
           <div class="max-w-[160px] text-center">
             <img
               class="mx-auto mb-10 block"

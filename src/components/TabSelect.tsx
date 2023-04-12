@@ -11,8 +11,8 @@ const TabSelect = component$<TabSelectProps>(({ id, secondBtnText, onChange }) =
   const inputName = "tabselect-" + id;
 
   return (
-    <div class="flex items-center justify-center gap-20 p-10">
-      <p class="wv-b2 font-bold">โหมดการสำรวจ</p>
+    <div class="flex flex-col items-center justify-center gap-20 p-10 md:flex-row">
+      <p class="wv-b2 nobr font-bold">โหมดการสำรวจ</p>
       <div class="flex overflow-hidden rounded-10 bg-white ring-1 ring-inset ring-black">
         <input
           class="peer/0 sr-only"
@@ -23,7 +23,7 @@ const TabSelect = component$<TabSelectProps>(({ id, secondBtnText, onChange }) =
           checked
         />
         <label
-          class="wv-b3 z-10 flex w-[200px] cursor-pointer select-none items-center justify-center gap-[2px] rounded-10 p-10 text-center font-bold transition-colors peer-checked/0:text-white"
+          class="wv-b3 z-10 flex w-[150px] cursor-pointer select-none items-center justify-center gap-[2px] rounded-10 p-10 text-center font-bold transition-colors peer-checked/0:text-white md:w-[200px]"
           for={inputName + "-choice-0"}
         >
           <svg
@@ -53,7 +53,7 @@ const TabSelect = component$<TabSelectProps>(({ id, secondBtnText, onChange }) =
           onChange$={() => onChange(1)}
         />
         <label
-          class="wv-b3 z-10 flex w-[200px] cursor-pointer select-none items-center justify-center gap-[2px] rounded-10 p-10 text-center font-bold transition-colors peer-checked/1:text-white"
+          class="wv-b3 z-10 flex w-[150px] cursor-pointer select-none items-center justify-center gap-[2px] rounded-10 p-10 text-center font-bold transition-colors peer-checked/1:text-white md:w-[200px]"
           for={inputName + "-choice-1"}
         >
           <svg
@@ -70,7 +70,7 @@ const TabSelect = component$<TabSelectProps>(({ id, secondBtnText, onChange }) =
           </svg>
           {secondBtnText}
         </label>
-        <div class="absolute top-0 left-0 h-full w-[200px] rounded-10 bg-black transition-transform duration-300 ease-in-out peer-checked/1:translate-x-full" />
+        <div class="absolute inset-0 right-1/2 h-full rounded-10 bg-black transition-transform duration-300 ease-in-out peer-checked/1:translate-x-full" />
       </div>
       <Slot />
     </div>
