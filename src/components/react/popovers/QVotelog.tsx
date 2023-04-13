@@ -21,7 +21,7 @@ export default qwikify$(
     const passRate = Math.round((totalPassVote / (totalVote || 1)) * 1e4) / 1e2;
 
     return (
-      <Popover className="relative">
+      <Popover className="relative flex">
         <Popover.Button className="outline-0 ring-0 ring-black transition-all hover:scale-110 hover:bg-black hover:ring-2">
           {pass ? (
             <svg
@@ -57,10 +57,10 @@ export default qwikify$(
         </Popover.Button>
 
         <Transition
-          enter="transition-all fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:absolute z-10 md:top-10 md:left-10 md:translate-x-0 md:translate-y-0 md:origin-top-left"
+          enter="transition-all fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:absolute z-10 md:top-0 md:left-0 md:translate-x-0 md:translate-y-0 md:origin-top-left"
           enterFrom="scale-0 opacity-0"
-          enterTo="scale-100 opacity-100"
-          entered="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:absolute z-10 md:top-10 md:left-10 md:translate-x-0 md:translate-y-0 "
+          enterTo="scale-100 opacity-100 md:translate-y-[76.67px]"
+          entered="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:absolute z-10 md:top-0 md:left-0 md:translate-x-0 md:translate-y-100"
           leave="transition-all fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:absolute z-10 md:top-10 md:left-10 md:translate-x-0 md:translate-y-0 md:origin-top-left"
           leaveFrom="scale-100 opacity-100"
           leaveTo="scale-0 opacity-0"

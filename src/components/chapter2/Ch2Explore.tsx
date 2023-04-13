@@ -83,7 +83,7 @@ const Ch2Explore = component$(() => {
       <div class="mb-30 flex flex-col gap-20 md:flex-row">
         <div class="flex-1">
           <div class="mb-20 flex flex-col items-center gap-20 md:flex-row md:items-start">
-            <div class="max-w-[160px] text-center">
+            <div class="w-full max-w-[160px] text-center">
               <img
                 class="mx-auto mb-10 block"
                 src="./imgs/keep-ncpo.webp"
@@ -115,7 +115,7 @@ const Ch2Explore = component$(() => {
             </div>
           </div>
           <div class="mb-20 flex flex-col items-center gap-20 md:flex-row md:items-start">
-            <div class="max-w-[160px] text-center">
+            <div class="w-full max-w-[160px] text-center">
               <img
                 class="mx-auto mb-10 block"
                 src="./imgs/cons-vote.webp"
@@ -148,7 +148,7 @@ const Ch2Explore = component$(() => {
           </div>
         </div>
         <div class="flex flex-1 flex-col items-center gap-20 md:flex-row md:items-start">
-          <div class="max-w-[160px] text-center">
+          <div class="w-full max-w-[160px] text-center">
             <img
               class="mx-auto mb-10 block"
               src="./imgs/nation-strat.webp"
@@ -188,7 +188,7 @@ const Ch2Explore = component$(() => {
       <div class="flex flex-col gap-20 md:flex-row">
         <div class="flex-1">
           <div class="mb-20 flex flex-col items-center gap-20 md:flex-row md:items-start">
-            <div class="max-w-[160px] text-center">
+            <div class="w-full max-w-[160px] text-center">
               <img
                 class="mx-auto mb-10 block"
                 src="./imgs/select-pm.webp"
@@ -206,7 +206,7 @@ const Ch2Explore = component$(() => {
             <QChoosePm />
           </div>
           <div class="flex flex-col items-center gap-20 md:flex-row md:items-start">
-            <div class="max-w-[160px] text-center">
+            <div class="w-full max-w-[160px] text-center">
               <img
                 class="mx-auto mb-10 block"
                 src="./imgs/cons-vote.webp"
@@ -239,7 +239,7 @@ const Ch2Explore = component$(() => {
           </div>
         </div>
         <div class="flex flex-1 flex-col items-center gap-20 md:flex-row md:items-start">
-          <div class="max-w-[160px] text-center">
+          <div class="w-full max-w-[160px] text-center">
             <img
               class="mx-auto mb-10 block"
               src="./imgs/cons-draft.webp"
