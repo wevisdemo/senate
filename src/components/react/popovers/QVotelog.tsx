@@ -12,10 +12,11 @@ interface QConstitutionPopoverProps {
   type: string;
   pass: number;
   vote?: PeopleVotesType;
+  right?: boolean;
 }
 
 export default qwikify$(
-  ({ pass, date, type, title, vote, id }: QConstitutionPopoverProps) => {
+  ({ pass, date, type, title, vote, id, right }: QConstitutionPopoverProps) => {
     const totalVote = (vote?.mp?.[5] ?? 0) + (vote?.senate?.[5] ?? 0);
     const totalPassVote = (vote?.mp?.[0] ?? 0) + (vote?.senate?.[0] ?? 0);
     const passRate = Math.round((totalPassVote / (totalVote || 1)) * 1e4) / 1e2;
@@ -57,13 +58,24 @@ export default qwikify$(
         </Popover.Button>
 
         <Transition
-          enter="transition-all fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:absolute z-10 md:top-0 md:left-0 md:translate-x-0 md:translate-y-0 md:origin-top-left"
-          enterFrom="scale-0 opacity-0"
-          enterTo="scale-100 opacity-100 md:translate-y-[76.67px]"
-          entered="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:absolute z-10 md:top-0 md:left-0 md:translate-x-0 md:translate-y-100"
-          leave="transition-all fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:absolute z-10 md:top-10 md:left-10 md:translate-x-0 md:translate-y-0 md:origin-top-left"
-          leaveFrom="scale-100 opacity-100"
-          leaveTo="scale-0 opacity-0"
+          className="fixed top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 transition-all md:absolute md:top-0 md:translate-x-0 md:translate-y-0"
+          enter={
+            right
+              ? "md:right-0 md:left-auto md:origin-top-right"
+              : "md:left-0 md:origin-top-left"
+          }
+          enterFrom="opacity-0"
+          enterTo="md:translate-y-[76.67px]"
+          entered={
+            "md:translate-y-[76.67px] " +
+            (right ? "md:right-0 md:left-auto" : "md:left-0")
+          }
+          leave={
+            right
+              ? "md:right-0 md:left-auto md:origin-top-right"
+              : "md:left-0 md:origin-top-left"
+          }
+          leaveTo="opacity-0"
         >
           <Popover.Panel className="w-[300px] border bg-white md:w-[465px]">
             <div className={"h-10 " + (pass ? "bg-vote-เห็น" : "bg-vote-ไม่เห็น")} />

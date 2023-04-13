@@ -174,6 +174,7 @@ const Ch2Explore = component$(() => {
                     type="ยุทธศาสตร์ชาติ"
                     pass={d.IsPassed}
                     vote={d.PeopleVotes}
+                    right
                   />
                 ))
               : Array(VOTELOG.senate.nationStrat).fill(<LoadingPaper />)}
@@ -265,6 +266,7 @@ const Ch2Explore = component$(() => {
                     date={d.VoteDate}
                     title={d.Title}
                     vote={d.PeopleVotes}
+                    right
                   />
                 ))
               : Array(VOTELOG.parliament.consDraft).fill(<LoadingPaper />)}
