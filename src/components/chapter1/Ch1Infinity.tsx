@@ -84,7 +84,7 @@ const Ch1Infinity = component$(() => {
           play={currentLottieInview.value.includes(1)}
         />
         <p class="wv-h8 font-kondolar font-bold">
-          ส.ว. ชุดปัจจุบันที่แต่งตั้งตามกระบวน การในบทเฉพาะกาลของรัฐธรรมนูญ
+          ส.ว. ชุดปัจจุบันที่แต่งตั้งตามกระบวนการในบทเฉพาะกาลของรัฐธรรมนูญ
         </p>
         <p class="wv-h9 mb-10">มาตรา 269</p>
       </div>
@@ -128,7 +128,7 @@ const Ch1Infinity = component$(() => {
           play={currentLottieInview.value.includes(2)}
         />
         <p class="wv-h8 font-kondolar font-bold">
-          สามารถโหวตเลือก นายกรัฐมนตรีในสมัยหน้า ได้อีก 1 ครั้ง
+          สามารถโหวตเลือกนายกรัฐมนตรีในสมัยหน้าได้อีก 1 ครั้ง
         </p>
         <p class="wv-h9">มาตรา 272</p>
       </div>
@@ -172,7 +172,7 @@ const Ch1Infinity = component$(() => {
           play={currentLottieInview.value.includes(3)}
         />
         <p class="wv-h8 font-kondolar font-bold">
-          คัดเลือก ส.ว. ชุดใหม่ที่ ตามกระบวนการในบททั่วไปของรัฐธรรมนูญ
+          คัดเลือก ส.ว. ชุดใหม่ตามกระบวนการในบททั่วไปของรัฐธรรมนูญ
         </p>
         <p class="wv-h9">มาตรา 107</p>
       </div>
@@ -196,8 +196,8 @@ const Ch1Infinity = component$(() => {
           play={currentLottieInview.value.includes(4)}
         />
         <p class="wv-h8 font-kondolar font-bold">
-          ที่มาของ ส.ว. ในรัฐธรรมนูญ 2560 บททั่วไปที่จะมีการคัด
-          เลือกหลังโหวตนายกฯครั้งหน้ามีโอกาสที่จะเอื้อให้เกิดการ &ldquo;จัดฮั้ว&rdquo;
+          ที่มาของ ส.ว. ในรัฐธรรมนูญ 2560 บททั่วไปที่จะมีการคัดเลือกหลังโหวตนายกฯ
+          ครั้งหน้ามีโอกาสที่จะเอื้อให้เกิดการ &ldquo;จัดฮั้ว&rdquo;{" "}
           ซึ่งส่งผลให้ได้กลุ่มคนที่จะเข้ามาสนับสนุนรัฐบาล คสช. แปลงรูปต่อไป
         </p>
       </div>
@@ -220,7 +220,7 @@ const Ch1Infinity = component$(() => {
           delayMs={250}
           play={currentLottieInview.value.includes(5)}
         />
-        <p class="wv-h8 mb-10 font-kondolar font-bold">ระบบ ส.ว.ดำเนินต่อไป</p>
+        <p class="wv-h8 mb-10 font-kondolar font-bold">ระบบ ส.ว. ดำเนินต่อไป</p>
       </div>
     </div>
   );
