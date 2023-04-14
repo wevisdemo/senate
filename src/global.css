@@ -149,4 +149,9 @@ a {
   display: none;
 }
 
+.paginate-input:checked + .paginate-label {
+  border: 1px;
+  @apply bg-black text-white;
+}
+
 @tailwind utilities;

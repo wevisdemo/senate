@@ -11,7 +11,7 @@ const TabSelect = component$<TabSelectProps>(({ id, secondBtnText, onChange }) =
   const inputName = "tabselect-" + id;
 
   return (
-    <div class="flex flex-col items-center justify-center gap-20 p-10 md:flex-row">
+    <div class="mb-40 flex flex-col items-center justify-center gap-20 p-10 md:flex-row">
       <p class="wv-b2 nobr font-bold">โหมดการสำรวจ</p>
       <div class="flex overflow-hidden rounded-10 bg-white ring-1 ring-inset ring-black">
         <input
