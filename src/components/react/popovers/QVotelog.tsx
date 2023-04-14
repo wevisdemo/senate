@@ -118,6 +118,9 @@ export default qwikify$(
                 ></div>
                 <span className="wv-h10">{!pass && "ไม่"}ผ่าน</span>
               </div>
+              {(vote?.mp || vote?.senate) && (
+                <div className="font-bold md:hidden">ผลการลงคะแนนเสียง</div>
+              )}
               {vote?.senate && vote?.mp && (
                 <div className="flex items-center justify-end gap-4 text-[10px]">
                   <div className="-top-[1px] h-5 w-5 bg-vote-เห็น" />
@@ -134,13 +137,13 @@ export default qwikify$(
               )}
               {(vote?.mp || vote?.senate) && (
                 <div className="-mt-[2px] flex">
-                  <div className="font-bold">ผลการลงคะแนนเสียง</div>
-                  <div className="ml-auto">
+                  <div className="hidden font-bold md:block">ผลการลงคะแนนเสียง</div>
+                  <div className="flex-1 md:ml-auto md:flex-initial">
                     {vote?.senate && (
                       <div className="flex items-center gap-20">
-                        <span className="mr-auto font-bold">ส.ว.</span>
+                        <span className="font-bold">ส.ว.</span>
                         <div
-                          className="flex w-[177px]"
+                          className="flex w-full md:w-[177px]"
                           style={{ "--max": vote.senate[5] } as React.CSSProperties}
                         >
                           <div
@@ -168,9 +171,9 @@ export default qwikify$(
                     )}
                     {vote?.mp && (
                       <div className="flex items-center gap-20">
-                        <span className="mr-auto font-bold">ส.ส.</span>
+                        <span className="font-bold">ส.ส.</span>
                         <div
-                          className="flex w-[177px]"
+                          className="flex w-full md:w-[177px]"
                           style={{ "--max": vote.mp[5] } as React.CSSProperties}
                         >
                           <div
