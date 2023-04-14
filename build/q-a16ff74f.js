@@ -1,0 +1,1 @@
+import{a as l,V as r}from"./q-0d19a960.js";const a=e=>l("div",null,{class:"container my-10 flex items-center gap-10 p-10"},[l("div",null,{class:"flex-1 border-b border-dashed"},null,3,null),l("span",null,{class:"wv-h6 font-kondolar font-black"},r(n=>n.text,[e]),3,null),l("div",null,{class:"flex-1 border-b border-dashed"},null,3,null)],3,"Zh_0");export{a as s_i5ZL09b3emg};
