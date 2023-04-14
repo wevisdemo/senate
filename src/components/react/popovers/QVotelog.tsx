@@ -23,7 +23,10 @@ export default qwikify$(
 
     return (
       <Popover className="relative flex">
-        <Popover.Button className="outline-0 ring-0 ring-black transition-all hover:scale-110 hover:bg-black hover:ring-2">
+        <Popover.Button
+          className="outline-0 ring-0 ring-black transition-all hover:scale-110 hover:bg-black hover:ring-2"
+          aria-label={title}
+        >
           {pass ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"

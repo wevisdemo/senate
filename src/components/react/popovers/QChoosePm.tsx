@@ -6,7 +6,10 @@ import { Popover, Transition } from "@headlessui/react";
 export default qwikify$(
   () => (
     <Popover className="relative flex">
-      <Popover.Button className="outline-0 ring-0 ring-black transition-all hover:scale-110 hover:bg-black hover:ring-2">
+      <Popover.Button
+        className="outline-0 ring-0 ring-black transition-all hover:scale-110 hover:bg-black hover:ring-2"
+        aria-label="การลงมติเลือกนายกรัฐมนตรีไทย พ.ศ. 2562"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

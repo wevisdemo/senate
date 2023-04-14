@@ -11,7 +11,10 @@ interface QConstitutionPopoverProps {
 export default qwikify$(
   ({ children, title }: QConstitutionPopoverProps) => (
     <Popover className="relative">
-      <Popover.Button className="w-[85px] rounded-5 border bg-senate-pink py-10 outline-0 transition-transform md:w-[95px] md:hover:rotate-1 md:hover:scale-110">
+      <Popover.Button
+        className="w-[85px] rounded-5 border bg-senate-pink py-10 outline-0 transition-transform md:w-[95px] md:hover:rotate-1 md:hover:scale-110"
+        aria-label="ไม่ผ่าน"
+      >
         <svg
           className="mx-auto mb-10"
           width="43"
