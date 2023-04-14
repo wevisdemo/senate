@@ -403,13 +403,15 @@ const Chapter2 = (
       loading="lazy"
       decoding="async"
     />
-    <Lottie
-      src="./imgs/lotties/textslide.json"
-      loop
-      width="457px"
-      height="125px"
-      class="mx-auto mb-60 h-auto !w-[80%] max-w-[457px]"
-    />
+    <div class="container">
+      <Lottie
+        src="./imgs/lotties/textslide.json"
+        loop
+        width="457px"
+        height="125px"
+        class="mx-auto mb-60 h-auto !w-[80%] max-w-[457px]"
+      />
+    </div>
     <p class="wv-b2 container mb-60 text-center">
       รัฐธรรมนูญ 2560 ให้อำนาจ ส.ว.
       เหล่านี้มากถึงขนาดที่สามารถกำหนดทิศทางของการเมืองไทยได้
