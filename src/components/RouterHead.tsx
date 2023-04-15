@@ -18,10 +18,33 @@ export const RouterHead = component$(() => {
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <base href={loc.url.href} />
-
       <link rel="canonical" href={loc.url.href} />
-      <link rel="manifest" href={`${hrefWithoutAbout}manifest.json`} />
-      <link rel="icon" type="image/svg+xml" href={`${hrefWithoutAbout}favicon.svg`} />
+
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href={`${hrefWithoutAbout}apple-touch-icon.png`}
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href={`${hrefWithoutAbout}favicon-32x32.png`}
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href={`${hrefWithoutAbout}favicon-16x16.png`}
+      />
+      <link rel="manifest" href={`${hrefWithoutAbout}site.webmanifest`} />
+      <link
+        rel="mask-icon"
+        href={`${hrefWithoutAbout}safari-pinned-tab.svg`}
+        color="#222222"
+      />
+      <meta name="msapplication-TileColor" content="#000000" />
+      <meta name="theme-color" content="#000000" />
 
       <title>{TITLE}</title>
       <meta name="description" content={DESC} />
