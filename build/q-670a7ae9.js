@@ -1,1 +1,0 @@
-import{H as l,F as r,C as s,a as e,b as n}from"./q-2a7c4c20.js";import{d as i,a,h as t}from"./q-0d19a960.js";import"./q-68942e05.js";const d=()=>i(t,{children:[l,a("main",null,{class:"min-h-[50vh] bg-bg"},[s,e,n],1,null),r,a("div",null,{class:"relative h-0 w-0"},a("div",null,{class:"fixed h-screen",id:"100vh"},null,3,null),3,null)]},1,"mY_0");export{d as s_bcsqMmq34wA};
