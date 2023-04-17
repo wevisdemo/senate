@@ -13,6 +13,7 @@ import Ch1Chart from "~/components/chapter1/Ch1Chart";
 import Ch1Divider from "~/components/chapter1/Ch1Divider";
 import Ch1Infinity from "~/components/chapter1/Ch1Infinity";
 import Ch1Video from "~/components/chapter1/Ch1Video";
+import Ch1Explore from "~/components/chapter1/Ch1Explore";
 
 import Ch2Compare from "~/components/chapter2/Ch2Compare";
 import Ch2Explore from "~/components/chapter2/Ch2Explore";
@@ -238,6 +239,7 @@ const Chapter1 = (
     <p class="wv-h4 container mt-30 mb-40 text-center font-kondolar font-black">
       สำรวจ ส.ว. ตามประเภทอาชีพ และความเกี่ยวข้องกับ คสช.
     </p>
+    <Ch1Explore />
     <TitleBlock class="!mb-20">ความเกี่ยวพันระหว่าง ส.ว. และ คสช.</TitleBlock>
     <div class="container mb-30 flex flex-col gap-20 md:mt-[130px] md:flex-row">
       <div class="flex flex-1 items-center justify-center">

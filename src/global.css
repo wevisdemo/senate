@@ -154,4 +154,20 @@ a {
   @apply bg-black text-white;
 }
 
+.pill-input:checked + .pill-label {
+  @apply border-black bg-black text-white;
+}
+
+.pill-input:checked + .pill-label > .pill-checkbox {
+  @apply ring-0;
+}
+
+.pill-input:not(:checked) + .pill-label > .pill-checkbox > svg {
+  @apply hidden;
+}
+
+.pill-input:checked + .pill-label > .pill-radio {
+  @apply ring-[3px] ring-offset-2 ring-offset-white;
+}
+
 @tailwind utilities;
