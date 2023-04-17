@@ -17,7 +17,7 @@ const RadioPill = component$<RadioPillProps>(({ id, name, checked, onChange }) =
         name={"radiopill-" + name}
         id={"radiopill-" + name + "-" + id}
         checked={checked}
-        onChange$={onChange}
+        onChange$={() => onChange?.()}
       />
       <label
         for={"radiopill-" + name + "-" + id}

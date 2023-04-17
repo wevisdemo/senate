@@ -15,7 +15,7 @@ const CheckPill = component$<CheckPillProps>(({ id, checked, onChange }) => {
         type="checkbox"
         id={"checkpill-" + id}
         checked={checked}
-        onChange$={onChange}
+        onChange$={() => onChange?.()}
       />
       <label
         for={"checkpill-" + id}
