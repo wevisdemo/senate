@@ -1,4 +1,11 @@
-import { component$, useSignal, $, useStore } from "@builder.io/qwik";
+import {
+  $,
+  component$,
+  useComputed$,
+  useSignal,
+  useStore,
+  useVisibleTask$,
+} from "@builder.io/qwik";
 
 import PEOPLE from "~/data/people";
 
@@ -6,20 +13,156 @@ import TabSelect from "~/components/TabSelect";
 import CheckPill from "../CheckPill";
 import RadioPill from "../RadioPill";
 
-type JobName = keyof (typeof PEOPLE)["jobs"];
+import type {
+  FilteredPeopleDataSchema,
+  OccupationGroup,
+  PeopleDataSchema,
+  PeopleListSchema,
+} from "~/types/people";
 
-const JOBS = [...Object.keys(PEOPLE.jobs)].sort(
-  (a, z) => PEOPLE.jobs[z as JobName] - PEOPLE.jobs[a as JobName]
+export interface FormOption {
+  type: { position: boolean; ncpo: boolean; friend: boolean };
+  relation: { yes: boolean; no: boolean };
+  status: { active: boolean; out: boolean };
+  job: number;
+}
+
+const JOBS = ([...Object.keys(PEOPLE.jobs)] as OccupationGroup[]).sort(
+  (a, z) => PEOPLE.jobs[z] - PEOPLE.jobs[a]
 );
+
+const groupBy = <T, K extends keyof any>(
+  arr: T[],
+  groupFn: (element: T) => K
+): Record<K, T[]> =>
+  arr.reduce(
+    (r, v, _i, _a, k = groupFn(v)) => ((r[k] || (r[k] = [])).push(v), r),
+    {} as Record<K, T[]>
+  );
+
+const JobDivider = component$(
+  ({ name, data }: { name: string; data: PeopleListSchema[] }) => {
+    return (
+      <div class="flex items-center gap-10">
+        <span class="wv-h7 font-kondolar font-bold">{name}</span>
+        <div class="flex-1 border-t" />
+        <div class="text-right">
+          <span class="wv-b3 block font-bold">{data.length} คน</span>
+          <span class="wv-b6 block">
+            {data.filter((e) => !e.IsActive).length} คนพ้นจากตำแหน่ง
+          </span>
+        </div>
+      </div>
+    );
+  }
+);
+
+const Overview = component$(({ data }: { data: FilteredPeopleDataSchema }) => {
+  return (
+    <div class="flex-1">
+      <div class="flex items-center gap-20">
+        <span class="wv-b2 font-bold">สัญลักษณ์ประเภท ส.ว.</span>
+        <div class="flex flex-wrap items-center justify-center gap-[8px]">
+          <div class="flex gap-[8px]">
+            <div class="h-20 w-20 rounded-full border bg-senate-green" />
+            <span class="wv-b4 font-bold">ส.ว. โดยตำแหน่ง</span>
+          </div>
+          <div class="flex gap-[8px]">
+            <div class="h-20 w-20 rounded-full border bg-senate-blue" />
+            <span class="wv-b4 font-bold">ส.ว. เลือกโดย คสช.</span>
+          </div>
+          <div class="flex gap-[8px]">
+            <div class="h-20 w-20 rounded-full border bg-senate-pink" />
+            <span class="wv-b4 font-bold">ส.ว. เลือกกันเอง</span>
+          </div>
+          <div class="flex gap-[8px]">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 23 23"
+              width="21"
+              height="21"
+            >
+              <rect width="21" height="21" x="1" y="1.333" fill="#fff" rx="10.5" />
+              <g clipPath="url(#senate-yeeted)">
+                <path
+                  fill="#000"
+                  fillRule="evenodd"
+                  d="M7.285 6.685l-.933.933 4.2 4.2-4.2 4.2.933.934 4.2-4.2 4.2 4.2.934-.933-4.2-4.2 4.2-4.2-.933-.934-4.2 4.2-4.2-4.2z"
+                  clipRule="evenodd"
+                />
+              </g>
+              <rect width="21" height="21" x="1" y="1.333" stroke="#000" rx="10.5" />
+              <defs>
+                <clipPath id="senate-yeeted">
+                  <path
+                    fill="#fff"
+                    d="M0 0h10.56v10.56H0z"
+                    transform="translate(6.22 6.553)"
+                  />
+                </clipPath>
+              </defs>
+            </svg>
+            <span class="wv-b4 font-bold">พ้นจากตำแหน่ง</span>
+          </div>
+          <div class="flex gap-[8px]">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 23 23"
+              width="21"
+              height="21"
+            >
+              <path
+                fill="#fff"
+                stroke="#000"
+                d="M11.5 2.005l2.665 2.852.156.166.227-.007 3.901-.132-.132 3.901-.007.227.166.155 2.852 2.666-2.852 2.665-.166.156.007.227.132 3.901-3.901-.132-.227-.007-.155.166L11.5 21.66l-2.666-2.852-.155-.166-.227.007-3.901.132.132-3.901.007-.227-.166-.155-2.852-2.666 2.852-2.666.166-.155-.007-.227-.132-3.901 3.901.132.227.007.155-.166L11.5 2.005z"
+              />
+            </svg>
+            <span class="wv-b4 font-bold">ผู้มีส่วนเกี่ยวข้องกับ คสช.</span>
+          </div>
+        </div>
+      </div>
+      {JOBS.map(
+        (job) =>
+          data.listByJobs?.[job]?.length > 0 && (
+            <div key={job}>
+              <JobDivider name={job} data={data.listByJobs[job]} />
+              <div class="my-10 flex flex-wrap gap-4">
+                {data.listByJobs[job].map((e) => (
+                  <span key={e.Id}>{e.Name}</span>
+                ))}
+              </div>
+            </div>
+          )
+      )}
+    </div>
+  );
+});
+
+const Details = component$(() => {
+  return <div class="flex-1">LOL</div>;
+});
 
 const Ch1Explore = component$(() => {
   const tabIndex = useSignal(0);
+  const data = useSignal<PeopleDataSchema>({
+    imgBase: "",
+    list: [],
+  });
+
+  useVisibleTask$(async () => {
+    const resp = await fetch("./data/people.json");
+    const json = await resp.json();
+
+    data.value = json;
+  });
 
   const changeTabIndex = $((index: number) => {
     tabIndex.value = index;
   });
 
-  const formOptions = useStore(
+  const formOptions = useStore<FormOption>(
     {
       type: {
         position: true,
@@ -39,6 +182,38 @@ const Ch1Explore = component$(() => {
     { deep: true }
   );
 
+  const filteredData = useComputed$((): FilteredPeopleDataSchema => {
+    const list = [...data.value.list].filter((e) => {
+      if (
+        formOptions.job !== 0 &&
+        formOptions.job !== JOBS.indexOf(e.OccupationGroup) + 1
+      )
+        return false;
+
+      let score = 0;
+
+      if (formOptions.type.friend && e.SenatorMethod === "เลือกกันเอง") score++;
+      if (formOptions.type.ncpo && e.SenatorMethod === "เลือกโดย คสช.") score++;
+      if (formOptions.type.position && e.SenatorMethod === "โดยตำแหน่ง") score++;
+
+      if (formOptions.relation.yes && !!e.NcpoType) score++;
+      if (formOptions.relation.no && !e.NcpoType) score++;
+
+      if (formOptions.status.active && !!e.IsActive) score++;
+      if (formOptions.status.out && !e.IsActive) score++;
+
+      return score >= 3;
+    });
+
+    const listByJobs = groupBy(list, (l) => l.OccupationGroup);
+
+    return {
+      ...data.value,
+      list,
+      listByJobs,
+    };
+  });
+
   return (
     <div class="container mb-60">
       <TabSelect
@@ -46,7 +221,7 @@ const Ch1Explore = component$(() => {
         secondBtnText="ดูรายชื่อ ก&ndash;ฮ"
         onChange={changeTabIndex}
       />
-      <div class="flex flex-col gap-30 md:flex-row">
+      <div class="flex flex-col items-start gap-30 md:flex-row">
         <div class="max-w-[530px] flex-1 rounded-10 border bg-white p-30">
           <p class="wv-h6 mb-10 font-kondolar font-black">เลือกสำรวจตาม</p>
           <p class="wv-b2 mb-10 font-bold">ประเภท ส.ว.</p>
@@ -199,13 +374,13 @@ const Ch1Explore = component$(() => {
                 })}
               >
                 <span class="wv-b4 font-bold leading-none">
-                  {job} ({PEOPLE.jobs[job as JobName]})
+                  {job} ({PEOPLE.jobs[job as OccupationGroup]})
                 </span>
               </RadioPill>
             ))}
           </div>
         </div>
-        <div class="flex-1">{JSON.stringify(formOptions)}</div>
+        {tabIndex.value === 0 ? <Overview data={filteredData.value} /> : <Details />}
       </div>
     </div>
   );
