@@ -20,30 +20,14 @@ export const RouterHead = component$(() => {
       <base href={loc.url.href} />
       <link rel="canonical" href={loc.url.href} />
 
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href={`${hrefWithoutAbout}apple-touch-icon.png`}
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href={`${hrefWithoutAbout}favicon-32x32.png`}
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href={`${hrefWithoutAbout}favicon-16x16.png`}
-      />
-      <link rel="manifest" href={`${hrefWithoutAbout}site.webmanifest`} />
-      <link
-        rel="mask-icon"
-        href={`${hrefWithoutAbout}safari-pinned-tab.svg`}
-        color="#222222"
-      />
-      <meta name="msapplication-TileColor" content="#000000" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/senate/apple-touch-icon.png" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/senate/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/senate/favicon-16x16.png" />
+      <link rel="manifest" href="/senate/site.webmanifest" />
+      <link rel="mask-icon" href="/senate/safari-pinned-tab.svg" color="#222222" />
+      <link rel="shortcut icon" href="/senate/favicon.ico" />
+      <meta name="msapplication-TileColor" content="#ffa9d1" />
+      <meta name="msapplication-config" content="/senate/browserconfig.xml" />
       <meta name="theme-color" content="#000000" />
 
       <title>{TITLE}</title>
