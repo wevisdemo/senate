@@ -262,7 +262,7 @@ const VotelogBox = component$(
                 "-top-[2px] mr-4 h-[13px] w-[13px] rounded-full " +
                 (data.IsPassed ? "bg-vote-เห็น" : "bg-vote-ไม่เห็น")
               }
-            ></div>
+            />
             <span class="wv-h10">{!data.IsPassed && "ไม่"}ผ่าน</span>
           </div>
           {(data.PeopleVotes?.mp || data.PeopleVotes?.senate) && (

@@ -41,7 +41,7 @@ export default component$(() => {
       </main>
       {Footer}
       <div class="relative h-0 w-0">
-        <div class="fixed h-screen" id="100vh"></div>
+        <div class="fixed h-screen" id="100vh" />
       </div>
     </>
   );

@@ -47,19 +47,19 @@ const Ch1Chart = component$<Ch1ChartProps>(({ who, desc, data }) => {
           <div
             class="bg-senate-green"
             style={{ width: (data[0] / MAX_NUM) * 100 + "%" }}
-          ></div>
+          />
         )}
         {data[1] > 0 && (
           <div
             class="bg-senate-blue"
             style={{ width: (data[1] / MAX_NUM) * 100 + "%" }}
-          ></div>
+          />
         )}
         {data[2] > 0 && (
           <div
             class="bg-senate-pink"
             style={{ width: (data[2] / MAX_NUM) * 100 + "%" }}
-          ></div>
+          />
         )}
       </div>
     </div>

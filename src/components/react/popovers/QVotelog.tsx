@@ -118,7 +118,7 @@ export default qwikify$(
                     "-top-[2px] mr-4 h-[13px] w-[13px] rounded-full " +
                     (pass ? "bg-vote-เห็น" : "bg-vote-ไม่เห็น")
                   }
-                ></div>
+                />
                 <span className="wv-h10">{!pass && "ไม่"}ผ่าน</span>
               </div>
               {(vote?.mp || vote?.senate) && (
