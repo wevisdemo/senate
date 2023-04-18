@@ -438,11 +438,11 @@ const ChooseMpVotelogBox = component$(() => (
           <span>ประยุทธ์ จันทร์โอชา</span>
         </div>
         <div class="flex gap-4">
-          <div class="h-20 w-60 bg-พลังประชารัฐ" />
+          <div class="h-20 w-60 bg-black" />
           <span>249</span>
         </div>
         <div class="flex gap-4">
-          <div class="h-20 w-60 bg-พลังประชารัฐ" />
+          <div class="h-20 w-60 bg-black" />
           <span>251</span>
         </div>
         <div class="flex items-center gap-[8px] font-bold">
@@ -458,7 +458,7 @@ const ChooseMpVotelogBox = component$(() => (
         </div>
         <div>0</div>
         <div class="flex gap-4">
-          <div class="h-20 w-[58.32px] bg-ก้าวไกล" />
+          <div class="h-20 w-[58.32px] bg-black" />
           <span>244</span>
         </div>
         <div class="flex items-center gap-[8px] font-bold">

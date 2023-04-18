@@ -72,11 +72,13 @@ export default qwikify$(
             <p className="wv-h9 mb-10 mr-auto font-kondolar font-bold">
               66.93% เลือกประยุทธ์ จันทร์โอชา
             </p>
-            <div className="wv-b5 mb-10 grid grid-cols-choosepm gap-x-[8px] gap-y-4">
-              <div className="wv-b4 mb-4 font-bold">ผลการลงคะแนนเสียง</div>
+            <div className="wv-b5 mb-10 grid grid-cols-choosepm gap-4 md:gap-x-[8px]">
+              <div className="wv-b4 mb-4 -mr-[2px] font-bold md:mr-0">
+                ผลการลงคะแนนเสียง
+              </div>
               <div className="wv-b4 font-bold">ส.ว.</div>
               <div className="wv-b4 font-bold">ส.ส.</div>
-              <div className="flex items-center gap-[8px] font-bold">
+              <div className="-mr-[2px] flex items-center gap-[8px] font-bold md:mr-0">
                 <img
                   src="./imgs/prayuth.webp"
                   alt=""
@@ -85,17 +87,20 @@ export default qwikify$(
                   loading="lazy"
                   decoding="async"
                 />
-                <span>ประยุทธ์ จันทร์โอชา</span>
+                <span>
+                  <span className="nobr">ประยุทธ์</span>{" "}
+                  <span className="nobr">จันทร์โอชา</span>
+                </span>
               </div>
               <div className="flex gap-4">
-                <div className="h-20 w-60 bg-พลังประชารัฐ" />
+                <div className="h-20 w-50 bg-black md:w-60" />
                 <span>249</span>
               </div>
               <div className="flex gap-4">
-                <div className="h-20 w-60 bg-พลังประชารัฐ" />
+                <div className="h-20 w-50 bg-black md:w-60" />
                 <span>251</span>
               </div>
-              <div className="flex items-center gap-[8px] font-bold">
+              <div className="-mr-[2px] flex items-center gap-[8px] font-bold md:mr-0">
                 <img
                   src="./imgs/thanathorn.webp"
                   alt=""
@@ -104,23 +109,26 @@ export default qwikify$(
                   loading="lazy"
                   decoding="async"
                 />
-                <span>ธนาธร จึงรุ่งเรืองกิจ</span>
+                <span>
+                  <span className="nobr">ธนาธร</span>{" "}
+                  <span className="nobr">จึงรุ่งเรืองกิจ</span>
+                </span>
               </div>
               <div>0</div>
               <div className="flex gap-4">
-                <div className="h-20 w-[58.32px] bg-ก้าวไกล" />
+                <div className="h-20 w-[48.61px] bg-black md:w-[58.32px]" />
                 <span>244</span>
               </div>
-              <div className="flex items-center gap-[8px] font-bold">
+              <div className="-mr-[2px] flex items-center gap-[8px] font-bold md:mr-0">
                 <div className="h-[12px] w-[12px] bg-vote-งด" />
                 <span>งดออกเสียง</span>
               </div>
               <div className="flex gap-4">
-                <div className="h-20 w-[0.24px] bg-vote-งด" />
+                <div className="h-20 w-[0.2px] bg-vote-งด md:w-[0.24px]" />
                 <span>1</span>
               </div>
               <div className="flex gap-4">
-                <div className="h-20 w-[0.47px] bg-vote-งด" />
+                <div className="h-20 w-[0.4px] bg-vote-งด md:w-[0.47px]" />
                 <span>2</span>
               </div>
             </div>
