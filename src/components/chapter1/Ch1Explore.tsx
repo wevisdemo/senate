@@ -12,6 +12,7 @@ import PEOPLE from "~/data/people";
 import TabSelect from "~/components/TabSelect";
 import CheckPill from "../CheckPill";
 import RadioPill from "../RadioPill";
+import QPeople from "../react/popovers/QPeople";
 
 import type {
   FilteredPeopleDataSchema,
@@ -41,18 +42,34 @@ const groupBy = <T, K extends keyof any>(
   );
 
 const JobDivider = component$(
-  ({ name, data }: { name: string; data: PeopleListSchema[] }) => {
+  ({ name, data }: { name: OccupationGroup; data: PeopleListSchema[] }) => {
     return (
       <div class="flex items-center gap-10">
         <span class="wv-h7 font-kondolar font-bold">{name}</span>
         <div class="flex-1 border-t" />
         <div class="text-right">
-          <span class="wv-b3 block font-bold">{data.length} คน</span>
+          <span class="wv-b3 block font-bold">
+            {data?.length ?? PEOPLE.jobs[name]} คน
+          </span>
           <span class="wv-b6 block">
-            {data.filter((e) => !e.IsActive).length} คนพ้นจากตำแหน่ง
+            {data?.filter((e) => !e.IsActive)?.length ?? "..."} คนพ้นจากตำแหน่ง
           </span>
         </div>
       </div>
+      // <>
+      //   <div class="flex items-center gap-10">
+      //     <span class="wv-h7 font-kondolar font-bold">{name}</span>
+      //     <div class="flex-1 border-t" />
+      //     <div class="wv-b3 block text-right font-bold">
+      //       {data?.length ?? PEOPLE.jobs[name]} คน
+      //     </div>
+      //   </div>
+      //   {data?.filter((e) => !e.IsActive)?.length > 0 && (
+      //     <span class="wv-b6 -mt-4 -mb-4 block text-right leading-none">
+      //       {data.filter((e) => !e.IsActive).length} คนพ้นจากตำแหน่ง
+      //     </span>
+      //   )}
+      // </>
     );
   }
 );
@@ -130,7 +147,7 @@ const Overview = component$(({ data }: { data: FilteredPeopleDataSchema }) => {
               <JobDivider name={job} data={data.listByJobs[job]} />
               <div class="my-10 flex flex-wrap gap-4">
                 {data.listByJobs[job].map((e) => (
-                  <span key={e.Id}>{e.Name}</span>
+                  <QPeople key={e.Id} data={e} imgBase={data.imgBase} />
                 ))}
               </div>
             </div>
@@ -221,6 +238,17 @@ const Ch1Explore = component$(() => {
         secondBtnText="ดูรายชื่อ ก&ndash;ฮ"
         onChange={changeTabIndex}
       />
+      <svg class="absolute h-0 w-0">
+        <defs>
+          <clipPath id="imageStar">
+            <path
+              fillRule="evenodd"
+              d="M40.398 11.974l-8.325-8.908-8.326 8.908-12.185-.412.412 12.185-8.908 8.326 8.908 8.325-.412 12.185 12.185-.412 8.326 8.908 8.325-8.908 12.185.412-.412-12.185 8.908-8.325-8.908-8.326.412-12.185-12.185.412z"
+              clipRule="evenodd"
+            />
+          </clipPath>
+        </defs>
+      </svg>
       <div class="flex flex-col items-start gap-30 md:flex-row">
         <div class="max-w-[530px] flex-1 rounded-10 border bg-white p-30">
           <p class="wv-h6 mb-10 font-kondolar font-black">เลือกสำรวจตาม</p>
