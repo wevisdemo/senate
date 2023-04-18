@@ -153,6 +153,8 @@ const PeopleCard = component$(
     <a
       class="flex items-center gap-20 rounded-10 border border-black bg-white py-10 px-20 font-bold text-black no-underline hover:no-underline"
       href={"https://theyworkforus.wevis.info/people/" + data.Name.replace(/\s+/g, "-")}
+      target="_blank"
+      rel="nofollow noopener noreferrer"
     >
       <div class="min-h-[64px] min-w-[64px] flex-[0_0_64px]">
         {data.NcpoType ? (
