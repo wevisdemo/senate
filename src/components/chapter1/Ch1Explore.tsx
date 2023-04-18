@@ -269,7 +269,6 @@ const Details = component$(({ data }: { data: FilteredPeopleDataSchema }) => {
         <div class="wv-b4 font-bold">&ndash; {data.list.length} คน &ndash;</div>
         {data.list.length > ENTRY_PER_PAGE && (
           <Pagination
-            id="ch1"
             perPage={ENTRY_PER_PAGE}
             currentPage={currentPageIndex.value}
             total={data.list.length}

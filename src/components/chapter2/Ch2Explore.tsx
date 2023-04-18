@@ -724,7 +724,6 @@ const Details = component$(({ data }: { data: Signal<VotelogDataSchema> }) => {
           <div class="wv-b4 font-bold">&ndash; {catgCount.value} มติ &ndash;</div>
           {catgCount.value > ENTRY_PER_PAGE && (
             <Pagination
-              id="ch2"
               perPage={ENTRY_PER_PAGE}
               currentPage={currentPageIndex.value}
               total={catgCount.value}

@@ -1,8 +1,7 @@
 import type { QRL } from "@builder.io/qwik";
-import { component$, Fragment } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 
 export interface PaginationProps {
-  id: string;
   total: number;
   currentPage: number;
   perPage: number;
@@ -10,9 +9,8 @@ export interface PaginationProps {
 }
 
 const Pagination = component$<PaginationProps>(
-  ({ id, total, currentPage, perPage, onChange }) => {
+  ({ total, currentPage, perPage, onChange }) => {
     const totalPage = Math.ceil(total / perPage);
-    const inputName = "pagination-" + id;
 
     return (
       <div class="flex items-center gap-4">
@@ -35,26 +33,93 @@ const Pagination = component$<PaginationProps>(
             />
           </svg>
         </button>
-        {Array(totalPage)
-          .fill(0)
-          .map((_, i) => (
-            <Fragment key={i}>
-              <input
-                class="paginate-input sr-only"
-                type="radio"
-                name={inputName}
-                id={inputName + "-page-" + i}
-                onChange$={() => onChange(i)}
-                checked={i === currentPage}
-              />
-              <label
-                class="wv-u5 paginate-label flex h-[24px] w-[24px] cursor-pointer items-center justify-center rounded-[2px] border bg-white p-4 font-semibold leading-none"
-                for={inputName + "-page-" + i}
+        {totalPage > 6 ? (
+          <>
+            <button
+              class={`wv-u5 flex h-[24px] w-[24px] cursor-pointer items-center justify-center rounded-[2px] border border-black p-4 font-semibold leading-none ${
+                0 === currentPage ? "bg-black text-white" : "bg-white"
+              }`}
+              type="button"
+              onClick$={() => onChange(0)}
+            >
+              <span class="translate-y-[1px]">1</span>
+            </button>
+
+            <button
+              class={`wv-u5 flex h-[24px] w-[24px] cursor-pointer items-center justify-center rounded-[2px] border border-black p-4 font-semibold leading-none disabled:bg-wv ${
+                1 === currentPage ? "bg-black text-white" : "bg-white"
+              } ${currentPage > 3 ? "hidden" : ""}`}
+              type="button"
+              onClick$={() => onChange(1)}
+            >
+              <span class="translate-y-[1px]">2</span>
+            </button>
+            <span
+              class={`w-[24px] translate-y-[1px] text-center ${
+                currentPage > 3 ? "" : "hidden"
+              }`}
+            >
+              ...
+            </span>
+
+            {Array(3)
+              .fill(Math.max(Math.min(currentPage - 1, totalPage - 5), 2))
+              .map((e, i) => (
+                <button
+                  key={i + e}
+                  class={`wv-u5 flex h-[24px] w-[24px] cursor-pointer items-center justify-center rounded-[2px] border border-black p-4 font-semibold leading-none ${
+                    i + e === currentPage ? "bg-black text-white" : "bg-white"
+                  }`}
+                  type="button"
+                  onClick$={() => onChange(i + e)}
+                >
+                  <span class="translate-y-[1px]">{i + 1 + e}</span>
+                </button>
+              ))}
+
+            <button
+              class={`wv-u5 flex h-[24px] w-[24px] cursor-pointer items-center justify-center rounded-[2px] border border-black p-4 font-semibold leading-none ${
+                totalPage - 2 === currentPage ? "bg-black text-white" : "bg-white"
+              } ${currentPage < totalPage - 4 ? "hidden" : ""}`}
+              type="button"
+              onClick$={() => onChange(totalPage - 2)}
+            >
+              <span class="translate-y-[1px]">{totalPage - 1}</span>
+            </button>
+            <span
+              class={`w-[24px] translate-y-[1px] text-center ${
+                currentPage < totalPage - 4 ? "" : "hidden"
+              }`}
+            >
+              ...
+            </span>
+
+            <button
+              class={`wv-u5 flex h-[24px] w-[24px] cursor-pointer items-center justify-center rounded-[2px] border border-black p-4 font-semibold leading-none ${
+                totalPage - 1 === currentPage ? "bg-black text-white" : "bg-white"
+              }`}
+              type="button"
+              onClick$={() => onChange(totalPage - 1)}
+            >
+              <span class="translate-y-[1px]">{totalPage}</span>
+            </button>
+          </>
+        ) : (
+          Array(totalPage)
+            .fill(0)
+            .map((_, i) => (
+              <button
+                key={i}
+                class={`wv-u5 flex h-[24px] w-[24px] cursor-pointer items-center justify-center rounded-[2px] border border-black p-4 font-semibold leading-none ${
+                  i === currentPage ? "bg-black text-white" : "bg-white"
+                }`}
+                type="button"
+                onClick$={() => onChange(i)}
               >
                 <span class="translate-y-[1px]">{i + 1}</span>
-              </label>
-            </Fragment>
-          ))}
+              </button>
+            ))
+        )}
         <button
           class="flex h-[24px] w-[24px] cursor-pointer items-center justify-center rounded-[2px] border bg-white disabled:cursor-not-allowed disabled:opacity-50"
           type="button"

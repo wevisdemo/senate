@@ -149,11 +149,6 @@ a {
   display: none;
 }
 
-.paginate-input:checked + .paginate-label {
-  border: 1px;
-  @apply bg-black text-white;
-}
-
 .pill-input:checked + .pill-label {
   @apply border-black bg-black text-white;
 }
