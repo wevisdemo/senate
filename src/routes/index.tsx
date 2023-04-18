@@ -335,28 +335,53 @@ const Chapter1 = (
         </ul>
       </div>
     </div>
-    <div class="container mb-100 flex flex-col items-center justify-center gap-20 md:mb-[260px] md:flex-row">
-      <div class="flex flex-1 items-center justify-center">
-        <img
-          src="./imgs/popular-job.webp"
-          alt=""
-          width={295}
-          height={322}
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
-      <div class="flex flex-1 items-center justify-center">
-        <p class="flex flex-col gap-10 rounded-10 bg-senate-pink p-30 text-center font-kondolar md:text-left">
-          <span class="wv-h2 font-black">
-            {Math.round((PEOPLE.jobs.ทหาร / PEOPLE.total) * 1e4) / 1e2}%
-          </span>
-          <span class="wv-h8">
-            หรือ <span class="font-bold">{PEOPLE.jobs.ทหาร}</span>/{PEOPLE.total} คน
-          </span>
-          <span class="wv-h6">ของ ส.ว. อยู่ในกลุ่มอาชีพทหาร</span>
-        </p>
-      </div>
+    <div class="container mb-100 flex flex-col justify-center gap-20 md:mb-[260px] md:flex-row">
+      <img
+        class="mx-auto flex-1"
+        src="./imgs/popular-job.webp"
+        alt=""
+        width={295}
+        height={322}
+        loading="lazy"
+        decoding="async"
+      />
+      <p class="mx-auto flex flex-1 flex-col gap-10 rounded-10 bg-senate-pink p-30 text-center font-kondolar md:text-left">
+        <span class="wv-b6 mx-auto aspect-square h-[28px] w-[28px] rounded-full bg-black text-center font-bold leading-[28px] text-white md:ml-0">
+          1
+        </span>
+        <span class="wv-h5 font-black">
+          {Math.round((PEOPLE.jobs.ทหาร / PEOPLE.total) * 1e4) / 1e2}%
+        </span>
+        <span class="wv-h8">
+          หรือ <span class="font-bold">{PEOPLE.jobs.ทหาร}</span>/{PEOPLE.total} คน
+        </span>
+        <span class="wv-h8">ของ ส.ว. อยู่ในกลุ่มอาชีพทหาร</span>
+      </p>
+      <p class="mx-auto flex flex-1 flex-col gap-10 rounded-10 bg-senate-pink p-30 text-center font-kondolar md:text-left">
+        <span class="wv-b6 mx-auto aspect-square h-[28px] w-[28px] rounded-full bg-black text-center font-bold leading-[28px] text-white md:ml-0">
+          2
+        </span>
+        <span class="wv-h5 font-black">
+          {Math.round((PEOPLE.jobs.การเมือง / PEOPLE.total) * 1e4) / 1e2}%
+        </span>
+        <span class="wv-h8">
+          หรือ <span class="font-bold">{PEOPLE.jobs.การเมือง}</span>/{PEOPLE.total} คน
+        </span>
+        <span class="wv-h8">ของ ส.ว. อยู่ในกลุ่มอาชีพการเมือง</span>
+      </p>
+      <p class="mx-auto flex flex-1 flex-col gap-10 rounded-10 bg-senate-pink p-30 text-center font-kondolar md:text-left">
+        <span class="wv-b6 mx-auto aspect-square h-[28px] w-[28px] rounded-full bg-black text-center font-bold leading-[28px] text-white md:ml-0">
+          3
+        </span>
+        <span class="wv-h5 font-black">
+          {Math.round((PEOPLE.jobs["องค์กรรัฐ/รัฐวิสาหกิจ"] / PEOPLE.total) * 1e4) / 1e2}%
+        </span>
+        <span class="wv-h8">
+          หรือ <span class="font-bold">{PEOPLE.jobs["องค์กรรัฐ/รัฐวิสาหกิจ"]}</span>/
+          {PEOPLE.total} คน
+        </span>
+        <span class="wv-h8">ของ ส.ว. อยู่ในกลุ่มอาชีพองค์กรรัฐ/รัฐวิสาหกิจ</span>
+      </p>
     </div>
   </section>
 );
