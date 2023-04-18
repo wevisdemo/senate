@@ -51,7 +51,7 @@ const Pagination = component$<PaginationProps>(
                 class="wv-u5 paginate-label flex h-[24px] w-[24px] cursor-pointer items-center justify-center rounded-[2px] border bg-white p-4 font-semibold leading-none"
                 for={inputName + "-page-" + i}
               >
-                {i + 1}
+                <span class="translate-y-[1px]">{i + 1}</span>
               </label>
             </Fragment>
           ))}

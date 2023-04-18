@@ -4,6 +4,7 @@ import {
   useComputed$,
   useSignal,
   useStore,
+  useTask$,
   useVisibleTask$,
 } from "@builder.io/qwik";
 
@@ -11,6 +12,7 @@ import PEOPLE from "~/data/people";
 
 import TabSelect from "~/components/TabSelect";
 import CheckPill from "../CheckPill";
+import Pagination from "../Pagination";
 import RadioPill from "../RadioPill";
 import QPeople from "../react/popovers/QPeople";
 
@@ -31,6 +33,7 @@ export interface FormOption {
 const JOBS = ([...Object.keys(PEOPLE.jobs)] as OccupationGroup[]).sort(
   (a, z) => PEOPLE.jobs[z] - PEOPLE.jobs[a]
 );
+const ENTRY_PER_PAGE = 10;
 
 const groupBy = <T, K extends keyof any>(
   arr: T[],
@@ -44,32 +47,20 @@ const groupBy = <T, K extends keyof any>(
 const JobDivider = component$(
   ({ name, data }: { name: OccupationGroup; data: PeopleListSchema[] }) => {
     return (
-      <div class="flex items-center gap-10">
-        <span class="wv-h7 font-kondolar font-bold">{name}</span>
-        <div class="flex-1 border-t" />
-        <div class="text-right">
-          <span class="wv-b3 block font-bold">
+      <>
+        <div class="flex items-center gap-10">
+          <span class="wv-h7 font-kondolar font-bold">{name}</span>
+          <div class="flex-1 border-t" />
+          <div class="wv-b3 block text-right font-bold">
             {data?.length ?? PEOPLE.jobs[name]} คน
-          </span>
-          <span class="wv-b6 block">
-            {data?.filter((e) => !e.IsActive)?.length ?? "..."} คนพ้นจากตำแหน่ง
-          </span>
+          </div>
         </div>
-      </div>
-      // <>
-      //   <div class="flex items-center gap-10">
-      //     <span class="wv-h7 font-kondolar font-bold">{name}</span>
-      //     <div class="flex-1 border-t" />
-      //     <div class="wv-b3 block text-right font-bold">
-      //       {data?.length ?? PEOPLE.jobs[name]} คน
-      //     </div>
-      //   </div>
-      //   {data?.filter((e) => !e.IsActive)?.length > 0 && (
-      //     <span class="wv-b6 -mt-4 -mb-4 block text-right leading-none">
-      //       {data.filter((e) => !e.IsActive).length} คนพ้นจากตำแหน่ง
-      //     </span>
-      //   )}
-      // </>
+        {data?.filter((e) => !e.IsActive)?.length > 0 && (
+          <span class="wv-b6 -mt-4 -mb-4 block text-right leading-none">
+            {data.filter((e) => !e.IsActive).length} คนพ้นจากตำแหน่ง
+          </span>
+        )}
+      </>
     );
   }
 );
@@ -157,8 +148,147 @@ const Overview = component$(({ data }: { data: FilteredPeopleDataSchema }) => {
   );
 });
 
-const Details = component$(() => {
-  return <div class="flex-1">LOL</div>;
+const PeopleCard = component$(
+  ({ data, imgBase }: { data: PeopleListSchema; imgBase: string }) => (
+    <a
+      class="flex items-center gap-20 rounded-10 border border-black bg-white py-10 px-20 font-bold text-black no-underline hover:no-underline"
+      href={"https://theyworkforus.wevis.info/people/" + data.Name.replace(/\s+/g, "-")}
+    >
+      {data.NcpoType ? (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 64 64"
+          width="64"
+          height="64"
+        >
+          <image
+            width="64"
+            height="64"
+            href={imgBase + data.Images}
+            clip-path="url(#imageStar)"
+          />
+          <path
+            class={
+              data.SenatorMethod === "เลือกกันเอง"
+                ? "fill-senate-pink"
+                : data.SenatorMethod === "เลือกโดย คสช."
+                ? "fill-senate-blue"
+                : "fill-senate-green"
+            }
+            fillRule="evenodd"
+            d="M32 0l9.184 9.827 13.443-.454-.454 13.443L64 32l-9.827 9.184.454 13.443-13.443-.454L32 64l-9.184-9.827-13.443.454.454-13.443L0 32l9.827-9.184-.454-13.443 13.443.454L32 0zm0 5.988l-7.466 7.988-10.927-.37.369 10.928L5.988 32l7.988 7.466-.37 10.928 10.928-.37L32 58.012l7.466-7.988 10.928.37-.37-10.928L58.012 32l-7.988-7.466.37-10.927-10.928.369L32 5.988z"
+            clipRule="evenodd"
+          />
+        </svg>
+      ) : (
+        <img
+          class={`rounded-full border-[4px] ${
+            data.SenatorMethod === "เลือกกันเอง"
+              ? "border-senate-pink bg-senate-pink"
+              : data.SenatorMethod === "เลือกโดย คสช."
+              ? "border-senate-blue bg-senate-blue"
+              : "border-senate-green bg-senate-green"
+          }`}
+          src={imgBase + data.Images}
+          alt=""
+          width={64}
+          height={64}
+          loading="lazy"
+          decoding="async"
+        />
+      )}
+      <div>
+        <span class="wv-h9 mb-5 block font-kondolar">{data.Name}</span>
+        <div class="flex flex-wrap items-center gap-4">
+          <div
+            class={`m-4 h-[8px] w-[8px] rounded-full ${
+              data.SenatorMethod === "เลือกกันเอง"
+                ? "bg-senate-pink"
+                : data.SenatorMethod === "เลือกโดย คสช."
+                ? "bg-senate-blue"
+                : "bg-senate-green"
+            }`}
+          />
+          <span class="mr-[6px] inline-block">ส.ว. {data.SenatorMethod}</span>
+          {data.IsActive ? (
+            <div class="flex items-center gap-4 rounded-5 bg-[#E9FFF4] pl-4 pr-5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 16 16"
+                width={16}
+                height={16}
+              >
+                <path
+                  fill="#000"
+                  d="M13.776 3.502c.275.244.3.666.056.94l-7.112 8a.666.666 0 01-.996 0l-3.556-4a.667.667 0 01.997-.885l3.057 3.44 6.613-7.44a.667.667 0 01.941-.055z"
+                />
+              </svg>
+              <span>อยู่ในตำแหน่ง</span>
+            </div>
+          ) : (
+            <div class="flex items-center gap-4 rounded-5 bg-[#e2e2e2] pl-4 pr-5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 16 16"
+                width={16}
+                height={16}
+              >
+                <path
+                  fill="#000"
+                  d="M3.529 3.529c.26-.26.682-.26.943 0L8 7.057 11.53 3.53a.667.667 0 11.943.942L8.943 8l3.529 3.528a.667.667 0 01-.943.943L8 8.943 4.472 12.47a.667.667 0 11-.943-.943L7.057 8 3.53 4.47a.667.667 0 010-.942z"
+                />
+              </svg>
+              <span>พ้นจากตำแหน่ง</span>
+            </div>
+          )}
+        </div>
+      </div>
+    </a>
+  )
+);
+
+const Details = component$(({ data }: { data: FilteredPeopleDataSchema }) => {
+  const currentPageIndex = useSignal(0);
+
+  const setPageIndex = $((i: number) => {
+    currentPageIndex.value = i;
+  });
+
+  useTask$(({ track }) => {
+    track(() => data.list);
+
+    currentPageIndex.value = 0;
+  });
+
+  return (
+    <div class="flex-1">
+      <div class="mb-15 flex flex-col items-center justify-between gap-10 md:flex-row">
+        <div class="wv-b4 font-bold">&ndash; {data.list.length} คน &ndash;</div>
+        {data.list.length > ENTRY_PER_PAGE && (
+          <Pagination
+            id="ch1"
+            perPage={ENTRY_PER_PAGE}
+            currentPage={currentPageIndex.value}
+            total={data.list.length}
+            onChange={setPageIndex}
+          />
+        )}
+      </div>
+      <div class="flex flex-col gap-5">
+        {data.list
+          .slice(
+            currentPageIndex.value * ENTRY_PER_PAGE,
+            currentPageIndex.value * ENTRY_PER_PAGE + ENTRY_PER_PAGE
+          )
+          .map((e) => (
+            <PeopleCard key={e.Id} data={e} imgBase={data.imgBase} />
+          ))}
+      </div>
+    </div>
+  );
 });
 
 const Ch1Explore = component$(() => {
@@ -408,7 +538,11 @@ const Ch1Explore = component$(() => {
             ))}
           </div>
         </div>
-        {tabIndex.value === 0 ? <Overview data={filteredData.value} /> : <Details />}
+        {tabIndex.value === 0 ? (
+          <Overview data={filteredData.value} />
+        ) : (
+          <Details data={filteredData.value} />
+        )}
       </div>
     </div>
   );

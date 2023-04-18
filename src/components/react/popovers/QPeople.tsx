@@ -101,7 +101,7 @@ export default qwikify$(
                     <image
                       width="64"
                       height="64"
-                      xlinkHref={imgBase + data.Images}
+                      href={imgBase + data.Images}
                       clipPath="url(#imageStar)"
                     />
                     <path
