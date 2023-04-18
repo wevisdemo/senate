@@ -79,15 +79,14 @@ const Lottie = component$(
       }
     );
 
-    if (play !== undefined) {
-      useVisibleTask$(({ track }) => {
-        track(() => play);
-        if (play) {
-          if (delayMs) setTimeout(() => lottieCtrlData.ctrl?.play?.(), delayMs);
-          else lottieCtrlData.ctrl?.play?.();
-        }
-      });
-    }
+    useVisibleTask$(({ track }) => {
+      track(() => play);
+      if (play === undefined) return;
+      if (play) {
+        if (delayMs) setTimeout(() => lottieCtrlData.ctrl?.play?.(), delayMs);
+        else lottieCtrlData.ctrl?.play?.();
+      }
+    });
 
     return hasFallback ? (
       <div
