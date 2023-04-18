@@ -90,50 +90,54 @@ export default qwikify$(
             />
             <div className="wv-b5 border-t border-dashed p-15 font-bold">
               <div className="mb-10 flex items-start gap-10">
-                {data.NcpoType ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 64 64"
-                    width="64"
-                    height="64"
-                  >
-                    <image
+                <div className="min-h-[64px] min-w-[64px] flex-[0_0_64px]">
+                  {data.NcpoType ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 64 64"
                       width="64"
                       height="64"
-                      href={imgBase + data.Images}
-                      clipPath="url(#imageStar)"
-                    />
-                    <path
-                      className={
+                    >
+                      <image
+                        width="64"
+                        height="64"
+                        href={
+                          data.Images ? imgBase + data.Images : "./imgs/no-image.webp"
+                        }
+                        clipPath="url(#imageStar)"
+                      />
+                      <path
+                        className={
+                          data.SenatorMethod === "เลือกกันเอง"
+                            ? "fill-senate-pink"
+                            : data.SenatorMethod === "เลือกโดย คสช."
+                            ? "fill-senate-blue"
+                            : "fill-senate-green"
+                        }
+                        fillRule="evenodd"
+                        d="M32 0l9.184 9.827 13.443-.454-.454 13.443L64 32l-9.827 9.184.454 13.443-13.443-.454L32 64l-9.184-9.827-13.443.454.454-13.443L0 32l9.827-9.184-.454-13.443 13.443.454L32 0zm0 5.988l-7.466 7.988-10.927-.37.369 10.928L5.988 32l7.988 7.466-.37 10.928 10.928-.37L32 58.012l7.466-7.988 10.928.37-.37-10.928L58.012 32l-7.988-7.466.37-10.927-10.928.369L32 5.988z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  ) : (
+                    <img
+                      className={`rounded-full border-[4px] ${
                         data.SenatorMethod === "เลือกกันเอง"
-                          ? "fill-senate-pink"
+                          ? "border-senate-pink bg-senate-pink"
                           : data.SenatorMethod === "เลือกโดย คสช."
-                          ? "fill-senate-blue"
-                          : "fill-senate-green"
-                      }
-                      fillRule="evenodd"
-                      d="M32 0l9.184 9.827 13.443-.454-.454 13.443L64 32l-9.827 9.184.454 13.443-13.443-.454L32 64l-9.184-9.827-13.443.454.454-13.443L0 32l9.827-9.184-.454-13.443 13.443.454L32 0zm0 5.988l-7.466 7.988-10.927-.37.369 10.928L5.988 32l7.988 7.466-.37 10.928 10.928-.37L32 58.012l7.466-7.988 10.928.37-.37-10.928L58.012 32l-7.988-7.466.37-10.927-10.928.369L32 5.988z"
-                      clipRule="evenodd"
+                          ? "border-senate-blue bg-senate-blue"
+                          : "border-senate-green bg-senate-green"
+                      }`}
+                      src={data.Images ? imgBase + data.Images : "./imgs/no-image.webp"}
+                      alt=""
+                      width={64}
+                      height={64}
+                      loading="lazy"
+                      decoding="async"
                     />
-                  </svg>
-                ) : (
-                  <img
-                    className={`rounded-full border-[4px] ${
-                      data.SenatorMethod === "เลือกกันเอง"
-                        ? "border-senate-pink bg-senate-pink"
-                        : data.SenatorMethod === "เลือกโดย คสช."
-                        ? "border-senate-blue bg-senate-blue"
-                        : "border-senate-green bg-senate-green"
-                    }`}
-                    src={imgBase + data.Images}
-                    alt=""
-                    width={64}
-                    height={64}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                )}
+                  )}
+                </div>
                 <span className="wv-h8 font-kondolar">{data.Name}</span>
                 <Popover.Button className="ml-auto" type="button" aria-label="ปิด">
                   <svg
