@@ -70,15 +70,15 @@ export default qwikify$(
         </Popover.Button>
 
         <Transition
-          className="fixed top-1/2 left-1/2 z-20 -translate-x-1/2 -translate-y-1/2 transition-all md:absolute md:top-0 md:translate-x-0 md:translate-y-0"
-          enter="md:right-0 md:left-auto md:origin-top-right"
+          className="fixed top-1/2 left-1/2 z-20 -translate-x-1/2 -translate-y-1/2 transition-all lg:absolute lg:top-0 lg:translate-x-0 lg:translate-y-0"
+          enter="lg:right-0 lg:left-auto lg:origin-top-right"
           enterFrom="opacity-0"
-          enterTo="md:translate-y-[26px]"
-          entered="md:translate-y-[26px] md:right-0 md:left-auto"
-          leave="md:right-0 md:left-auto md:origin-top-right"
+          enterTo="lg:translate-y-[26px]"
+          entered="lg:translate-y-[26px] lg:right-0 lg:left-auto"
+          leave="lg:right-0 lg:left-auto lg:origin-top-right"
           leaveTo="opacity-0"
         >
-          <Popover.Panel className="w-[300px] overflow-hidden rounded-10 border bg-white md:w-[320px]">
+          <Popover.Panel className="w-[300px] overflow-hidden rounded-10 border bg-white lg:w-[320px]">
             <div
               className={`h-15 ${
                 data.SenatorMethod === "เลือกกันเอง"

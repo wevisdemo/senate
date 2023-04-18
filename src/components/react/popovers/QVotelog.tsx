@@ -61,26 +61,26 @@ export default qwikify$(
         </Popover.Button>
 
         <Transition
-          className="fixed top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 transition-all md:absolute md:top-0 md:translate-x-0 md:translate-y-0"
+          className="fixed top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 transition-all lg:absolute lg:top-0 lg:translate-x-0 lg:translate-y-0"
           enter={
             right
-              ? "md:right-0 md:left-auto md:origin-top-right"
-              : "md:left-0 md:origin-top-left"
+              ? "lg:right-0 lg:left-auto lg:origin-top-right"
+              : "lg:left-0 lg:origin-top-left"
           }
           enterFrom="opacity-0"
-          enterTo="md:translate-y-[76.67px]"
+          enterTo="lg:translate-y-[76.67px]"
           entered={
-            "md:translate-y-[76.67px] " +
-            (right ? "md:right-0 md:left-auto" : "md:left-0")
+            "lg:translate-y-[76.67px] " +
+            (right ? "lg:right-0 lg:left-auto" : "lg:left-0")
           }
           leave={
             right
-              ? "md:right-0 md:left-auto md:origin-top-right"
-              : "md:left-0 md:origin-top-left"
+              ? "lg:right-0 lg:left-auto lg:origin-top-right"
+              : "lg:left-0 lg:origin-top-left"
           }
           leaveTo="opacity-0"
         >
-          <Popover.Panel className="w-[300px] border bg-white md:w-[465px]">
+          <Popover.Panel className="w-[300px] border bg-white lg:w-[465px]">
             <div className={"h-10 " + (pass ? "bg-vote-เห็น" : "bg-vote-ไม่เห็น")} />
             <div className="px-15 py-10">
               <div className="mb-10 flex items-center font-bold">
@@ -122,7 +122,7 @@ export default qwikify$(
                 <span className="wv-h10">{!pass && "ไม่"}ผ่าน</span>
               </div>
               {(vote?.mp || vote?.senate) && (
-                <div className="font-bold md:hidden">ผลการลงคะแนนเสียง</div>
+                <div className="font-bold lg:hidden">ผลการลงคะแนนเสียง</div>
               )}
               {vote?.senate && vote?.mp && (
                 <div className="flex items-center justify-end gap-4 text-[10px]">
@@ -140,13 +140,13 @@ export default qwikify$(
               )}
               {(vote?.mp || vote?.senate) && (
                 <div className="-mt-[2px] flex">
-                  <div className="hidden font-bold md:block">ผลการลงคะแนนเสียง</div>
-                  <div className="flex-1 md:ml-auto md:flex-initial">
+                  <div className="hidden font-bold lg:block">ผลการลงคะแนนเสียง</div>
+                  <div className="flex-1 lg:ml-auto lg:flex-initial">
                     {vote?.senate && (
                       <div className="flex items-center gap-20">
                         <span className="font-bold">ส.ว.</span>
                         <div
-                          className="flex w-full md:w-[177px]"
+                          className="flex w-full lg:w-[177px]"
                           style={{ "--max": vote.senate[5] } as React.CSSProperties}
                         >
                           <div
@@ -176,7 +176,7 @@ export default qwikify$(
                       <div className="flex items-center gap-20">
                         <span className="font-bold">ส.ส.</span>
                         <div
-                          className="flex w-full md:w-[177px]"
+                          className="flex w-full lg:w-[177px]"
                           style={{ "--max": vote.mp[5] } as React.CSSProperties}
                         >
                           <div

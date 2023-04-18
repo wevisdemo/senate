@@ -30,13 +30,13 @@ export default qwikify$(
       </Popover.Button>
 
       <Transition
-        className="fixed top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 transition-all md:absolute md:top-0 md:left-0 md:origin-top-left md:translate-x-0 md:translate-y-0"
+        className="fixed top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 transition-all lg:absolute lg:top-0 lg:left-0 lg:origin-top-left lg:translate-x-0 lg:translate-y-0"
         enterFrom="opacity-0"
-        enterTo="md:translate-y-[76.67px]"
-        entered="md:translate-y-[76.67px]"
+        enterTo="lg:translate-y-[76.67px]"
+        entered="lg:translate-y-[76.67px]"
         leaveTo="opacity-0"
       >
-        <Popover.Panel className="w-[300px] border bg-white md:w-[465px]">
+        <Popover.Panel className="w-[300px] border bg-white lg:w-[465px]">
           <div className="h-10 bg-black" />
           <div className="px-15 py-10">
             <div className="mb-10 flex items-center font-bold">
@@ -72,13 +72,13 @@ export default qwikify$(
             <p className="wv-h9 mb-10 mr-auto font-kondolar font-bold">
               66.93% เลือกประยุทธ์ จันทร์โอชา
             </p>
-            <div className="wv-b5 mb-10 grid grid-cols-choosepm gap-4 md:gap-x-[8px]">
-              <div className="wv-b4 mb-4 -mr-[2px] font-bold md:mr-0">
+            <div className="wv-b5 mb-10 grid grid-cols-choosepm gap-4 lg:gap-x-[8px]">
+              <div className="wv-b4 mb-4 -mr-[2px] font-bold lg:mr-0">
                 ผลการลงคะแนนเสียง
               </div>
               <div className="wv-b4 font-bold">ส.ว.</div>
               <div className="wv-b4 font-bold">ส.ส.</div>
-              <div className="-mr-[2px] flex items-center gap-[8px] font-bold md:mr-0">
+              <div className="-mr-[2px] flex items-center gap-[8px] font-bold lg:mr-0">
                 <img
                   src="./imgs/prayuth.webp"
                   alt=""
@@ -93,14 +93,14 @@ export default qwikify$(
                 </span>
               </div>
               <div className="flex gap-4">
-                <div className="h-20 w-50 bg-black md:w-60" />
+                <div className="h-20 w-50 bg-black lg:w-60" />
                 <span>249</span>
               </div>
               <div className="flex gap-4">
-                <div className="h-20 w-50 bg-black md:w-60" />
+                <div className="h-20 w-50 bg-black lg:w-60" />
                 <span>251</span>
               </div>
-              <div className="-mr-[2px] flex items-center gap-[8px] font-bold md:mr-0">
+              <div className="-mr-[2px] flex items-center gap-[8px] font-bold lg:mr-0">
                 <img
                   src="./imgs/thanathorn.webp"
                   alt=""
@@ -116,19 +116,19 @@ export default qwikify$(
               </div>
               <div>0</div>
               <div className="flex gap-4">
-                <div className="h-20 w-[48.61px] bg-black md:w-[58.32px]" />
+                <div className="h-20 w-[48.61px] bg-black lg:w-[58.32px]" />
                 <span>244</span>
               </div>
-              <div className="-mr-[2px] flex items-center gap-[8px] font-bold md:mr-0">
+              <div className="-mr-[2px] flex items-center gap-[8px] font-bold lg:mr-0">
                 <div className="h-[12px] w-[12px] bg-vote-งด" />
                 <span>งดออกเสียง</span>
               </div>
               <div className="flex gap-4">
-                <div className="h-20 w-[0.2px] bg-vote-งด md:w-[0.24px]" />
+                <div className="h-20 w-[0.2px] bg-vote-งด lg:w-[0.24px]" />
                 <span>1</span>
               </div>
               <div className="flex gap-4">
-                <div className="h-20 w-[0.4px] bg-vote-งด md:w-[0.47px]" />
+                <div className="h-20 w-[0.4px] bg-vote-งด lg:w-[0.47px]" />
                 <span>2</span>
               </div>
             </div>

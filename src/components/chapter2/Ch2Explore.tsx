@@ -41,9 +41,9 @@ const Overview = component$(({ data }: { data: Signal<VotelogDataSchema> }) => (
       มติในที่ประชุมวุฒิสภา ({VOTELOG.senate.total})
     </p>
 
-    <div class="mb-30 flex flex-col gap-20 md:flex-row">
+    <div class="mb-30 flex flex-col gap-20 lg:flex-row">
       <div class="flex-1">
-        <div class="mb-20 flex flex-col items-center gap-20 md:flex-row md:items-start">
+        <div class="mb-20 flex flex-col items-center gap-20 lg:flex-row lg:items-start">
           <div class="w-full max-w-[160px] text-center">
             <img
               class="mx-auto mb-10 block"
@@ -75,7 +75,7 @@ const Overview = component$(({ data }: { data: Signal<VotelogDataSchema> }) => (
               : Array(VOTELOG.senate.keepNcpo).fill(<LoadingPaper />)}
           </div>
         </div>
-        <div class="mb-20 flex flex-col items-center gap-20 md:flex-row md:items-start">
+        <div class="mb-20 flex flex-col items-center gap-20 lg:flex-row lg:items-start">
           <div class="w-full max-w-[160px] text-center">
             <img
               class="mx-auto mb-10 block"
@@ -108,7 +108,7 @@ const Overview = component$(({ data }: { data: Signal<VotelogDataSchema> }) => (
           </div>
         </div>
       </div>
-      <div class="flex flex-1 flex-col items-center gap-20 md:flex-row md:items-start">
+      <div class="flex flex-1 flex-col items-center gap-20 lg:flex-row lg:items-start">
         <div class="w-full max-w-[160px] text-center">
           <img
             class="mx-auto mb-10 block"
@@ -147,9 +147,9 @@ const Overview = component$(({ data }: { data: Signal<VotelogDataSchema> }) => (
       มติในที่ประชุมร่วมของรัฐสภา ({VOTELOG.parliament.total})
     </p>
 
-    <div class="flex flex-col gap-20 md:flex-row">
+    <div class="flex flex-col gap-20 lg:flex-row">
       <div class="flex-1">
-        <div class="mb-20 flex flex-col items-center gap-20 md:flex-row md:items-start">
+        <div class="mb-20 flex flex-col items-center gap-20 lg:flex-row lg:items-start">
           <div class="w-full max-w-[160px] text-center">
             <img
               class="mx-auto mb-10 block"
@@ -167,7 +167,7 @@ const Overview = component$(({ data }: { data: Signal<VotelogDataSchema> }) => (
           </div>
           <QChoosePm />
         </div>
-        <div class="flex flex-col items-center gap-20 md:flex-row md:items-start">
+        <div class="flex flex-col items-center gap-20 lg:flex-row lg:items-start">
           <div class="w-full max-w-[160px] text-center">
             <img
               class="mx-auto mb-10 block"
@@ -200,7 +200,7 @@ const Overview = component$(({ data }: { data: Signal<VotelogDataSchema> }) => (
           </div>
         </div>
       </div>
-      <div class="flex flex-1 flex-col items-center gap-20 md:flex-row md:items-start">
+      <div class="flex flex-1 flex-col items-center gap-20 lg:flex-row lg:items-start">
         <div class="w-full max-w-[160px] text-center">
           <img
             class="mx-auto mb-10 block"
@@ -266,7 +266,7 @@ const VotelogBox = component$(
             <span class="wv-h10">{!data.IsPassed && "ไม่"}ผ่าน</span>
           </div>
           {(data.PeopleVotes?.mp || data.PeopleVotes?.senate) && (
-            <div class="font-bold md:hidden">ผลการลงคะแนนเสียง</div>
+            <div class="font-bold lg:hidden">ผลการลงคะแนนเสียง</div>
           )}
           {data.PeopleVotes?.senate && data.PeopleVotes?.mp && (
             <div class="flex items-center justify-end gap-4 text-[10px]">
@@ -284,13 +284,13 @@ const VotelogBox = component$(
           )}
           {(data.PeopleVotes?.mp || data.PeopleVotes?.senate) && (
             <div class="-mt-[2px] flex">
-              <div class="hidden font-bold md:block">ผลการลงคะแนนเสียง</div>
-              <div class="flex-1 md:ml-auto md:flex-initial">
+              <div class="hidden font-bold lg:block">ผลการลงคะแนนเสียง</div>
+              <div class="flex-1 lg:ml-auto lg:flex-initial">
                 {data.PeopleVotes?.senate && (
                   <div class="flex items-center gap-20">
                     <span class="font-bold">ส.ว.</span>
                     <div
-                      class="flex w-full md:w-[177px]"
+                      class="flex w-full lg:w-[177px]"
                       style={{ "--max": data.PeopleVotes.senate[5] }}
                     >
                       <div
@@ -320,7 +320,7 @@ const VotelogBox = component$(
                   <div class="flex items-center gap-20">
                     <span class="font-bold">ส.ส.</span>
                     <div
-                      class="flex w-full md:w-[177px]"
+                      class="flex w-full lg:w-[177px]"
                       style={{ "--max": data.PeopleVotes.mp[5] }}
                     >
                       <div
@@ -548,7 +548,7 @@ const Details = component$(({ data }: { data: Signal<VotelogDataSchema> }) => {
   });
 
   return (
-    <div class="flex flex-col gap-30 md:flex-row">
+    <div class="flex flex-col gap-30 lg:flex-row">
       <div class="flex-1">
         <p class="wv-h8 mb-10 text-center font-kondolar font-black">
           มติในที่ประชุมวุฒิสภา ({VOTELOG.senate.total})
@@ -720,7 +720,7 @@ const Details = component$(({ data }: { data: Signal<VotelogDataSchema> }) => {
         </label>
       </div>
       <div class="flex flex-1 flex-col gap-10">
-        <div class="mb-10 flex flex-col items-center justify-between gap-10 md:flex-row">
+        <div class="mb-10 flex flex-col items-center justify-between gap-10 lg:flex-row">
           <div class="wv-b4 font-bold">&ndash; {catgCount.value} มติ &ndash;</div>
           {catgCount.value > ENTRY_PER_PAGE && (
             <Pagination

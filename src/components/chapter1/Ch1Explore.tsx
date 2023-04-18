@@ -269,7 +269,7 @@ const Details = component$(({ data }: { data: FilteredPeopleDataSchema }) => {
 
   return (
     <div class="flex-1">
-      <div class="mb-15 flex flex-col items-center justify-between gap-10 md:flex-row">
+      <div class="mb-15 flex flex-col items-center justify-between gap-10 lg:flex-row">
         <div class="wv-b4 font-bold">&ndash; {data.list.length} คน &ndash;</div>
         {data.list.length > ENTRY_PER_PAGE && (
           <Pagination
@@ -382,7 +382,7 @@ const Ch1Explore = component$(() => {
           </clipPath>
         </defs>
       </svg>
-      <div class="flex flex-col items-start gap-30 md:flex-row">
+      <div class="flex flex-col items-start gap-30 lg:flex-row">
         <div class="max-w-[530px] flex-1 rounded-10 border bg-white p-30">
           <p class="wv-h6 mb-10 font-kondolar font-black">เลือกสำรวจตาม</p>
           <p class="wv-b2 mb-10 font-bold">ประเภท ส.ว.</p>

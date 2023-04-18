@@ -16,8 +16,8 @@ html {
 }
 
 .container {
-  /* @apply mx-auto w-[calc(100%_-_40px)] max-w-[1440px] md:w-[calc(100%_-_200px)]; */
-  @apply mx-auto w-[calc(100%_-_40px)] max-w-[1280px] md:w-[calc(100%_-_200px)];
+  /* @apply mx-auto w-[calc(100%_-_40px)] max-w-[1440px] lg:w-[calc(100%_-_200px)]; */
+  @apply mx-auto w-[calc(100%_-_40px)] max-w-[1280px] lg:w-[calc(100%_-_200px)];
 }
 
 .nobr {
@@ -111,7 +111,7 @@ a {
 
 .ch1-senate-path-scrollbar::-webkit-scrollbar-track {
   background: #e5e2d8;
-  @apply mx-20 md:mx-100;
+  @apply mx-20 lg:mx-100;
   border-radius: 4px;
 }
 

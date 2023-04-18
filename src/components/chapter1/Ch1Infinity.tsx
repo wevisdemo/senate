@@ -59,7 +59,7 @@ const Ch1Infinity = component$(() => {
   return (
     <div ref={elContainer} class="mb-60 flex flex-col items-center gap-10 py-40">
       <svg
-        class="absolute top-0 hidden h-full w-auto object-cover md:block"
+        class="absolute top-0 hidden h-full w-auto object-cover lg:block"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 149 320"

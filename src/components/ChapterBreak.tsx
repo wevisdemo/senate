@@ -83,7 +83,7 @@ const ChapterBreak = component$(({ part, title }: ChapterBreakProps) => {
     <div
       ref={elChapterBreakContainer}
       id={`ch${part}`}
-      class="flex w-full flex-col items-center justify-center gap-10 border-t border-dashed border-t-white bg-black py-40 text-white md:h-[360px] md:flex-row md:gap-60 md:p-0"
+      class="flex w-full flex-col items-center justify-center gap-10 border-t border-dashed border-t-white bg-black py-40 text-white lg:h-[360px] lg:flex-row lg:gap-60 lg:p-0"
     >
       <div
         ref={elPartContainer}
@@ -97,7 +97,7 @@ const ChapterBreak = component$(({ part, title }: ChapterBreakProps) => {
       </div>
       <div
         ref={elTitleContainer}
-        class="wv-h5 text-center font-kondolar font-black md:text-left"
+        class="wv-h5 text-center font-kondolar font-black lg:text-left"
       >
         {title.map((ch, i) =>
           ch === "-" ? (

@@ -49,9 +49,9 @@ const Ch2Compare = component$(() => {
   );
 
   return (
-    <div class="container flex flex-col gap-20 md:flex-row md:items-start">
+    <div class="container flex flex-col gap-20 lg:flex-row lg:items-start">
       <div class="flex-1">
-        <p class="wv-h6 mb-30 text-center font-kondolar font-black md:text-left">
+        <p class="wv-h6 mb-30 text-center font-kondolar font-black lg:text-left">
           เปรียบเทียบความแตกต่างการเลือกนายกรัฐมนตรีใน รธน. 40 และ 60
         </p>
         <Lottie src="./imgs/lotties/pm-select.json" height="250px" width="250px" />
@@ -74,7 +74,7 @@ const Ch2Compare = component$(() => {
           />
           <span class="font-kondalar wv-h7 font-bold">ส.ส.</span>
         </div>
-        <p class="wv-b3 text-center md:text-left">
+        <p class="wv-b3 text-center lg:text-left">
           <span class="font-bold">อ้างอิงจากรัฐธรรมนูญ 2540</span> ใช้เสียงครึ่งหนึ่งของ
           ส.ส. คือ <span class="font-bold">251 เสียง จาก 500 เสียง</span>
         </p>
@@ -122,7 +122,7 @@ const Ch2Compare = component$(() => {
             <span class="font-kondalar wv-h7 font-bold">ส.ว.</span>
           </div>
         </div>
-        <p class="wv-b3 text-center md:text-left">
+        <p class="wv-b3 text-center lg:text-left">
           ในระยะ 5 ปีแรก ให้ส.ส. ทั้ง 500 คน กับ ส.ว. 250 คน ร่วมกัน
           ลงมติเลือกนายกรัฐมนตรีโดยใช้เสียง
           <span class="font-bold">กึ่งหนึ่งของ 2 สภา คือ 376 เสียง</span>

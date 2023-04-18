@@ -11,7 +11,7 @@ const TabSelect = component$<TabSelectProps>(({ id, secondBtnText, onChange }) =
   const inputName = "tabselect-" + id;
 
   return (
-    <div class="mb-40 flex flex-col items-center justify-center gap-20 p-10 md:flex-row">
+    <div class="mb-40 flex flex-col items-center justify-center gap-20 p-10 lg:flex-row">
       <p class="wv-b2 nobr font-bold">โหมดการสำรวจ</p>
       <div class="flex overflow-hidden rounded-10 bg-white ring-1 ring-inset ring-black">
         <input
@@ -23,7 +23,7 @@ const TabSelect = component$<TabSelectProps>(({ id, secondBtnText, onChange }) =
           checked
         />
         <label
-          class="wv-b3 z-10 flex w-[150px] cursor-pointer select-none items-center justify-center gap-[2px] rounded-10 p-10 text-center font-bold transition-colors peer-checked/0:text-white md:w-[200px]"
+          class="wv-b3 z-10 flex w-[150px] cursor-pointer select-none items-center justify-center gap-[2px] rounded-10 p-10 text-center font-bold transition-colors peer-checked/0:text-white lg:w-[200px]"
           for={inputName + "-choice-0"}
         >
           <svg
@@ -53,7 +53,7 @@ const TabSelect = component$<TabSelectProps>(({ id, secondBtnText, onChange }) =
           onChange$={() => onChange(1)}
         />
         <label
-          class="wv-b3 z-10 flex w-[150px] cursor-pointer select-none items-center justify-center gap-[2px] rounded-10 p-10 text-center font-bold transition-colors peer-checked/1:text-white md:w-[200px]"
+          class="wv-b3 z-10 flex w-[150px] cursor-pointer select-none items-center justify-center gap-[2px] rounded-10 p-10 text-center font-bold transition-colors peer-checked/1:text-white lg:w-[200px]"
           for={inputName + "-choice-1"}
         >
           <svg

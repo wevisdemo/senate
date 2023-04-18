@@ -11,9 +11,6 @@ module.exports = {
       serif: ["Kondolar Thai", ...defaultTheme.fontFamily.serif],
       sans: ["IBM Plex Sans Thai", ...defaultTheme.fontFamily.sans],
     },
-    screens: {
-      md: "1024px",
-    },
     colors: {
       black: colors.black,
       white: colors.white,

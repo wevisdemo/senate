@@ -50,13 +50,13 @@ export default component$(() => {
 // ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝
 
 const Header = (
-  <header class="bg-black pb-30 text-white md:pt-100 md:pb-60">
-    <h1 class="wv-h2 container py-20 text-center font-kondolar font-black md:hidden">
+  <header class="bg-black pb-30 text-white lg:pt-100 lg:pb-60">
+    <h1 class="wv-h2 container py-20 text-center font-kondolar font-black lg:hidden">
       <span class="nobr">แลหลัง</span>
       <br />
       <span class="nobr">เหลียวหน้า</span> <span class="nobr">ส.ว.</span>
     </h1>
-    <div class="container mx-auto mb-20 flex flex-col gap-20 md:mb-[48px] md:flex-row">
+    <div class="container mx-auto mb-20 flex flex-col gap-20 lg:mb-[48px] lg:flex-row">
       <div class="flex-1 overflow-hidden">
         <Lottie
           class="mx-auto max-h-[778px] max-w-[311px]"
@@ -77,8 +77,8 @@ const Header = (
           />
         </Lottie>
       </div>
-      <div class="flex-1 text-center md:text-left">
-        <h1 class="wv-h2 mb-20 hidden font-kondolar font-black md:block">
+      <div class="flex-1 text-center lg:text-left">
+        <h1 class="wv-h2 mb-20 hidden font-kondolar font-black lg:block">
           <span class="nobr">แลหลัง</span>
           <br />
           <span class="nobr">เหลียวหน้า</span> <span class="nobr">ส.ว.</span>
@@ -108,7 +108,7 @@ const Header = (
     </div>
     <div class="container">
       <p class="wv-h7 mb-20 text-center font-kondolar font-black">ข้ามไปสำรวจ</p>
-      <div class="flex flex-col gap-20 md:flex-row">
+      <div class="flex flex-col gap-20 lg:flex-row">
         <JumpToContent
           id="ch1"
           src="./imgs/skip-ch1.webp"
@@ -191,7 +191,7 @@ const Chapter1 = (
       ส.ว. ทั้งหมด 250 ที่นั่ง ประกอบไปด้วย 3 ประเภท
     </p>
     <Ch1Divider text="คัดเลือกโดยตรง" />
-    <div class="ch1-senate-path-scrollbar scroll-green mt-20 mb-10 overflow-x-auto px-20 md:px-100">
+    <div class="ch1-senate-path-scrollbar scroll-green mt-20 mb-10 overflow-x-auto px-20 lg:px-100">
       <img
         class="mx-auto h-[147px] w-[1048px] max-w-none object-contain"
         src="./imgs/senate-path/01.webp"
@@ -202,7 +202,7 @@ const Chapter1 = (
         decoding="async"
       />
     </div>
-    <div class="ch1-senate-path-scrollbar scroll-blue mt-10 mb-20 overflow-x-auto px-20 md:px-100">
+    <div class="ch1-senate-path-scrollbar scroll-blue mt-10 mb-20 overflow-x-auto px-20 lg:px-100">
       <img
         class="mx-auto h-[211px] w-[1048px] max-w-none object-contain"
         src="./imgs/senate-path/02.webp"
@@ -214,7 +214,7 @@ const Chapter1 = (
       />
     </div>
     <Ch1Divider text="คัดเลือกโดยอ้อม" />
-    <div class="ch1-senate-path-scrollbar scroll-pink mt-20 mb-[130px] overflow-x-auto px-20 md:px-100">
+    <div class="ch1-senate-path-scrollbar scroll-pink mt-20 mb-[130px] overflow-x-auto px-20 lg:px-100">
       <img
         class="mx-auto h-[248px] w-[1048px] max-w-none object-contain"
         src="./imgs/senate-path/03.webp"
@@ -236,7 +236,7 @@ const Chapter1 = (
     </p>
     <Ch1Explore />
     <TitleBlock class="!mb-20">ความเกี่ยวพันระหว่าง ส.ว. และ คสช.</TitleBlock>
-    <div class="container mb-30 flex flex-col gap-20 md:mt-[130px] md:flex-row">
+    <div class="container mb-30 flex flex-col gap-20 lg:mt-[130px] lg:flex-row">
       <div class="flex flex-1 items-center justify-center">
         <img
           src="./imgs/nepo.webp"
@@ -251,9 +251,9 @@ const Chapter1 = (
         <Ch1Video />
       </div>
     </div>
-    <div class="container mb-30 flex flex-col items-center justify-center gap-20 md:flex-row">
+    <div class="container mb-30 flex flex-col items-center justify-center gap-20 lg:flex-row">
       <div class="flex-1 p-20">
-        <p class="flex flex-col gap-10 text-center font-kondolar md:text-left">
+        <p class="flex flex-col gap-10 text-center font-kondolar lg:text-left">
           <span class="wv-h4 block font-black">ตามรัฐธรรมนูญ &apos;60</span>
           <span class="wv-h2 block font-black">80% ของ ส.ว.</span>
           <span class="wv-h8 block">
@@ -269,7 +269,7 @@ const Chapter1 = (
         <Lottie src="./imgs/lotties/bubblechart.json" width="350px" height="344px" />
       </div>
     </div>
-    <div class="container mb-30 flex flex-col items-center justify-center gap-20 md:flex-row">
+    <div class="container mb-30 flex flex-col items-center justify-center gap-20 lg:flex-row">
       <div class="flex-1 p-20">
         <Lottie
           src="./imgs/lotties/senate.json"
@@ -278,7 +278,7 @@ const Chapter1 = (
           class="mb-10"
           loop
         />
-        <p class="flex flex-col gap-10 text-center font-kondolar md:text-left">
+        <p class="flex flex-col gap-10 text-center font-kondolar lg:text-left">
           <span class="wv-h2 block font-black">
             {Math.round((PEOPLE.withNcpo / PEOPLE.total) * 1e4) / 1e2}%
           </span>
@@ -294,7 +294,7 @@ const Chapter1 = (
         <div class="wv-h5 mb-20 w-full bg-white px-40 py-20 text-center font-kondolar font-black">
           ผู้มีส่วนเกี่ยวข้องกับ คสช. ประกอบไปด้วย
         </div>
-        <div class="mb-20 md:px-40">
+        <div class="mb-20 lg:px-40">
           <Ch1Chart
             who="สายนิติบัญญัติ"
             desc="สนช., สปช., สปท., กรธ."
@@ -335,7 +335,7 @@ const Chapter1 = (
         </ul>
       </div>
     </div>
-    <div class="container mb-100 flex flex-col justify-center gap-20 md:mb-[260px] md:flex-row">
+    <div class="container mb-100 flex flex-col justify-center gap-20 lg:mb-[260px] lg:flex-row">
       <img
         class="mx-auto flex-1"
         src="./imgs/popular-job.webp"
@@ -345,8 +345,8 @@ const Chapter1 = (
         loading="lazy"
         decoding="async"
       />
-      <p class="mx-auto flex flex-1 flex-col gap-10 rounded-10 bg-senate-pink p-30 text-center font-kondolar md:text-left">
-        <span class="wv-b6 mx-auto aspect-square h-[28px] w-[28px] rounded-full bg-black text-center font-bold leading-[28px] text-white md:ml-0">
+      <p class="mx-auto flex flex-1 flex-col gap-10 rounded-10 bg-senate-pink p-30 text-center font-kondolar lg:text-left">
+        <span class="wv-b6 mx-auto aspect-square h-[28px] w-[28px] rounded-full bg-black text-center font-bold leading-[28px] text-white lg:ml-0">
           1
         </span>
         <span class="wv-h5 font-black">
@@ -357,8 +357,8 @@ const Chapter1 = (
         </span>
         <span class="wv-h8">ของ ส.ว. อยู่ในกลุ่มอาชีพทหาร</span>
       </p>
-      <p class="mx-auto flex flex-1 flex-col gap-10 rounded-10 bg-senate-pink p-30 text-center font-kondolar md:text-left">
-        <span class="wv-b6 mx-auto aspect-square h-[28px] w-[28px] rounded-full bg-black text-center font-bold leading-[28px] text-white md:ml-0">
+      <p class="mx-auto flex flex-1 flex-col gap-10 rounded-10 bg-senate-pink p-30 text-center font-kondolar lg:text-left">
+        <span class="wv-b6 mx-auto aspect-square h-[28px] w-[28px] rounded-full bg-black text-center font-bold leading-[28px] text-white lg:ml-0">
           2
         </span>
         <span class="wv-h5 font-black">
@@ -369,8 +369,8 @@ const Chapter1 = (
         </span>
         <span class="wv-h8">ของ ส.ว. อยู่ในกลุ่มอาชีพการเมือง</span>
       </p>
-      <p class="mx-auto flex flex-1 flex-col gap-10 rounded-10 bg-senate-pink p-30 text-center font-kondolar md:text-left">
-        <span class="wv-b6 mx-auto aspect-square h-[28px] w-[28px] rounded-full bg-black text-center font-bold leading-[28px] text-white md:ml-0">
+      <p class="mx-auto flex flex-1 flex-col gap-10 rounded-10 bg-senate-pink p-30 text-center font-kondolar lg:text-left">
+        <span class="wv-b6 mx-auto aspect-square h-[28px] w-[28px] rounded-full bg-black text-center font-bold leading-[28px] text-white lg:ml-0">
           3
         </span>
         <span class="wv-h5 font-black">
@@ -444,7 +444,7 @@ const Chapter2 = (
       โดยสามารถแยกกลุ่มมติที่เอื้อประโยชน์ได้ 2 กลุ่ม ได้แก่{" "}
       <strong>มติในที่ประชุมวุฒิสภา และ มติในที่ประชุมรัฐสภา</strong>
     </p>
-    <div class="container mb-60 flex flex-col gap-10 text-center md:flex-row">
+    <div class="container mb-60 flex flex-col gap-10 text-center lg:flex-row">
       <div class="flex-1">
         <p class="wv-h5 mb-[12px] font-kondolar font-black">มติในที่ประชุมวุฒิสภา</p>
         <div class="wv-b2 mb-[12px] flex items-center justify-center gap-20 font-bold">
@@ -615,10 +615,10 @@ const Chapter2 = (
         </div>
       </div>
     </div>
-    <div class="mb-60 flex flex-col items-center justify-center gap-20 md:flex-row md:items-start md:gap-60">
+    <div class="mb-60 flex flex-col items-center justify-center gap-20 lg:flex-row lg:items-start lg:gap-60">
       <span class="wv-h5 font-kondolar font-black">ประเภทการลงคะแนนเสียง</span>
       <img
-        class="md:hidden"
+        class="lg:hidden"
         src="./imgs/votetype-mobile.webp"
         alt=""
         width={264}
@@ -627,7 +627,7 @@ const Chapter2 = (
         decoding="async"
       />
       <img
-        class="hidden md:block"
+        class="hidden lg:block"
         src="./imgs/votetype-desktop.webp"
         alt=""
         width={395}
@@ -951,14 +951,14 @@ const Chapter3 = (
     <p class="wv-h5 container mb-20 text-center font-kondolar font-black">
       แนวทางการแก้ไขบทบัญญัติในรัฐธรรมนูญ
     </p>
-    <p class="wv-b3 container mb-20 text-center md:mb-60">
+    <p class="wv-b3 container mb-20 text-center lg:mb-60">
       การแก้ไขในเรื่องที่มาและอำนาจของ ส.ว. เป็นการแก้ไขตัวเนื้อหาในรัฐธรรมนูญ 2560
       เนื่องจากรัฐธรรมนูญเป็นกฎหมายสูงสุดและเป็นแม่บทที่กำหนดโครงสร้าง กลไก
       และหลักการพื้นฐานในการปกครองประเทศ
       การแก้ไขเพิ่มเติมรัฐธรรมนูญจึงต้องมีกระบวนการไว้เป็นการเฉพาะและแตกต่างออกไปจากการแก้ไขบทบัญญัติของกฎหมายทั่วไป
       โดยกระบวนการแก้ไขถูกกำหนดไว้ในหมวด 15 การแก้ไขเพิ่มเติมรัฐธรรมนูญ มาตรา 256
     </p>
-    <div class="container flex flex-col gap-20 md:flex-row">
+    <div class="container flex flex-col gap-20 lg:flex-row">
       <div class="flex-1">
         <p class="wv-h5 mb-10 text-center font-kondolar font-black">เงื่อนไขพื้นฐาน</p>
         <p class="wv-b2 mb-10 text-center font-bold">ผู้มีสิทธิยื่นแก้ไขเพิ่มเติม</p>
@@ -975,7 +975,7 @@ const Chapter3 = (
     <p class="wv-h4 container mb-80 mt-60 text-center font-kondolar font-black">
       ช่องทางการเสนอแก้ไขรัฐธรรมนูญเกี่ยวกับที่มา และอำนาจของ ส.ว.
     </p>
-    <div class="container flex flex-col gap-40 pb-120 md:flex-row">
+    <div class="container flex flex-col gap-40 pb-120 lg:flex-row">
       <div class="flex-1">
         <div class="wv-b6 mx-auto mb-20 h-20 w-20 rounded-full bg-black text-center font-bold leading-[20px] text-white">
           1

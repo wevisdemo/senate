@@ -12,7 +12,7 @@ export default qwikify$(
   ({ children, title }: QConstitutionPopoverProps) => (
     <Popover className="relative">
       <Popover.Button
-        className="w-[85px] rounded-5 border bg-senate-pink py-10 outline-0 transition-transform md:w-[95px] md:hover:rotate-1 md:hover:scale-110"
+        className="w-[85px] rounded-5 border bg-senate-pink py-10 outline-0 transition-transform lg:w-[95px] lg:hover:rotate-1 lg:hover:scale-110"
         aria-label="ไม่ผ่าน"
       >
         <svg
@@ -36,15 +36,15 @@ export default qwikify$(
       </Popover.Button>
 
       <Transition
-        enter="transition-all fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:absolute z-10 md:top-10 md:left-10 md:translate-x-0 md:translate-y-0 md:origin-top-left"
+        enter="transition-all fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:absolute z-10 lg:top-10 lg:left-10 lg:translate-x-0 lg:translate-y-0 lg:origin-top-left"
         enterFrom="scale-0 opacity-0"
         enterTo="scale-100 opacity-100"
-        entered="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:absolute z-10 md:top-10 md:left-10 md:translate-x-0 md:translate-y-0 "
-        leave="transition-all fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:absolute z-10 md:top-10 md:left-10 md:translate-x-0 md:translate-y-0 md:origin-top-left"
+        entered="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:absolute z-10 lg:top-10 lg:left-10 lg:translate-x-0 lg:translate-y-0 "
+        leave="transition-all fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:absolute z-10 lg:top-10 lg:left-10 lg:translate-x-0 lg:translate-y-0 lg:origin-top-left"
         leaveFrom="scale-100 opacity-100"
         leaveTo="scale-0 opacity-0"
       >
-        <Popover.Panel className="w-[300px] rounded-10 border bg-senate-pink py-20 px-10 md:w-[320px] ">
+        <Popover.Panel className="w-[300px] rounded-10 border bg-senate-pink py-20 px-10 lg:w-[320px] ">
           <Popover.Button
             className="absolute top-10 right-10"
             type="button"
