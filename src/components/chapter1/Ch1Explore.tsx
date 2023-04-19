@@ -384,9 +384,9 @@ export const Ch1Explore = component$(() => {
             <CheckPill
               id="โดยตำแหน่ง"
               checked={formOptions.type.position}
-              onChange$={() => {
+              onChange={$(() => {
                 formOptions.type.position = !formOptions.type.position;
-              }}
+              })}
             >
               <div class="h-[12px] w-[12px] rounded-full border border-black bg-senate-green" />
               <span class="wv-b4 font-bold leading-none">โดยตำแหน่ง</span>
@@ -394,9 +394,9 @@ export const Ch1Explore = component$(() => {
             <CheckPill
               id="เลือกโดยคสช"
               checked={formOptions.type.ncpo}
-              onChange$={() => {
+              onChange={$(() => {
                 formOptions.type.ncpo = !formOptions.type.ncpo;
-              }}
+              })}
             >
               <div class="h-[12px] w-[12px] rounded-full border border-black bg-senate-blue" />
               <span class="wv-b4 font-bold leading-none">เลือกโดย คสช.</span>
@@ -404,9 +404,9 @@ export const Ch1Explore = component$(() => {
             <CheckPill
               id="เลือกกันเอง"
               checked={formOptions.type.friend}
-              onChange$={() => {
+              onChange={$(() => {
                 formOptions.type.friend = !formOptions.type.friend;
-              }}
+              })}
             >
               <div class="h-[12px] w-[12px] rounded-full border border-black bg-senate-pink" />
               <span class="wv-b4 font-bold leading-none">เลือกกันเอง</span>
@@ -417,9 +417,9 @@ export const Ch1Explore = component$(() => {
             <CheckPill
               id="ผู้มีส่วนเกี่ยวข้องกับคสช"
               checked={formOptions.relation.yes}
-              onChange$={() => {
+              onChange={$(() => {
                 formOptions.relation.yes = !formOptions.relation.yes;
-              }}
+              })}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -440,9 +440,9 @@ export const Ch1Explore = component$(() => {
             <CheckPill
               id="ผู้ที่ไม่เกี่ยวข้องกับคสช"
               checked={formOptions.relation.no}
-              onChange$={() => {
+              onChange={$(() => {
                 formOptions.relation.no = !formOptions.relation.no;
-              }}
+              })}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -466,9 +466,9 @@ export const Ch1Explore = component$(() => {
             <CheckPill
               id="ดำรงตำแหน่ง"
               checked={formOptions.status.active}
-              onChange$={() => {
+              onChange={$(() => {
                 formOptions.status.active = !formOptions.status.active;
-              }}
+              })}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -487,9 +487,9 @@ export const Ch1Explore = component$(() => {
             <CheckPill
               id="พ้นจากตำแหน่ง"
               checked={formOptions.status.out}
-              onChange$={() => {
+              onChange={$(() => {
                 formOptions.status.out = !formOptions.status.out;
-              }}
+              })}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -512,9 +512,9 @@ export const Ch1Explore = component$(() => {
               name="อาชีพ"
               id="ทั้งหมด"
               checked={formOptions.job === 0}
-              onChange$={() => {
+              onChange={$(() => {
                 formOptions.job = 0;
-              }}
+              })}
             >
               <span class="wv-b4 font-bold leading-none">ทั้งหมด ({PEOPLE.total})</span>
             </RadioPill>
@@ -524,9 +524,9 @@ export const Ch1Explore = component$(() => {
                 id={job}
                 key={job}
                 checked={formOptions.job === i + 1}
-                onChange$={() => {
+                onChange={$(() => {
                   formOptions.job = i + 1;
-                }}
+                })}
               >
                 <span class="wv-b4 font-bold leading-none">
                   {job.replace("ๆ", " ๆ")} ({PEOPLE.jobs[job as OccupationGroup]})

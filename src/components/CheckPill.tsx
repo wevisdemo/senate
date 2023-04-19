@@ -1,20 +1,20 @@
-import type { PropFunction } from "@builder.io/qwik";
+import type { QRL } from "@builder.io/qwik";
 import { Slot, component$ } from "@builder.io/qwik";
 
 export interface CheckPillProps {
   id: string;
   checked?: boolean;
-  onChange$?: PropFunction<() => void>;
+  onChange?: QRL<() => void>;
 }
 
-export const CheckPill = component$<CheckPillProps>(({ id, checked, onChange$ }) => (
+export const CheckPill = component$<CheckPillProps>(({ id, checked, onChange }) => (
   <div class="inline-block">
     <input
       class="pill-input sr-only"
       type="checkbox"
       id={"checkpill-" + id}
       checked={checked}
-      onChange$={onChange$}
+      onChange$={() => onChange?.()}
     />
     <label
       for={"checkpill-" + id}
