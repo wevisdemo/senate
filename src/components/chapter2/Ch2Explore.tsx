@@ -2,20 +2,27 @@ import type { Signal } from "@builder.io/qwik";
 import {
   $,
   component$,
+  createContextId,
   useComputed$,
+  useContext,
+  useContextProvider,
   useSignal,
   useTask$,
   useVisibleTask$,
 } from "@builder.io/qwik";
-
-import VOTELOG from "~/data/votelog";
 
 import { TabSelect } from "~/components/TabSelect";
 import { Pagination } from "../Pagination";
 import { QChoosePm } from "../react/popovers/QChoosePm";
 import { QVotelog } from "../react/popovers/QVotelog";
 
+import VOTELOG from "~/data/votelog";
+
 import type { VotelogDataSchema, VotelogItemType } from "~/types/votelog";
+
+export const DataContext = createContextId<Signal<VotelogDataSchema>>(
+  "ch2explore.data-context"
+);
 
 const ENTRY_PER_PAGE = 5;
 
@@ -35,19 +42,87 @@ const LoadingPaper = component$(() => (
   </svg>
 ));
 
-const Overview = component$<{ data: Signal<VotelogDataSchema> }>(({ data }) => (
-  <>
-    <p class="wv-h4 mb-30 text-center font-kondolar font-black">
-      มติในที่ประชุมวุฒิสภา ({VOTELOG.senate.total})
-    </p>
+const Overview = component$<{ show: boolean }>(({ show }) => {
+  const data = useContext(DataContext);
 
-    <div class="mb-30 flex flex-col gap-20 lg:flex-row">
-      <div class="flex-1">
-        <div class="mb-20 flex flex-col items-center gap-20 lg:flex-row lg:items-start">
+  return (
+    <div class={show ? "" : "hidden"}>
+      <p class="wv-h4 mb-30 text-center font-kondolar font-black">
+        มติในที่ประชุมวุฒิสภา ({VOTELOG.senate.total})
+      </p>
+
+      <div class="mb-30 flex flex-col gap-20 lg:flex-row">
+        <div class="flex-1">
+          <div class="mb-20 flex flex-col items-center gap-20 lg:flex-row lg:items-start">
+            <div class="w-full max-w-[160px] text-center">
+              <img
+                class="mx-auto mb-10 block"
+                src="./imgs/keep-ncpo.webp"
+                alt=""
+                width={120}
+                height={120}
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="wv-h9 mb-10 block text-center font-kondolar font-black">
+                ตั้งบุคคลในโครงสร้างค้ำจุน คสช.
+              </span>
+              <span class="b5">{VOTELOG.senate.keepNcpo} มติ</span>
+            </div>
+            <div class="flex flex-wrap gap-10">
+              {data.value.senate.keepNcpo.length
+                ? data.value.senate.keepNcpo.map((d) => (
+                    <QVotelog
+                      key={d.Id}
+                      id={d.Id}
+                      type="ค้ำจุน คสช."
+                      pass={d.IsPassed}
+                      date={d.VoteDate}
+                      title={d.Title}
+                      vote={d.PeopleVotes}
+                    />
+                  ))
+                : Array(VOTELOG.senate.keepNcpo).fill(<LoadingPaper />)}
+            </div>
+          </div>
+          <div class="mb-20 flex flex-col items-center gap-20 lg:flex-row lg:items-start">
+            <div class="w-full max-w-[160px] text-center">
+              <img
+                class="mx-auto mb-10 block"
+                src="./imgs/cons-vote.webp"
+                alt=""
+                width={120}
+                height={120}
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="wv-h9 mb-10 block text-center font-kondolar font-black">
+                ประชามติแก้รัฐธรรมนูญ
+              </span>
+              <span class="b5">{VOTELOG.senate.consVote} มติ</span>
+            </div>
+            <div class="flex flex-wrap gap-10">
+              {data.value.senate.consVote.length
+                ? data.value.senate.consVote.map((d) => (
+                    <QVotelog
+                      key={d.Id}
+                      id={d.Id}
+                      type="ประชามติ"
+                      pass={d.IsPassed}
+                      date={d.VoteDate}
+                      title={d.Title}
+                      vote={d.PeopleVotes}
+                    />
+                  ))
+                : Array(VOTELOG.senate.consVote).fill(<LoadingPaper />)}
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-1 flex-col items-center gap-20 lg:flex-row lg:items-start">
           <div class="w-full max-w-[160px] text-center">
             <img
               class="mx-auto mb-10 block"
-              src="./imgs/keep-ncpo.webp"
+              src="./imgs/nation-strat.webp"
               alt=""
               width={120}
               height={120}
@@ -55,123 +130,91 @@ const Overview = component$<{ data: Signal<VotelogDataSchema> }>(({ data }) => (
               decoding="async"
             />
             <span class="wv-h9 mb-10 block text-center font-kondolar font-black">
-              ตั้งบุคคลในโครงสร้างค้ำจุน คสช.
+              ยุทธศาสตร์ชาติ
             </span>
-            <span class="b5">{VOTELOG.senate.keepNcpo} มติ</span>
+            <span class="b5">{VOTELOG.senate.nationStrat} มติ</span>
           </div>
           <div class="flex flex-wrap gap-10">
-            {data.value.senate.keepNcpo.length
-              ? data.value.senate.keepNcpo.map((d) => (
+            {data.value.senate.nationStrat.length
+              ? data.value.senate.nationStrat.map((d) => (
                   <QVotelog
                     key={d.Id}
                     id={d.Id}
-                    type="ค้ำจุน คสช."
-                    pass={d.IsPassed}
-                    date={d.VoteDate}
                     title={d.Title}
+                    date={d.VoteDate}
+                    type="ยุทธศาสตร์ชาติ"
+                    pass={d.IsPassed}
                     vote={d.PeopleVotes}
+                    right
                   />
                 ))
-              : Array(VOTELOG.senate.keepNcpo).fill(<LoadingPaper />)}
-          </div>
-        </div>
-        <div class="mb-20 flex flex-col items-center gap-20 lg:flex-row lg:items-start">
-          <div class="w-full max-w-[160px] text-center">
-            <img
-              class="mx-auto mb-10 block"
-              src="./imgs/cons-vote.webp"
-              alt=""
-              width={120}
-              height={120}
-              loading="lazy"
-              decoding="async"
-            />
-            <span class="wv-h9 mb-10 block text-center font-kondolar font-black">
-              ประชามติแก้รัฐธรรมนูญ
-            </span>
-            <span class="b5">{VOTELOG.senate.consVote} มติ</span>
-          </div>
-          <div class="flex flex-wrap gap-10">
-            {data.value.senate.consVote.length
-              ? data.value.senate.consVote.map((d) => (
-                  <QVotelog
-                    key={d.Id}
-                    id={d.Id}
-                    type="ประชามติ"
-                    pass={d.IsPassed}
-                    date={d.VoteDate}
-                    title={d.Title}
-                    vote={d.PeopleVotes}
-                  />
-                ))
-              : Array(VOTELOG.senate.consVote).fill(<LoadingPaper />)}
+              : Array(VOTELOG.senate.nationStrat).fill(<LoadingPaper />)}
           </div>
         </div>
       </div>
-      <div class="flex flex-1 flex-col items-center gap-20 lg:flex-row lg:items-start">
-        <div class="w-full max-w-[160px] text-center">
-          <img
-            class="mx-auto mb-10 block"
-            src="./imgs/nation-strat.webp"
-            alt=""
-            width={120}
-            height={120}
-            loading="lazy"
-            decoding="async"
-          />
-          <span class="wv-h9 mb-10 block text-center font-kondolar font-black">
-            ยุทธศาสตร์ชาติ
-          </span>
-          <span class="b5">{VOTELOG.senate.nationStrat} มติ</span>
-        </div>
-        <div class="flex flex-wrap gap-10">
-          {data.value.senate.nationStrat.length
-            ? data.value.senate.nationStrat.map((d) => (
-                <QVotelog
-                  key={d.Id}
-                  id={d.Id}
-                  title={d.Title}
-                  date={d.VoteDate}
-                  type="ยุทธศาสตร์ชาติ"
-                  pass={d.IsPassed}
-                  vote={d.PeopleVotes}
-                  right
-                />
-              ))
-            : Array(VOTELOG.senate.nationStrat).fill(<LoadingPaper />)}
-        </div>
-      </div>
-    </div>
 
-    <p class="wv-h4 mb-30 text-center font-kondolar font-black">
-      มติในที่ประชุมร่วมของรัฐสภา ({VOTELOG.parliament.total})
-    </p>
+      <p class="wv-h4 mb-30 text-center font-kondolar font-black">
+        มติในที่ประชุมร่วมของรัฐสภา ({VOTELOG.parliament.total})
+      </p>
 
-    <div class="flex flex-col gap-20 lg:flex-row">
-      <div class="flex-1">
-        <div class="mb-20 flex flex-col items-center gap-20 lg:flex-row lg:items-start">
-          <div class="w-full max-w-[160px] text-center">
-            <img
-              class="mx-auto mb-10 block"
-              src="./imgs/select-pm.webp"
-              alt=""
-              width={120}
-              height={120}
-              loading="lazy"
-              decoding="async"
-            />
-            <span class="wv-h9 mb-10 block text-center font-kondolar font-black">
-              เลือกนายกรัฐมนตรี
-            </span>
-            <span class="b5">{VOTELOG.parliament.selectPm} มติ</span>
+      <div class="flex flex-col gap-20 lg:flex-row">
+        <div class="flex-1">
+          <div class="mb-20 flex flex-col items-center gap-20 lg:flex-row lg:items-start">
+            <div class="w-full max-w-[160px] text-center">
+              <img
+                class="mx-auto mb-10 block"
+                src="./imgs/select-pm.webp"
+                alt=""
+                width={120}
+                height={120}
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="wv-h9 mb-10 block text-center font-kondolar font-black">
+                เลือกนายกรัฐมนตรี
+              </span>
+              <span class="b5">{VOTELOG.parliament.selectPm} มติ</span>
+            </div>
+            <QChoosePm />
           </div>
-          <QChoosePm />
+          <div class="flex flex-col items-center gap-20 lg:flex-row lg:items-start">
+            <div class="w-full max-w-[160px] text-center">
+              <img
+                class="mx-auto mb-10 block"
+                src="./imgs/cons-vote.webp"
+                alt=""
+                width={120}
+                height={120}
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="wv-h9 mb-10 block text-center font-kondolar font-black">
+                ประชามติแก้รัฐธรรมนูญ
+              </span>
+              <span class="b5">{VOTELOG.parliament.consVote} มติ</span>
+            </div>
+            <div class="mb-auto flex flex-1 flex-wrap gap-10">
+              {data.value.parliament.consVote.length
+                ? data.value.parliament.consVote.map((d) => (
+                    <QVotelog
+                      key={d.Id}
+                      id={d.Id}
+                      type="ประชามติ"
+                      pass={d.IsPassed}
+                      date={d.VoteDate}
+                      title={d.Title}
+                      vote={d.PeopleVotes}
+                    />
+                  ))
+                : Array(VOTELOG.parliament.consVote).fill(<LoadingPaper />)}
+            </div>
+          </div>
         </div>
-        <div class="flex flex-col items-center gap-20 lg:flex-row lg:items-start">
+        <div class="flex flex-1 flex-col items-center gap-20 lg:flex-row lg:items-start">
           <div class="w-full max-w-[160px] text-center">
             <img
               class="mx-auto mb-10 block"
-              src="./imgs/cons-vote.webp"
+              src="./imgs/cons-draft.webp"
               alt=""
               width={120}
               height={120}
@@ -179,63 +222,31 @@ const Overview = component$<{ data: Signal<VotelogDataSchema> }>(({ data }) => (
               decoding="async"
             />
             <span class="wv-h9 mb-10 block text-center font-kondolar font-black">
-              ประชามติแก้รัฐธรรมนูญ
+              ร่างแก้รัฐธรรมนูญ
             </span>
-            <span class="b5">{VOTELOG.parliament.consVote} มติ</span>
+            <span class="b5">{VOTELOG.parliament.consDraft} มติ</span>
           </div>
           <div class="mb-auto flex flex-1 flex-wrap gap-10">
-            {data.value.parliament.consVote.length
-              ? data.value.parliament.consVote.map((d) => (
+            {data.value.parliament.consDraft.length
+              ? data.value.parliament.consDraft.map((d) => (
                   <QVotelog
                     key={d.Id}
                     id={d.Id}
-                    type="ประชามติ"
+                    type="แก้รัฐธรรมนูญ"
                     pass={d.IsPassed}
                     date={d.VoteDate}
                     title={d.Title}
                     vote={d.PeopleVotes}
+                    right
                   />
                 ))
-              : Array(VOTELOG.parliament.consVote).fill(<LoadingPaper />)}
+              : Array(VOTELOG.parliament.consDraft).fill(<LoadingPaper />)}
           </div>
         </div>
       </div>
-      <div class="flex flex-1 flex-col items-center gap-20 lg:flex-row lg:items-start">
-        <div class="w-full max-w-[160px] text-center">
-          <img
-            class="mx-auto mb-10 block"
-            src="./imgs/cons-draft.webp"
-            alt=""
-            width={120}
-            height={120}
-            loading="lazy"
-            decoding="async"
-          />
-          <span class="wv-h9 mb-10 block text-center font-kondolar font-black">
-            ร่างแก้รัฐธรรมนูญ
-          </span>
-          <span class="b5">{VOTELOG.parliament.consDraft} มติ</span>
-        </div>
-        <div class="mb-auto flex flex-1 flex-wrap gap-10">
-          {data.value.parliament.consDraft.length
-            ? data.value.parliament.consDraft.map((d) => (
-                <QVotelog
-                  key={d.Id}
-                  id={d.Id}
-                  type="แก้รัฐธรรมนูญ"
-                  pass={d.IsPassed}
-                  date={d.VoteDate}
-                  title={d.Title}
-                  vote={d.PeopleVotes}
-                  right
-                />
-              ))
-            : Array(VOTELOG.parliament.consDraft).fill(<LoadingPaper />)}
-        </div>
-      </div>
     </div>
-  </>
-));
+  );
+});
 
 const VotelogBox = component$<{ data: VotelogItemType; type: string }>(
   ({ data, type }) => (
@@ -498,7 +509,9 @@ const ChooseMpVotelogBox = component$(() => (
   </div>
 ));
 
-const Details = component$<{ data: Signal<VotelogDataSchema> }>(({ data }) => {
+const Details = component$<{ show: boolean }>(({ show }) => {
+  const data = useContext(DataContext);
+
   const currentCatg = useSignal(0);
   const currentPageIndex = useSignal(0);
 
@@ -547,7 +560,7 @@ const Details = component$<{ data: Signal<VotelogDataSchema> }>(({ data }) => {
   });
 
   return (
-    <div class="flex flex-col gap-30 lg:flex-row">
+    <div class={`flex flex-col gap-30 lg:flex-row ${show ? "" : "hidden"}`}>
       <div class="flex-1">
         <p class="wv-h8 mb-10 text-center font-kondolar font-black">
           มติในที่ประชุมวุฒิสภา ({VOTELOG.senate.total})
@@ -751,6 +764,7 @@ const Details = component$<{ data: Signal<VotelogDataSchema> }>(({ data }) => {
 
 export const Ch2Explore = component$(() => {
   const tabIndex = useSignal(0);
+
   const data = useSignal<VotelogDataSchema>({
     senate: {
       keepNcpo: [],
@@ -762,6 +776,8 @@ export const Ch2Explore = component$(() => {
       consVote: [],
     },
   });
+
+  useContextProvider(DataContext, data);
 
   useVisibleTask$(async () => {
     const resp = await fetch("./data/votelog.json");
@@ -840,7 +856,8 @@ export const Ch2Explore = component$(() => {
           </span>
         </div>
       </div>
-      {tabIndex.value === 0 ? <Overview data={data} /> : <Details data={data} />}
+      <Overview show={!tabIndex.value} />
+      <Details show={!!tabIndex.value} />
     </div>
   );
 });

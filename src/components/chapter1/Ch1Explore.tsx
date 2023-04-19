@@ -1,20 +1,24 @@
+import type { Signal } from "@builder.io/qwik";
 import {
   $,
   component$,
+  createContextId,
   useComputed$,
+  useContext,
+  useContextProvider,
   useSignal,
   useStore,
   useTask$,
   useVisibleTask$,
 } from "@builder.io/qwik";
 
-import PEOPLE from "~/data/people";
-
 import { TabSelect } from "~/components/TabSelect";
 import { CheckPill } from "../CheckPill";
 import { Pagination } from "../Pagination";
 import { RadioPill } from "../RadioPill";
 import { QPeople } from "../react/popovers/QPeople";
+
+import PEOPLE from "~/data/people";
 
 import type {
   FilteredPeopleDataSchema,
@@ -23,12 +27,9 @@ import type {
   PeopleListSchema,
 } from "~/types/people";
 
-export interface FormOption {
-  type: { position: boolean; ncpo: boolean; friend: boolean };
-  relation: { yes: boolean; no: boolean };
-  status: { active: boolean; out: boolean };
-  job: number;
-}
+export const DataContext = createContextId<Readonly<Signal<FilteredPeopleDataSchema>>>(
+  "ch1explore.data-context"
+);
 
 const JOBS = ([...Object.keys(PEOPLE.jobs)] as OccupationGroup[]).sort(
   (a, z) => PEOPLE.jobs[z] - PEOPLE.jobs[a]
@@ -63,88 +64,92 @@ const JobDivider = component$<{ name: OccupationGroup; data: PeopleListSchema[] 
   )
 );
 
-const Overview = component$<{ data: FilteredPeopleDataSchema }>(({ data }) => (
-  <div class="flex-1">
-    <div class="flex items-center gap-20">
-      <span class="wv-b2 font-bold">
-        สัญลักษณ์<span class="nobr">ประเภท ส.ว.</span>
-      </span>
-      <div class="flex flex-wrap items-center justify-center gap-[8px]">
-        <div class="flex gap-[8px]">
-          <div class="h-20 w-20 rounded-full border bg-senate-green" />
-          <span class="wv-b4 font-bold">ส.ว. โดยตำแหน่ง</span>
-        </div>
-        <div class="flex gap-[8px]">
-          <div class="h-20 w-20 rounded-full border bg-senate-blue" />
-          <span class="wv-b4 font-bold">ส.ว. เลือกโดย คสช.</span>
-        </div>
-        <div class="flex gap-[8px]">
-          <div class="h-20 w-20 rounded-full border bg-senate-pink" />
-          <span class="wv-b4 font-bold">ส.ว. เลือกกันเอง</span>
-        </div>
-        <div class="flex gap-[8px]">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 23 23"
-            width="21"
-            height="21"
-          >
-            <rect width="21" height="21" x="1" y="1.333" fill="#fff" rx="10.5" />
-            <g clipPath="url(#senate-yeeted)">
-              <path
-                fill="#000"
-                fillRule="evenodd"
-                d="M7.285 6.685l-.933.933 4.2 4.2-4.2 4.2.933.934 4.2-4.2 4.2 4.2.934-.933-4.2-4.2 4.2-4.2-.933-.934-4.2 4.2-4.2-4.2z"
-                clipRule="evenodd"
-              />
-            </g>
-            <rect width="21" height="21" x="1" y="1.333" stroke="#000" rx="10.5" />
-            <defs>
-              <clipPath id="senate-yeeted">
+const Overview = component$<{ show: boolean }>(({ show }) => {
+  const data = useContext(DataContext);
+
+  return (
+    <div class={`flex-1 ${show ? "" : "hidden"}`}>
+      <div class="flex items-center gap-20">
+        <span class="wv-b2 font-bold">
+          สัญลักษณ์<span class="nobr">ประเภท ส.ว.</span>
+        </span>
+        <div class="flex flex-wrap items-center justify-center gap-[8px]">
+          <div class="flex gap-[8px]">
+            <div class="h-20 w-20 rounded-full border bg-senate-green" />
+            <span class="wv-b4 font-bold">ส.ว. โดยตำแหน่ง</span>
+          </div>
+          <div class="flex gap-[8px]">
+            <div class="h-20 w-20 rounded-full border bg-senate-blue" />
+            <span class="wv-b4 font-bold">ส.ว. เลือกโดย คสช.</span>
+          </div>
+          <div class="flex gap-[8px]">
+            <div class="h-20 w-20 rounded-full border bg-senate-pink" />
+            <span class="wv-b4 font-bold">ส.ว. เลือกกันเอง</span>
+          </div>
+          <div class="flex gap-[8px]">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 23 23"
+              width="21"
+              height="21"
+            >
+              <rect width="21" height="21" x="1" y="1.333" fill="#fff" rx="10.5" />
+              <g clipPath="url(#senate-yeeted)">
                 <path
-                  fill="#fff"
-                  d="M0 0h10.56v10.56H0z"
-                  transform="translate(6.22 6.553)"
+                  fill="#000"
+                  fillRule="evenodd"
+                  d="M7.285 6.685l-.933.933 4.2 4.2-4.2 4.2.933.934 4.2-4.2 4.2 4.2.934-.933-4.2-4.2 4.2-4.2-.933-.934-4.2 4.2-4.2-4.2z"
+                  clipRule="evenodd"
                 />
-              </clipPath>
-            </defs>
-          </svg>
-          <span class="wv-b4 font-bold">พ้นจากตำแหน่ง</span>
-        </div>
-        <div class="flex gap-[8px]">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 23 23"
-            width="21"
-            height="21"
-          >
-            <path
-              fill="#fff"
-              stroke="#000"
-              d="M11.5 2.005l2.665 2.852.156.166.227-.007 3.901-.132-.132 3.901-.007.227.166.155 2.852 2.666-2.852 2.665-.166.156.007.227.132 3.901-3.901-.132-.227-.007-.155.166L11.5 21.66l-2.666-2.852-.155-.166-.227.007-3.901.132.132-3.901.007-.227-.166-.155-2.852-2.666 2.852-2.666.166-.155-.007-.227-.132-3.901 3.901.132.227.007.155-.166L11.5 2.005z"
-            />
-          </svg>
-          <span class="wv-b4 font-bold">ผู้มีส่วนเกี่ยวข้องกับ คสช.</span>
+              </g>
+              <rect width="21" height="21" x="1" y="1.333" stroke="#000" rx="10.5" />
+              <defs>
+                <clipPath id="senate-yeeted">
+                  <path
+                    fill="#fff"
+                    d="M0 0h10.56v10.56H0z"
+                    transform="translate(6.22 6.553)"
+                  />
+                </clipPath>
+              </defs>
+            </svg>
+            <span class="wv-b4 font-bold">พ้นจากตำแหน่ง</span>
+          </div>
+          <div class="flex gap-[8px]">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 23 23"
+              width="21"
+              height="21"
+            >
+              <path
+                fill="#fff"
+                stroke="#000"
+                d="M11.5 2.005l2.665 2.852.156.166.227-.007 3.901-.132-.132 3.901-.007.227.166.155 2.852 2.666-2.852 2.665-.166.156.007.227.132 3.901-3.901-.132-.227-.007-.155.166L11.5 21.66l-2.666-2.852-.155-.166-.227.007-3.901.132.132-3.901.007-.227-.166-.155-2.852-2.666 2.852-2.666.166-.155-.007-.227-.132-3.901 3.901.132.227.007.155-.166L11.5 2.005z"
+              />
+            </svg>
+            <span class="wv-b4 font-bold">ผู้มีส่วนเกี่ยวข้องกับ คสช.</span>
+          </div>
         </div>
       </div>
-    </div>
-    {JOBS.map(
-      (job) =>
-        data.listByJobs?.[job]?.length > 0 && (
-          <div key={job}>
-            <JobDivider name={job} data={data.listByJobs[job]} />
-            <div class="my-10 flex flex-wrap gap-4">
-              {data.listByJobs[job].map((e) => (
-                <QPeople key={e.Id} data={e} imgBase={data.imgBase} />
-              ))}
+      {JOBS.map(
+        (job) =>
+          data.value.listByJobs?.[job]?.length > 0 && (
+            <div key={job}>
+              <JobDivider name={job} data={data.value.listByJobs[job]} />
+              <div class="my-10 flex flex-wrap gap-4">
+                {data.value.listByJobs[job].map((e) => (
+                  <QPeople key={e.Id} data={e} imgBase={data.value.imgBase} />
+                ))}
+              </div>
             </div>
-          </div>
-        )
-    )}
-  </div>
-));
+          )
+      )}
+    </div>
+  );
+});
 
 const PeopleCard = component$<{ data: PeopleListSchema; imgBase: string }>(
   ({ data, imgBase }) => (
@@ -252,24 +257,28 @@ const PeopleCard = component$<{ data: PeopleListSchema; imgBase: string }>(
   )
 );
 
-const Details = component$<{ data: FilteredPeopleDataSchema }>(({ data }) => {
+const Details = component$<{ show: boolean }>(({ show }) => {
+  const data = useContext(DataContext);
+
   const currentPageIndex = useSignal(0);
 
   useTask$(({ track }) => {
-    track(() => data.list);
+    track(() => data.value.list);
 
     currentPageIndex.value = 0;
   });
 
   return (
-    <div class="w-full flex-1">
+    <div class={`w-full flex-1 ${show ? "" : "hidden"}`}>
       <div class="mb-15 flex flex-col flex-wrap items-center justify-between gap-10 lg:flex-row">
-        <div class="wv-b4 nobr font-bold">&ndash; {data.list.length} คน &ndash;</div>
-        {data.list.length > ENTRY_PER_PAGE && (
+        <div class="wv-b4 nobr font-bold">
+          &ndash; {data.value.list.length} คน &ndash;
+        </div>
+        {data.value.list.length > ENTRY_PER_PAGE && (
           <Pagination
             perPage={ENTRY_PER_PAGE}
             currentPage={currentPageIndex.value}
-            total={data.list.length}
+            total={data.value.list.length}
             onChange={$((i: number) => {
               currentPageIndex.value = i;
             })}
@@ -277,13 +286,13 @@ const Details = component$<{ data: FilteredPeopleDataSchema }>(({ data }) => {
         )}
       </div>
       <div class="flex flex-col gap-5">
-        {data.list
+        {data.value.list
           .slice(
             currentPageIndex.value * ENTRY_PER_PAGE,
             currentPageIndex.value * ENTRY_PER_PAGE + ENTRY_PER_PAGE
           )
           .map((e) => (
-            <PeopleCard key={e.Id} data={e} imgBase={data.imgBase} />
+            <PeopleCard key={e.Id} data={e} imgBase={data.value.imgBase} />
           ))}
       </div>
     </div>
@@ -292,6 +301,7 @@ const Details = component$<{ data: FilteredPeopleDataSchema }>(({ data }) => {
 
 export const Ch1Explore = component$(() => {
   const tabIndex = useSignal(0);
+
   const data = useSignal<PeopleDataSchema>({
     imgBase: "",
     list: [],
@@ -304,57 +314,51 @@ export const Ch1Explore = component$(() => {
     data.value = json;
   });
 
-  const formOptions = useStore<FormOption>(
-    {
-      type: {
-        position: true,
-        ncpo: true,
-        friend: true,
-      },
-      relation: {
-        yes: true,
-        no: true,
-      },
-      status: {
-        active: true,
-        out: true,
-      },
-      job: 0,
-    },
-    { deep: true }
-  );
-
-  const filteredData = useComputed$((): FilteredPeopleDataSchema => {
-    const list = [...data.value.list].filter((e) => {
-      if (
-        formOptions.job !== 0 &&
-        formOptions.job !== JOBS.indexOf(e.OccupationGroup) + 1
-      )
-        return false;
-
-      let score = 0;
-
-      if (formOptions.type.friend && e.SenatorMethod === "เลือกกันเอง") score++;
-      if (formOptions.type.ncpo && e.SenatorMethod === "เลือกโดย คสช.") score++;
-      if (formOptions.type.position && e.SenatorMethod === "โดยตำแหน่ง") score++;
-
-      if (formOptions.relation.yes && !!e.NcpoType) score++;
-      if (formOptions.relation.no && !e.NcpoType) score++;
-
-      if (formOptions.status.active && !!e.IsActive) score++;
-      if (formOptions.status.out && !e.IsActive) score++;
-
-      return score >= 3;
-    });
-
-    const listByJobs = groupBy(list, (l) => l.OccupationGroup);
-
-    return {
-      ...data.value,
-      list,
-      listByJobs,
-    };
+  const formOptions = useStore({
+    typePosition: true,
+    typeNcpo: true,
+    typeFriend: true,
+    relationYes: true,
+    relationNo: true,
+    statusActive: true,
+    statusOut: true,
+    job: 0,
   });
+
+  useContextProvider(
+    DataContext,
+    useComputed$((): FilteredPeopleDataSchema => {
+      const list = [...data.value.list].filter((e) => {
+        if (
+          formOptions.job !== 0 &&
+          formOptions.job !== JOBS.indexOf(e.OccupationGroup) + 1
+        )
+          return false;
+
+        let score = 0;
+
+        if (formOptions.typeFriend && e.SenatorMethod === "เลือกกันเอง") score++;
+        if (formOptions.typeNcpo && e.SenatorMethod === "เลือกโดย คสช.") score++;
+        if (formOptions.typePosition && e.SenatorMethod === "โดยตำแหน่ง") score++;
+
+        if (formOptions.relationYes && !!e.NcpoType) score++;
+        if (formOptions.relationNo && !e.NcpoType) score++;
+
+        if (formOptions.statusActive && !!e.IsActive) score++;
+        if (formOptions.statusOut && !e.IsActive) score++;
+
+        return score >= 3;
+      });
+
+      const listByJobs = groupBy(list, (l) => l.OccupationGroup);
+
+      return {
+        ...data.value,
+        list,
+        listByJobs,
+      };
+    })
+  );
 
   return (
     <div class="con mb-60">
@@ -383,9 +387,9 @@ export const Ch1Explore = component$(() => {
           <div class="mb-10 flex flex-wrap gap-[8px]">
             <CheckPill
               id="โดยตำแหน่ง"
-              checked={formOptions.type.position}
+              checked={formOptions.typePosition}
               onChange={$(() => {
-                formOptions.type.position = !formOptions.type.position;
+                formOptions.typePosition = !formOptions.typePosition;
               })}
             >
               <div class="h-[12px] w-[12px] rounded-full border border-black bg-senate-green" />
@@ -393,9 +397,9 @@ export const Ch1Explore = component$(() => {
             </CheckPill>
             <CheckPill
               id="เลือกโดยคสช"
-              checked={formOptions.type.ncpo}
+              checked={formOptions.typeNcpo}
               onChange={$(() => {
-                formOptions.type.ncpo = !formOptions.type.ncpo;
+                formOptions.typeNcpo = !formOptions.typeNcpo;
               })}
             >
               <div class="h-[12px] w-[12px] rounded-full border border-black bg-senate-blue" />
@@ -403,9 +407,9 @@ export const Ch1Explore = component$(() => {
             </CheckPill>
             <CheckPill
               id="เลือกกันเอง"
-              checked={formOptions.type.friend}
+              checked={formOptions.typeFriend}
               onChange={$(() => {
-                formOptions.type.friend = !formOptions.type.friend;
+                formOptions.typeFriend = !formOptions.typeFriend;
               })}
             >
               <div class="h-[12px] w-[12px] rounded-full border border-black bg-senate-pink" />
@@ -416,9 +420,9 @@ export const Ch1Explore = component$(() => {
           <div class="mb-10 flex flex-wrap gap-[8px]">
             <CheckPill
               id="ผู้มีส่วนเกี่ยวข้องกับคสช"
-              checked={formOptions.relation.yes}
+              checked={formOptions.relationYes}
               onChange={$(() => {
-                formOptions.relation.yes = !formOptions.relation.yes;
+                formOptions.relationYes = !formOptions.relationYes;
               })}
             >
               <svg
@@ -439,9 +443,9 @@ export const Ch1Explore = component$(() => {
             </CheckPill>
             <CheckPill
               id="ผู้ที่ไม่เกี่ยวข้องกับคสช"
-              checked={formOptions.relation.no}
+              checked={formOptions.relationNo}
               onChange={$(() => {
-                formOptions.relation.no = !formOptions.relation.no;
+                formOptions.relationNo = !formOptions.relationNo;
               })}
             >
               <svg
@@ -465,9 +469,9 @@ export const Ch1Explore = component$(() => {
           <div class="mb-10 flex flex-wrap gap-[8px]">
             <CheckPill
               id="ดำรงตำแหน่ง"
-              checked={formOptions.status.active}
+              checked={formOptions.statusActive}
               onChange={$(() => {
-                formOptions.status.active = !formOptions.status.active;
+                formOptions.statusActive = !formOptions.statusActive;
               })}
             >
               <svg
@@ -486,9 +490,9 @@ export const Ch1Explore = component$(() => {
             </CheckPill>
             <CheckPill
               id="พ้นจากตำแหน่ง"
-              checked={formOptions.status.out}
+              checked={formOptions.statusOut}
               onChange={$(() => {
-                formOptions.status.out = !formOptions.status.out;
+                formOptions.statusOut = !formOptions.statusOut;
               })}
             >
               <svg
@@ -535,11 +539,8 @@ export const Ch1Explore = component$(() => {
             ))}
           </div>
         </div>
-        {tabIndex.value === 0 ? (
-          <Overview data={filteredData.value} />
-        ) : (
-          <Details data={filteredData.value} />
-        )}
+        <Overview show={!tabIndex.value} />
+        <Details show={!!tabIndex.value} />
       </div>
     </div>
   );
