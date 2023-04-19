@@ -1,7 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import { useDocumentHead, useLocation } from "@builder.io/qwik-city";
 
-const TITLE = "Senate — WeVis";
+const TITLE = "แลหลัง เหลียวหน้า ส.ว. — WeVis";
 const DESC =
   "ชวนอ่านและค้นหาเรื่องราวการสืบทอดอำนาจของ คสช. ผ่านกลไกที่ให้อำนาจ ส.ว. กำหนดทิศทางการเมืองไทย เมื่อผลเลือกตั้งของประชาชนถูกทำให้ไร้ความหมาย";
 
