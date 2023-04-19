@@ -7,36 +7,32 @@ export const Ch3BasicCondition = component$(() => {
   const elTxt3 = useSignal<HTMLDivElement>();
   const elTxt4 = useSignal<HTMLDivElement>();
 
-  useVisibleTask$(() => {
-    if (elTxt1.value && elTxt2.value && elTxt3.value && elTxt4.value) {
-      const elTxts = [elTxt1.value, elTxt2.value, elTxt3.value, elTxt4.value];
-      elTxts.forEach((el) => {
-        inView(
-          el,
-          () => {
-            animate(
-              el,
-              {
-                opacity: [0, 1],
-                transform: ["translateY(20px)", "translateY(0)"],
-              },
-              {
-                duration: 0.5,
-              }
-            );
-          },
-          { amount: 0.99 }
-        );
-      });
-    }
-  });
-
   useVisibleTask$(
     () => {
       if (elTxt1.value && elTxt2.value && elTxt3.value && elTxt4.value) {
         const elTxts = [elTxt1.value, elTxt2.value, elTxt3.value, elTxt4.value];
+
         elTxts.forEach((el) => {
           el.classList.add("opacity-0");
+        });
+
+        elTxts.forEach((el) => {
+          inView(
+            el,
+            () => {
+              animate(
+                el,
+                {
+                  opacity: [0, 1],
+                  transform: ["translateY(20px)", "translateY(0)"],
+                },
+                {
+                  duration: 0.5,
+                }
+              );
+            },
+            { amount: 0.99 }
+          );
         });
       }
     },

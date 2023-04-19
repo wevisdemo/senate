@@ -242,34 +242,32 @@ interface Ch3ConstitutionProps {
 export const Ch3Constitution = component$<Ch3ConstitutionProps>(({ side }) => {
   const elQPop = useSignal<HTMLDivElement>();
 
-  useVisibleTask$(() => {
-    if (elQPop.value)
-      inView(
-        elQPop.value,
-        () => {
-          if (elQPop.value)
-            animate(
-              [...elQPop.value.children],
-              {
-                opacity: [0, 1],
-                transform: ["translateX(-50%)", ""],
-              },
-              {
-                duration: 0.5,
-                delay: stagger(0.1),
-              }
-            );
-        },
-        {
-          amount: 0.99,
-        }
-      );
-  });
-
   useVisibleTask$(
     () => {
-      if (elQPop.value)
+      if (elQPop.value) {
         [...elQPop.value.children].forEach((el) => el.classList.add("opacity-0"));
+
+        inView(
+          elQPop.value,
+          () => {
+            if (elQPop.value)
+              animate(
+                [...elQPop.value.children],
+                {
+                  opacity: [0, 1],
+                  transform: ["translateX(-50%)", ""],
+                },
+                {
+                  duration: 0.5,
+                  delay: stagger(0.1),
+                }
+              );
+          },
+          {
+            amount: 0.99,
+          }
+        );
+      }
     },
     { strategy: "document-idle" }
   );

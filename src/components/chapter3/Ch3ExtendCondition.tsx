@@ -8,36 +8,32 @@ export const Ch3ExtendCondition = component$(() => {
   const el4 = useSignal<HTMLDivElement>();
   const el5 = useSignal<HTMLDivElement>();
 
-  useVisibleTask$(() => {
-    if (el1.value && el2.value && el3.value && el4.value && el5.value) {
-      const elTxts = [el1.value, el2.value, el3.value, el4.value, el5.value];
-      elTxts.forEach((el) => {
-        inView(
-          el,
-          () => {
-            animate(
-              el,
-              {
-                opacity: [0, 1],
-                transform: ["translateY(20px)", "translateY(0)"],
-              },
-              {
-                duration: 0.5,
-              }
-            );
-          },
-          { amount: 0.99 }
-        );
-      });
-    }
-  });
-
   useVisibleTask$(
     () => {
       if (el1.value && el2.value && el3.value && el4.value && el5.value) {
         const elTxts = [el1.value, el2.value, el3.value, el4.value, el5.value];
+
         elTxts.forEach((el) => {
           el.classList.add("opacity-0");
+        });
+
+        elTxts.forEach((el) => {
+          inView(
+            el,
+            () => {
+              animate(
+                el,
+                {
+                  opacity: [0, 1],
+                  transform: ["translateY(20px)", "translateY(0)"],
+                },
+                {
+                  duration: 0.5,
+                }
+              );
+            },
+            { amount: 0.99 }
+          );
         });
       }
     },

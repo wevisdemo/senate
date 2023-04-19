@@ -1,20 +1,11 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
-import { inView } from "motion";
 
 export const Ch1Video = component$(() => {
   const elVideo = useSignal<HTMLVideoElement>();
 
-  useVisibleTask$(
-    () => {
-      if (elVideo.value)
-        inView(elVideo.value, () => {
-          elVideo.value?.play();
-        });
-    },
-    {
-      strategy: "document-idle",
-    }
-  );
+  useVisibleTask$(() => {
+    elVideo.value?.play();
+  });
 
   return (
     <video

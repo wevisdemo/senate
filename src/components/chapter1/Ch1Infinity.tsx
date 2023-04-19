@@ -27,7 +27,7 @@ export const Ch1Infinity = component$(() => {
         }
 
         // Contents
-        [...elContent].forEach((el) => {
+        elContent.forEach((el) => {
           el.classList.add("opacity-0");
 
           inView(
