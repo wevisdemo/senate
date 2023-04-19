@@ -51,12 +51,12 @@ export default component$(() => {
 
 const Header = (
   <header class="bg-black pb-30 text-white lg:pt-100 lg:pb-60">
-    <h1 class="wv-h2 container py-20 text-center font-kondolar font-black lg:hidden">
+    <h1 class="wv-h2 con py-20 text-center font-kondolar font-black lg:hidden">
       <span class="nobr">แลหลัง</span>
       <br />
       <span class="nobr">เหลียวหน้า</span> <span class="nobr">ส.ว.</span>
     </h1>
-    <div class="container mx-auto mb-20 flex flex-col gap-20 lg:mb-[48px] lg:flex-row">
+    <div class="con mx-auto mb-20 flex flex-col gap-20 lg:mb-[48px] lg:flex-row">
       <div class="flex-1 overflow-hidden">
         <Lottie
           class="mx-auto max-h-[778px] max-w-[311px]"
@@ -106,7 +106,7 @@ const Header = (
         </p>
       </div>
     </div>
-    <div class="container">
+    <div class="con">
       <p class="wv-h7 mb-20 text-center font-kondolar font-black">ข้ามไปสำรวจ</p>
       <div class="flex flex-col gap-20 lg:flex-row">
         <JumpToContent
@@ -174,20 +174,18 @@ const Chapter1 = (
       <br />
       ยังมีอำนาจเลือก &ldquo;นายกฯ&rdquo; คนใหม่
     </TitleBlock>
-    <p class="wv-b2 container mb-60 text-center">
+    <p class="wv-b2 con mb-60 text-center">
       เมื่อวาระของ ส.ว. คือ 5 ปี ส.ว. ชุดปัจจุบันจะทำงานไปจนถึง 11 พฤษภาคม 2567
       ซึ่งเป็นจุดที่น่ากังวลของการเมืองไทยในอนาคต เนื่องจาก…
     </p>
     <Ch1Infinity />
     <TitleBlock>ที่มาของ ส.ว.</TitleBlock>
-    <p class="wv-b2 container mb-30 text-center">
-      ส.ว. ในรัฐธรรมนูญ 2560 ล้วนมีที่มาเกี่ยวข้องกับ คสช. ไม่ว่าจะมาจากการคัดเลือก
-      โดยตรงหรือโดยอ้อม
+    <p class="wv-b2 con mb-30 text-center">
+      ส.ว. ในรัฐธรรมนูญ 2560 ล้วนมีที่มาเกี่ยวข้องกับ คสช.
+      ไม่ว่าจะมาจากการคัดเลือกโดยตรงหรือโดยอ้อม
     </p>
-    <p class="wv-h3 container mb-30 text-center font-kondolar font-black">
-      เส้นทางของ ส.ว.
-    </p>
-    <p class="wv-h6 container mb-50 text-center font-kondolar font-bold">
+    <p class="wv-h3 con mb-30 text-center font-kondolar font-black">เส้นทางของ ส.ว.</p>
+    <p class="wv-h6 con mb-50 text-center font-kondolar font-bold">
       ส.ว. ทั้งหมด 250 ที่นั่ง ประกอบไปด้วย 3 ประเภท
     </p>
     <Ch1Divider text="คัดเลือกโดยตรง" />
@@ -226,17 +224,17 @@ const Chapter1 = (
       />
     </div>
     <TitleBlock class="!mb-30">อาชีพและความเกี่ยวข้องกับ คสช.</TitleBlock>
-    <p class="wv-b2 container mb-30 text-center">
+    <p class="wv-b2 con mb-30 text-center">
       ซึ่ง ส.ว. เหล่านี้ มาจากหลากหลายสาขาอาชีพและหลายคนเกี่ยวข้องกับ คสช. ก่อนจะมาเป็น
       ส.ว.
     </p>
     <Lottie src="./imgs/lotties/googly-eye.json" width="242px" height="104px" />
-    <p class="wv-h4 container mt-30 mb-40 text-center font-kondolar font-black">
+    <p class="wv-h4 con mt-30 mb-40 text-center font-kondolar font-black">
       สำรวจ ส.ว. ตามประเภทอาชีพ และความเกี่ยวข้องกับ คสช.
     </p>
     <Ch1Explore />
     <TitleBlock class="!mb-20">ความเกี่ยวพันระหว่าง ส.ว. และ คสช.</TitleBlock>
-    <div class="container mb-30 flex flex-col gap-20 lg:mt-[130px] lg:flex-row">
+    <div class="con mb-30 flex flex-col gap-20 lg:mt-[130px] lg:flex-row">
       <div class="flex flex-1 items-center justify-center">
         <img
           src="./imgs/nepo.webp"
@@ -251,16 +249,16 @@ const Chapter1 = (
         <Ch1Video />
       </div>
     </div>
-    <div class="container mb-30 flex flex-col items-center justify-center gap-20 lg:flex-row">
+    <div class="con mb-30 flex flex-col items-center justify-center gap-20 lg:flex-row">
       <div class="flex-1 p-20">
         <p class="flex flex-col gap-10 text-center font-kondolar lg:text-left">
-          <span class="wv-h4 block font-black">ตามรัฐธรรมนูญ &apos;60</span>
+          <span class="wv-h4 block font-black">ตามรัฐธรรมนูญ&apos;60</span>
           <span class="wv-h2 block font-black">80% ของ ส.ว.</span>
           <span class="wv-h8 block">
             หรือ <span class="font-bold">200</span>/250 คน
           </span>
           <span class="wv-h7 block">
-            ถูกคัดเลือกโดย ค.ส.ช. โดยตรง และอีก 20% ถูกคัดเลือกโดยอ้อม แต่ในทางปฏิบัติแล้ว{" "}
+            ถูกคัดเลือกโดย คสช. โดยตรง และอีก 20% ถูกคัดเลือกโดยอ้อม แต่ในทางปฏิบัติแล้ว{" "}
             <span class="font-bold">ส.ว. ทุกตำแหน่งผ่านการคัดเลือกโดย คสช.</span>
           </span>
         </p>
@@ -269,7 +267,7 @@ const Chapter1 = (
         <Lottie src="./imgs/lotties/bubblechart.json" width="350px" height="344px" />
       </div>
     </div>
-    <div class="container mb-30 flex flex-col items-center justify-center gap-20 lg:flex-row">
+    <div class="con mb-30 flex flex-col items-center justify-center gap-20 lg:flex-row">
       <div class="flex-1 p-20">
         <Lottie
           src="./imgs/lotties/senate.json"
@@ -326,7 +324,7 @@ const Chapter1 = (
           </li>
           <li class="flex items-center gap-10">
             <span class="h-20 w-20 rounded-full border bg-senate-blue" />
-            <span class="wv-b4 font-bold">ส.ว. เลือกโดยคสช.</span>
+            <span class="wv-b4 font-bold">ส.ว. เลือกโดย คสช.</span>
           </li>
           <li class="flex items-center gap-10">
             <span class="h-20 w-20 rounded-full border bg-senate-pink" />
@@ -335,7 +333,7 @@ const Chapter1 = (
         </ul>
       </div>
     </div>
-    <div class="container mb-100 flex flex-col justify-center gap-20 lg:mb-[260px] lg:flex-row">
+    <div class="con mb-100 flex flex-col justify-center gap-20 lg:mb-[260px] lg:flex-row">
       <img
         class="mx-auto flex-1"
         src="./imgs/popular-job.webp"
@@ -425,7 +423,7 @@ const Chapter2 = (
       loading="lazy"
       decoding="async"
     />
-    <div class="container">
+    <div class="con">
       <Lottie
         src="./imgs/lotties/textslide.json"
         loop
@@ -434,7 +432,7 @@ const Chapter2 = (
         class="mx-auto mb-60 h-auto !w-[80%] max-w-[457px]"
       />
     </div>
-    <p class="wv-b2 container mb-60 text-center">
+    <p class="wv-b2 con mb-60 text-center">
       รัฐธรรมนูญ 2560 ให้อำนาจ ส.ว.
       เหล่านี้มากถึงขนาดที่สามารถกำหนดทิศทางของการเมืองไทยได้
       <br />
@@ -444,7 +442,7 @@ const Chapter2 = (
       โดยสามารถแยกกลุ่มมติที่เอื้อประโยชน์ได้ 2 กลุ่ม ได้แก่{" "}
       <strong>มติในที่ประชุมวุฒิสภา และ มติในที่ประชุมรัฐสภา</strong>
     </p>
-    <div class="container mb-60 flex flex-col gap-10 text-center lg:flex-row">
+    <div class="con flex flex-col gap-10 text-center lg:mb-60 lg:flex-row">
       <div class="flex-1">
         <p class="wv-h5 mb-[12px] font-kondolar font-black">มติในที่ประชุมวุฒิสภา</p>
         <div class="wv-b2 mb-[12px] flex items-center justify-center gap-20 font-bold">
@@ -618,7 +616,7 @@ const Chapter2 = (
     <div class="mb-60 flex flex-col items-center justify-center gap-20 lg:flex-row lg:items-start lg:gap-60">
       <span class="wv-h5 font-kondolar font-black">ประเภทการลงคะแนนเสียง</span>
       <img
-        class="lg:hidden"
+        class="md:hidden"
         src="./imgs/votetype-mobile.webp"
         alt=""
         width={264}
@@ -627,7 +625,7 @@ const Chapter2 = (
         decoding="async"
       />
       <img
-        class="hidden lg:block"
+        class="hidden md:block"
         src="./imgs/votetype-desktop.webp"
         alt=""
         width={395}
@@ -660,22 +658,22 @@ const Chapter3 = (
     <TitleBlock class="mt-100">
       แล้วจะแก้ไขปัญหา ส.ว. ที่ส่งผลกระทบต่อการเมืองประเทศไทยได้อย่างไร?
     </TitleBlock>
-    <p class="wv-b2 container mb-60 text-center">
+    <p class="wv-b2 con mb-60 text-center">
       <strong>&ldquo;การแก้ไขเรื่องที่มาและอำนาจของ ส.ว.&rdquo;</strong>{" "}
       คือสิ่งที่ถูกพูดถึงมาตลอด โดยมีการนำเสนอหลากหลายแนวทาง
     </p>
-    <p class="wv-h4 container mb-60 text-center font-kondolar font-black">
-      Model เกี่ยวกับการแก้ไขปัญหาเรื่องที่มา และอำนาจของ ส.ว.
+    <p class="wv-h4 con mb-60 text-center font-kondolar font-black">
+      Model เกี่ยวกับการแก้ไขปัญหาเรื่องที่มาและอำนาจของ ส.ว.
     </p>
     <div class="flex flex-col">
-      <Ch3Letter title="ยกเลิก ส.ว.เปลี่ยนเป็นสภาเดี่ยว" lottieName="01">
+      <Ch3Letter title="ยกเลิก ส.ว. เปลี่ยนเป็นสภาเดี่ยว" lottieName="01">
         <div class="border-b border-dashed pt-10 pb-20">
           <p class="wv-h8 mb-10 w-full text-center font-kondolar font-black">สรุป</p>
           <p class="wv-b4">
             <span class="font-bold">ระบบสภาเดี่ยว</span>{" "}
             คือระบบรัฐสภาที่มีเพียงสภาผู้แทนราษฎร (ส.ส.)
             ที่มาจากการเลือกตั้งโดยตรงของประชาชนทำหน้าที่ตรากฎหมายของประเทศและตรวจสอบถ่วงดุลรัฐบาล
-            โดยไม่มีสภาบนหรือ สมาชิกวุฒิสภา (ส.ว.) ซึ่งจะแตกต่างจากระบบสภาคู่ ที่ต้องมี
+            โดยไม่มีสภาบนหรือสมาชิกวุฒิสภา (ส.ว.) ซึ่งจะแตกต่างจากระบบสภาคู่ ที่ต้องมี
             ส.ว. ร่วมทำหน้าที่ในสภาด้วย
           </p>
         </div>
@@ -765,7 +763,7 @@ const Chapter3 = (
         </div>
       </Ch3Letter>
       <Ch3Letter
-        title="&ldquo;ลดอำนาจ ส.ว.&rdquo; สภาคู่ แต่อำนาจของ ส.ว.ต้องสัมพันธ์กับที่มา"
+        title="&ldquo;ลดอำนาจ ส.ว.&rdquo; สภาคู่ แต่อำนาจของ ส.ว. ต้องสัมพันธ์กับที่มา"
         lottieName="02"
       >
         <div class="border-b border-dashed pt-10 pb-20">
@@ -781,7 +779,7 @@ const Chapter3 = (
               เพราะไม่ได้มาจากการเลือกตั้งโดยประชาชน
             </li>
             <li class="ml-[2ch]">
-              ส.ว. จาก model นี้สามารถมีหลายประเภท เช่น ส.ว. ตัวแทนกลุ่มวิชาชีพ และ ส.ว.
+              ส.ว. จาก Model นี้สามารถมีหลายประเภท เช่น ส.ว. ตัวแทนกลุ่มวิชาชีพ และ ส.ว.
               ตัวแทนกลุ่มทางสังคมต่าง ๆ เป็นต้น
             </li>
           </ul>
@@ -840,7 +838,8 @@ const Chapter3 = (
                 </p>
                 <ul class="list-disc">
                   <li class="ml-[2ch]">
-                    มีอำนาจในการปกปองผลประโยชนของมลรัฐต่าง ๆ ใหพ้นจากรัฐบาลสหพันธ์และส.ส.
+                    มีอำนาจในการปกป้องผลประโยชน์ของมลรัฐต่าง ๆ ให้พ้นจากรัฐบาลสหพันธ์และ
+                    ส.ส.
                   </li>
                 </ul>
               </div>
@@ -882,8 +881,8 @@ const Chapter3 = (
                   <strong class="wv-h9 font-kondolar font-bold">สหรัฐอเมริกา</strong>
                   <br />
                   <span class="font-bold">
-                    มี ส.ว. มาจากการเลือกตั้งเป็นตัวแทนมลรัฐ
-                    (ส.ว.มีอำนาจมากในระดับเดียวกับ ส.ส.)
+                    มี ส.ว. มาจากการเลือกตั้งเป็นตัวแทนมลรัฐ (ส.ว.
+                    มีอำนาจมากในระดับเดียวกับ ส.ส.)
                   </span>
                 </p>
                 <ul class="list-disc">
@@ -927,12 +926,12 @@ const Chapter3 = (
                     พิจารณากลั่นกรองกฎหมายและตรวจสอบถ่วงดุลฝ่ายบริหารให้เป็นไปอย่างมีประสิทธิภาพ
                   </li>
                   <li class="ml-[2ch]">
-                    มีสิทธิในการร่วมพิจารณาร่างกฏหมาย แต่ไม่มีสิทธิอนุมัติออกกฏหมาย
+                    มีสิทธิในการร่วมพิจารณาร่างกฎหมาย แต่ไม่มีสิทธิอนุมัติออกกฎหมาย
                   </li>
                   <li class="ml-[2ch]">
-                    มีสิทธิในการแก้ไขร่างกฏหมายที่ผ่านความเห็นชอบของ ส.ส.
+                    มีสิทธิในการแก้ไขร่างกฎหมายที่ผ่านความเห็นชอบของ ส.ส.
                     แล้วส่งกลับคืนเพื่อพิจารณาใหม่ หากได้รับความเห็นชอบจากเสียง 2 ใน 3 ของ
-                    ส.ส. ร่างกฏหมายนั้นจะถูกตราเป็นกฏหมาย
+                    ส.ส. ร่างกฎหมายนั้นจะถูกตราเป็นกฎหมาย
                   </li>
                   <li class="ml-[2ch]">
                     มีสิทธิในการร่วมพิจารณางบประมาณ แต่ไม่มีสิทธิในการอนุมัติงบประมาณ
@@ -945,20 +944,20 @@ const Chapter3 = (
       </Ch3Letter>
     </div>
     <Ch3FixImg />
-    <p class="wv-h4 container mb-20 text-center font-kondolar font-black">
+    <p class="wv-h4 con mb-20 text-center font-kondolar font-black">
       วิธีการตามกฎหมายต้องเสนออย่างไร
     </p>
-    <p class="wv-h5 container mb-20 text-center font-kondolar font-black">
+    <p class="wv-h5 con mb-20 text-center font-kondolar font-black">
       แนวทางการแก้ไขบทบัญญัติในรัฐธรรมนูญ
     </p>
-    <p class="wv-b3 container mb-20 text-center lg:mb-60">
+    <p class="wv-b3 con mb-20 text-center lg:mb-60">
       การแก้ไขในเรื่องที่มาและอำนาจของ ส.ว. เป็นการแก้ไขตัวเนื้อหาในรัฐธรรมนูญ 2560
       เนื่องจากรัฐธรรมนูญเป็นกฎหมายสูงสุดและเป็นแม่บทที่กำหนดโครงสร้าง กลไก
       และหลักการพื้นฐานในการปกครองประเทศ
       การแก้ไขเพิ่มเติมรัฐธรรมนูญจึงต้องมีกระบวนการไว้เป็นการเฉพาะและแตกต่างออกไปจากการแก้ไขบทบัญญัติของกฎหมายทั่วไป
       โดยกระบวนการแก้ไขถูกกำหนดไว้ในหมวด 15 การแก้ไขเพิ่มเติมรัฐธรรมนูญ มาตรา 256
     </p>
-    <div class="container flex flex-col gap-20 lg:flex-row">
+    <div class="con flex flex-col gap-20 md:flex-row">
       <div class="flex-1">
         <p class="wv-h5 mb-10 text-center font-kondolar font-black">เงื่อนไขพื้นฐาน</p>
         <p class="wv-b2 mb-10 text-center font-bold">ผู้มีสิทธิยื่นแก้ไขเพิ่มเติม</p>
@@ -972,10 +971,10 @@ const Chapter3 = (
         <Ch3ExtendCondition />
       </div>
     </div>
-    <p class="wv-h4 container mb-80 mt-60 text-center font-kondolar font-black">
+    <p class="wv-h4 con mb-80 mt-60 text-center font-kondolar font-black">
       ช่องทางการเสนอแก้ไขรัฐธรรมนูญเกี่ยวกับที่มา และอำนาจของ ส.ว.
     </p>
-    <div class="container flex flex-col gap-40 pb-120 lg:flex-row">
+    <div class="con flex flex-col gap-40 pb-120 md:flex-row">
       <div class="flex-1">
         <div class="wv-b6 mx-auto mb-20 h-20 w-20 rounded-full bg-black text-center font-bold leading-[20px] text-white">
           1
@@ -1051,18 +1050,18 @@ const Footer = (
       height="333px"
       class="mx-auto mb-50 h-auto !w-[80%] max-w-[333px]"
     />
-    <h2 class="wv-h4 container mb-50 text-center font-kondolar font-black">
+    <h2 class="wv-h4 con mb-50 text-center font-kondolar font-black">
       ส.ว. ในรัฐธรรมนูญ 2560 คือปัญหาของประชาธิปไตยไทย
     </h2>
-    <p class="wv-b2 container mb-[75px] text-center font-bold">
+    <p class="wv-b2 con mb-[75px] text-center font-bold">
       เลือกตั้ง&apos;66 ประชาชนเลือกนายกฯ ผ่านการเลือก ส.ส. ดังนั้นแล้ว มติของ ส.ว.
       ต้องเคารพเจตจํานงของเสียงข้างมาก ส.ว. ต้องลงคะแนน ให้กับแคนดิเดตนายกฯ
       จากพรรคการเมืองที่รวบรวมเสียงส่วนใหญ่ของ ส.ส. ได้เท่านั้น
       <br />
       <br />
       ในระบบรัฐสภา เสียงของประชาชนเท่านั้นที่ &ldquo;ตัดสิน&rdquo; การแก้ไขปัญหาในเรื่อง
-      ส.ว. จึงเป็นเรื่องสำคัญ เพื่อให้ได้มาซึ่ง
-      กลไกทางรัฐสภาที่ยึดโยงกับเจตนารมณ์ของประชาชนมากที่สุด
+      ส.ว. จึงเป็นเรื่องสำคัญ
+      เพื่อให้ได้มาซึ่งกลไกทางรัฐสภาที่ยึดโยงกับเจตนารมณ์ของประชาชนมากที่สุด
     </p>
     <QWvSharer />
   </footer>

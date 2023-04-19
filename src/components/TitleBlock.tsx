@@ -31,7 +31,7 @@ const TitleBlock = component$((props: TitleBlockProps) => {
 
   return (
     <div
-      class={`wv-h4 container mb-60 rounded-10 bg-black text-center font-kondolar font-black text-white ${
+      class={`wv-h4 con mb-60 rounded-10 bg-black text-center font-kondolar font-black text-white ${
         props.class ?? ""
       }`}
     >

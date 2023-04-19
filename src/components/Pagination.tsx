@@ -13,7 +13,7 @@ const Pagination = component$<PaginationProps>(
     const totalPage = Math.ceil(total / perPage);
 
     return (
-      <div class="flex items-center gap-4">
+      <div class="mx-auto flex items-center gap-4 lg:mr-0">
         <button
           class="flex h-[24px] w-[24px] cursor-pointer items-center justify-center rounded-[2px] border bg-white disabled:cursor-not-allowed disabled:opacity-50"
           type="button"
@@ -127,7 +127,6 @@ const Pagination = component$<PaginationProps>(
           disabled={currentPage === totalPage - 1}
         >
           <svg
-            class="-right-[1px]"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 9 12"

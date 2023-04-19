@@ -21,7 +21,7 @@ const RadioPill = component$<RadioPillProps>(({ id, name, checked, onChange }) =
       />
       <label
         for={"radiopill-" + name + "-" + id}
-        class="pill-label flex cursor-pointer select-none items-center gap-4 rounded-full border py-4 px-10"
+        class="pill-label nobr flex cursor-pointer select-none items-center gap-4 rounded-full border py-4 px-10"
       >
         <div class="pill-radio m-[2px] flex h-[20px] w-[20px] items-center justify-center rounded-full bg-white ring-2 ring-inset ring-black" />
         <Slot />

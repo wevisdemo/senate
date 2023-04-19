@@ -19,7 +19,7 @@ const CheckPill = component$<CheckPillProps>(({ id, checked, onChange }) => {
       />
       <label
         for={"checkpill-" + id}
-        class="pill-label flex cursor-pointer select-none items-center gap-4 rounded-full border py-4 px-10"
+        class="pill-label nobr flex cursor-pointer select-none items-center gap-4 rounded-full border py-4 px-10"
       >
         <div class="pill-checkbox m-[3px] flex h-[18px] w-[18px] items-center justify-center rounded-[3px] bg-white ring-2 ring-inset ring-black">
           <svg

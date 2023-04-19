@@ -774,7 +774,7 @@ const Ch2Explore = component$(() => {
   });
 
   return (
-    <div class="container mb-60">
+    <div class="con mb-60">
       <TabSelect id="votelog" secondBtnText="ดูรายชื่อมติ" onChange={changeTabIndex}>
         <span class="wv-b3 nobr flex items-center gap-4">
           คลิก

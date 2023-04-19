@@ -15,9 +15,8 @@ html {
   @apply overflow-x-hidden scroll-smooth;
 }
 
-.container {
-  /* @apply mx-auto w-[calc(100%_-_40px)] max-w-[1440px] lg:w-[calc(100%_-_200px)]; */
-  @apply mx-auto w-[calc(100%_-_40px)] max-w-[1280px] lg:w-[calc(100%_-_200px)];
+.con {
+  @apply mx-auto w-[calc(100%_-_40px)] max-w-[1280px] md:w-[calc(100%_-_200px)];
 }
 
 .nobr {

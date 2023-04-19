@@ -49,7 +49,7 @@ const Ch2Compare = component$(() => {
   );
 
   return (
-    <div class="container flex flex-col gap-20 lg:flex-row lg:items-start">
+    <div class="con flex flex-col gap-20 lg:flex-row lg:items-start">
       <div class="flex-1">
         <p class="wv-h6 mb-30 text-center font-kondolar font-black lg:text-left">
           เปรียบเทียบความแตกต่างการเลือกนายกรัฐมนตรีใน รธน. 40 และ 60
@@ -58,7 +58,7 @@ const Ch2Compare = component$(() => {
       </div>
       <div ref={el40} class="flex-1 rounded-10 border bg-white p-20">
         <p class="wv-h6 mb-10 rounded-10 bg-black p-10 text-center font-kondolar font-black text-white">
-          รัฐธรรมนูญ’ 40
+          รัฐธรรมนูญ&apos;40
         </p>
         <p class="wv-h7 mb-10 text-center font-kondolar font-black">
           การเลือกนายกรัฐมนตรี
@@ -81,7 +81,7 @@ const Ch2Compare = component$(() => {
       </div>
       <div ref={el60} class="flex-1 rounded-10 border bg-white p-20">
         <p class="wv-h6 mb-10 rounded-10 bg-black p-10 text-center font-kondolar font-black text-white">
-          รัฐธรรมนูญ’ 60
+          รัฐธรรมนูญ&apos;60
         </p>
         <p class="wv-h7 mb-10 text-center font-kondolar font-black">
           การเลือกนายกรัฐมนตรี
@@ -123,8 +123,8 @@ const Ch2Compare = component$(() => {
           </div>
         </div>
         <p class="wv-b3 text-center lg:text-left">
-          ในระยะ 5 ปีแรก ให้ส.ส. ทั้ง 500 คน กับ ส.ว. 250 คน ร่วมกัน
-          ลงมติเลือกนายกรัฐมนตรีโดยใช้เสียง
+          ในระยะ 5 ปีแรก ให้ ส.ส. ทั้ง 500 คน กับ ส.ว. 250 คน
+          ร่วมกันลงมติเลือกนายกรัฐมนตรีโดยใช้เสียง
           <span class="font-bold">กึ่งหนึ่งของ 2 สภา คือ 376 เสียง</span>
         </p>
       </div>

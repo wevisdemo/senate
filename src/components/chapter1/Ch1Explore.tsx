@@ -49,7 +49,7 @@ const JobDivider = component$(
     return (
       <>
         <div class="flex items-center gap-10">
-          <span class="wv-h7 font-kondolar font-bold">{name}</span>
+          <span class="wv-h7 font-kondolar font-bold">{name.replace("ๆ", " ๆ")}</span>
           <div class="flex-1 border-t" />
           <div class="wv-b3 block text-right font-bold">
             {data?.length ?? PEOPLE.jobs[name]} คน
@@ -69,7 +69,9 @@ const Overview = component$(({ data }: { data: FilteredPeopleDataSchema }) => {
   return (
     <div class="flex-1">
       <div class="flex items-center gap-20">
-        <span class="wv-b2 font-bold">สัญลักษณ์ประเภท ส.ว.</span>
+        <span class="wv-b2 font-bold">
+          สัญลักษณ์<span class="nobr">ประเภท ส.ว.</span>
+        </span>
         <div class="flex flex-wrap items-center justify-center gap-[8px]">
           <div class="flex gap-[8px]">
             <div class="h-20 w-20 rounded-full border bg-senate-green" />
@@ -268,9 +270,9 @@ const Details = component$(({ data }: { data: FilteredPeopleDataSchema }) => {
   });
 
   return (
-    <div class="flex-1">
-      <div class="mb-15 flex flex-col items-center justify-between gap-10 lg:flex-row">
-        <div class="wv-b4 font-bold">&ndash; {data.list.length} คน &ndash;</div>
+    <div class="w-full flex-1">
+      <div class="mb-15 flex flex-col flex-wrap items-center justify-between gap-10 lg:flex-row">
+        <div class="wv-b4 nobr font-bold">&ndash; {data.list.length} คน &ndash;</div>
         {data.list.length > ENTRY_PER_PAGE && (
           <Pagination
             perPage={ENTRY_PER_PAGE}
@@ -365,7 +367,7 @@ const Ch1Explore = component$(() => {
   });
 
   return (
-    <div class="container mb-60">
+    <div class="con mb-60">
       <TabSelect
         id="senate"
         secondBtnText="ดูรายชื่อ ก&ndash;ฮ"
@@ -383,7 +385,7 @@ const Ch1Explore = component$(() => {
         </defs>
       </svg>
       <div class="flex flex-col items-start gap-30 lg:flex-row">
-        <div class="max-w-[530px] flex-1 rounded-10 border bg-white p-30">
+        <div class="flex-1 rounded-10 border bg-white p-30 lg:max-w-[530px]">
           <p class="wv-h6 mb-10 font-kondolar font-black">เลือกสำรวจตาม</p>
           <p class="wv-b2 mb-10 font-bold">ประเภท ส.ว.</p>
           <div class="mb-10 flex flex-wrap gap-[8px]">
@@ -535,7 +537,7 @@ const Ch1Explore = component$(() => {
                 })}
               >
                 <span class="wv-b4 font-bold leading-none">
-                  {job} ({PEOPLE.jobs[job as OccupationGroup]})
+                  {job.replace("ๆ", " ๆ")} ({PEOPLE.jobs[job as OccupationGroup]})
                 </span>
               </RadioPill>
             ))}

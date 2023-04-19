@@ -8,7 +8,6 @@ const Ch1Video = component$(() => {
     () => {
       if (elVideo.value)
         inView(elVideo.value, () => {
-          elVideo.value?.load();
           elVideo.value?.play();
         });
     },
