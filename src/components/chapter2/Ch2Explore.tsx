@@ -799,6 +799,44 @@ const Ch2Explore = component$(() => {
           เพื่อสำรวจแต่ละมติ
         </span>
       </TabSelect>
+      <div class="mb-20 -mt-20 flex flex-col items-center justify-center gap-10 md:mb-30 md:-mt-10 lg:mt-0 lg:flex-row">
+        <span class="wv-b2 nobr font-bold">ประเภทการลงคะแนนเสียง</span>
+        <div class="flex flex-wrap items-center justify-center gap-10">
+          <span class="wv-b4 flex items-center gap-4">
+            <span class="h-[14px] w-[14px] bg-vote-เห็น" />
+            เห็นด้วย
+          </span>
+          <span class="wv-b4 flex items-center gap-4">
+            <span class="h-[14px] w-[14px] bg-vote-ไม่เห็น" />
+            ไม่เห็นด้วย
+          </span>
+          <span class="wv-b4 flex items-center gap-4">
+            <span class="h-[14px] w-[14px] bg-vote-งด" />
+            งดออกเสียง
+          </span>
+          <span class="wv-b4 flex items-center gap-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 14"
+              width="14"
+              height="14"
+            >
+              <path
+                fill="#000"
+                fillRule="evenodd"
+                d="M1.272 0L0 1.272 5.727 7 0 12.727 1.272 14 7 8.272 12.727 14 14 12.727 8.272 7 14 1.272 12.727.001 7 5.727 1.272 0z"
+                clipRule="evenodd"
+              />
+            </svg>
+            ไม่เข้าประชุม
+          </span>
+          <span class="wv-b4 flex items-center gap-4">
+            <span class="h-[14px] w-[14px] border bg-vote-ไม่ลง" />
+            ไม่ลงคะแนน
+          </span>
+        </div>
+      </div>
       {tabIndex.value === 0 ? <Overview data={data} /> : <Details data={data} />}
     </div>
   );

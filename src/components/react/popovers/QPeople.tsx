@@ -229,7 +229,9 @@ export default qwikify$(
                   )}
                 </svg>
                 <span className="mb-5 block">
-                  {data.NcpoType ? "เป็นองคพยพ คสช. มาก่อน" : "ไม่เป็นองคพยพ คสช. มาก่อน"}
+                  {data.NcpoType
+                    ? "เป็นผู้มีส่วนเกี่ยวข้องกับ คสช. มาก่อน"
+                    : "ไม่ได้เป็นผู้มีส่วนเกี่ยวข้องกับ คสช."}
                 </span>
               </div>
               {data.NcpoType && (

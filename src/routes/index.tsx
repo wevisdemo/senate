@@ -707,7 +707,7 @@ const Chapter3 = (
               <p>
                 <strong class="wv-h9 font-kondolar font-bold">นิวซีแลนด์</strong>
                 <br />
-                <span class="wv-b4">&apos;1950</span>
+                <span class="wv-b4">ยกเลิก ส.ว. ในปี ค.ศ. 1950</span>
               </p>
             </li>
             <li class="mb-10 flex items-start gap-10">
@@ -810,7 +810,7 @@ const Chapter3 = (
                   </li>
                   <li class="ml-[2ch]">มีอำนาจในการพิจารณาร่างกฎหมาย</li>
                   <li class="ml-[2ch]">
-                    ไม่มีอำนาจยับยั้งกฎหมายได้เพียงแต่ชะลอออกไปได้มากถึง 2 ปี
+                    ไม่มีอำนาจยับยั้งกฎหมาย ได้เพียงแต่ชะลอออกไปได้มากถึง 2 ปี
                   </li>
                   <li class="ml-[2ch]">
                     ไม่มีอำนาจแก้ไขร่างกฎหมายที่เกี่ยวข้องกับการเงิน
