@@ -1,13 +1,11 @@
 import { component$, Slot } from "@builder.io/qwik";
-import Navbar from "~/components/Navbar";
-import QWvFooter from "~/components/react/QWvFooter";
+import { Navbar } from "~/components/Navbar";
+import { QWvFooter } from "~/components/react/QWvFooter";
 
-export default component$(() => {
-  return (
-    <>
-      <Navbar />
-      <Slot />
-      <QWvFooter />
-    </>
-  );
-});
+export default component$(() => (
+  <>
+    <Navbar />
+    <Slot />
+    <QWvFooter />
+  </>
+));

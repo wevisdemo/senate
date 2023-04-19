@@ -3,7 +3,7 @@
 import { qwikify$ } from "@builder.io/qwik-react";
 import { Popover, Transition } from "@headlessui/react";
 
-export default qwikify$(
+export const QChoosePm = qwikify$(
   () => (
     <Popover className="relative flex">
       <Popover.Button

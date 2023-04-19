@@ -1,8 +1,8 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import { animate, inView, scroll } from "motion";
-import Lottie from "~/components/Lottie";
+import { Lottie } from "~/components/Lottie";
 
-const Ch1Infinity = component$(() => {
+export const Ch1Infinity = component$(() => {
   const elContainer = useSignal<HTMLDivElement>();
   const currentLottieInview = useSignal<number[]>([]);
 
@@ -228,5 +228,3 @@ const Ch1Infinity = component$(() => {
     </div>
   );
 });
-
-export default Ch1Infinity;

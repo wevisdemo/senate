@@ -10,10 +10,10 @@ import {
 
 import VOTELOG from "~/data/votelog";
 
-import TabSelect from "~/components/TabSelect";
-import Pagination from "../Pagination";
-import QChoosePm from "../react/popovers/QChoosePm";
-import QVotelog from "../react/popovers/QVotelog";
+import { TabSelect } from "~/components/TabSelect";
+import { Pagination } from "../Pagination";
+import { QChoosePm } from "../react/popovers/QChoosePm";
+import { QVotelog } from "../react/popovers/QVotelog";
 
 import type { VotelogDataSchema, VotelogItemType } from "~/types/votelog";
 
@@ -35,7 +35,7 @@ const LoadingPaper = component$(() => (
   </svg>
 ));
 
-const Overview = component$(({ data }: { data: Signal<VotelogDataSchema> }) => (
+const Overview = component$<{ data: Signal<VotelogDataSchema> }>(({ data }) => (
   <>
     <p class="wv-h4 mb-30 text-center font-kondolar font-black">
       มติในที่ประชุมวุฒิสภา ({VOTELOG.senate.total})
@@ -237,176 +237,176 @@ const Overview = component$(({ data }: { data: Signal<VotelogDataSchema> }) => (
   </>
 ));
 
-const VotelogBox = component$(
-  ({ data, type }: { data: VotelogItemType; type: string }) => {
-    const totalVote =
-      (data.PeopleVotes?.mp?.[5] ?? 0) + (data.PeopleVotes?.senate?.[5] ?? 0);
-    const totalPassVote =
-      (data.PeopleVotes?.mp?.[0] ?? 0) + (data.PeopleVotes?.senate?.[0] ?? 0);
-    const passRate = Math.round((totalPassVote / (totalVote || 1)) * 1e4) / 1e2;
-
-    return (
-      <div class="border bg-white">
-        <div class={"h-10 " + (data.IsPassed ? "bg-vote-เห็น" : "bg-vote-ไม่เห็น")} />
-        <div class="px-15 py-10">
-          <div class="mb-10 flex items-center font-bold">
-            <span class="mr-auto">{data.VoteDate}</span>
-            <span class="flex font-bold">{type}</span>
+const VotelogBox = component$<{ data: VotelogItemType; type: string }>(
+  ({ data, type }) => (
+    <div class="border bg-white">
+      <div class={"h-10 " + (data.IsPassed ? "bg-vote-เห็น" : "bg-vote-ไม่เห็น")} />
+      <div class="px-15 py-10">
+        <div class="mb-10 flex items-center font-bold">
+          <span class="mr-auto">{data.VoteDate}</span>
+          <span class="flex font-bold">{type}</span>
+        </div>
+        <hr class="mb-10 border-dashed" />
+        <p class="wv-h9 mb-10 font-kondolar">{data.Title}</p>
+        <div class="mb-10 flex items-center justify-between font-kondolar">
+          <p class="wv-h9 mr-auto font-bold">
+            {Math.round(
+              (((data.PeopleVotes?.mp?.[0] ?? 0) + (data.PeopleVotes?.senate?.[0] ?? 0)) /
+                ((data.PeopleVotes?.mp?.[5] ?? 0) +
+                  (data.PeopleVotes?.senate?.[5] ?? 0) || 1)) *
+                1e4
+            ) / 1e2}
+            % เห็นด้วย
+          </p>
+          <div
+            class={
+              "-top-[2px] mr-4 h-[13px] w-[13px] rounded-full " +
+              (data.IsPassed ? "bg-vote-เห็น" : "bg-vote-ไม่เห็น")
+            }
+          />
+          <span class="wv-h10">{!data.IsPassed && "ไม่"}ผ่าน</span>
+        </div>
+        {(data.PeopleVotes?.mp || data.PeopleVotes?.senate) && (
+          <div class="font-bold lg:hidden">ผลการลงคะแนนเสียง</div>
+        )}
+        {data.PeopleVotes?.senate && data.PeopleVotes?.mp && (
+          <div class="flex items-center justify-end gap-4 text-[10px]">
+            <div class="-top-[1px] h-5 w-5 bg-vote-เห็น" />
+            <span>{data.PeopleVotes.senate[0]}</span>
+            <div class="-top-[1px] h-5 w-5 bg-vote-ไม่เห็น" />
+            <span>{data.PeopleVotes.senate[1]}</span>
+            <div class="-top-[1px] h-5 w-5 bg-vote-งด" />
+            <span>{data.PeopleVotes.senate[2]}</span>
+            <div class="-top-[1px] h-5 w-5 bg-vote-ไม่ลง" />
+            <span>{data.PeopleVotes.senate[3]}</span>
+            <div class="-top-[1px] h-5 w-5 bg-vote-ไม่เข้า" />
+            <span>{data.PeopleVotes.senate[4]}</span>
           </div>
-          <hr class="mb-10 border-dashed" />
-          <p class="wv-h9 mb-10 font-kondolar">{data.Title}</p>
-          <div class="mb-10 flex items-center justify-between font-kondolar">
-            <p class="wv-h9 mr-auto font-bold">{passRate}% เห็นด้วย</p>
-            <div
-              class={
-                "-top-[2px] mr-4 h-[13px] w-[13px] rounded-full " +
-                (data.IsPassed ? "bg-vote-เห็น" : "bg-vote-ไม่เห็น")
-              }
-            />
-            <span class="wv-h10">{!data.IsPassed && "ไม่"}ผ่าน</span>
+        )}
+        {(data.PeopleVotes?.mp || data.PeopleVotes?.senate) && (
+          <div class="-mt-[2px] flex">
+            <div class="hidden font-bold lg:block">ผลการลงคะแนนเสียง</div>
+            <div class="flex-1 lg:ml-auto lg:flex-initial">
+              {data.PeopleVotes?.senate && (
+                <div class="flex items-center gap-20">
+                  <span class="font-bold">ส.ว.</span>
+                  <div
+                    class="flex w-full lg:w-[177px]"
+                    style={{ "--max": data.PeopleVotes.senate[5] }}
+                  >
+                    <div
+                      class="chart-series bg-vote-เห็น"
+                      style={{ "--val": data.PeopleVotes.senate[0] }}
+                    />
+                    <div
+                      class="chart-series bg-vote-ไม่เห็น"
+                      style={{ "--val": data.PeopleVotes.senate[1] }}
+                    />
+                    <div
+                      class="chart-series bg-vote-งด"
+                      style={{ "--val": data.PeopleVotes.senate[2] }}
+                    />
+                    <div
+                      class="chart-series bg-vote-ไม่ลง"
+                      style={{ "--val": data.PeopleVotes.senate[3] }}
+                    />
+                    <div
+                      class="chart-series bg-vote-ไม่เข้า"
+                      style={{ "--val": data.PeopleVotes.senate[4] }}
+                    />
+                  </div>
+                </div>
+              )}
+              {data.PeopleVotes?.mp && (
+                <div class="flex items-center gap-20">
+                  <span class="font-bold">ส.ส.</span>
+                  <div
+                    class="flex w-full lg:w-[177px]"
+                    style={{ "--max": data.PeopleVotes.mp[5] }}
+                  >
+                    <div
+                      class="chart-series bg-vote-เห็น"
+                      style={{ "--val": data.PeopleVotes.mp[0] }}
+                    />
+                    <div
+                      class="chart-series bg-vote-ไม่เห็น"
+                      style={{ "--val": data.PeopleVotes.mp[1] }}
+                    />
+                    <div
+                      class="chart-series bg-vote-งด"
+                      style={{ "--val": data.PeopleVotes.mp[2] }}
+                    />
+                    <div
+                      class="chart-series bg-vote-ไม่ลง"
+                      style={{ "--val": data.PeopleVotes.mp[3] }}
+                    />
+                    <div
+                      class="chart-series bg-vote-ไม่เข้า"
+                      style={{ "--val": data.PeopleVotes.mp[4] }}
+                    />
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
-          {(data.PeopleVotes?.mp || data.PeopleVotes?.senate) && (
-            <div class="font-bold lg:hidden">ผลการลงคะแนนเสียง</div>
-          )}
-          {data.PeopleVotes?.senate && data.PeopleVotes?.mp && (
-            <div class="flex items-center justify-end gap-4 text-[10px]">
-              <div class="-top-[1px] h-5 w-5 bg-vote-เห็น" />
-              <span>{data.PeopleVotes.senate[0]}</span>
-              <div class="-top-[1px] h-5 w-5 bg-vote-ไม่เห็น" />
-              <span>{data.PeopleVotes.senate[1]}</span>
-              <div class="-top-[1px] h-5 w-5 bg-vote-งด" />
-              <span>{data.PeopleVotes.senate[2]}</span>
-              <div class="-top-[1px] h-5 w-5 bg-vote-ไม่ลง" />
-              <span>{data.PeopleVotes.senate[3]}</span>
-              <div class="-top-[1px] h-5 w-5 bg-vote-ไม่เข้า" />
-              <span>{data.PeopleVotes.senate[4]}</span>
-            </div>
-          )}
-          {(data.PeopleVotes?.mp || data.PeopleVotes?.senate) && (
-            <div class="-mt-[2px] flex">
-              <div class="hidden font-bold lg:block">ผลการลงคะแนนเสียง</div>
-              <div class="flex-1 lg:ml-auto lg:flex-initial">
-                {data.PeopleVotes?.senate && (
-                  <div class="flex items-center gap-20">
-                    <span class="font-bold">ส.ว.</span>
-                    <div
-                      class="flex w-full lg:w-[177px]"
-                      style={{ "--max": data.PeopleVotes.senate[5] }}
-                    >
-                      <div
-                        class="chart-series bg-vote-เห็น"
-                        style={{ "--val": data.PeopleVotes.senate[0] }}
-                      />
-                      <div
-                        class="chart-series bg-vote-ไม่เห็น"
-                        style={{ "--val": data.PeopleVotes.senate[1] }}
-                      />
-                      <div
-                        class="chart-series bg-vote-งด"
-                        style={{ "--val": data.PeopleVotes.senate[2] }}
-                      />
-                      <div
-                        class="chart-series bg-vote-ไม่ลง"
-                        style={{ "--val": data.PeopleVotes.senate[3] }}
-                      />
-                      <div
-                        class="chart-series bg-vote-ไม่เข้า"
-                        style={{ "--val": data.PeopleVotes.senate[4] }}
-                      />
-                    </div>
-                  </div>
-                )}
-                {data.PeopleVotes?.mp && (
-                  <div class="flex items-center gap-20">
-                    <span class="font-bold">ส.ส.</span>
-                    <div
-                      class="flex w-full lg:w-[177px]"
-                      style={{ "--max": data.PeopleVotes.mp[5] }}
-                    >
-                      <div
-                        class="chart-series bg-vote-เห็น"
-                        style={{ "--val": data.PeopleVotes.mp[0] }}
-                      />
-                      <div
-                        class="chart-series bg-vote-ไม่เห็น"
-                        style={{ "--val": data.PeopleVotes.mp[1] }}
-                      />
-                      <div
-                        class="chart-series bg-vote-งด"
-                        style={{ "--val": data.PeopleVotes.mp[2] }}
-                      />
-                      <div
-                        class="chart-series bg-vote-ไม่ลง"
-                        style={{ "--val": data.PeopleVotes.mp[3] }}
-                      />
-                      <div
-                        class="chart-series bg-vote-ไม่เข้า"
-                        style={{ "--val": data.PeopleVotes.mp[4] }}
-                      />
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
-          {(data.PeopleVotes?.mp || data.PeopleVotes?.senate) && (
-            <div class="mb-10 flex items-center justify-end gap-4 text-[10px]">
-              <div class="-top-[1px] h-5 w-5 bg-vote-เห็น" />
-              <span>
-                {data.PeopleVotes?.mp
-                  ? data.PeopleVotes.mp[0]
-                  : data.PeopleVotes?.senate && data.PeopleVotes.senate[0]}
-              </span>
-              <div class="-top-[1px] h-5 w-5 bg-vote-ไม่เห็น" />
-              <span>
-                {data.PeopleVotes?.mp
-                  ? data.PeopleVotes.mp[1]
-                  : data.PeopleVotes?.senate && data.PeopleVotes.senate[1]}
-              </span>
-              <div class="-top-[1px] h-5 w-5 bg-vote-งด" />
-              <span>
-                {data.PeopleVotes?.mp
-                  ? data.PeopleVotes.mp[2]
-                  : data.PeopleVotes?.senate && data.PeopleVotes.senate[2]}
-              </span>
-              <div class="-top-[1px] h-5 w-5 bg-vote-ไม่ลง" />
-              <span>
-                {data.PeopleVotes?.mp
-                  ? data.PeopleVotes.mp[3]
-                  : data.PeopleVotes?.senate && data.PeopleVotes.senate[3]}
-              </span>
-              <div class="-top-[1px] h-5 w-5 bg-vote-ไม่เข้า" />
-              <span>
-                {data.PeopleVotes?.mp
-                  ? data.PeopleVotes.mp[4]
-                  : data.PeopleVotes?.senate && data.PeopleVotes.senate[4]}
-              </span>
-            </div>
-          )}
-          <hr class="mb-10 border-dashed" />
-          <div class="text-center">
-            <a
-              class="wv-b3 inline-flex items-center gap-[4px] font-bold text-black"
-              href={"https://theyworkforus.wevis.info/votelog/" + data.Id}
-              target="_blank"
-              rel="nofollow noopener noreferrer"
+        )}
+        {(data.PeopleVotes?.mp || data.PeopleVotes?.senate) && (
+          <div class="mb-10 flex items-center justify-end gap-4 text-[10px]">
+            <div class="-top-[1px] h-5 w-5 bg-vote-เห็น" />
+            <span>
+              {data.PeopleVotes?.mp
+                ? data.PeopleVotes.mp[0]
+                : data.PeopleVotes?.senate && data.PeopleVotes.senate[0]}
+            </span>
+            <div class="-top-[1px] h-5 w-5 bg-vote-ไม่เห็น" />
+            <span>
+              {data.PeopleVotes?.mp
+                ? data.PeopleVotes.mp[1]
+                : data.PeopleVotes?.senate && data.PeopleVotes.senate[1]}
+            </span>
+            <div class="-top-[1px] h-5 w-5 bg-vote-งด" />
+            <span>
+              {data.PeopleVotes?.mp
+                ? data.PeopleVotes.mp[2]
+                : data.PeopleVotes?.senate && data.PeopleVotes.senate[2]}
+            </span>
+            <div class="-top-[1px] h-5 w-5 bg-vote-ไม่ลง" />
+            <span>
+              {data.PeopleVotes?.mp
+                ? data.PeopleVotes.mp[3]
+                : data.PeopleVotes?.senate && data.PeopleVotes.senate[3]}
+            </span>
+            <div class="-top-[1px] h-5 w-5 bg-vote-ไม่เข้า" />
+            <span>
+              {data.PeopleVotes?.mp
+                ? data.PeopleVotes.mp[4]
+                : data.PeopleVotes?.senate && data.PeopleVotes.senate[4]}
+            </span>
+          </div>
+        )}
+        <hr class="mb-10 border-dashed" />
+        <div class="text-center">
+          <a
+            class="wv-b3 inline-flex items-center gap-[4px] font-bold text-black"
+            href={"https://theyworkforus.wevis.info/votelog/" + data.Id}
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+          >
+            <span>ดูรายละเอียด</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 20 21"
+              width="20"
+              height="21"
             >
-              <span>ดูรายละเอียด</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 20 21"
-                width="20"
-                height="21"
-              >
-                <path fill="#000" d="M8.334 6.333l5 4.167-5 4.167V6.333z" />
-              </svg>
-            </a>
-          </div>
+              <path fill="#000" d="M8.334 6.333l5 4.167-5 4.167V6.333z" />
+            </svg>
+          </a>
         </div>
       </div>
-    );
-  }
+    </div>
+  )
 );
 
 const ChooseMpVotelogBox = component$(() => (
@@ -498,48 +498,47 @@ const ChooseMpVotelogBox = component$(() => (
   </div>
 ));
 
-const Details = component$(({ data }: { data: Signal<VotelogDataSchema> }) => {
+const Details = component$<{ data: Signal<VotelogDataSchema> }>(({ data }) => {
   const currentCatg = useSignal(0);
   const currentPageIndex = useSignal(0);
 
-  const setPageIndex = $((i: number) => {
-    currentPageIndex.value = i;
-  });
-
-  const catgCount = useComputed$(() => {
-    return [
-      VOTELOG.senate.keepNcpo,
-      VOTELOG.senate.nationStrat,
-      VOTELOG.senate.consVote,
-      VOTELOG.parliament.selectPm,
-      VOTELOG.parliament.consDraft,
-      VOTELOG.parliament.consVote,
-    ][currentCatg.value];
-  });
-
-  const dataCatg = useComputed$(() => {
-    return [
-      data.value?.senate?.keepNcpo ?? [],
-      data.value?.senate?.nationStrat ?? [],
-      data.value?.senate?.consVote ?? [],
-      [],
-      data.value?.parliament?.consDraft ?? [],
-      data.value?.parliament?.consVote ?? [],
-    ][currentCatg.value];
-  });
-
-  const catgName = useComputed$(() => {
-    return (
+  const catgCount = useComputed$(
+    () =>
       [
-        "ค้ำจุน คสช.",
-        "ยุทธศาสตร์ชาติ",
-        "ประชามติ",
-        "เลือกนายกรัฐมนตรี",
-        "แก้รัฐธรรมนูญ",
-        "ประชามติ",
-      ] as const
-    )[currentCatg.value];
-  });
+        VOTELOG.senate.keepNcpo,
+        VOTELOG.senate.nationStrat,
+        VOTELOG.senate.consVote,
+        VOTELOG.parliament.selectPm,
+        VOTELOG.parliament.consDraft,
+        VOTELOG.parliament.consVote,
+      ][currentCatg.value]
+  );
+
+  const dataCatg = useComputed$(
+    () =>
+      [
+        data.value?.senate?.keepNcpo ?? [],
+        data.value?.senate?.nationStrat ?? [],
+        data.value?.senate?.consVote ?? [],
+        [],
+        data.value?.parliament?.consDraft ?? [],
+        data.value?.parliament?.consVote ?? [],
+      ][currentCatg.value]
+  );
+
+  const catgName = useComputed$(
+    () =>
+      (
+        [
+          "ค้ำจุน คสช.",
+          "ยุทธศาสตร์ชาติ",
+          "ประชามติ",
+          "เลือกนายกรัฐมนตรี",
+          "แก้รัฐธรรมนูญ",
+          "ประชามติ",
+        ] as const
+      )[currentCatg.value]
+  );
 
   useTask$(({ track }) => {
     track(() => currentCatg.value);
@@ -727,7 +726,9 @@ const Details = component$(({ data }: { data: Signal<VotelogDataSchema> }) => {
               perPage={ENTRY_PER_PAGE}
               currentPage={currentPageIndex.value}
               total={catgCount.value}
-              onChange={setPageIndex}
+              onChange={$((i: number) => {
+                currentPageIndex.value = i;
+              })}
             />
           )}
         </div>
@@ -748,7 +749,7 @@ const Details = component$(({ data }: { data: Signal<VotelogDataSchema> }) => {
   );
 });
 
-const Ch2Explore = component$(() => {
+export const Ch2Explore = component$(() => {
   const tabIndex = useSignal(0);
   const data = useSignal<VotelogDataSchema>({
     senate: {
@@ -769,13 +770,15 @@ const Ch2Explore = component$(() => {
     data.value = json;
   });
 
-  const changeTabIndex = $((index: number) => {
-    tabIndex.value = index;
-  });
-
   return (
     <div class="con mb-60">
-      <TabSelect id="votelog" secondBtnText="ดูรายชื่อมติ" onChange={changeTabIndex}>
+      <TabSelect
+        id="votelog"
+        secondBtnText="ดูรายชื่อมติ"
+        onChange={$((index: number) => {
+          tabIndex.value = index;
+        })}
+      >
         <span class="wv-b3 nobr flex items-center gap-4">
           คลิก
           <svg
@@ -841,5 +844,3 @@ const Ch2Explore = component$(() => {
     </div>
   );
 });
-
-export default Ch2Explore;

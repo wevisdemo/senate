@@ -15,8 +15,8 @@ interface QConstitutionPopoverProps {
   right?: boolean;
 }
 
-export default qwikify$(
-  ({ pass, date, type, title, vote, id, right }: QConstitutionPopoverProps) => {
+export const QVotelog = qwikify$<QConstitutionPopoverProps>(
+  ({ pass, date, type, title, vote, id, right }) => {
     const totalVote = (vote?.mp?.[5] ?? 0) + (vote?.senate?.[5] ?? 0);
     const totalPassVote = (vote?.mp?.[0] ?? 0) + (vote?.senate?.[0] ?? 0);
     const passRate = Math.round((totalPassVote / (totalVote || 1)) * 1e4) / 1e2;

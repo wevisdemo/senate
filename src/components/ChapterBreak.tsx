@@ -6,7 +6,7 @@ interface ChapterBreakProps {
   title: string[];
 }
 
-const ChapterBreak = component$(({ part, title }: ChapterBreakProps) => {
+export const ChapterBreak = component$<ChapterBreakProps>(({ part, title }) => {
   const elChapterBreakContainer = useSignal<HTMLDivElement>();
   const elPartContainer = useSignal<HTMLDivElement>();
   const elImgContainer = useSignal<HTMLDivElement>();
@@ -112,5 +112,3 @@ const ChapterBreak = component$(({ part, title }: ChapterBreakProps) => {
     </div>
   );
 });
-
-export default ChapterBreak;

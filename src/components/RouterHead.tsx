@@ -11,7 +11,6 @@ const DESC =
 export const RouterHead = component$(() => {
   const head = useDocumentHead();
   const loc = useLocation();
-  const hrefWithoutAbout = loc.url.href.replace("about/", "");
 
   return (
     <>
@@ -37,14 +36,17 @@ export const RouterHead = component$(() => {
       <meta property="og:type" content="website" />
       <meta property="og:title" content={TITLE} />
       <meta property="og:description" content={DESC} />
-      <meta property="og:image" content={`${hrefWithoutAbout}og.png`} />
+      <meta property="og:image" content={`${loc.url.href.replace("about/", "")}og.png`} />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta property="twitter:domain" content={loc.url.hostname} />
       <meta property="twitter:url" content={loc.url.href} />
       <meta name="twitter:title" content={TITLE} />
       <meta name="twitter:description" content={DESC} />
-      <meta name="twitter:image" content={`${hrefWithoutAbout}og.png`} />
+      <meta
+        name="twitter:image"
+        content={`${loc.url.href.replace("about/", "")}og.png`}
+      />
 
       {head.meta.map((m) => (
         <meta key={m.key} {...m} />

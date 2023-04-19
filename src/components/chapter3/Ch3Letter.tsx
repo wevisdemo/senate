@@ -1,14 +1,15 @@
 import { Slot, component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
-import QLetter from "../react/QLetter";
-import Lottie from "../Lottie";
 import { animate, inView } from "motion";
+
+import { Lottie } from "../Lottie";
+import { QLetter } from "../react/QLetter";
 
 export interface Ch3LetterProps {
   title: string;
   lottieName: string;
 }
 
-const Ch3Letter = component$<Ch3LetterProps>(({ title, lottieName }) => {
+export const Ch3Letter = component$<Ch3LetterProps>(({ title, lottieName }) => {
   const elLetter = useSignal<HTMLDivElement>();
 
   useVisibleTask$(
@@ -89,5 +90,3 @@ const Ch3Letter = component$<Ch3LetterProps>(({ title, lottieName }) => {
     </div>
   );
 });
-
-export default Ch3Letter;

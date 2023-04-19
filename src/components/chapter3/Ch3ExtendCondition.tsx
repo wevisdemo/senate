@@ -1,7 +1,7 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import { animate, inView } from "motion";
 
-const Ch3ExtendCondition = component$(() => {
+export const Ch3ExtendCondition = component$(() => {
   const el1 = useSignal<HTMLDivElement>();
   const el2 = useSignal<HTMLDivElement>();
   const el3 = useSignal<HTMLDivElement>();
@@ -70,5 +70,3 @@ const Ch3ExtendCondition = component$(() => {
     </>
   );
 });
-
-export default Ch3ExtendCondition;

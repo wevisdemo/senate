@@ -1,47 +1,45 @@
 import { component$ } from "@builder.io/qwik";
 
+import { ChapterBreak } from "~/components/ChapterBreak";
+import { JumpToContent } from "~/components/JumpToContent";
+import { Lottie } from "~/components/Lottie";
+import { TitleBlock } from "~/components/TitleBlock";
+import { QWvSharer } from "~/components/react/QWvSharer";
+
+import { Ch1Chart } from "~/components/chapter1/Ch1Chart";
+import { Ch1Divider } from "~/components/chapter1/Ch1Divider";
+import { Ch1Explore } from "~/components/chapter1/Ch1Explore";
+import { Ch1Infinity } from "~/components/chapter1/Ch1Infinity";
+import { Ch1Video } from "~/components/chapter1/Ch1Video";
+
+import { Ch2Compare } from "~/components/chapter2/Ch2Compare";
+import { Ch2Explore } from "~/components/chapter2/Ch2Explore";
+
+import { Ch3BasicCondition } from "~/components/chapter3/Ch3BasicCondition";
+import { Ch3Constitution } from "~/components/chapter3/Ch3Constitution";
+import { Ch3ExtendCondition } from "~/components/chapter3/Ch3ExtendCondition";
+import { Ch3FixImg } from "~/components/chapter3/Ch3FixImg";
+import { Ch3GeneralConstitution } from "~/components/chapter3/Ch3GeneralConstitution";
+import { Ch3Letter } from "~/components/chapter3/Ch3Letter";
+
 import PEOPLE from "~/data/people";
-import VOTELOG from "~/data/votelog";
 import UPDATE from "~/data/update";
+import VOTELOG from "~/data/votelog";
 
-import ChapterBreak from "~/components/ChapterBreak";
-import JumpToContent from "~/components/JumpToContent";
-import Lottie from "~/components/Lottie";
-import TitleBlock from "~/components/TitleBlock";
-import QWvSharer from "~/components/react/QWvSharer";
-
-import Ch1Chart from "~/components/chapter1/Ch1Chart";
-import Ch1Divider from "~/components/chapter1/Ch1Divider";
-import Ch1Infinity from "~/components/chapter1/Ch1Infinity";
-import Ch1Video from "~/components/chapter1/Ch1Video";
-import Ch1Explore from "~/components/chapter1/Ch1Explore";
-
-import Ch2Compare from "~/components/chapter2/Ch2Compare";
-import Ch2Explore from "~/components/chapter2/Ch2Explore";
-
-import Ch3BasicCondition from "~/components/chapter3/Ch3BasicCondition";
-import Ch3Constitution from "~/components/chapter3/Ch3Constitution";
-import Ch3ExtendCondition from "~/components/chapter3/Ch3ExtendCondition";
-import Ch3FixImg from "~/components/chapter3/Ch3FixImg";
-import Ch3GeneralConstitution from "~/components/chapter3/Ch3GeneralConstitution";
-import Ch3Letter from "~/components/chapter3/Ch3Letter";
-
-export default component$(() => {
-  return (
-    <>
-      {Header}
-      <main class="min-h-[50vh] bg-bg">
-        {Chapter1}
-        {Chapter2}
-        {Chapter3}
-      </main>
-      {Footer}
-      <div class="relative h-0 w-0">
-        <div class="fixed h-screen" id="100vh" />
-      </div>
-    </>
-  );
-});
+export default component$(() => (
+  <>
+    {Header}
+    <main class="min-h-[50vh] bg-bg">
+      {Chapter1}
+      {Chapter2}
+      {Chapter3}
+    </main>
+    {Footer}
+    <div class="relative h-0 w-0">
+      <div class="fixed h-screen" id="100vh" />
+    </div>
+  </>
+));
 
 // ██╗  ██╗███████╗ █████╗ ██████╗ ███████╗██████╗
 // ██║  ██║██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗

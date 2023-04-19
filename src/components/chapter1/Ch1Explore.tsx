@@ -10,11 +10,11 @@ import {
 
 import PEOPLE from "~/data/people";
 
-import TabSelect from "~/components/TabSelect";
-import CheckPill from "../CheckPill";
-import Pagination from "../Pagination";
-import RadioPill from "../RadioPill";
-import QPeople from "../react/popovers/QPeople";
+import { TabSelect } from "~/components/TabSelect";
+import { CheckPill } from "../CheckPill";
+import { Pagination } from "../Pagination";
+import { RadioPill } from "../RadioPill";
+import { QPeople } from "../react/popovers/QPeople";
 
 import type {
   FilteredPeopleDataSchema,
@@ -44,114 +44,110 @@ const groupBy = <T, K extends keyof any>(
     {} as Record<K, T[]>
   );
 
-const JobDivider = component$(
-  ({ name, data }: { name: OccupationGroup; data: PeopleListSchema[] }) => {
-    return (
-      <>
-        <div class="flex items-center gap-10">
-          <span class="wv-h7 font-kondolar font-bold">{name.replace("ๆ", " ๆ")}</span>
-          <div class="flex-1 border-t" />
-          <div class="wv-b3 block text-right font-bold">
-            {data?.length ?? PEOPLE.jobs[name]} คน
-          </div>
-        </div>
-        {data?.filter((e) => !e.IsActive)?.length > 0 && (
-          <span class="wv-b6 -mt-4 -mb-4 block text-right leading-none">
-            {data.filter((e) => !e.IsActive).length} คนพ้นจากตำแหน่ง
-          </span>
-        )}
-      </>
-    );
-  }
-);
-
-const Overview = component$(({ data }: { data: FilteredPeopleDataSchema }) => {
-  return (
-    <div class="flex-1">
-      <div class="flex items-center gap-20">
-        <span class="wv-b2 font-bold">
-          สัญลักษณ์<span class="nobr">ประเภท ส.ว.</span>
-        </span>
-        <div class="flex flex-wrap items-center justify-center gap-[8px]">
-          <div class="flex gap-[8px]">
-            <div class="h-20 w-20 rounded-full border bg-senate-green" />
-            <span class="wv-b4 font-bold">ส.ว. โดยตำแหน่ง</span>
-          </div>
-          <div class="flex gap-[8px]">
-            <div class="h-20 w-20 rounded-full border bg-senate-blue" />
-            <span class="wv-b4 font-bold">ส.ว. เลือกโดย คสช.</span>
-          </div>
-          <div class="flex gap-[8px]">
-            <div class="h-20 w-20 rounded-full border bg-senate-pink" />
-            <span class="wv-b4 font-bold">ส.ว. เลือกกันเอง</span>
-          </div>
-          <div class="flex gap-[8px]">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 23 23"
-              width="21"
-              height="21"
-            >
-              <rect width="21" height="21" x="1" y="1.333" fill="#fff" rx="10.5" />
-              <g clipPath="url(#senate-yeeted)">
-                <path
-                  fill="#000"
-                  fillRule="evenodd"
-                  d="M7.285 6.685l-.933.933 4.2 4.2-4.2 4.2.933.934 4.2-4.2 4.2 4.2.934-.933-4.2-4.2 4.2-4.2-.933-.934-4.2 4.2-4.2-4.2z"
-                  clipRule="evenodd"
-                />
-              </g>
-              <rect width="21" height="21" x="1" y="1.333" stroke="#000" rx="10.5" />
-              <defs>
-                <clipPath id="senate-yeeted">
-                  <path
-                    fill="#fff"
-                    d="M0 0h10.56v10.56H0z"
-                    transform="translate(6.22 6.553)"
-                  />
-                </clipPath>
-              </defs>
-            </svg>
-            <span class="wv-b4 font-bold">พ้นจากตำแหน่ง</span>
-          </div>
-          <div class="flex gap-[8px]">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 23 23"
-              width="21"
-              height="21"
-            >
-              <path
-                fill="#fff"
-                stroke="#000"
-                d="M11.5 2.005l2.665 2.852.156.166.227-.007 3.901-.132-.132 3.901-.007.227.166.155 2.852 2.666-2.852 2.665-.166.156.007.227.132 3.901-3.901-.132-.227-.007-.155.166L11.5 21.66l-2.666-2.852-.155-.166-.227.007-3.901.132.132-3.901.007-.227-.166-.155-2.852-2.666 2.852-2.666.166-.155-.007-.227-.132-3.901 3.901.132.227.007.155-.166L11.5 2.005z"
-              />
-            </svg>
-            <span class="wv-b4 font-bold">ผู้มีส่วนเกี่ยวข้องกับ คสช.</span>
-          </div>
+const JobDivider = component$<{ name: OccupationGroup; data: PeopleListSchema[] }>(
+  ({ name, data }) => (
+    <>
+      <div class="flex items-center gap-10">
+        <span class="wv-h7 font-kondolar font-bold">{name.replace("ๆ", " ๆ")}</span>
+        <div class="flex-1 border-t" />
+        <div class="wv-b3 block text-right font-bold">
+          {data?.length ?? PEOPLE.jobs[name]} คน
         </div>
       </div>
-      {JOBS.map(
-        (job) =>
-          data.listByJobs?.[job]?.length > 0 && (
-            <div key={job}>
-              <JobDivider name={job} data={data.listByJobs[job]} />
-              <div class="my-10 flex flex-wrap gap-4">
-                {data.listByJobs[job].map((e) => (
-                  <QPeople key={e.Id} data={e} imgBase={data.imgBase} />
-                ))}
-              </div>
-            </div>
-          )
+      {data?.filter((e) => !e.IsActive)?.length > 0 && (
+        <span class="wv-b6 -mt-4 -mb-4 block text-right leading-none">
+          {data.filter((e) => !e.IsActive).length} คนพ้นจากตำแหน่ง
+        </span>
       )}
-    </div>
-  );
-});
+    </>
+  )
+);
 
-const PeopleCard = component$(
-  ({ data, imgBase }: { data: PeopleListSchema; imgBase: string }) => (
+const Overview = component$<{ data: FilteredPeopleDataSchema }>(({ data }) => (
+  <div class="flex-1">
+    <div class="flex items-center gap-20">
+      <span class="wv-b2 font-bold">
+        สัญลักษณ์<span class="nobr">ประเภท ส.ว.</span>
+      </span>
+      <div class="flex flex-wrap items-center justify-center gap-[8px]">
+        <div class="flex gap-[8px]">
+          <div class="h-20 w-20 rounded-full border bg-senate-green" />
+          <span class="wv-b4 font-bold">ส.ว. โดยตำแหน่ง</span>
+        </div>
+        <div class="flex gap-[8px]">
+          <div class="h-20 w-20 rounded-full border bg-senate-blue" />
+          <span class="wv-b4 font-bold">ส.ว. เลือกโดย คสช.</span>
+        </div>
+        <div class="flex gap-[8px]">
+          <div class="h-20 w-20 rounded-full border bg-senate-pink" />
+          <span class="wv-b4 font-bold">ส.ว. เลือกกันเอง</span>
+        </div>
+        <div class="flex gap-[8px]">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 23 23"
+            width="21"
+            height="21"
+          >
+            <rect width="21" height="21" x="1" y="1.333" fill="#fff" rx="10.5" />
+            <g clipPath="url(#senate-yeeted)">
+              <path
+                fill="#000"
+                fillRule="evenodd"
+                d="M7.285 6.685l-.933.933 4.2 4.2-4.2 4.2.933.934 4.2-4.2 4.2 4.2.934-.933-4.2-4.2 4.2-4.2-.933-.934-4.2 4.2-4.2-4.2z"
+                clipRule="evenodd"
+              />
+            </g>
+            <rect width="21" height="21" x="1" y="1.333" stroke="#000" rx="10.5" />
+            <defs>
+              <clipPath id="senate-yeeted">
+                <path
+                  fill="#fff"
+                  d="M0 0h10.56v10.56H0z"
+                  transform="translate(6.22 6.553)"
+                />
+              </clipPath>
+            </defs>
+          </svg>
+          <span class="wv-b4 font-bold">พ้นจากตำแหน่ง</span>
+        </div>
+        <div class="flex gap-[8px]">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 23 23"
+            width="21"
+            height="21"
+          >
+            <path
+              fill="#fff"
+              stroke="#000"
+              d="M11.5 2.005l2.665 2.852.156.166.227-.007 3.901-.132-.132 3.901-.007.227.166.155 2.852 2.666-2.852 2.665-.166.156.007.227.132 3.901-3.901-.132-.227-.007-.155.166L11.5 21.66l-2.666-2.852-.155-.166-.227.007-3.901.132.132-3.901.007-.227-.166-.155-2.852-2.666 2.852-2.666.166-.155-.007-.227-.132-3.901 3.901.132.227.007.155-.166L11.5 2.005z"
+            />
+          </svg>
+          <span class="wv-b4 font-bold">ผู้มีส่วนเกี่ยวข้องกับ คสช.</span>
+        </div>
+      </div>
+    </div>
+    {JOBS.map(
+      (job) =>
+        data.listByJobs?.[job]?.length > 0 && (
+          <div key={job}>
+            <JobDivider name={job} data={data.listByJobs[job]} />
+            <div class="my-10 flex flex-wrap gap-4">
+              {data.listByJobs[job].map((e) => (
+                <QPeople key={e.Id} data={e} imgBase={data.imgBase} />
+              ))}
+            </div>
+          </div>
+        )
+    )}
+  </div>
+));
+
+const PeopleCard = component$<{ data: PeopleListSchema; imgBase: string }>(
+  ({ data, imgBase }) => (
     <a
       class="flex items-center gap-20 rounded-10 border border-black bg-white py-10 px-20 font-bold text-black no-underline hover:no-underline"
       href={"https://theyworkforus.wevis.info/people/" + data.Name.replace(/\s+/g, "-")}
@@ -256,12 +252,8 @@ const PeopleCard = component$(
   )
 );
 
-const Details = component$(({ data }: { data: FilteredPeopleDataSchema }) => {
+const Details = component$<{ data: FilteredPeopleDataSchema }>(({ data }) => {
   const currentPageIndex = useSignal(0);
-
-  const setPageIndex = $((i: number) => {
-    currentPageIndex.value = i;
-  });
 
   useTask$(({ track }) => {
     track(() => data.list);
@@ -278,7 +270,9 @@ const Details = component$(({ data }: { data: FilteredPeopleDataSchema }) => {
             perPage={ENTRY_PER_PAGE}
             currentPage={currentPageIndex.value}
             total={data.list.length}
-            onChange={setPageIndex}
+            onChange={$((i: number) => {
+              currentPageIndex.value = i;
+            })}
           />
         )}
       </div>
@@ -296,7 +290,7 @@ const Details = component$(({ data }: { data: FilteredPeopleDataSchema }) => {
   );
 });
 
-const Ch1Explore = component$(() => {
+export const Ch1Explore = component$(() => {
   const tabIndex = useSignal(0);
   const data = useSignal<PeopleDataSchema>({
     imgBase: "",
@@ -308,10 +302,6 @@ const Ch1Explore = component$(() => {
     const json = await resp.json();
 
     data.value = json;
-  });
-
-  const changeTabIndex = $((index: number) => {
-    tabIndex.value = index;
   });
 
   const formOptions = useStore<FormOption>(
@@ -371,7 +361,9 @@ const Ch1Explore = component$(() => {
       <TabSelect
         id="senate"
         secondBtnText="ดูรายชื่อ ก&ndash;ฮ"
-        onChange={changeTabIndex}
+        onChange={$((index: number) => {
+          tabIndex.value = index;
+        })}
       />
       <svg class="absolute h-0 w-0">
         <defs>
@@ -392,9 +384,9 @@ const Ch1Explore = component$(() => {
             <CheckPill
               id="โดยตำแหน่ง"
               checked={formOptions.type.position}
-              onChange={$(() => {
+              onChange$={() => {
                 formOptions.type.position = !formOptions.type.position;
-              })}
+              }}
             >
               <div class="h-[12px] w-[12px] rounded-full border border-black bg-senate-green" />
               <span class="wv-b4 font-bold leading-none">โดยตำแหน่ง</span>
@@ -402,9 +394,9 @@ const Ch1Explore = component$(() => {
             <CheckPill
               id="เลือกโดยคสช"
               checked={formOptions.type.ncpo}
-              onChange={$(() => {
+              onChange$={() => {
                 formOptions.type.ncpo = !formOptions.type.ncpo;
-              })}
+              }}
             >
               <div class="h-[12px] w-[12px] rounded-full border border-black bg-senate-blue" />
               <span class="wv-b4 font-bold leading-none">เลือกโดย คสช.</span>
@@ -412,9 +404,9 @@ const Ch1Explore = component$(() => {
             <CheckPill
               id="เลือกกันเอง"
               checked={formOptions.type.friend}
-              onChange={$(() => {
+              onChange$={() => {
                 formOptions.type.friend = !formOptions.type.friend;
-              })}
+              }}
             >
               <div class="h-[12px] w-[12px] rounded-full border border-black bg-senate-pink" />
               <span class="wv-b4 font-bold leading-none">เลือกกันเอง</span>
@@ -425,9 +417,9 @@ const Ch1Explore = component$(() => {
             <CheckPill
               id="ผู้มีส่วนเกี่ยวข้องกับคสช"
               checked={formOptions.relation.yes}
-              onChange={$(() => {
+              onChange$={() => {
                 formOptions.relation.yes = !formOptions.relation.yes;
-              })}
+              }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -448,9 +440,9 @@ const Ch1Explore = component$(() => {
             <CheckPill
               id="ผู้ที่ไม่เกี่ยวข้องกับคสช"
               checked={formOptions.relation.no}
-              onChange={$(() => {
+              onChange$={() => {
                 formOptions.relation.no = !formOptions.relation.no;
-              })}
+              }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -474,9 +466,9 @@ const Ch1Explore = component$(() => {
             <CheckPill
               id="ดำรงตำแหน่ง"
               checked={formOptions.status.active}
-              onChange={$(() => {
+              onChange$={() => {
                 formOptions.status.active = !formOptions.status.active;
-              })}
+              }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -495,9 +487,9 @@ const Ch1Explore = component$(() => {
             <CheckPill
               id="พ้นจากตำแหน่ง"
               checked={formOptions.status.out}
-              onChange={$(() => {
+              onChange$={() => {
                 formOptions.status.out = !formOptions.status.out;
-              })}
+              }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -520,9 +512,9 @@ const Ch1Explore = component$(() => {
               name="อาชีพ"
               id="ทั้งหมด"
               checked={formOptions.job === 0}
-              onChange={$(() => {
+              onChange$={() => {
                 formOptions.job = 0;
-              })}
+              }}
             >
               <span class="wv-b4 font-bold leading-none">ทั้งหมด ({PEOPLE.total})</span>
             </RadioPill>
@@ -532,9 +524,9 @@ const Ch1Explore = component$(() => {
                 id={job}
                 key={job}
                 checked={formOptions.job === i + 1}
-                onChange={$(() => {
+                onChange$={() => {
                   formOptions.job = i + 1;
-                })}
+                }}
               >
                 <span class="wv-b4 font-bold leading-none">
                   {job.replace("ๆ", " ๆ")} ({PEOPLE.jobs[job as OccupationGroup]})
@@ -552,5 +544,3 @@ const Ch1Explore = component$(() => {
     </div>
   );
 });
-
-export default Ch1Explore;

@@ -1,7 +1,7 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import { inView } from "motion";
 
-const Ch1Video = component$(() => {
+export const Ch1Video = component$(() => {
   const elVideo = useSignal<HTMLVideoElement>();
 
   useVisibleTask$(
@@ -29,5 +29,3 @@ const Ch1Video = component$(() => {
     />
   );
 });
-
-export default Ch1Video;

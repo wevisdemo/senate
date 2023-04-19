@@ -1,8 +1,8 @@
 import { component$ } from "@builder.io/qwik";
 import { useLocation, useNavigate } from "@builder.io/qwik-city";
-import QWvNavbar from "./react/QWvNavbar";
+import { QWvNavbar } from "./react/QWvNavbar";
 
-export default component$(() => {
+export const Navbar = component$(() => {
   const loc = useLocation();
   const nav = useNavigate();
 

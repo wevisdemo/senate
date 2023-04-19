@@ -1,7 +1,7 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import { inView } from "motion";
 
-const Ch3GeneralConstitution = component$(() => {
+export const Ch3GeneralConstitution = component$(() => {
   const el = useSignal<HTMLDivElement>();
 
   useVisibleTask$(() => {
@@ -42,5 +42,3 @@ const Ch3GeneralConstitution = component$(() => {
     </div>
   );
 });
-
-export default Ch3GeneralConstitution;

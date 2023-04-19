@@ -1,4 +1,13 @@
-import { Slot, component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
+import type { NoSerialize } from "@builder.io/qwik";
+import {
+  Slot,
+  component$,
+  noSerialize,
+  useSignal,
+  useStore,
+  useVisibleTask$,
+} from "@builder.io/qwik";
+import type { AnimationItem } from "lottie-web";
 import lottie from "lottie-web";
 import { inView } from "motion";
 
@@ -14,19 +23,11 @@ export interface LottieProps {
   hasFallback?: boolean;
 }
 
-const Lottie = component$(
-  ({
-    src,
-    width,
-    height,
-    loop,
-    delayMs,
-    play,
-    class: clazz,
-    threshold,
-    hasFallback,
-  }: LottieProps) => {
-    const lottieCtrlData: { ctrl: any } = { ctrl: null };
+export const Lottie = component$<LottieProps>(
+  ({ src, width, height, loop, delayMs, play, class: clazz, threshold, hasFallback }) => {
+    const lottieCtrlData = useStore<{ ctrl: NoSerialize<AnimationItem> }>({
+      ctrl: undefined,
+    });
     const elContainer = useSignal<HTMLDivElement>();
 
     useVisibleTask$(
@@ -38,12 +39,14 @@ const Lottie = component$(
               if (elContainer.value) {
                 if (hasFallback) elContainer.value.children[0].classList.add("hidden");
 
-                lottieCtrlData.ctrl = lottie.loadAnimation({
-                  container: elContainer.value,
-                  loop: loop ?? false,
-                  autoplay: false,
-                  path: src,
-                });
+                lottieCtrlData.ctrl = noSerialize(
+                  lottie.loadAnimation({
+                    container: elContainer.value,
+                    loop: loop ?? false,
+                    autoplay: false,
+                    path: src,
+                  })
+                );
 
                 elContainer.value.classList.add("!w-auto");
                 const realThreshold = Math.min(
@@ -105,5 +108,3 @@ const Lottie = component$(
     );
   }
 );
-
-export default Lottie;

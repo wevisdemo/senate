@@ -1,9 +1,9 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
-
 import { animate, inView } from "motion";
-import Lottie from "../Lottie";
 
-const Ch2Compare = component$(() => {
+import { Lottie } from "../Lottie";
+
+export const Ch2Compare = component$(() => {
   const el40 = useSignal<HTMLDivElement>();
   const el60 = useSignal<HTMLDivElement>();
 
@@ -131,5 +131,3 @@ const Ch2Compare = component$(() => {
     </div>
   );
 });
-
-export default Ch2Compare;

@@ -9,7 +9,7 @@ interface Ch1ChartProps {
 
 const MAX_NUM = 130;
 
-const Ch1Chart = component$<Ch1ChartProps>(({ who, desc, data }) => {
+export const Ch1Chart = component$<Ch1ChartProps>(({ who, desc, data }) => {
   const elBar = useSignal<HTMLDivElement>();
 
   useVisibleTask$(
@@ -65,5 +65,3 @@ const Ch1Chart = component$<Ch1ChartProps>(({ who, desc, data }) => {
     </div>
   );
 });
-
-export default Ch1Chart;

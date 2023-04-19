@@ -5,7 +5,7 @@ interface TitleBlockProps {
   class?: string;
 }
 
-const TitleBlock = component$((props: TitleBlockProps) => {
+export const TitleBlock = component$<TitleBlockProps>(({ class: clazz }) => {
   const elTextContainer = useSignal<HTMLDivElement>();
 
   useVisibleTask$(() => {
@@ -32,7 +32,7 @@ const TitleBlock = component$((props: TitleBlockProps) => {
   return (
     <div
       class={`wv-h4 con mb-60 rounded-10 bg-black text-center font-kondolar font-black text-white ${
-        props.class ?? ""
+        clazz ?? ""
       }`}
     >
       <span class="block py-20 px-40" ref={elTextContainer}>
@@ -41,5 +41,3 @@ const TitleBlock = component$((props: TitleBlockProps) => {
     </div>
   );
 });
-
-export default TitleBlock;

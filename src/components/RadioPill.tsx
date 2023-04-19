@@ -1,15 +1,15 @@
-import type { QRL } from "@builder.io/qwik";
+import type { PropFunction } from "@builder.io/qwik";
 import { Slot, component$ } from "@builder.io/qwik";
 
 export interface RadioPillProps {
   id: string;
   name: string;
   checked?: boolean;
-  onChange?: QRL<() => any>;
+  onChange$?: PropFunction<() => void>;
 }
 
-const RadioPill = component$<RadioPillProps>(({ id, name, checked, onChange }) => {
-  return (
+export const RadioPill = component$<RadioPillProps>(
+  ({ id, name, checked, onChange$ }) => (
     <div class="inline-block">
       <input
         class="pill-input sr-only"
@@ -17,7 +17,7 @@ const RadioPill = component$<RadioPillProps>(({ id, name, checked, onChange }) =
         name={"radiopill-" + name}
         id={"radiopill-" + name + "-" + id}
         checked={checked}
-        onChange$={() => onChange?.()}
+        onChange$={onChange$}
       />
       <label
         for={"radiopill-" + name + "-" + id}
@@ -27,7 +27,5 @@ const RadioPill = component$<RadioPillProps>(({ id, name, checked, onChange }) =
         <Slot />
       </label>
     </div>
-  );
-});
-
-export default RadioPill;
+  )
+);

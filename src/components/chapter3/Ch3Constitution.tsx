@@ -1,6 +1,6 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
-import QPopover from "../react/popovers/QConstitutionPopover";
 import { animate, inView, stagger } from "motion";
+import { QPopover } from "../react/popovers/QConstitutionPopover";
 
 const DATA = {
   ภาคประชาชน: [
@@ -239,7 +239,7 @@ interface Ch3ConstitutionProps {
   side: "ภาคประชาชน" | "ฝ่ายรัฐบาล" | "ฝ่ายค้าน" | "เสนอร่วมฝ่าย";
 }
 
-const Ch3Constitution = component$(({ side }: Ch3ConstitutionProps) => {
+export const Ch3Constitution = component$<Ch3ConstitutionProps>(({ side }) => {
   const elQPop = useSignal<HTMLDivElement>();
 
   useVisibleTask$(() => {
@@ -284,5 +284,3 @@ const Ch3Constitution = component$(({ side }: Ch3ConstitutionProps) => {
     </div>
   );
 });
-
-export default Ch3Constitution;

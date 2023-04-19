@@ -8,8 +8,8 @@ interface QConstitutionPopoverProps {
   title: string;
 }
 
-export default qwikify$(
-  ({ children, title }: QConstitutionPopoverProps) => (
+export const QPopover = qwikify$<QConstitutionPopoverProps>(
+  ({ children, title }) => (
     <Popover className="relative">
       <Popover.Button
         className="w-[85px] rounded-5 border bg-senate-pink py-10 outline-0 transition-transform lg:w-[95px] lg:hover:rotate-1 lg:hover:scale-110"

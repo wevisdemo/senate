@@ -1,7 +1,7 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import { animate, inView } from "motion";
 
-const Ch3FixImg = component$(() => {
+export const Ch3FixImg = component$(() => {
   const elImg = useSignal<HTMLImageElement>();
 
   useVisibleTask$(() => {
@@ -39,5 +39,3 @@ const Ch3FixImg = component$(() => {
     />
   );
 });
-
-export default Ch3FixImg;
