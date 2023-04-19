@@ -2,6 +2,7 @@ import { component$ } from "@builder.io/qwik";
 
 import PEOPLE from "~/data/people";
 import VOTELOG from "~/data/votelog";
+import UPDATE from "~/data/update";
 
 import ChapterBreak from "~/components/ChapterBreak";
 import JumpToContent from "~/components/JumpToContent";
@@ -100,10 +101,7 @@ const Header = (
             กำหนดทิศทางการเมืองไทย เมื่อผลเลือกตั้งของประชาชนถูกทำให้ไร้ความหมาย
           </strong>
         </p>
-        <p class="wv-b3 font-bold">
-          Update ล่าสุดเมื่อ:{" "}
-          {new Date().toLocaleDateString("th-TH", { dateStyle: "long" })}
-        </p>
+        <p class="wv-b3 font-bold">Update ล่าสุดเมื่อ: {UPDATE}</p>
       </div>
     </div>
     <div class="con">

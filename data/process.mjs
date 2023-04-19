@@ -181,3 +181,7 @@ const compileVotelog = () => {
 
 compilePeople();
 compileVotelog();
+saveForImport(
+  "update.ts",
+  `"${new Date().toLocaleDateString("th-TH", { dateStyle: "long" })}"`
+);
