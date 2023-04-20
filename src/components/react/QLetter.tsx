@@ -18,7 +18,7 @@ export const QLetter = qwikify$<QLetterProps>(
           </Disclosure.Button>
           <div
             className={`letter-transition mx-auto mb-[276px] w-[calc(100%-20px)] max-w-[600px] rounded-10 border bg-white px-20 pt-30 pb-100 ${
-              open ? "mt-20" : "mt-[130px] peer-hover:-translate-y-10"
+              open ? "mt-20" : "mt-[150px] peer-hover:-translate-y-10 md:mt-[130px]"
             }`}
           >
             <p className="wv-h7 w-full border-b border-dashed pb-10 text-center font-kondolar font-black">
