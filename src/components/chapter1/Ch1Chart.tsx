@@ -10,16 +10,22 @@ interface Ch1ChartProps {
 const MAX_NUM = 130;
 
 export const Ch1Chart = component$<Ch1ChartProps>(({ who, desc, data }) => {
-  const elBar = useSignal<HTMLDivElement>();
+  const elContainer = useSignal<HTMLDivElement>();
 
   useVisibleTask$(
     () => {
-      if (elBar.value) {
-        elBar.value.classList.add("scale-x-0");
+      if (elContainer.value) {
+        const [, elBar] = elContainer.value.children;
+        elContainer.value.classList.add("opacity-0", "translate-y-50");
+        elBar.classList.add("scale-x-0");
+
         inView(
-          elBar.value,
+          elContainer.value,
           () => {
-            if (elBar.value) elBar.value.classList.remove("scale-x-0");
+            if (elContainer.value) {
+              elContainer.value.classList.remove("opacity-0", "translate-y-50");
+              elBar.classList.remove("scale-x-0");
+            }
           },
           {
             amount: 0.99,
@@ -33,16 +39,13 @@ export const Ch1Chart = component$<Ch1ChartProps>(({ who, desc, data }) => {
   );
 
   return (
-    <div class="mb-5">
+    <div ref={elContainer} class="mb-5 transition duration-500">
       <p class="mb-5 flex flex-wrap items-baseline gap-x-10">
         <span class="wv-h8 font-kondolar font-bold">{who}</span>
         <span class="wv-b3 font-bold">{data[3]} คน</span>
         {desc && <span class="wv-b4 nobr">{desc}</span>}
       </p>
-      <div
-        ref={elBar}
-        class="flex h-40 w-full origin-left transition-transform duration-500"
-      >
+      <div class="flex h-40 w-full origin-left transition-transform duration-500">
         {data[0] > 0 && (
           <div
             class="bg-senate-green"
