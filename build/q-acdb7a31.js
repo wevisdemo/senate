@@ -1,0 +1,1 @@
+import{A as l,E as e}from"./q-ebe1be39.js";const o=n=>l("div",null,{class:"con my-10 flex items-center gap-10 p-10"},[l("div",null,{class:"flex-1 border-b border-dashed"},null,3,null),l("span",null,{class:"wv-h6 font-kondolar font-black"},e(s=>s.text,[n]),3,null),l("div",null,{class:"flex-1 border-b border-dashed"},null,3,null)],3,"Zh_0");export{o as s_i5ZL09b3emg};
