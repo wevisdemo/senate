@@ -87,12 +87,15 @@ export const ChapterBreak = component$<ChapterBreakProps>(({ part, title }) => {
       <div class="flex h-full items-center">
         <Slot />
       </div>
-      <div class="wv-h5 text-center font-kondolar font-black lg:text-left">
+      <div
+        class="wv-h5 text-center font-kondolar font-black lg:text-left"
+        aria-label={title.join("").replace("-", " ")}
+      >
         {title.map((ch, i) =>
           ch === "-" ? (
             <br key={i} />
           ) : (
-            <span class="inline-block whitespace-pre" key={i}>
+            <span class="inline-block whitespace-pre" key={i} aria-hidden="true">
               {ch}
             </span>
           )
