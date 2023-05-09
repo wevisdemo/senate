@@ -66,22 +66,23 @@ const compilePeople = () => {
   saveForImport("people.ts", JSON.stringify(data.local));
 };
 
-const VOTE_ENUM = [
-  "เห็นด้วย",
-  "ไม่เห็นด้วย",
-  "งดออกเสียง",
-  "ไม่ลงคะแนนเสียง",
-  "ไม่เข้าร่วมประชุม",
-];
+const VOTE_FORMAT_INDEX = {
+  เห็นด้วย: 0,
+  ไม่เห็นด้วย: 1,
+  งดออกเสียง: 2,
+  ไม่ลงคะแนนเสียง: 3,
+  ไม่ลงคะแนน: 3,
+  ไม่เข้าร่วมประชุม: 4,
+};
 
 const formatPeopleVote = (peopleVoteData) => {
   const reduced = peopleVoteData.reduce(
     (all, current) => {
       if (SENATE_ID.includes(current.nc_9rqw__People_id)) {
-        all.senate[VOTE_ENUM.indexOf(current.Status)]++;
+        all.senate[VOTE_FORMAT_INDEX[current.Status]]++;
         all.senate[5]++;
       } else {
-        all.mp[VOTE_ENUM.indexOf(current.Status)]++;
+        all.mp[VOTE_FORMAT_INDEX[current.Status]]++;
         all.mp[5]++;
       }
 
