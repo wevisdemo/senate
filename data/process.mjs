@@ -102,7 +102,6 @@ const formatPeopleVote = (peopleVoteData) => {
 };
 
 // skip selectPm due to hard code
-// skip 3 keepNcpo due to hard code
 const compileVotelog = () => {
   const data = {
     fetch: {
@@ -118,8 +117,8 @@ const compileVotelog = () => {
     },
     local: {
       senate: {
-        total: 3,
-        keepNcpo: 3,
+        total: 0,
+        keepNcpo: 0,
         nationStrat: 0,
         consVote: 0,
       },
@@ -132,11 +131,11 @@ const compileVotelog = () => {
     },
   };
 
+  let customSenatePeopleVote = [];
+
   const { list } = VOTELOG_DATA;
 
   list.forEach((e) => {
-    if ([270, 276, 294].includes(e.Id)) return;
-
     const formattedData = {
       ...e,
       VoteDate: e.VoteDate.split("-")
@@ -166,7 +165,12 @@ const compileVotelog = () => {
       switch (e.SenateVoteType) {
         case "ตั้งศาลรัฐธรรมนูญ":
           data.local.senate.keepNcpo++;
-          data.fetch.senate.keepNcpo.push(formattedData);
+          if ([270, 276, 294].includes(e.Id)) {
+            formattedData.PeopleVotes = undefined; // reduce payload size, will be hard-coded
+            customSenatePeopleVote.push(formattedData);
+          } else {
+            data.fetch.senate.keepNcpo.push(formattedData);
+          }
           break;
         case "ยุทธศาสตร์ชาติ":
           data.local.senate.nationStrat++;
@@ -179,6 +183,7 @@ const compileVotelog = () => {
       }
     }
   });
+  data.fetch.senate.keepNcpo.push(...customSenatePeopleVote);
 
   saveForFetch("votelog.json", JSON.stringify(data.fetch));
   saveForImport("votelog.ts", JSON.stringify(data.local));

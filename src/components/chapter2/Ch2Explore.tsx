@@ -15,16 +15,29 @@ import { TabSelect } from "~/components/TabSelect";
 import { Pagination } from "../Pagination";
 import { QChoosePm } from "../react/popovers/QChoosePm";
 import { QVotelog } from "../react/popovers/QVotelog";
+import { QVotelogPeople } from "../react/popovers/QVotelogPeople";
 
 import VOTELOG from "~/data/votelog";
 
 import type { VotelogDataSchema, VotelogItemType } from "~/types/votelog";
+import type { PeopleVotelog } from "../react/popovers/QVotelogPeople";
 
 export const DataContext = createContextId<Signal<VotelogDataSchema>>(
   "ch2explore.data-context"
 );
 
 const ENTRY_PER_PAGE = 5;
+const VOTELOG_PEOPLE_DATA: Record<string, PeopleVotelog[]> = {
+  "270": [
+    { name: "อุดม สิทธิวิรัชธรรม", vote: [216, 3, 0] },
+    { name: "วิรุฬห์ แสงเทียน", vote: [216, 3, 0] },
+    { name: "จิรนิติ หะวานนท์", vote: [217, 2, 0] },
+    { name: "ชั่งทอง โอภาสศิริวิทย์", vote: [52, 139, 28] },
+    { name: "นภดล เทพพิทักษ์", vote: [203, 12, 4] },
+  ],
+  "276": [{ name: "บรรจงศักดิ์ วงศ์ปราชญ์", vote: [206, 12, 11] }],
+  "294": [{ name: "อุดม รัฐอมฤต", vote: [200, 2, 6] }],
+};
 
 const LoadingPaper = component$(() => (
   <svg
@@ -70,19 +83,34 @@ const Overview = component$<{ show: boolean }>(({ show }) => {
               <span class="b5">{VOTELOG.senate.keepNcpo} มติ</span>
             </div>
             <div class="flex flex-wrap gap-10">
-              {data.value.senate.keepNcpo.length
-                ? data.value.senate.keepNcpo.map((d) => (
-                    <QVotelog
-                      key={d.Id}
-                      id={d.Id}
-                      type="ค้ำจุน คสช."
-                      pass={d.IsPassed}
-                      date={d.VoteDate}
-                      title={d.Title}
-                      vote={d.PeopleVotes}
-                    />
-                  ))
-                : Array(VOTELOG.senate.keepNcpo).fill(<LoadingPaper />)}
+              {data.value.senate.keepNcpo.length ? (
+                <>
+                  {data.value.senate.keepNcpo.map((d) =>
+                    [270, 276, 294].includes(d.Id) ? (
+                      <QVotelogPeople
+                        key={d.Id}
+                        id={d.Id}
+                        type="ค้ำจุน คสช."
+                        date={d.VoteDate}
+                        title={d.Title}
+                        vote={VOTELOG_PEOPLE_DATA[d.Id]}
+                      />
+                    ) : (
+                      <QVotelog
+                        key={d.Id}
+                        id={d.Id}
+                        type="ค้ำจุน คสช."
+                        pass={d.IsPassed}
+                        date={d.VoteDate}
+                        title={d.Title}
+                        vote={d.PeopleVotes}
+                      />
+                    )
+                  )}
+                </>
+              ) : (
+                Array(VOTELOG.senate.keepNcpo).fill(<LoadingPaper />)
+              )}
             </div>
           </div>
           <div class="mb-20 flex flex-col items-center gap-20 lg:flex-row lg:items-start">
@@ -420,6 +448,98 @@ const VotelogBox = component$<{ data: VotelogItemType; type: string }>(
   )
 );
 
+const VotelogPeopleBox = component$<{
+  id: number;
+  type: string;
+  date: string;
+  title: string;
+  vote: PeopleVotelog[];
+}>(({ id, type, date, title, vote }) => (
+  <div class="border bg-white">
+    <div class="h-10 bg-black" />
+    <div class="px-15 py-10">
+      <div class="mb-10 flex items-center font-bold">
+        <span class="mr-auto">{date}</span>
+        <span class="flex font-bold">{type}</span>
+      </div>
+      <hr class="mb-10 border-dashed" />
+      <p class="wv-h9 mb-10 font-kondolar">{title}</p>
+      <div class="font-bold">ผลการลงคะแนนเสียงบุคคลที่ถูกเสนอชื่อให้ดำรงตำแหน่ง</div>
+      {vote.map((v) => (
+        <div key={v.name} class="senate-custombar-grid mb-[2px] lg:mb-0">
+          <div class="senate-custombar-grid-name flex items-center gap-5 font-bold">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 16 16"
+              width="16"
+              height="16"
+            >
+              <rect width="15" height="15" x=".5" y=".5" fill="#000" rx="7.5" />
+              {v.vote[0] > 125 ? (
+                <path
+                  fill="#fff"
+                  d="M11.61 5.189a.417.417 0 01.035.588l-4.445 5a.417.417 0 01-.623 0l-2.222-2.5a.417.417 0 01.623-.554l1.91 2.15 4.134-4.65a.417.417 0 01.588-.034z"
+                />
+              ) : (
+                <path
+                  fill="#fff"
+                  d="M5.206 5.205a.417.417 0 01.589 0L8 7.411l2.206-2.206a.417.417 0 01.589.59L8.589 8l2.206 2.205a.417.417 0 11-.59.59L8 8.588l-2.205 2.205a.417.417 0 11-.59-.589L7.412 8 5.206 5.795a.417.417 0 010-.59z"
+                />
+              )}
+              <rect width="15" height="15" x=".5" y=".5" stroke="#000" rx="7.5" />
+            </svg>
+            {v.name}
+          </div>
+          <div
+            class="senate-custombar-grid-bar mt-[2px] flex w-full justify-self-end lg:mt-0 lg:w-[177px]"
+            style={{
+              "--max": v.vote[0] + v.vote[1] + v.vote[2],
+            }}
+          >
+            <div class="chart-series bg-vote-เห็น" style={{ "--val": v.vote[0] }} />
+            <div class="chart-series bg-vote-ไม่เห็น" style={{ "--val": v.vote[1] }} />
+            <div class="chart-series bg-vote-งด" style={{ "--val": v.vote[2] }} />
+          </div>
+          <div class="senate-custombar-grid-count mb-[2px] flex items-center justify-end gap-4 self-end text-[10px] lg:mb-0">
+            <div class="-top-[1px] h-5 w-5 bg-vote-เห็น" />
+            <span>{v.vote[0]}</span>
+            <div class="-top-[1px] h-5 w-5 bg-vote-ไม่เห็น" />
+            <span>{v.vote[1]}</span>
+            <div class="-top-[1px] h-5 w-5 bg-vote-งด" />
+            <span>{v.vote[2]}</span>
+          </div>
+        </div>
+      ))}
+      <p class="wv-b6 my-10">
+        <span class="font-bold">หมายเหตุ:</span>{" "}
+        ผู้ที่ดำรงตำแหน่งต้องได้รับความเห็นชอบด้วยคะแนนเสียงกึ่งหนึ่งจาก ส.ว. คือ 125
+        คะแนนขึ้นไป
+      </p>
+      <hr class="mb-10 border-dashed" />
+      <div class="text-center">
+        <a
+          class="wv-b3 inline-flex items-center gap-[4px] font-bold text-black"
+          href={"https://theyworkforus.wevis.info/votelog/" + id}
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+        >
+          <span>ดูรายละเอียด</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 20 21"
+            width="20"
+            height="21"
+          >
+            <path fill="#000" d="M8.334 6.333l5 4.167-5 4.167V6.333z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+));
+
 const ChooseMpVotelogBox = component$(() => (
   <div class="border bg-white">
     <div class="h-10 bg-black" />
@@ -753,9 +873,20 @@ const Details = component$<{ show: boolean }>(({ show }) => {
               currentPageIndex.value * ENTRY_PER_PAGE,
               currentPageIndex.value * ENTRY_PER_PAGE + ENTRY_PER_PAGE
             )
-            .map((e: VotelogItemType) => (
-              <VotelogBox key={e.Id} data={e} type={catgName.value} />
-            ))
+            .map((e: VotelogItemType) =>
+              [270, 276, 294].includes(e.Id) ? (
+                <VotelogPeopleBox
+                  key={e.Id}
+                  id={e.Id}
+                  type={catgName.value}
+                  date={e.VoteDate}
+                  title={e.Title}
+                  vote={VOTELOG_PEOPLE_DATA[e.Id]}
+                />
+              ) : (
+                <VotelogBox key={e.Id} data={e} type={catgName.value} />
+              )
+            )
         )}
       </div>
     </div>
@@ -818,7 +949,7 @@ export const Ch2Explore = component$(() => {
           เพื่อสำรวจแต่ละมติ
         </span>
       </TabSelect>
-      <div class="mb-20 -mt-20 flex flex-col items-center justify-center gap-10 md:mb-30 md:-mt-10 lg:mt-0 lg:flex-row">
+      <div class="-mt-20 mb-20 flex flex-col items-center justify-center gap-10 md:-mt-10 md:mb-30 lg:mt-0 lg:flex-row">
         <span class="wv-b2 nobr font-bold">ประเภทการลงคะแนนเสียง</span>
         <div class="flex flex-wrap items-center justify-center gap-10">
           <span class="wv-b4 flex items-center gap-4">

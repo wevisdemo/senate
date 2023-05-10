@@ -164,4 +164,28 @@ a {
   @apply ring-[3px] ring-offset-2 ring-offset-white;
 }
 
+.senate-custombar-grid {
+  display: grid;
+  grid-template-areas: "senate-name senate-count" "senate-bar senate-bar";
+}
+
+@media (min-width: 1024px) {
+  .senate-custombar-grid {
+    display: grid;
+    grid-template-areas: "senate-count senate-count" "senate-name senate-bar";
+  }
+}
+
+.senate-custombar-grid-count {
+  grid-area: senate-count;
+}
+
+.senate-custombar-grid-name {
+  grid-area: senate-name;
+}
+
+.senate-custombar-grid-bar {
+  grid-area: senate-bar;
+}
+
 @tailwind utilities;

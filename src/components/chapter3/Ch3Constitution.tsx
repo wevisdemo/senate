@@ -1,6 +1,6 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import { animate, inView, stagger } from "motion";
-import { QPopover } from "../react/popovers/QConstitutionPopover";
+import { QPopover } from "../react/popovers/QConstitution";
 
 const DATA = {
   ภาคประชาชน: [
