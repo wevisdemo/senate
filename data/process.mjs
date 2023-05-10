@@ -101,6 +101,8 @@ const formatPeopleVote = (peopleVoteData) => {
   return reduced;
 };
 
+// skip selectPm due to hard code
+// skip 3 keepNcpo due to hard code
 const compileVotelog = () => {
   const data = {
     fetch: {
@@ -116,8 +118,8 @@ const compileVotelog = () => {
     },
     local: {
       senate: {
-        total: 0,
-        keepNcpo: 0,
+        total: 3,
+        keepNcpo: 3,
         nationStrat: 0,
         consVote: 0,
       },
@@ -133,6 +135,8 @@ const compileVotelog = () => {
   const { list } = VOTELOG_DATA;
 
   list.forEach((e) => {
+    if ([270, 276, 294].includes(e.Id)) return;
+
     const formattedData = {
       ...e,
       VoteDate: e.VoteDate.split("-")
