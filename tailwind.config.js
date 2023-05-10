@@ -59,9 +59,12 @@ module.exports = {
       gridTemplateRows: {
         "0fr": "0fr",
         "1fr": "1fr",
+        "2auto": "auto auto",
       },
       gridTemplateColumns: {
         choosepm: "1fr auto auto",
+        "2eq": "1fr 1fr",
+        "4eq": "repeat(4,1fr)",
       },
     },
   },

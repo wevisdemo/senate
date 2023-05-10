@@ -230,8 +230,8 @@ const Chapter1 = (
     </p>
     <Ch1Explore />
     <TitleBlock class="!mb-20">ความเกี่ยวพันระหว่าง ส.ว. และ คสช.</TitleBlock>
-    <div class="con mb-30 flex flex-col gap-20 lg:mt-[130px] lg:flex-row">
-      <div class="flex flex-1 items-center justify-center">
+    <div class="con mb-30 gap-20 lg:mt-[130px] lg:grid lg:grid-cols-2eq">
+      <div class="mb-20 flex items-center justify-center lg:mb-0">
         <img
           src="./imgs/nepo.webp"
           alt=""
@@ -241,30 +241,28 @@ const Chapter1 = (
           decoding="async"
         />
       </div>
-      <div class="flex flex-1 items-center justify-center">
+      <div class="flex items-center justify-center">
         <Ch1Video />
       </div>
     </div>
-    <div class="con mb-30 flex flex-col items-center justify-center gap-20 lg:flex-row">
-      <div class="flex-1 p-20">
-        <p class="flex flex-col gap-10 text-center font-kondolar lg:text-left">
-          <span class="wv-h4 block font-black">ตามรัฐธรรมนูญ&apos;60</span>
-          <span class="wv-h2 block font-black">80% ของ ส.ว.</span>
-          <span class="wv-h8 block">
-            หรือ <span class="font-bold">200</span>/250 คน
-          </span>
-          <span class="wv-h7 block">
-            ถูกคัดเลือกโดย คสช. โดยตรง และอีก 20% ถูกคัดเลือกโดยอ้อม แต่ในทางปฏิบัติแล้ว{" "}
-            <span class="font-bold">ส.ว. ทุกตำแหน่งผ่านการคัดเลือกโดย คสช.</span>
-          </span>
-        </p>
-      </div>
-      <div class="flex flex-1 items-center justify-center overflow-x-hidden">
+    <div class="con mb-30 gap-20 lg:grid lg:grid-cols-2eq">
+      <p class="mb-20 flex flex-col gap-10 p-20 text-center font-kondolar lg:mb-0 lg:text-left">
+        <span class="wv-h4 block font-black">ตามรัฐธรรมนูญ&apos;60</span>
+        <span class="wv-h2 block font-black">80% ของ ส.ว.</span>
+        <span class="wv-h8 block">
+          หรือ <span class="font-bold">200</span>/250 คน
+        </span>
+        <span class="wv-h7 block">
+          ถูกคัดเลือกโดย คสช. โดยตรง และอีก 20% ถูกคัดเลือกโดยอ้อม แต่ในทางปฏิบัติแล้ว{" "}
+          <span class="font-bold">ส.ว. ทุกตำแหน่งผ่านการคัดเลือกโดย คสช.</span>
+        </span>
+      </p>
+      <div class="flex items-center justify-center overflow-x-hidden">
         <Lottie src="./imgs/lotties/bubblechart.json" width="350px" height="344px" />
       </div>
     </div>
-    <div class="con mb-30 flex flex-col items-center justify-center gap-20 lg:flex-row">
-      <div class="flex-1 p-20">
+    <div class="con mb-30 gap-20 lg:grid lg:grid-cols-2eq">
+      <div class="mb-20 p-20 lg:mb-0">
         <Lottie
           src="./imgs/lotties/senate.json"
           width="200px"
@@ -280,11 +278,12 @@ const Chapter1 = (
             หรือ <span class="font-bold">{PEOPLE.withNcpo}</span>/{PEOPLE.total} คน
           </span>
           <span class="wv-h7 block">
-            ของ ส.ว. ทั้งหมดเคยเป็นผู้มีส่วนเกี่ยวข้องกับ คสช. มาก่อน
+            ของ ส.ว. ทั้งหมดเคยเป็นผู้มีส่วนเกี่ยวข้องกับ คสช.{" "}
+            <span class="nobr">มาก่อน</span>
           </span>
         </p>
       </div>
-      <div class="flex-1">
+      <div>
         <div class="wv-h5 mb-20 w-full bg-white px-40 py-20 text-center font-kondolar font-black">
           ผู้มีส่วนเกี่ยวข้องกับ คสช. ประกอบไปด้วย
         </div>
@@ -340,15 +339,17 @@ const Chapter1 = (
       </div>
     </div>
     <div class="con mb-100 flex flex-col justify-center gap-20 lg:mb-[260px] lg:flex-row">
-      <img
-        class="mx-auto flex-1"
-        src="./imgs/popular-job.webp"
-        alt=""
-        width={295}
-        height={322}
-        loading="lazy"
-        decoding="async"
-      />
+      <div class="flex flex-1 items-center justify-center px-30">
+        <img
+          class="mx-auto"
+          src="./imgs/popular-job.webp"
+          alt=""
+          width={295}
+          height={322}
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
       <p class="mx-auto flex flex-1 flex-col gap-10 rounded-10 bg-senate-pink p-30 text-center font-kondolar lg:text-left">
         <span class="wv-b6 mx-auto aspect-square h-[28px] w-[28px] rounded-full bg-black text-center font-bold leading-[28px] text-white lg:ml-0">
           1
