@@ -49,7 +49,7 @@ export default component$(() => (
 // ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝
 
 const Header = (
-  <header class="bg-black pb-30 text-white lg:pt-100 lg:pb-60">
+  <header class="bg-black pb-30 text-white lg:pb-60 lg:pt-100">
     <h1 class="wv-h2 con py-20 text-center font-kondolar font-black lg:hidden">
       <span class="nobr">แลหลัง</span>
       <br />
@@ -157,7 +157,7 @@ const Chapter1 = (
       <Lottie src="./imgs/lotties/chapter/01.json" width="320px" height="320px" />
     </ChapterBreak>
     <img
-      class="my-60 mx-auto h-auto w-[87.5%] max-w-[632px]"
+      class="mx-auto my-60 h-auto w-[87.5%] max-w-[632px]"
       src="./imgs/ch1-break.webp"
       alt=""
       width={632}
@@ -185,7 +185,7 @@ const Chapter1 = (
       ส.ว. ทั้งหมด 250 ที่นั่ง ประกอบไปด้วย 3 ประเภท
     </p>
     <Ch1Divider text="คัดเลือกโดยตรง" />
-    <div class="ch1-senate-path-scrollbar scroll-green mt-20 mb-10 overflow-x-auto px-20 lg:px-100">
+    <div class="ch1-senate-path-scrollbar scroll-green mb-10 mt-20 overflow-x-auto px-20 lg:px-100">
       <img
         class="mx-auto h-[147px] w-[1048px] max-w-none object-contain"
         src="./imgs/senate-path/01.webp"
@@ -196,7 +196,7 @@ const Chapter1 = (
         decoding="async"
       />
     </div>
-    <div class="ch1-senate-path-scrollbar scroll-blue mt-10 mb-20 overflow-x-auto px-20 lg:px-100">
+    <div class="ch1-senate-path-scrollbar scroll-blue mb-20 mt-10 overflow-x-auto px-20 lg:px-100">
       <img
         class="mx-auto h-[211px] w-[1048px] max-w-none object-contain"
         src="./imgs/senate-path/02.webp"
@@ -208,7 +208,7 @@ const Chapter1 = (
       />
     </div>
     <Ch1Divider text="คัดเลือกโดยอ้อม" />
-    <div class="ch1-senate-path-scrollbar scroll-pink mt-20 mb-[130px] overflow-x-auto px-20 lg:px-100">
+    <div class="ch1-senate-path-scrollbar scroll-pink mb-[130px] mt-20 overflow-x-auto px-20 lg:px-100">
       <img
         class="mx-auto h-[248px] w-[1048px] max-w-none object-contain"
         src="./imgs/senate-path/03.webp"
@@ -225,7 +225,7 @@ const Chapter1 = (
       ส.ว.
     </p>
     <Lottie src="./imgs/lotties/googly-eye.json" width="242px" height="104px" />
-    <p class="wv-h4 con mt-30 mb-40 text-center font-kondolar font-black">
+    <p class="wv-h4 con mb-40 mt-30 text-center font-kondolar font-black">
       สำรวจ ส.ว. ตามประเภทอาชีพ และความเกี่ยวข้องกับ คสช.
     </p>
     <Ch1Explore />
@@ -554,7 +554,7 @@ const Chapter2 = (
             />
             <span class="wv-h9 block text-center font-kondolar font-bold">ส.ส.</span>
           </div>
-          <span>250 เสียง</span>
+          <span>500 เสียง</span>
         </div>
         <p class="wv-b4 mb-30">
           <span class="font-bold">มติที่ประชุมร่วมของรัฐสภา:</span> เป็นการพิจารณาลงมติ
@@ -663,7 +663,7 @@ const Chapter3 = (
     </p>
     <div class="flex flex-col">
       <Ch3Letter title="ยกเลิก ส.ว. เปลี่ยนเป็นสภาเดี่ยว" lottieName="01">
-        <div class="border-b border-dashed pt-10 pb-20">
+        <div class="border-b border-dashed pb-20 pt-10">
           <p class="wv-h8 mb-10 w-full text-center font-kondolar font-black">สรุป</p>
           <p class="wv-b4">
             <span class="font-bold">ระบบสภาเดี่ยว</span>{" "}
@@ -673,7 +673,7 @@ const Chapter3 = (
             ส.ว. ร่วมทำหน้าที่ในสภาด้วย
           </p>
         </div>
-        <div class="pt-20 pb-20">
+        <div class="pb-20 pt-20">
           <p class="wv-h8 mb-20 w-full text-center font-kondolar font-black">
             ตัวอย่างประเทศ
           </p>
@@ -762,7 +762,7 @@ const Chapter3 = (
         title="&ldquo;ลดอำนาจ ส.ว.&rdquo; สภาคู่ แต่อำนาจของ ส.ว. ต้องสัมพันธ์กับที่มา"
         lottieName="02"
       >
-        <div class="border-b border-dashed pt-10 pb-20">
+        <div class="border-b border-dashed pb-20 pt-10">
           <p class="wv-h8 mb-10 w-full text-center font-kondolar font-black">สรุป</p>
           <ul class="wv-b4 list-disc">
             <li class="ml-[2ch]">
@@ -780,7 +780,7 @@ const Chapter3 = (
             </li>
           </ul>
         </div>
-        <div class="pt-20 pb-20">
+        <div class="pb-20 pt-20">
           <p class="wv-h8 mb-20 w-full text-center font-kondolar font-black">
             ตัวอย่างประเทศ
           </p>
@@ -847,7 +847,7 @@ const Chapter3 = (
         title="&ldquo;เปลี่ยนที่มา ส.ว.&rdquo; สภาคู่ แต่ที่มา ส.ว. ยึดโยงกับประชาชนมากขึ้น"
         lottieName="03"
       >
-        <div class="border-b border-dashed pt-10 pb-20">
+        <div class="border-b border-dashed pb-20 pt-10">
           <p class="wv-h8 mb-10 w-full text-center font-kondolar font-black">สรุป</p>
           <p class="wv-b4">
             <strong>
@@ -858,7 +858,7 @@ const Chapter3 = (
             เพราะมีความชอบธรรมในการใช้อำนาจหน้าที่ดังกล่าวแทนประชาชนจากการเลือกตั้งแล้ว
           </p>
         </div>
-        <div class="pt-20 pb-20">
+        <div class="pb-20 pt-20">
           <p class="wv-h8 mb-20 w-full text-center font-kondolar font-black">
             ตัวอย่างประเทศ
           </p>
