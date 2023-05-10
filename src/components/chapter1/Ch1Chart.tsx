@@ -3,7 +3,7 @@ import { inView } from "motion";
 
 interface Ch1ChartProps {
   who: string;
-  desc?: string;
+  desc?: string[];
   data: number[];
 }
 
@@ -40,10 +40,16 @@ export const Ch1Chart = component$<Ch1ChartProps>(({ who, desc, data }) => {
 
   return (
     <div ref={elContainer} class="mb-5 transition duration-500">
-      <p class="mb-5 flex flex-wrap items-baseline gap-x-10">
-        <span class="wv-h8 font-kondolar font-bold">{who}</span>
-        <span class="wv-b3 font-bold">{data[3]} คน</span>
-        {desc && <span class="wv-b4 nobr">{desc}</span>}
+      <p class="mb-5">
+        <span class="wv-h8 mr-10 inline-block font-kondolar font-bold">{who}</span>
+        <span class="wv-b3 mr-10 inline-block font-bold">{data[3]} คน</span>
+        {desc?.map((txt, i) => (
+          <>
+          <span key={i} class="wv-b4 nobr">
+            {txt}
+          </span>{' '}
+          </>
+        ))}
       </p>
       <div class="flex h-40 w-full origin-left transition-transform duration-500">
         {data[0] > 0 && (
