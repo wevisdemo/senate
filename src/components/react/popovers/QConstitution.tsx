@@ -44,9 +44,9 @@ export const QPopover = qwikify$<QConstitutionPopoverProps>(
         leaveFrom="scale-100 opacity-100"
         leaveTo="scale-0 opacity-0"
       >
-        <Popover.Panel className="w-[300px] rounded-10 border bg-senate-pink py-20 px-10 lg:w-[320px] ">
+        <Popover.Panel className="w-[300px] rounded-10 border bg-senate-pink px-10 py-20 lg:w-[320px]">
           <Popover.Button
-            className="absolute top-10 right-10"
+            className="absolute right-10 top-10"
             type="button"
             aria-label="ปิด"
           >
@@ -113,6 +113,6 @@ export const QPopover = qwikify$<QConstitutionPopoverProps>(
     </Popover>
   ),
   {
-    eagerness: "visible",
+    eagerness: "hover",
   }
 );

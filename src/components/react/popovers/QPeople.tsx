@@ -69,7 +69,7 @@ export const QPeople = qwikify$<QPeoplePopoverProps>(
       </Popover.Button>
 
       <Transition
-        className="fixed top-1/2 left-1/2 z-20 -translate-x-1/2 -translate-y-1/2 transition-all lg:absolute lg:top-0 lg:translate-x-0 lg:translate-y-0"
+        className="fixed left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 transition-all lg:absolute lg:top-0 lg:translate-x-0 lg:translate-y-0"
         enter="lg:right-0 lg:left-auto lg:origin-top-right"
         enterFrom="opacity-0"
         enterTo="lg:translate-y-[26px]"
@@ -265,6 +265,6 @@ export const QPeople = qwikify$<QPeoplePopoverProps>(
     </Popover>
   ),
   {
-    eagerness: "visible",
+    eagerness: "hover",
   }
 );

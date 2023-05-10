@@ -24,6 +24,6 @@ export const QWvNavbar = qwikify$<QNavbarProps>(
     </WvNavbar>
   ),
   {
-    eagerness: "visible",
+    eagerness: "hover",
   }
 );

@@ -17,7 +17,7 @@ export const QLetter = qwikify$<QLetterProps>(
             <span className="sr-only">Toggle Card: {title}</span>
           </Disclosure.Button>
           <div
-            className={`letter-transition mx-auto mb-[276px] w-[calc(100%-20px)] max-w-[600px] rounded-10 border bg-white px-20 pt-30 pb-100 ${
+            className={`letter-transition mx-auto mb-[276px] w-[calc(100%-20px)] max-w-[600px] rounded-10 border bg-white px-20 pb-100 pt-30 ${
               open ? "mt-20" : "mt-[150px] peer-hover:-translate-y-10 md:mt-[130px]"
             }`}
           >
@@ -71,6 +71,6 @@ export const QLetter = qwikify$<QLetterProps>(
     </Disclosure>
   ),
   {
-    eagerness: "visible",
+    eagerness: "hover",
   }
 );
