@@ -32,7 +32,7 @@ export const DataContext = createContextId<Readonly<Signal<FilteredPeopleDataSch
 );
 
 const JOBS = ([...Object.keys(PEOPLE.jobs)] as OccupationGroup[]).sort(
-  (a, z) => PEOPLE.jobs[z] - PEOPLE.jobs[a]
+  (a, z) => PEOPLE.jobs[z][0] - PEOPLE.jobs[a][0]
 );
 const ENTRY_PER_PAGE = 10;
 
@@ -45,24 +45,20 @@ const groupBy = <T, K extends keyof any>(
     {} as Record<K, T[]>
   );
 
-const JobDivider = component$<{ name: OccupationGroup; data: PeopleListSchema[] }>(
-  ({ name, data }) => (
-    <>
-      <div class="flex items-center gap-10">
-        <span class="wv-h7 font-kondolar font-bold">{name.replace("ๆ", " ๆ")}</span>
-        <div class="flex-1 border-t" />
-        <div class="wv-b3 block text-right font-bold">
-          {data?.length ?? PEOPLE.jobs[name]} คน
-        </div>
-      </div>
-      {data?.filter((e) => !e.IsActive)?.length > 0 && (
-        <span class="wv-b6 -mt-4 -mb-4 block text-right leading-none">
-          {data.filter((e) => !e.IsActive).length} คนพ้นจากตำแหน่ง
-        </span>
-      )}
-    </>
-  )
-);
+const JobDivider = component$<{ name: OccupationGroup }>(({ name }) => (
+  <>
+    <div class="flex items-center gap-10">
+      <span class="wv-h7 font-kondolar font-bold">{name.replace("ๆ", " ๆ")}</span>
+      <div class="flex-1 border-t" />
+      <div class="wv-b3 block text-right font-bold">{PEOPLE.jobs[name][0]} คน</div>
+    </div>
+    {PEOPLE.jobs[name][1] > 0 && (
+      <span class="wv-b6 -mb-4 -mt-4 block text-right leading-none">
+        {PEOPLE.jobs[name][1]} คนพ้นจากตำแหน่ง
+      </span>
+    )}
+  </>
+));
 
 const Overview = component$<{ show: boolean }>(({ show }) => {
   const data = useContext(DataContext);
@@ -136,12 +132,18 @@ const Overview = component$<{ show: boolean }>(({ show }) => {
       </div>
       {JOBS.map(
         (job) =>
-          data.value.listByJobs?.[job]?.length > 0 && (
+          (data.value.imgBase === "" ||
+            Object.keys(data.value.listByJobs).includes(job)) && (
             <div key={job}>
-              <JobDivider name={job} data={data.value.listByJobs[job]} />
+              <JobDivider name={job} />
               <div class="my-10 flex flex-wrap gap-4">
-                {data.value.listByJobs[job].map((e) => (
-                  <QPeople key={e.Id} data={e} imgBase={data.value.imgBase} />
+                {(data.value.imgBase === ""
+                  ? Array(PEOPLE.jobs[job][0]).fill(0)
+                  : data.value.listByJobs[job]
+                ).map((e) => (
+                  <div key={e.Id} class="h-[22px] w-[22px]">
+                    <QPeople data={e} imgBase={data.value.imgBase} />
+                  </div>
                 ))}
               </div>
             </div>
@@ -154,7 +156,7 @@ const Overview = component$<{ show: boolean }>(({ show }) => {
 const PeopleCard = component$<{ data: PeopleListSchema; imgBase: string }>(
   ({ data, imgBase }) => (
     <a
-      class="flex items-center gap-20 rounded-10 border border-black bg-white py-10 px-20 font-bold text-black no-underline hover:no-underline"
+      class="flex items-center gap-20 rounded-10 border border-black bg-white px-20 py-10 font-bold text-black no-underline hover:no-underline"
       href={"https://theyworkforus.wevis.info/people/" + data.Name.replace(/\s+/g, "-")}
       target="_blank"
       rel="nofollow noopener noreferrer"

@@ -26,21 +26,6 @@ import PEOPLE from "~/data/people";
 import UPDATE from "~/data/update";
 import VOTELOG from "~/data/votelog";
 
-export default component$(() => (
-  <>
-    {Header}
-    <main class="min-h-[50vh] bg-bg">
-      {Chapter1}
-      {Chapter2}
-      {Chapter3}
-    </main>
-    {Footer}
-    <div class="relative h-0 w-0">
-      <div class="fixed h-screen" id="100vh" />
-    </div>
-  </>
-));
-
 // ██╗  ██╗███████╗ █████╗ ██████╗ ███████╗██████╗
 // ██║  ██║██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗
 // ███████║█████╗  ███████║██║  ██║█████╗  ██████╔╝
@@ -1073,3 +1058,18 @@ const Footer = (
     <QWvSharer />
   </footer>
 );
+
+export default component$(() => (
+  <>
+    {Header}
+    <main class="min-h-[50vh] bg-bg">
+      {Chapter1}
+      {Chapter2}
+      {Chapter3}
+    </main>
+    {Footer}
+    <div class="relative h-0 w-0">
+      <div class="fixed h-screen" id="100vh" />
+    </div>
+  </>
+));

@@ -48,9 +48,13 @@ const compilePeople = () => {
     }
 
     if (e.OccupationGroup in data.local.jobs) {
-      data.local.jobs[e.OccupationGroup]++;
+      data.local.jobs[e.OccupationGroup][0]++;
     } else {
-      data.local.jobs[e.OccupationGroup] = 1;
+      data.local.jobs[e.OccupationGroup] = [1, 0];
+    }
+
+    if (!e.IsActive) {
+      data.local.jobs[e.OccupationGroup][1]++;
     }
 
     return {
