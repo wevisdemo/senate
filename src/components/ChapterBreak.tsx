@@ -75,32 +75,35 @@ export const ChapterBreak = component$<ChapterBreakProps>(({ part, title }) => {
   );
 
   return (
-    <div
-      ref={elChapterBreakContainer}
-      id={`ch${part}`}
-      class="flex w-full flex-col items-center justify-center gap-10 border-t border-dashed border-t-white bg-black py-40 text-white lg:h-[360px] lg:flex-row lg:gap-60 lg:p-0"
-    >
-      <div class="text-center font-kondolar font-black leading-none">
-        <span class="wv-h9 mb-[12px] block">Part</span>
-        <span class="block text-[100px]">{part}</span>
-      </div>
-      <div class="flex h-full items-center">
-        <Slot />
-      </div>
+    <>
+      <span class="sr-only">
+        Part {part} {title.join("").replace("-", " ")}
+      </span>
       <div
-        class="wv-h5 text-center font-kondolar font-black lg:text-left"
-        aria-label={title.join("").replace("-", " ")}
+        ref={elChapterBreakContainer}
+        id={`ch${part}`}
+        class="flex w-full flex-col items-center justify-center gap-10 border-t border-dashed border-t-white bg-black py-40 text-white lg:h-[360px] lg:flex-row lg:gap-60 lg:p-0"
+        aria-hidden="true"
       >
-        {title.map((ch, i) =>
-          ch === "-" ? (
-            <br key={i} />
-          ) : (
-            <span class="inline-block whitespace-pre" key={i} aria-hidden="true">
-              {ch}
-            </span>
-          )
-        )}
+        <div class="text-center font-kondolar font-black leading-none">
+          <span class="wv-h9 mb-[12px] block">Part</span>
+          <span class="block text-[100px]">{part}</span>
+        </div>
+        <div class="flex h-full items-center">
+          <Slot />
+        </div>
+        <div class="wv-h5 text-center font-kondolar font-black lg:text-left">
+          {title.map((ch, i) =>
+            ch === "-" ? (
+              <br key={i} />
+            ) : (
+              <span class="inline-block whitespace-pre" key={i}>
+                {ch}
+              </span>
+            )
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 });
