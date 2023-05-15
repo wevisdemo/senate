@@ -45,30 +45,39 @@ export const Ch1Chart = component$<Ch1ChartProps>(({ who, desc, data }) => {
         <span class="wv-b3 mr-10 inline-block font-bold">{data[3]} คน</span>
         {desc?.map((txt, i) => (
           <>
-          <span key={i} class="wv-b4 nobr">
-            {txt}
-          </span>{' '}
+            <span key={i} class="wv-b4 nobr">
+              {txt}
+            </span>{" "}
           </>
         ))}
       </p>
       <div class="flex h-40 w-full origin-left transition-transform duration-500">
         {data[0] > 0 && (
-          <div
-            class="bg-senate-green"
-            style={{ width: (data[0] / MAX_NUM) * 100 + "%" }}
-          />
+          <>
+            <div
+              class="bg-senate-green"
+              style={{ width: (data[0] / MAX_NUM) * 100 + "%" }}
+            />
+            <span class="sr-only">เป็น ส.ว. โดยตำแหน่ง {data[0]} คน</span>
+          </>
         )}
         {data[1] > 0 && (
-          <div
-            class="bg-senate-blue"
-            style={{ width: (data[1] / MAX_NUM) * 100 + "%" }}
-          />
+          <>
+            <div
+              class="bg-senate-blue"
+              style={{ width: (data[1] / MAX_NUM) * 100 + "%" }}
+            />
+            <span class="sr-only">เป็น ส.ว. เลือกโดย คสช. {data[1]} คน</span>
+          </>
         )}
         {data[2] > 0 && (
-          <div
-            class="bg-senate-pink"
-            style={{ width: (data[2] / MAX_NUM) * 100 + "%" }}
-          />
+          <>
+            <div
+              class="bg-senate-pink"
+              style={{ width: (data[2] / MAX_NUM) * 100 + "%" }}
+            />
+            <span class="sr-only">เป็น ส.ว. เลือกกันเอง {data[2]} คน</span>
+          </>
         )}
       </div>
     </div>

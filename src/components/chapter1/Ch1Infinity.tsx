@@ -69,6 +69,7 @@ export const Ch1Infinity = component$(() => {
         style={{
           willChange: "clip-path",
         }}
+        aria-hidden="true"
       >
         <path
           fill="#FFA9D1"
@@ -106,6 +107,7 @@ export const Ch1Infinity = component$(() => {
           viewBox="0 0 17 17"
           width="17"
           height="17"
+          aria-hidden="true"
         >
           <path d="M14.276 4.002c.275.245.3.666.056.941l-7.112 8a.667.667 0 01-.996 0l-3.556-4a.667.667 0 01.997-.886l3.057 3.44 6.613-7.44a.667.667 0 01.941-.055z" />
         </svg>
@@ -150,10 +152,14 @@ export const Ch1Infinity = component$(() => {
           viewBox="0 0 17 17"
           width="17"
           height="17"
+          aria-hidden="true"
         >
           <path d="M4.028 4.029c.26-.26.683-.26.943 0L8.5 7.557l3.528-3.528a.667.667 0 11.943.943L9.442 8.5l3.53 3.529a.667.667 0 01-.944.943L8.5 9.443 4.97 12.972a.667.667 0 01-.943-.943L7.557 8.5 4.028 4.972a.667.667 0 010-.943z" />
         </svg>
-        <span class="wv-b4 font-bold">อยู่ในวาระ</span>
+        <span class="wv-b4 font-bold" aria-hidden="true">
+          อยู่ในวาระ
+        </span>
+        <span class="sr-only">ไม่อยู่ในวาระ</span>
       </div>
       <img
         src="./imgs/darr.svg"

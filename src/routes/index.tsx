@@ -229,11 +229,15 @@ const Chapter1 = (
     </div>
     <div class="con mb-30 gap-20 lg:grid lg:grid-cols-2eq">
       <p class="mb-20 flex flex-col gap-10 p-20 text-center font-kondolar lg:mb-0 lg:text-left">
-        <span class="wv-h4 block font-black">ตามรัฐธรรมนูญ&apos;60</span>
+        <span class="wv-h4 block font-black" aria-hidden="true">
+          ตามรัฐธรรมนูญ&apos;60
+        </span>
+        <span class="sr-only">ตามรัฐธรรมนูญปี 2560</span>
         <span class="wv-h2 block font-black">80% ของ ส.ว.</span>
-        <span class="wv-h8 block">
+        <span class="wv-h8 block" aria-hidden="true">
           หรือ <span class="font-bold">200</span>/250 คน
         </span>
+        <span class="sr-only">หรือ 200 จาก 250 คน</span>
         <span class="wv-h7 block">
           ถูกคัดเลือกโดย คสช. โดยตรง และอีก 20% ถูกคัดเลือกโดยอ้อม แต่ในทางปฏิบัติแล้ว{" "}
           <span class="font-bold">ส.ว. ทุกตำแหน่งผ่านการคัดเลือกโดย คสช.</span>
@@ -256,8 +260,11 @@ const Chapter1 = (
           <span class="wv-h2 block font-black">
             {Math.round((PEOPLE.withNcpo / PEOPLE.total) * 1e4) / 1e2}%
           </span>
-          <span class="wv-h8 block">
+          <span class="wv-h8 block" aria-hidden="true">
             หรือ <span class="font-bold">{PEOPLE.withNcpo}</span>/{PEOPLE.total} คน
+          </span>
+          <span class="sr-only">
+            หรือ {PEOPLE.withNcpo} จาก {PEOPLE.total} คน
           </span>
           <span class="wv-h7 block">
             ของ ส.ว. ทั้งหมดเคยเป็นผู้มีส่วนเกี่ยวข้องกับ คสช.{" "}
@@ -304,7 +311,7 @@ const Chapter1 = (
             data={PEOPLE.ncpoType["สมาชิก คสช.,สายบริหาร"]}
           />
         </div>
-        <ul class="flex flex-wrap justify-center gap-x-20 gap-y-10">
+        <ul class="flex flex-wrap justify-center gap-x-20 gap-y-10" aria-hidden="true">
           <li class="flex items-center gap-10">
             <span class="h-20 w-20 rounded-full border bg-senate-green" />
             <span class="wv-b4 font-bold">ส.ว. โดยตำแหน่ง</span>
@@ -325,7 +332,7 @@ const Chapter1 = (
         <img
           class="mx-auto"
           src="./imgs/popular-job.webp"
-          alt=""
+          alt="สามอันดับอาชีพยอดฮิตของ ส.ว."
           width={295}
           height={322}
           loading="lazy"
@@ -333,41 +340,62 @@ const Chapter1 = (
         />
       </div>
       <p class="mx-auto flex flex-1 flex-col gap-10 rounded-10 bg-senate-pink p-30 text-center font-kondolar lg:text-left">
-        <span class="wv-b6 mx-auto aspect-square h-[28px] w-[28px] rounded-full bg-black text-center font-bold leading-[28px] text-white lg:ml-0">
+        <span
+          class="wv-b6 mx-auto aspect-square h-[28px] w-[28px] rounded-full bg-black text-center font-bold leading-[28px] text-white lg:ml-0"
+          aria-hidden="true"
+        >
           1
         </span>
+        <span class="sr-only">อันดับที่ 1</span>
         <span class="wv-h5 font-black">
           {Math.round((PEOPLE.jobs.ทหาร[0] / PEOPLE.total) * 1e4) / 1e2}%
         </span>
-        <span class="wv-h8">
-          หรือ <span class="font-bold">{PEOPLE.jobs.ทหาร}</span>/{PEOPLE.total} คน
+        <span class="wv-h8" aria-hidden="true">
+          หรือ <span class="font-bold">{PEOPLE.jobs.ทหาร[0]}</span>/{PEOPLE.total} คน
+        </span>
+        <span class="sr-only">
+          หรือ {PEOPLE.jobs.ทหาร[0]} จาก {PEOPLE.total} คน
         </span>
         <span class="wv-h8">ของ ส.ว. อยู่ในกลุ่มอาชีพทหาร</span>
       </p>
       <p class="mx-auto flex flex-1 flex-col gap-10 rounded-10 bg-senate-pink p-30 text-center font-kondolar lg:text-left">
-        <span class="wv-b6 mx-auto aspect-square h-[28px] w-[28px] rounded-full bg-black text-center font-bold leading-[28px] text-white lg:ml-0">
+        <span
+          class="wv-b6 mx-auto aspect-square h-[28px] w-[28px] rounded-full bg-black text-center font-bold leading-[28px] text-white lg:ml-0"
+          aria-hidden="true"
+        >
           2
         </span>
+        <span class="sr-only">อันดับที่ 2</span>
         <span class="wv-h5 font-black">
           {Math.round((PEOPLE.jobs.การเมือง[0] / PEOPLE.total) * 1e4) / 1e2}%
         </span>
-        <span class="wv-h8">
-          หรือ <span class="font-bold">{PEOPLE.jobs.การเมือง}</span>/{PEOPLE.total} คน
+        <span class="wv-h8" aria-hidden="true">
+          หรือ <span class="font-bold">{PEOPLE.jobs.การเมือง[0]}</span>/{PEOPLE.total} คน
+        </span>
+        <span class="sr-only">
+          หรือ {PEOPLE.jobs.การเมือง[0]} จาก {PEOPLE.total} คน
         </span>
         <span class="wv-h8">ของ ส.ว. อยู่ในกลุ่มอาชีพการเมือง</span>
       </p>
       <p class="mx-auto flex flex-1 flex-col gap-10 rounded-10 bg-senate-pink p-30 text-center font-kondolar lg:text-left">
-        <span class="wv-b6 mx-auto aspect-square h-[28px] w-[28px] rounded-full bg-black text-center font-bold leading-[28px] text-white lg:ml-0">
+        <span
+          class="wv-b6 mx-auto aspect-square h-[28px] w-[28px] rounded-full bg-black text-center font-bold leading-[28px] text-white lg:ml-0"
+          aria-hidden="true"
+        >
           3
         </span>
+        <span class="sr-only">อันดับที่ 3</span>
         <span class="wv-h5 font-black">
           {Math.round((PEOPLE.jobs["องค์กรรัฐ/รัฐวิสาหกิจ"][0] / PEOPLE.total) * 1e4) /
             1e2}
           %
         </span>
-        <span class="wv-h8">
-          หรือ <span class="font-bold">{PEOPLE.jobs["องค์กรรัฐ/รัฐวิสาหกิจ"]}</span>/
+        <span class="wv-h8" aria-hidden="true">
+          หรือ <span class="font-bold">{PEOPLE.jobs["องค์กรรัฐ/รัฐวิสาหกิจ"][0]}</span>/
           {PEOPLE.total} คน
+        </span>
+        <span class="sr-only">
+          หรือ {PEOPLE.jobs["องค์กรรัฐ/รัฐวิสาหกิจ"][0]} จาก {PEOPLE.total} คน
         </span>
         <span class="wv-h8">ของ ส.ว. อยู่ในกลุ่มอาชีพองค์กรรัฐ/รัฐวิสาหกิจ</span>
       </p>
@@ -437,7 +465,10 @@ const Chapter2 = (
     <div class="con flex flex-col gap-10 text-center lg:mb-60 lg:flex-row">
       <div class="flex-1">
         <p class="wv-h5 mb-[12px] font-kondolar font-black">มติในที่ประชุมวุฒิสภา</p>
-        <div class="wv-b2 mb-[12px] flex items-center justify-center gap-20 font-bold">
+        <div
+          class="wv-b2 mb-[12px] flex items-center justify-center gap-20 font-bold"
+          aria-hidden="true"
+        >
           <div>
             <img
               class="mx-auto block"
@@ -452,6 +483,7 @@ const Chapter2 = (
           </div>
           <span>250 เสียง</span>
         </div>
+        <span class="sr-only">ส.ว. 250 เสียง</span>
         <p class="wv-b4 mb-30">
           <span class="font-bold">มติที่ประชุมวุฒิสภา:</span> เป็นการพิจารณาลงมติ
           ในเรื่องที่เป็นอำนาจของ ส.ว. มีทั้งกรณีที่พิจารณาต่อจาก ส.ส.
@@ -509,7 +541,10 @@ const Chapter2 = (
         <p class="wv-h5 mb-[12px] font-kondolar font-black">
           มติในที่ประชุมร่วมของรัฐสภา
         </p>
-        <div class="wv-b2 mb-[12px] flex items-center justify-center gap-20 font-bold">
+        <div
+          class="wv-b2 mb-[12px] flex items-center justify-center gap-20 font-bold"
+          aria-hidden="true"
+        >
           <span>250 เสียง</span>
           <div>
             <img
@@ -552,6 +587,7 @@ const Chapter2 = (
           </div>
           <span>500 เสียง</span>
         </div>
+        <span class="sr-only">ส.ว. 250 เสียงและ ส.ส. 500 เสียง</span>
         <p class="wv-b4 mb-30">
           <span class="font-bold">มติที่ประชุมร่วมของรัฐสภา:</span> เป็นการพิจารณาลงมติ
           ในเรื่องที่เป็นอำนาจของ ส.ส. และ ส.ว.ร่วมกันตั้งแต่ต้นจนจบ
@@ -605,7 +641,10 @@ const Chapter2 = (
         </div>
       </div>
     </div>
-    <div class="mb-60 flex flex-col items-center justify-center gap-20 lg:flex-row lg:items-start lg:gap-60">
+    <div
+      class="mb-60 flex flex-col items-center justify-center gap-20 lg:flex-row lg:items-start lg:gap-60"
+      aria-hidden="true"
+    >
       <span class="wv-h5 font-kondolar font-black">ประเภทการลงคะแนนเสียง</span>
       <img
         class="md:hidden"

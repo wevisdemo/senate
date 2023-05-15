@@ -48,6 +48,7 @@ export const Ch3Letter = component$<Ch3LetterProps>(({ title, lottieName }) => {
         width={640}
         height={618}
         class="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2"
+        aria-hidden="true"
       >
         <path
           fill="#FFA9D1"
@@ -73,6 +74,7 @@ export const Ch3Letter = component$<Ch3LetterProps>(({ title, lottieName }) => {
         width={640}
         height={428}
         class="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2"
+        aria-hidden="true"
       >
         <path
           fill="#FFA9D1"

@@ -51,19 +51,29 @@ export const Ch2Compare = component$(() => {
   return (
     <div class="con flex flex-col gap-20 lg:flex-row lg:items-start">
       <div class="flex-1">
-        <p class="wv-h6 mb-30 text-center font-kondolar font-black lg:text-left">
+        <p
+          class="wv-h6 mb-30 text-center font-kondolar font-black lg:text-left"
+          aria-hidden="true"
+        >
           เปรียบเทียบความแตกต่างการเลือกนายกรัฐมนตรีใน รธน. 40 และ 60
         </p>
+        <span class="sr-only">
+          เปรียบเทียบความแตกต่างการเลือกนายกรัฐมนตรีในรัฐธรรมนูญปี 2540 และ 2560
+        </span>
         <Lottie src="./imgs/lotties/pm-select.json" height="250px" width="250px" />
       </div>
       <div ref={el40} class="flex-1 rounded-10 border bg-white p-20">
-        <p class="wv-h6 mb-10 rounded-10 bg-black p-10 text-center font-kondolar font-black text-white">
+        <p
+          class="wv-h6 mb-10 rounded-10 bg-black p-10 text-center font-kondolar font-black text-white"
+          aria-hidden="true"
+        >
           รัฐธรรมนูญ&apos;40
         </p>
-        <p class="wv-h7 mb-10 text-center font-kondolar font-black">
+        <span class="sr-only">รัฐธรรมนูญปี 2540</span>
+        <p class="wv-h7 mb-10 text-center font-kondolar font-black" aria-hidden="true">
           การเลือกนายกรัฐมนตรี
         </p>
-        <div class="mb-10 flex flex-col items-center">
+        <div class="mb-10 flex flex-col items-center" aria-hidden="true">
           <img
             src="./imgs/mp3.webp"
             alt=""
@@ -80,13 +90,17 @@ export const Ch2Compare = component$(() => {
         </p>
       </div>
       <div ref={el60} class="flex-1 rounded-10 border bg-white p-20">
-        <p class="wv-h6 mb-10 rounded-10 bg-black p-10 text-center font-kondolar font-black text-white">
+        <p
+          class="wv-h6 mb-10 rounded-10 bg-black p-10 text-center font-kondolar font-black text-white"
+          aria-hidden="true"
+        >
           รัฐธรรมนูญ&apos;60
         </p>
-        <p class="wv-h7 mb-10 text-center font-kondolar font-black">
+        <span class="sr-only">รัฐธรรมนูญปี 2560</span>
+        <p class="wv-h7 mb-10 text-center font-kondolar font-black" aria-hidden="true">
           การเลือกนายกรัฐมนตรี
         </p>
-        <div class="mb-10 flex items-center justify-center gap-20">
+        <div class="mb-10 flex items-center justify-center gap-20" aria-hidden="true">
           <div class="flex flex-col items-center">
             <img
               src="./imgs/mp3.webp"

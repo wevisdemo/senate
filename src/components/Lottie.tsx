@@ -96,6 +96,7 @@ export const Lottie = component$<LottieProps>(
         ref={elContainer}
         class={"scrollbar-none " + (clazz ?? "")}
         style={{ width, height }}
+        aria-hidden="true"
       >
         <Slot />
       </div>
@@ -104,6 +105,7 @@ export const Lottie = component$<LottieProps>(
         ref={elContainer}
         class={"scrollbar-none " + (clazz ?? "")}
         style={{ width, height }}
+        aria-hidden="true"
       />
     );
   }

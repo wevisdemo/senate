@@ -26,7 +26,7 @@ export const JumpToContent = component$<JumpToContentProps>(({ id, src, label })
     />
     <span class="text-left">
       <span class="wv-h10 mb-4 block font-kondolar font-black">{label}</span>
-      <span class="wv-b5 mt-auto flex items-center gap-4 font-bold">
+      <span class="wv-b5 mt-auto flex items-center gap-4 font-bold" aria-hidden="true">
         สำรวจ
         <img
           src="./imgs/dcaret.svg"
