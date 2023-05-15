@@ -1,1 +1,0 @@
-import{Q as n,q as e,S as o}from"./q-e7306113.js";import{R as u}from"./q-9db42da8.js";import{N as l,A as r}from"./q-1d1dd21c.js";const a=()=>l(n,{children:[r("head",null,null,l(u,null,3,"n3_0"),1,null),r("body",null,null,[l(e,null,3,"n3_1"),l(o,null,3,"n3_2")],1,null)]},1,"n3_3");export{a as s_f1zQoEscqbs};
