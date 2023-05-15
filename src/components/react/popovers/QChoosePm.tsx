@@ -104,7 +104,7 @@ const ChoosePmContent = ({ close }: { close?: boolean }) => (
 
 export const QChoosePmContent = qwikify$(() => (
   <div className="border bg-white">
-    <QChoosePmContent />
+    <ChoosePmContent />
   </div>
 ));
 
