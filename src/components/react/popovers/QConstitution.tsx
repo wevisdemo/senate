@@ -113,6 +113,6 @@ export const QPopover = qwikify$<QConstitutionPopoverProps>(
     </Popover>
   ),
   {
-    eagerness: "hover",
+    eagerness: "visible",
   }
 );

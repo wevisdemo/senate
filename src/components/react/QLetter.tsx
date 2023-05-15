@@ -71,6 +71,6 @@ export const QLetter = qwikify$<QLetterProps>(
     </Disclosure>
   ),
   {
-    eagerness: "hover",
+    eagerness: "visible",
   }
 );

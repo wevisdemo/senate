@@ -3,6 +3,8 @@
 import { qwikify$ } from "@builder.io/qwik-react";
 import { Popover, Transition } from "@headlessui/react";
 
+import { THEYWORK_LINK } from "~/data/const";
+
 import type { PeopleListSchema } from "~/types/people";
 
 interface QPeoplePopoverProps {
@@ -246,8 +248,8 @@ export const QPeople = qwikify$<QPeoplePopoverProps>(
                 <a
                   className="wv-b3 inline-flex items-center gap-[4px] font-bold text-black"
                   href={
-                    "https://theyworkforus.wevis.info/people/" +
-                    data.Name.replace(/\s+/g, "-")
+                    `https://${THEYWORK_LINK}/people/` +
+                    (data.Name ?? "").replace(/\s+/g, "-")
                   }
                   target="_blank"
                   rel="nofollow noopener noreferrer"
@@ -270,6 +272,6 @@ export const QPeople = qwikify$<QPeoplePopoverProps>(
       </Popover>
     ),
   {
-    eagerness: "hover",
+    eagerness: "visible",
   }
 );

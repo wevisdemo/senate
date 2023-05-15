@@ -99,7 +99,7 @@ export const Ch1Infinity = component$(() => {
         loading="lazy"
         decoding="async"
       />
-      <div class="flex items-center gap-4 rounded-full bg-black py-4 px-20 text-white">
+      <div class="flex items-center gap-4 rounded-full bg-black px-20 py-4 text-white">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="#fff"
@@ -121,7 +121,7 @@ export const Ch1Infinity = component$(() => {
       />
       <div
         data-lottie="2"
-        class="mx-auto flex w-[calc(100%_-_40px)] min-w-[280px] max-w-[337px] flex-col items-center justify-center gap-10 overflow-hidden rounded-10 border bg-white py-30 px-20 text-center"
+        class="mx-auto flex w-[calc(100%_-_40px)] min-w-[280px] max-w-[337px] flex-col items-center justify-center gap-10 overflow-hidden rounded-10 border bg-white px-20 py-30 text-center"
       >
         <Lottie
           src="./imgs/lotties/process/02.json"
@@ -131,7 +131,7 @@ export const Ch1Infinity = component$(() => {
           play={currentLottieInview.value.includes(2)}
         />
         <p class="wv-h8 font-kondolar font-bold">
-          สามารถโหวตเลือกนายกรัฐมนตรีในสมัยหน้าได้อีก 1 ครั้ง
+          สามารถโหวตเลือกนายกรัฐมนตรีหลังการเลือกตั้ง 2566 ได้อีก 1 ครั้ง
         </p>
         <p class="wv-h9">มาตรา 272</p>
       </div>
@@ -143,7 +143,7 @@ export const Ch1Infinity = component$(() => {
         loading="lazy"
         decoding="async"
       />
-      <div class="flex items-center gap-4 rounded-full bg-black py-4 px-20 text-white">
+      <div class="flex items-center gap-4 rounded-full bg-black px-20 py-4 text-white">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="#fff"
@@ -165,7 +165,7 @@ export const Ch1Infinity = component$(() => {
       />
       <div
         data-lottie="3"
-        class="mx-auto flex w-[calc(100%_-_40px)] min-w-[280px] max-w-[337px] flex-col items-center justify-center gap-10 overflow-hidden rounded-10 border bg-white py-30 px-20 text-center"
+        class="mx-auto flex w-[calc(100%_-_40px)] min-w-[280px] max-w-[337px] flex-col items-center justify-center gap-10 overflow-hidden rounded-10 border bg-white px-20 py-30 text-center"
       >
         <Lottie
           src="./imgs/lotties/process/03.json"
@@ -189,7 +189,7 @@ export const Ch1Infinity = component$(() => {
       />
       <div
         data-lottie="4"
-        class="mx-auto flex w-[calc(100%_-_40px)] min-w-[280px] max-w-[337px] flex-col items-center justify-center gap-10 overflow-hidden rounded-10 border bg-white py-30 px-20 text-center"
+        class="mx-auto flex w-[calc(100%_-_40px)] min-w-[280px] max-w-[337px] flex-col items-center justify-center gap-10 overflow-hidden rounded-10 border bg-white px-20 py-30 text-center"
       >
         <Lottie
           src="./imgs/lotties/process/04.json"

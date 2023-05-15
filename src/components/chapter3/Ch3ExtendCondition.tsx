@@ -50,13 +50,13 @@ export const Ch3ExtendCondition = component$(() => {
       </p>
       <div ref={el2} class="bg-repeat-arrow mb-10 h-30 bg-[url(/imgs/darr.svg)]" />
       <p ref={el3} class="mb-10 border bg-white p-10 text-center lg:text-left">
-        <span class="font-bold">วาระ 2</span> พิจารณาเรียงลำดับมาตรา ส.ส .+ ส.ว.
+        <span class="block font-bold">วาระ 2 พิจารณาเรียงลำดับมาตรา</span> ส.ส .+ ส.ว.
         เอาเสียงข้างมากของทั้งสองสภา และต้องเปิดให้ประชาชนที่เข้าชื่อแสดงความเห็นด้วย
         ในกรณีเป็นร่างที่ประชาชนเสนอ
       </p>
       <div ref={el4} class="bg-repeat-arrow mb-10 h-30 bg-[url(/imgs/darr.svg)]" />
       <p ref={el5} class="border bg-white p-10 text-center lg:text-left">
-        <span class="font-bold">วาระ 3</span> ขั้นสุดท้าย
+        <span class="block font-bold">วาระ 3 ขั้นสุดท้าย</span>{" "}
         ต้องได้รับเสียงเห็นชอบเกินครึ่งหนึ่งของทั้งสองสภา แต่มีเงื่อนไขพิเศษกำหนดให้ต้องมี
         ส.ส. จากพรรคที่ไม่มีสมาชิกเป็นรัฐมนตรี ประธานสภาผู้แทนราษฎร
         หรือรองประธานผู้แทนราษฎรเห็นชอบด้วยไม่น้อยกว่า ร้อยละ 20

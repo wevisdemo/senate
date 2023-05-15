@@ -89,7 +89,6 @@ const Overview = component$<{ show: boolean }>(({ show }) => {
                     [270, 276, 294].includes(d.Id) ? (
                       <QVotelogPeople
                         key={d.Id}
-                        id={d.Id}
                         type="ค้ำจุน คสช."
                         date={d.VoteDate}
                         title={d.Title}
@@ -524,7 +523,6 @@ const Details = component$<{ show: boolean }>(({ show }) => {
               [270, 276, 294].includes(e.Id) ? (
                 <QVotelogPeopleContent
                   key={e.Id}
-                  id={e.Id}
                   type={catgName.value}
                   date={e.VoteDate}
                   title={e.Title}

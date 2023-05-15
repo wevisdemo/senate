@@ -9,7 +9,6 @@ export interface PeopleVotelog {
 }
 
 interface QVotelogPeoplePopoverProps {
-  id: number;
   title: string;
   date: string;
   type: string;
@@ -17,7 +16,6 @@ interface QVotelogPeoplePopoverProps {
 }
 
 const VotelogPeopleContent = ({
-  id,
   title,
   date,
   type,
@@ -59,7 +57,7 @@ const VotelogPeopleContent = ({
       <p className="wv-h9 mb-10 font-kondolar">{title}</p>
       <div className="font-bold">ผลการลงคะแนนเสียงบุคคลที่ถูกเสนอชื่อให้ดำรงตำแหน่ง</div>
       {vote.map((v) => (
-        <div className="senate-custombar-grid mb-[2px] lg:mb-0">
+        <div key={v.name} className="senate-custombar-grid mb-[2px] lg:mb-0">
           <div className="senate-custombar-grid-name flex items-center gap-5 font-bold">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -115,45 +113,25 @@ const VotelogPeopleContent = ({
           </div>
         </div>
       ))}
-      <p className="wv-b6 my-10">
+      <p className="wv-b6 mt-10">
         <span className="font-bold">หมายเหตุ:</span>{" "}
         ผู้ที่ดำรงตำแหน่งต้องได้รับความเห็นชอบด้วยคะแนนเสียงกึ่งหนึ่งจาก ส.ว. คือ 125
         คะแนนขึ้นไป
       </p>
-      <hr className="mb-10 border-dashed" />
-      <div className="text-center">
-        <a
-          className="wv-b3 inline-flex items-center gap-[4px] font-bold text-black"
-          href={"https://theyworkforus.wevis.info/votelog/" + id}
-          target="_blank"
-          rel="nofollow noopener noreferrer"
-        >
-          <span>ดูรายละเอียด</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 20 21"
-            width="20"
-            height="21"
-          >
-            <path fill="#000" d="M8.334 6.333l5 4.167-5 4.167V6.333z" />
-          </svg>
-        </a>
-      </div>
     </div>
   </>
 );
 
 export const QVotelogPeopleContent = qwikify$<QVotelogPeoplePopoverProps>(
-  ({ id, title, date, type, vote }) => (
+  ({ title, date, type, vote }) => (
     <div className="border bg-white">
-      <VotelogPeopleContent id={id} title={title} date={date} type={type} vote={vote} />
+      <VotelogPeopleContent title={title} date={date} type={type} vote={vote} />
     </div>
   )
 );
 
 export const QVotelogPeople = qwikify$<QVotelogPeoplePopoverProps>(
-  ({ id, title, date, type, vote }) => (
+  ({ title, date, type, vote }) => (
     <Popover className="relative flex">
       <Popover.Button
         className="outline-0 ring-0 ring-black transition-all hover:scale-110 hover:bg-black hover:ring-2"
@@ -188,19 +166,12 @@ export const QVotelogPeople = qwikify$<QVotelogPeoplePopoverProps>(
         leaveTo="opacity-0"
       >
         <Popover.Panel className="w-[300px] border bg-white lg:w-[465px]">
-          <VotelogPeopleContent
-            id={id}
-            title={title}
-            date={date}
-            type={type}
-            vote={vote}
-            close
-          />
+          <VotelogPeopleContent title={title} date={date} type={type} vote={vote} close />
         </Popover.Panel>
       </Transition>
     </Popover>
   ),
   {
-    eagerness: "hover",
+    eagerness: "visible",
   }
 );

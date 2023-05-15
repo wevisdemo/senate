@@ -2,6 +2,16 @@
 import { qwikify$ } from "@builder.io/qwik-react";
 import WvSharer from "@wevisdemo/ui/react/sharer";
 
-export const QWvSharer = qwikify$(() => <WvSharer allowCopyLink light center />, {
-  eagerness: "hover",
-});
+interface QWvSharerProps {
+  indexPage?: boolean;
+  center?: boolean;
+}
+
+export const QWvSharer = qwikify$<QWvSharerProps>(
+  ({ indexPage, center }) => (
+    <WvSharer allowCopyLink={indexPage} light={indexPage} center={center} />
+  ),
+  {
+    eagerness: "visible",
+  }
+);

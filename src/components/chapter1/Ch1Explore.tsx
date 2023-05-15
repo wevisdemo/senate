@@ -17,7 +17,9 @@ import { CheckPill } from "../CheckPill";
 import { Pagination } from "../Pagination";
 import { RadioPill } from "../RadioPill";
 import { QPeople } from "../react/popovers/QPeople";
+// import { Ch1PeoplePopover } from "./Ch1PeoplePopover";
 
+import { THEYWORK_LINK } from "~/data/const";
 import PEOPLE from "~/data/people";
 
 import type {
@@ -143,6 +145,7 @@ const Overview = component$<{ show: boolean }>(({ show }) => {
                 ).map((e) => (
                   <div key={e.Id} class="h-[22px] w-[22px]">
                     <QPeople data={e} imgBase={data.value.imgBase} />
+                    {/* <Ch1PeoplePopover data={e} imgBase={data.value.imgBase} /> */}
                   </div>
                 ))}
               </div>
@@ -157,7 +160,7 @@ const PeopleCard = component$<{ data: PeopleListSchema; imgBase: string }>(
   ({ data, imgBase }) => (
     <a
       class="flex items-center gap-20 rounded-10 border border-black bg-white px-20 py-10 font-bold text-black no-underline hover:no-underline"
-      href={"https://theyworkforus.wevis.info/people/" + data.Name.replace(/\s+/g, "-")}
+      href={`https://${THEYWORK_LINK}/people/` + data.Name.replace(/\s+/g, "-")}
       target="_blank"
       rel="nofollow noopener noreferrer"
     >

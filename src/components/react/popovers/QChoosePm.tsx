@@ -40,7 +40,7 @@ const ChoosePmContent = ({ close }: { close?: boolean }) => (
       <p className="wv-h9 mb-10 mr-auto font-kondolar font-bold">
         66.93% เลือกประยุทธ์ จันทร์โอชา
       </p>
-      <div className="wv-b5 mb-10 grid grid-cols-choosepm gap-4 lg:gap-x-[8px]">
+      <div className="wv-b5 grid grid-cols-choosepm gap-4 lg:gap-x-[8px]">
         <div className="wv-b4 -mr-[2px] mb-4 font-bold lg:mr-0">ผลการลงคะแนนเสียง</div>
         <div className="wv-b4 font-bold">ส.ว.</div>
         <div className="wv-b4 font-bold">ส.ส.</div>
@@ -98,26 +98,6 @@ const ChoosePmContent = ({ close }: { close?: boolean }) => (
           <span>2</span>
         </div>
       </div>
-      <hr className="mb-10 border-dashed" />
-      <div className="text-center">
-        <a
-          className="wv-b3 inline-flex items-center gap-[4px] font-bold text-black"
-          href="https://theyworkforus.wevis.info/votelog/"
-          target="_blank"
-          rel="nofollow noopener noreferrer"
-        >
-          <span>ดูรายละเอียด</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 20 21"
-            width="20"
-            height="21"
-          >
-            <path fill="#000" d="M8.334 6.333l5 4.167-5 4.167V6.333z" />
-          </svg>
-        </a>
-      </div>
     </div>
   </>
 );
@@ -168,6 +148,6 @@ export const QChoosePm = qwikify$(
     </Popover>
   ),
   {
-    eagerness: "hover",
+    eagerness: "visible",
   }
 );

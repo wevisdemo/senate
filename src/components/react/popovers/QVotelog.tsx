@@ -3,6 +3,8 @@
 import { qwikify$ } from "@builder.io/qwik-react";
 import { Popover, Transition } from "@headlessui/react";
 
+import { THEYWORK_LINK } from "~/data/const";
+
 import type { PeopleVotesType } from "~/types/votelog";
 
 interface QVotelogPopoverProps {
@@ -176,7 +178,7 @@ const VotelogContent = ({
       <div className="text-center">
         <a
           className="wv-b3 inline-flex items-center gap-[4px] font-bold text-black"
-          href={"https://theyworkforus.wevis.info/votelog/" + id}
+          href={`https://${THEYWORK_LINK}/votelog/` + id}
           target="_blank"
           rel="nofollow noopener noreferrer"
         >
@@ -285,6 +287,6 @@ export const QVotelog = qwikify$<QVotelogPopoverProps>(
     </Popover>
   ),
   {
-    eagerness: "hover",
+    eagerness: "visible",
   }
 );

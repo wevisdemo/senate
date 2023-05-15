@@ -37,6 +37,10 @@ const DATA = {
       content: (
         <ul class="ml-[2rem] list-disc">
           <li>
+            เสนอแก้ไขบทเฉพาะกาล โดยยกเลิกมาตรา 269 มาตรา 270 มาตรา 271 มาตรา 272 และมาตรา
+            279
+          </li>
+          <li>
             <span class="font-bold">ชื่อผู้เสนอ:</span> นายพริษฐ์ วัชรสินธุ
             กับประชาชนผู้มีสิทธิเลือกตั้ง
           </li>
@@ -60,25 +64,26 @@ const DATA = {
       ),
     },
     {
-      title: "ร่างแก้ไขรัฐธรรมนูญของภาคประชาชน แก้ไขในเรื่องที่มาของ ส.ว.",
+      title:
+        "ร่างแก้ไขรัฐธรรมนูญของภาคประชาชน แก้ไขในเรื่องอำนาจของ ส.ว. ในสิทธิเลือกนายก",
       content: (
         <ul class="ml-[2rem] list-disc">
-          <li class="font-bold">เสนอแก้ไขเพิ่มเติมมาตรา 269 ในบทเฉพาะกาล</li>
+          <li class="font-bold">เสนอแก้ไขเพิ่มเติมมาตรา 272</li>
           <li>
-            <span class="font-bold">ชื่อผู้เสนอ:</span> นายจอน อึ๊งภากรณ์
+            <span class="font-bold">ชื่อผู้เสนอ:</span> รศ.ดร.สมชัย ศรีสุทธิยากร
             กับประชาชนผู้มีสิทธิเลือกตั้ง
           </li>
           <li>
             <span class="font-bold">ประเภทผู้เสนอ:</span> ประชาชน
           </li>
           <li>
-            <span class="font-bold">วันที่เสนอ:</span> 22 ก.ย. 2563
+            <span class="font-bold">วันที่เสนอ:</span> 22 ก.พ. 2565
           </li>
           <li>
-            <span class="font-bold">วันที่สิ้นสุด:</span> 18 พ.ย. 2563
+            <span class="font-bold">วันที่สิ้นสุด:</span> 6 ก.ย. 2565
           </li>
           <li>
-            <span class="font-bold">รวมระยะเวลา:</span> 58 วัน
+            <span class="font-bold">รวมระยะเวลา:</span> 197 วัน
           </li>
           <li>
             <span class="font-bold">สถานะ:</span> ตกไปในการพิจารณาของรัฐสภา (วาระที่ 1)
