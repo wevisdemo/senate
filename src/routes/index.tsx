@@ -4,6 +4,7 @@ import { ChapterBreak } from "~/components/ChapterBreak";
 import { JumpToContent } from "~/components/JumpToContent";
 import { Lottie } from "~/components/Lottie";
 import { TitleBlock } from "~/components/TitleBlock";
+import { QBalancer } from "~/components/react/QBalancer";
 import { QWvSharer } from "~/components/react/QWvSharer";
 
 import { Ch1Chart } from "~/components/chapter1/Ch1Chart";
@@ -150,17 +151,13 @@ const Chapter1 = (
       loading="lazy"
       decoding="async"
     />
-    <TitleBlock>
-      เลือกตั้ง&apos;66 ส.ว. ชุดเดิม
-      <br />
-      ยังมีอำนาจเลือก &ldquo;นายกฯ&rdquo; คนใหม่
-    </TitleBlock>
+    <TitleBlock text="เลือกตั้ง'66 ส.ว. ชุดเดิม ยังมีอำนาจเลือก &ldquo;นายกฯ&rdquo; คนใหม่" />
     <p class="wv-b2 con mb-60 text-center">
       เมื่อวาระของ ส.ว. คือ 5 ปี ส.ว. ชุดปัจจุบันจะทำงานไปจนถึง 11 พฤษภาคม 2567
       ซึ่งเป็นจุดที่น่ากังวลของการเมืองไทยในอนาคต เนื่องจาก…
     </p>
     <Ch1Infinity />
-    <TitleBlock>ที่มาของ ส.ว.</TitleBlock>
+    <TitleBlock text="ที่มาของ ส.ว." />
     <p class="wv-b2 con mb-30 text-center">
       ส.ว. ในรัฐธรรมนูญ 2560 ล้วนมีที่มาเกี่ยวข้องกับ คสช.
       ไม่ว่าจะมาจากการคัดเลือกโดยตรงหรือโดยอ้อม
@@ -204,7 +201,7 @@ const Chapter1 = (
         decoding="async"
       />
     </div>
-    <TitleBlock class="!mb-30">อาชีพและความเกี่ยวข้องกับ คสช.</TitleBlock>
+    <TitleBlock class="!mb-30" text="อาชีพและความเกี่ยวข้องกับ คสช." />
     <p class="wv-b2 con mb-30 text-center">
       ซึ่ง ส.ว. เหล่านี้ มาจากหลากหลายสาขาอาชีพและหลายคนเกี่ยวข้องกับ คสช. ก่อนจะมาเป็น
       ส.ว.
@@ -214,7 +211,7 @@ const Chapter1 = (
       สำรวจ ส.ว. ตามประเภทอาชีพ และความเกี่ยวข้องกับ คสช.
     </p>
     <Ch1Explore />
-    <TitleBlock class="!mb-20">ความเกี่ยวพันระหว่าง ส.ว. และ คสช.</TitleBlock>
+    <TitleBlock class="!mb-20" text="ความเกี่ยวพันระหว่าง ส.ว. และ คสช." />
     <div class="con mb-30 gap-20 lg:mt-[130px] lg:grid lg:grid-cols-2eq">
       <div class="mb-20 flex items-center justify-center lg:mb-0">
         <img
@@ -269,9 +266,10 @@ const Chapter1 = (
         </p>
       </div>
       <div>
-        <div class="wv-h5 mb-20 w-full bg-white px-40 py-20 text-center font-kondolar font-black">
-          ผู้มีส่วนเกี่ยวข้องกับ คสช. ประกอบไปด้วย
-        </div>
+        <QBalancer
+          class="wv-h5 mb-20 w-full bg-white px-40 py-20 text-center font-kondolar font-black"
+          text="ผู้มีส่วนเกี่ยวข้องกับ คสช. ประกอบไปด้วย"
+        />
         <div class="mb-20 lg:px-40">
           <Ch1Chart
             who="สายนิติบัญญัติ"
@@ -404,9 +402,10 @@ const Chapter2 = (
     >
       <Lottie src="./imgs/lotties/chapter/02.json" width="320px" height="320px" />
     </ChapterBreak>
-    <TitleBlock class="mt-100">
-      อำนาจการโหวตของ ส.ว. สามารถกำหนดทิศทางของการเมืองไทย
-    </TitleBlock>
+    <TitleBlock
+      class="mt-100"
+      text="อำนาจการโหวตของ ส.ว. สามารถกำหนดทิศทางของการเมืองไทย"
+    />
     <img
       class="mx-auto mb-60 h-[200px] w-auto"
       src="./imgs/vote.svg"
@@ -627,7 +626,7 @@ const Chapter2 = (
         decoding="async"
       />
     </div>
-    <TitleBlock class="!mb-30">ผลการลงมติของ ส.ว. ในวุฒิสภาและรัฐสภา</TitleBlock>
+    <TitleBlock class="!mb-30" text="ผลการลงมติของ ส.ว. ในวุฒิสภาและรัฐสภา" />
     <Ch2Explore />
     <Ch2Compare />
   </section>
@@ -648,9 +647,10 @@ const Chapter3 = (
     >
       <Lottie src="./imgs/lotties/chapter/03.json" width="320px" height="320px" />
     </ChapterBreak>
-    <TitleBlock class="mt-100">
-      แล้วจะแก้ไขปัญหา ส.ว. ที่ส่งผลกระทบต่อการเมืองประเทศไทยได้อย่างไร?
-    </TitleBlock>
+    <TitleBlock
+      class="mt-100"
+      text="แล้วจะแก้ไขปัญหา ส.ว. ที่ส่งผลกระทบต่อการเมืองประเทศไทยได้อย่างไร?"
+    />
     <p class="wv-b2 con mb-60 text-center">
       ที่มาและอำนาจของ ส.ว. ถูกตั้งคำถามจากภาคประชาชน นักวิชาการ สื่อ
       และพรรคการเมืองมาหลายครั้ง การถกเถียงในประเด็นนี้

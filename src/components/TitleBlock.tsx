@@ -1,11 +1,13 @@
-import { component$, Slot, useSignal, useVisibleTask$ } from "@builder.io/qwik";
+import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import { inView } from "motion";
+import { QBalancer } from "./react/QBalancer";
 
 interface TitleBlockProps {
   class?: string;
+  text: string;
 }
 
-export const TitleBlock = component$<TitleBlockProps>(({ class: clazz }) => {
+export const TitleBlock = component$<TitleBlockProps>(({ class: clazz, text }) => {
   const elTextContainer = useSignal<HTMLDivElement>();
 
   useVisibleTask$(
@@ -33,9 +35,9 @@ export const TitleBlock = component$<TitleBlockProps>(({ class: clazz }) => {
         clazz ?? ""
       }`}
     >
-      <span class="block py-20 px-40" ref={elTextContainer}>
-        <Slot />
-      </span>
+      <div ref={elTextContainer}>
+        <QBalancer class="px-40 py-20" text={text} />
+      </div>
     </div>
   );
 });
