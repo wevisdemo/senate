@@ -156,8 +156,8 @@ const Overview = component$<{ show: boolean }>(({ show }) => {
   );
 });
 
-const PeopleCard = component$<{ data: PeopleListSchema; imgBase: string }>(
-  ({ data, imgBase }) => (
+const PeopleCard = component$<{ data: PeopleListSchema; imgBase: string; show: boolean }>(
+  ({ data, imgBase, show }) => (
     <a
       class="flex items-center gap-20 rounded-10 border border-black bg-white px-20 py-10 font-bold text-black no-underline hover:no-underline"
       href={`https://${THEYWORK_LINK}/people/` + data.Name.replace(/\s+/g, "-")}
@@ -173,12 +173,14 @@ const PeopleCard = component$<{ data: PeopleListSchema; imgBase: string }>(
             width="64"
             height="64"
           >
-            <image
-              width="64"
-              height="64"
-              href={data.Images ? imgBase + data.Images : "./imgs/no-image.webp"}
-              clip-path="url(#imageStar)"
-            />
+            {show && (
+              <image
+                width="64"
+                height="64"
+                href={data.Images ? imgBase + data.Images : "./imgs/no-image.webp"}
+                clip-path="url(#imageStar)"
+              />
+            )}
             <path
               class={
                 data.SenatorMethod === "เลือกกันเอง"
@@ -193,21 +195,23 @@ const PeopleCard = component$<{ data: PeopleListSchema; imgBase: string }>(
             />
           </svg>
         ) : (
-          <img
-            class={`rounded-full border-[4px] ${
-              data.SenatorMethod === "เลือกกันเอง"
-                ? "border-senate-pink bg-senate-pink"
-                : data.SenatorMethod === "เลือกโดย คสช."
-                ? "border-senate-blue bg-senate-blue"
-                : "border-senate-green bg-senate-green"
-            }`}
-            src={data.Images ? imgBase + data.Images : "./imgs/no-image.webp"}
-            alt=""
-            width={64}
-            height={64}
-            loading="lazy"
-            decoding="async"
-          />
+          show && (
+            <img
+              class={`rounded-full border-[4px] ${
+                data.SenatorMethod === "เลือกกันเอง"
+                  ? "border-senate-pink bg-senate-pink"
+                  : data.SenatorMethod === "เลือกโดย คสช."
+                  ? "border-senate-blue bg-senate-blue"
+                  : "border-senate-green bg-senate-green"
+              }`}
+              src={data.Images ? imgBase + data.Images : "./imgs/no-image.webp"}
+              alt=""
+              width={64}
+              height={64}
+              loading="lazy"
+              decoding="async"
+            />
+          )
         )}
       </div>
       <div>
@@ -297,7 +301,7 @@ const Details = component$<{ show: boolean }>(({ show }) => {
             currentPageIndex.value * ENTRY_PER_PAGE + ENTRY_PER_PAGE
           )
           .map((e) => (
-            <PeopleCard key={e.Id} data={e} imgBase={data.value.imgBase} />
+            <PeopleCard key={e.Id} data={e} imgBase={data.value.imgBase} show={show} />
           ))}
       </div>
     </div>
