@@ -13,7 +13,7 @@ export const QPopover = qwikify$<QConstitutionPopoverProps>(
     <Popover className="relative">
       <Popover.Button
         className="w-[85px] rounded-5 border bg-senate-pink py-10 outline-0 transition-transform lg:w-[95px] lg:hover:rotate-1 lg:hover:scale-110"
-        aria-label="ไม่ผ่าน"
+        aria-label={title + " — ไม่ผ่าน"}
       >
         <svg
           className="mx-auto mb-10"
@@ -22,6 +22,7 @@ export const QPopover = qwikify$<QConstitutionPopoverProps>(
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 43 43"
+          aria-hidden="true"
         >
           <path
             fill="#fff"
@@ -30,7 +31,10 @@ export const QPopover = qwikify$<QConstitutionPopoverProps>(
             d="M21.838 15.97l13.71-13.71 5.161 5.16L26.7 21.131l-.73.715.73.714L40.71 36.271l-5.153 5.153-13.71-14.009-.715-.73-.715.73-13.71 14.009-5.16-5.16 13.71-13.711.707-.707-.707-.707L1.546 7.428 6.712 2.26l13.71 13.71.708.708.707-.707z"
           />
         </svg>
-        <span className="wv-b5 nobr block bg-white py-4 text-center font-bold">
+        <span
+          className="wv-b5 nobr block bg-white py-4 text-center font-bold"
+          aria-hidden="true"
+        >
           ไม่ผ่าน
         </span>
       </Popover.Button>

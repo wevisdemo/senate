@@ -2,7 +2,6 @@
 /** @jsxImportSource react */
 import { qwikify$ } from "@builder.io/qwik-react";
 import { Disclosure } from "@headlessui/react";
-import Balancer from "react-wrap-balancer";
 
 interface QLetterProps {
   children?: any;
@@ -27,7 +26,7 @@ export const QLetter = qwikify$<QLetterProps>(
               className="wv-h7 w-full border-b border-dashed pb-10 text-center font-kondolar font-black"
               aria-hidden="true"
             >
-              <Balancer>{title}</Balancer>
+              {title}
             </p>
             <div
               className={`letter-grid-row wv-b4 mt-10 grid w-full overflow-hidden text-center font-bold transition-all duration-500 ${

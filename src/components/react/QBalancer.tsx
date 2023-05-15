@@ -17,5 +17,5 @@ export const QBalancer = qwikify$<QBalancerProps>(
       <Balancer>{text}</Balancer>
     </Component>
   ),
-  { eagerness: "idle" }
+  { eagerness: "idle", clientOnly: true }
 );
