@@ -1,4 +1,3 @@
-import type { Signal } from "@builder.io/qwik";
 import {
   $,
   component$,
@@ -6,6 +5,7 @@ import {
   useComputed$,
   useContext,
   useContextProvider,
+  useOnWindow,
   useSignal,
   useStore,
   useTask$,
@@ -22,6 +22,7 @@ import { QPeople } from "../react/popovers/QPeople";
 import { THEYWORK_LINK } from "~/data/const";
 import PEOPLE from "~/data/people";
 
+import type { Signal } from "@builder.io/qwik";
 import type {
   FilteredPeopleDataSchema,
   OccupationGroup,
@@ -310,13 +311,24 @@ const Details = component$<{ show: boolean }>(({ show }) => {
 
 export const Ch1Explore = component$(() => {
   const tabIndex = useSignal(0);
+  const elDetails = useSignal<HTMLDetailsElement>();
 
   const data = useSignal<PeopleDataSchema>({
     imgBase: "",
     list: [],
   });
 
+  const forceOpenDetails = $(() => {
+    if (elDetails.value) {
+      elDetails.value.open = window.matchMedia("(min-width: 1024px)").matches;
+    }
+  });
+
+  useOnWindow("resize", forceOpenDetails);
+
   useVisibleTask$(async () => {
+    forceOpenDetails();
+
     const resp = await fetch("./data/people.json");
     const json = await resp.json();
 
@@ -390,164 +402,195 @@ export const Ch1Explore = component$(() => {
         </defs>
       </svg>
       <div class="flex flex-col items-start gap-30 lg:flex-row">
-        <div class="flex-1 rounded-10 border bg-white p-30 lg:max-w-[530px]">
-          <p class="wv-h6 mb-10 font-kondolar font-black">เลือกสำรวจตาม</p>
-          <p class="wv-b2 mb-10 font-bold">ประเภท ส.ว.</p>
-          <div class="mb-10 flex flex-wrap gap-[8px]">
-            <CheckPill
-              id="โดยตำแหน่ง"
-              checked={formOptions.typePosition}
-              onChange={$(() => {
-                formOptions.typePosition = !formOptions.typePosition;
-              })}
-            >
-              <div class="h-[12px] w-[12px] rounded-full border border-black bg-senate-green" />
-              <span class="wv-b4 font-bold leading-none">โดยตำแหน่ง</span>
-            </CheckPill>
-            <CheckPill
-              id="เลือกโดยคสช"
-              checked={formOptions.typeNcpo}
-              onChange={$(() => {
-                formOptions.typeNcpo = !formOptions.typeNcpo;
-              })}
-            >
-              <div class="h-[12px] w-[12px] rounded-full border border-black bg-senate-blue" />
-              <span class="wv-b4 font-bold leading-none">เลือกโดย คสช.</span>
-            </CheckPill>
-            <CheckPill
-              id="เลือกกันเอง"
-              checked={formOptions.typeFriend}
-              onChange={$(() => {
-                formOptions.typeFriend = !formOptions.typeFriend;
-              })}
-            >
-              <div class="h-[12px] w-[12px] rounded-full border border-black bg-senate-pink" />
-              <span class="wv-b4 font-bold leading-none">เลือกกันเอง</span>
-            </CheckPill>
-          </div>
-          <p class="wv-b2 mb-10 font-bold">ความเกี่ยวข้องกับ คสช.</p>
-          <div class="mb-10 flex flex-wrap gap-[8px]">
-            <CheckPill
-              id="ผู้มีส่วนเกี่ยวข้องกับคสช"
-              checked={formOptions.relationYes}
-              onChange={$(() => {
-                formOptions.relationYes = !formOptions.relationYes;
-              })}
-            >
+        <details
+          ref={elDetails}
+          class="w-full flex-1 rounded-[20px] border bg-white p-10 lg:max-w-[530px] lg:rounded-10 lg:p-30"
+        >
+          <summary class="details-marker-none wv-b4 cursor-pointer list-none rounded-10 bg-black py-10 font-bold text-white lg:hidden">
+            <span class="flex items-center justify-center gap-10">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
-                viewBox="0 0 17 17"
-                width="17"
-                height="17"
+                viewBox="0 0 25 25"
+                width="25"
+                height="25"
               >
                 <path
-                  fill="currentColor"
-                  d="M14.276 4.002c.275.244.3.666.056.94l-7.112 8a.667.667 0 01-.996 0l-3.556-4a.667.667 0 01.997-.885l3.057 3.44 6.613-7.44a.667.667 0 01.941-.055z"
+                  fill="#fff"
+                  d="M9.5 5.377a1 1 0 100 2 1 1 0 000-2zm-2.83 0a3.001 3.001 0 015.66 0h7.17a1 1 0 110 2h-7.17a3.001 3.001 0 01-5.66 0H5.5a1 1 0 110-2h1.17zm8.83 6a1 1 0 100 2 1 1 0 000-2zm-2.83 0a3.001 3.001 0 015.66 0h1.17a1 1 0 110 2h-1.17a3.001 3.001 0 01-5.66 0H5.5a1 1 0 010-2h7.17zm-3.17 6a1 1 0 100 2 1 1 0 000-2zm-2.83 0a3.001 3.001 0 015.66 0h7.17a1 1 0 110 2h-7.17a3.001 3.001 0 01-5.66 0H5.5a1 1 0 010-2h1.17z"
                 />
               </svg>
-              <span class="wv-b4 font-bold leading-none">
-                ผู้มีส่วนเกี่ยวข้องกับ คสช. ({PEOPLE.withNcpo})
-              </span>
-            </CheckPill>
-            <CheckPill
-              id="ผู้ที่ไม่เกี่ยวข้องกับคสช"
-              checked={formOptions.relationNo}
-              onChange={$(() => {
-                formOptions.relationNo = !formOptions.relationNo;
-              })}
-            >
+              <span>คัดกรอง ส.ว.</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
-                viewBox="0 0 17 17"
-                width="17"
-                height="17"
+                viewBox="0 0 25 25"
+                width="25"
+                height="25"
               >
-                <path
-                  fill="currentColor"
-                  d="M4.029 4.029c.26-.26.682-.26.943 0L8.5 7.557 12.03 4.03a.667.667 0 11.943.942L9.443 8.5l3.529 3.529a.667.667 0 01-.943.942L8.5 9.443 4.972 12.97a.667.667 0 01-.943-.942L7.557 8.5 4.03 4.971a.667.667 0 010-.942z"
-                />
+                <path fill="#fff" d="M17.5 10.377l-5 6-5-6h10z" />
               </svg>
-              <span class="wv-b4 font-bold leading-none">
-                ผู้ที่ไม่เกี่ยวข้องกับ คสช. ({PEOPLE.notNcpo})
-              </span>
-            </CheckPill>
-          </div>
-          <p class="wv-b2 mb-10 font-bold">สถานะ</p>
-          <div class="mb-10 flex flex-wrap gap-[8px]">
-            <CheckPill
-              id="ดำรงตำแหน่ง"
-              checked={formOptions.statusActive}
-              onChange={$(() => {
-                formOptions.statusActive = !formOptions.statusActive;
-              })}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 17 17"
-                width="17"
-                height="17"
-              >
-                <path
-                  fill="currentColor"
-                  d="M14.276 4.002c.275.244.3.666.056.94l-7.112 8a.667.667 0 01-.996 0l-3.556-4a.667.667 0 01.997-.885l3.057 3.44 6.613-7.44a.667.667 0 01.941-.055z"
-                />
-              </svg>
-              <span class="wv-b4 font-bold leading-none">ดำรงตำแหน่ง</span>
-            </CheckPill>
-            <CheckPill
-              id="พ้นจากตำแหน่ง"
-              checked={formOptions.statusOut}
-              onChange={$(() => {
-                formOptions.statusOut = !formOptions.statusOut;
-              })}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 17 17"
-                width="17"
-                height="17"
-              >
-                <path
-                  fill="currentColor"
-                  d="M4.029 4.029c.26-.26.682-.26.943 0L8.5 7.557 12.03 4.03a.667.667 0 11.943.942L9.443 8.5l3.529 3.529a.667.667 0 01-.943.942L8.5 9.443 4.972 12.97a.667.667 0 01-.943-.942L7.557 8.5 4.03 4.971a.667.667 0 010-.942z"
-                />
-              </svg>
-              <span class="wv-b4 font-bold leading-none">พ้นจากตำแหน่ง</span>
-            </CheckPill>
-          </div>
-          <p class="wv-b2 mb-10 font-bold">อาชีพ</p>
-          <div class="flex flex-wrap gap-[8px]">
-            <RadioPill
-              name="อาชีพ"
-              id="ทั้งหมด"
-              checked={formOptions.job === 0}
-              onChange={$(() => {
-                formOptions.job = 0;
-              })}
-            >
-              <span class="wv-b4 font-bold leading-none">ทั้งหมด ({PEOPLE.total})</span>
-            </RadioPill>
-            {JOBS.map((job, i) => (
-              <RadioPill
-                name="อาชีพ"
-                id={job}
-                key={job}
-                checked={formOptions.job === i + 1}
+            </span>
+          </summary>
+          <div class="mt-20 lg:mt-0">
+            <p class="wv-h6 mb-10 font-kondolar font-black">เลือกสำรวจตาม</p>
+            <p class="wv-b2 mb-10 font-bold">ประเภท ส.ว.</p>
+            <div class="mb-10 flex flex-wrap gap-[8px]">
+              <CheckPill
+                id="โดยตำแหน่ง"
+                checked={formOptions.typePosition}
                 onChange={$(() => {
-                  formOptions.job = i + 1;
+                  formOptions.typePosition = !formOptions.typePosition;
                 })}
               >
+                <div class="h-[12px] w-[12px] rounded-full border border-black bg-senate-green" />
+                <span class="wv-b4 font-bold leading-none">โดยตำแหน่ง</span>
+              </CheckPill>
+              <CheckPill
+                id="เลือกโดยคสช"
+                checked={formOptions.typeNcpo}
+                onChange={$(() => {
+                  formOptions.typeNcpo = !formOptions.typeNcpo;
+                })}
+              >
+                <div class="h-[12px] w-[12px] rounded-full border border-black bg-senate-blue" />
+                <span class="wv-b4 font-bold leading-none">เลือกโดย คสช.</span>
+              </CheckPill>
+              <CheckPill
+                id="เลือกกันเอง"
+                checked={formOptions.typeFriend}
+                onChange={$(() => {
+                  formOptions.typeFriend = !formOptions.typeFriend;
+                })}
+              >
+                <div class="h-[12px] w-[12px] rounded-full border border-black bg-senate-pink" />
+                <span class="wv-b4 font-bold leading-none">เลือกกันเอง</span>
+              </CheckPill>
+            </div>
+            <p class="wv-b2 mb-10 font-bold">ความเกี่ยวข้องกับ คสช.</p>
+            <div class="mb-10 flex flex-wrap gap-[8px]">
+              <CheckPill
+                id="ผู้มีส่วนเกี่ยวข้องกับคสช"
+                checked={formOptions.relationYes}
+                onChange={$(() => {
+                  formOptions.relationYes = !formOptions.relationYes;
+                })}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 17 17"
+                  width="17"
+                  height="17"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M14.276 4.002c.275.244.3.666.056.94l-7.112 8a.667.667 0 01-.996 0l-3.556-4a.667.667 0 01.997-.885l3.057 3.44 6.613-7.44a.667.667 0 01.941-.055z"
+                  />
+                </svg>
                 <span class="wv-b4 font-bold leading-none">
-                  {job.replace("ๆ", " ๆ")} ({PEOPLE.jobs[job as OccupationGroup]})
+                  ผู้มีส่วนเกี่ยวข้องกับ คสช. ({PEOPLE.withNcpo})
                 </span>
+              </CheckPill>
+              <CheckPill
+                id="ผู้ที่ไม่เกี่ยวข้องกับคสช"
+                checked={formOptions.relationNo}
+                onChange={$(() => {
+                  formOptions.relationNo = !formOptions.relationNo;
+                })}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 17 17"
+                  width="17"
+                  height="17"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M4.029 4.029c.26-.26.682-.26.943 0L8.5 7.557 12.03 4.03a.667.667 0 11.943.942L9.443 8.5l3.529 3.529a.667.667 0 01-.943.942L8.5 9.443 4.972 12.97a.667.667 0 01-.943-.942L7.557 8.5 4.03 4.971a.667.667 0 010-.942z"
+                  />
+                </svg>
+                <span class="wv-b4 font-bold leading-none">
+                  ผู้ที่ไม่เกี่ยวข้องกับ คสช. ({PEOPLE.notNcpo})
+                </span>
+              </CheckPill>
+            </div>
+            <p class="wv-b2 mb-10 font-bold">สถานะ</p>
+            <div class="mb-10 flex flex-wrap gap-[8px]">
+              <CheckPill
+                id="ดำรงตำแหน่ง"
+                checked={formOptions.statusActive}
+                onChange={$(() => {
+                  formOptions.statusActive = !formOptions.statusActive;
+                })}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 17 17"
+                  width="17"
+                  height="17"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M14.276 4.002c.275.244.3.666.056.94l-7.112 8a.667.667 0 01-.996 0l-3.556-4a.667.667 0 01.997-.885l3.057 3.44 6.613-7.44a.667.667 0 01.941-.055z"
+                  />
+                </svg>
+                <span class="wv-b4 font-bold leading-none">ดำรงตำแหน่ง</span>
+              </CheckPill>
+              <CheckPill
+                id="พ้นจากตำแหน่ง"
+                checked={formOptions.statusOut}
+                onChange={$(() => {
+                  formOptions.statusOut = !formOptions.statusOut;
+                })}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 17 17"
+                  width="17"
+                  height="17"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M4.029 4.029c.26-.26.682-.26.943 0L8.5 7.557 12.03 4.03a.667.667 0 11.943.942L9.443 8.5l3.529 3.529a.667.667 0 01-.943.942L8.5 9.443 4.972 12.97a.667.667 0 01-.943-.942L7.557 8.5 4.03 4.971a.667.667 0 010-.942z"
+                  />
+                </svg>
+                <span class="wv-b4 font-bold leading-none">พ้นจากตำแหน่ง</span>
+              </CheckPill>
+            </div>
+            <p class="wv-b2 mb-10 font-bold">อาชีพ</p>
+            <div class="flex flex-wrap gap-[8px]">
+              <RadioPill
+                name="อาชีพ"
+                id="ทั้งหมด"
+                checked={formOptions.job === 0}
+                onChange={$(() => {
+                  formOptions.job = 0;
+                })}
+              >
+                <span class="wv-b4 font-bold leading-none">ทั้งหมด ({PEOPLE.total})</span>
               </RadioPill>
-            ))}
+              {JOBS.map((job, i) => (
+                <RadioPill
+                  name="อาชีพ"
+                  id={job}
+                  key={job}
+                  checked={formOptions.job === i + 1}
+                  onChange={$(() => {
+                    formOptions.job = i + 1;
+                  })}
+                >
+                  <span class="wv-b4 font-bold leading-none">
+                    {job.replace("ๆ", " ๆ")} ({PEOPLE.jobs[job as OccupationGroup]})
+                  </span>
+                </RadioPill>
+              ))}
+            </div>
           </div>
-        </div>
+        </details>
         <Overview show={!tabIndex.value} />
         <Details show={!!tabIndex.value} />
       </div>

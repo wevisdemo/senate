@@ -148,6 +148,10 @@ a {
   display: none;
 }
 
+.details-marker-none::-webkit-details-marker {
+  display: none;
+}
+
 .pill-input:checked + .pill-label {
   @apply border-black bg-black text-white;
 }
