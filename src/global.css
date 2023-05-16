@@ -11,6 +11,10 @@
   @apply relative;
 }
 
+.wv_cookie-consent__container {
+  position: static;
+}
+
 html {
   @apply overflow-x-hidden scroll-smooth;
 }

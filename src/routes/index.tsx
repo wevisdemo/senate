@@ -27,6 +27,8 @@ import PEOPLE from "~/data/people";
 import UPDATE from "~/data/update";
 import VOTELOG from "~/data/votelog";
 
+// TODO: Add Plausible
+
 // ██╗  ██╗███████╗ █████╗ ██████╗ ███████╗██████╗
 // ██║  ██║██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗
 // ███████║█████╗  ███████║██║  ██║█████╗  ██████╔╝
