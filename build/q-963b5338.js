@@ -1,0 +1,1 @@
+import{V as m}from"./q-65a55eed.js";import{j as t}from"./q-cee7cb14.js";import"./q-a4dbec78.js";import"./q-ef1db70a.js";import"./q-649551cb.js";import"./q-725317a4.js";import"./q-a4fc40a9.js";import"./q-ac071a78.js";const c=({title:o,date:r,type:e,vote:i})=>t.jsx("div",{className:"border bg-white",children:t.jsx(m,{title:o,date:r,type:e,vote:i})});export{c as s_D2yAIMrXzzY};

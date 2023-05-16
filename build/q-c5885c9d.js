@@ -1,0 +1,1 @@
+import{C as r}from"./q-ce5c3811.js";import{j as o}from"./q-cee7cb14.js";import"./q-a4dbec78.js";import"./q-ef1db70a.js";import"./q-649551cb.js";import"./q-725317a4.js";import"./q-a4fc40a9.js";import"./q-ac071a78.js";const a=()=>o.jsx("div",{className:"border bg-white",children:o.jsx(r,{})});export{a as s_YypF47oLTGQ};
