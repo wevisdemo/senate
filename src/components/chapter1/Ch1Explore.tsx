@@ -468,7 +468,7 @@ export const Ch1Explore = component$(() => {
               </CheckPill>
             </div>
             <p class="wv-b2 mb-10 font-bold">ความเกี่ยวข้องกับ คสช.</p>
-            <div class="mb-10 flex flex-wrap gap-[8px]">
+            <div class="mb-[8px] flex flex-wrap gap-[8px]">
               <CheckPill
                 id="ผู้มีส่วนเกี่ยวข้องกับคสช"
                 checked={formOptions.relationYes}
@@ -516,6 +516,13 @@ export const Ch1Explore = component$(() => {
                 </span>
               </CheckPill>
             </div>
+            <p class="wv-b7 mb-10">
+              <span class="font-bold">
+                ผู้มีส่วนเกี่ยวข้องกับ คสช. คือ ผู้ที่เคยมีตำแหน่งอยู่ในยุค คสช. ได้แก่
+              </span>{" "}
+              สภานิติบัญญัติแห่งชาติ (สนช.), สภาปฏิรูปแห่งชาติ (สปช.),
+              สภาขับเคลื่อนการปฏิรูปประเทศ (สปท.) และ คณะกรรมการร่างรัฐธรรมนูญ (กรธ.)
+            </p>
             <p class="wv-b2 mb-10 font-bold">สถานะ</p>
             <div class="mb-10 flex flex-wrap gap-[8px]">
               <CheckPill
