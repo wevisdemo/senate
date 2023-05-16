@@ -141,7 +141,7 @@ const Overview = component$<{ show: boolean }>(({ show }) => {
               <JobDivider name={job} />
               <div class="my-10 flex flex-wrap gap-4">
                 {(data.value.imgBase === ""
-                  ? Array(PEOPLE.jobs[job][0]).fill(0)
+                  ? Array(PEOPLE.jobs[job][0]).fill``
                   : data.value.listByJobs[job]
                 ).map((e) => (
                   <div key={e.Id} class="h-[22px] w-[22px]">
@@ -591,7 +591,7 @@ export const Ch1Explore = component$(() => {
                   })}
                 >
                   <span class="wv-b4 font-bold leading-none">
-                    {job.replace("ๆ", " ๆ")} ({PEOPLE.jobs[job as OccupationGroup]})
+                    {job.replace("ๆ", " ๆ")} ({PEOPLE.jobs[job as OccupationGroup][0]})
                   </span>
                 </RadioPill>
               ))}

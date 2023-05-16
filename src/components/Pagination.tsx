@@ -103,20 +103,18 @@ export const Pagination = component$<PaginationProps>(
           </button>
         </>
       ) : (
-        Array(Math.ceil(total / perPage))
-          .fill(0)
-          .map((_, i) => (
-            <button
-              key={i}
-              class={`wv-u5 flex h-[24px] w-[24px] cursor-pointer items-center justify-center rounded-[2px] border border-black p-4 font-semibold leading-none ${
-                i === currentPage ? "bg-black text-white" : "bg-white"
-              }`}
-              type="button"
-              onClick$={() => onChange(i)}
-            >
-              <span class="translate-y-[1px]">{i + 1}</span>
-            </button>
-          ))
+        Array(Math.ceil(total / perPage)).fill``.map((_, i) => (
+          <button
+            key={i}
+            class={`wv-u5 flex h-[24px] w-[24px] cursor-pointer items-center justify-center rounded-[2px] border border-black p-4 font-semibold leading-none ${
+              i === currentPage ? "bg-black text-white" : "bg-white"
+            }`}
+            type="button"
+            onClick$={() => onChange(i)}
+          >
+            <span class="translate-y-[1px]">{i + 1}</span>
+          </button>
+        ))
       )}
       <button
         class="flex h-[24px] w-[24px] cursor-pointer items-center justify-center rounded-[2px] border bg-white disabled:cursor-not-allowed disabled:opacity-50"
