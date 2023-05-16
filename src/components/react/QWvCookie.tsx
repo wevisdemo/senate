@@ -2,11 +2,13 @@
 import { qwikify$ } from "@builder.io/qwik-react";
 import WvCookieConsent from "@wevisdemo/ui/react/cookie-consent";
 
+import initClarity from "~/utils/clarity.js";
+
 export const QWvCookie = qwikify$(
   () => {
     const onCookieAccept = (option: Record<string, boolean>) => {
       if (option["Performance"]) {
-        // TODO: Enable Clarity
+        initClarity();
       }
     };
 

@@ -9,5 +9,10 @@ export default component$(() => (
     <QWvCookie />
     <Slot />
     <QWvFooter />
+    <script
+      defer
+      data-domain="wevis.info/senate"
+      src="https://analytics.punchup.world/js/plausible.js"
+    />
   </>
 ));

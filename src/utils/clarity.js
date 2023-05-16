@@ -1,0 +1,1 @@
+export default function(){var t,e,a,n,r="clarity",c="script";t=window,e=document,t[r]=t[r]||function(){(t[r].q=t[r].q||[]).push(arguments)},(a=e.createElement(c)).async=1,a.src="https://www.clarity.ms/tag/h4pqj1tiwn",(n=e.getElementsByTagName(c)[0]).parentNode.insertBefore(a,n)}
