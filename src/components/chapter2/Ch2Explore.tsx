@@ -578,9 +578,10 @@ export const Ch2Explore = component$(() => {
         onChange={$((index: number) => {
           tabIndex.value = index;
         })}
-      >
-        <span class="wv-b3 nobr flex items-center gap-4">
-          คลิก
+      />
+      <div class="wv-b2 -mt-20 mb-10 flex flex-col items-center justify-center gap-10 font-bold lg:flex-row">
+        <div class="nobr flex items-center justify-center gap-5">
+          <span>คลิก</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -599,10 +600,43 @@ export const Ch2Explore = component$(() => {
               d="M26.446 8.18a.5.5 0 01.707 0l2.647 2.647 2.646-2.647a.5.5 0 11.708.707l-2.647 2.647 2.646 2.646a.5.5 0 11-.707.707L29.8 12.241l-2.646 2.646a.5.5 0 11-.708-.707l2.647-2.646-2.647-2.647a.5.5 0 010-.707z"
             />
           </svg>
-          เพื่อสำรวจแต่ละมติ
-        </span>
-      </TabSelect>
-      <div class="-mt-20 mb-20 flex flex-col items-center justify-center gap-10 md:-mt-10 md:mb-30 lg:mt-0 lg:flex-row">
+          <span>เพื่อสำรวจแต่ละมติ</span>
+        </div>
+        <div class="flex items-center justify-center gap-10">
+          <span>ประเภทมติ</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 32 43"
+            width="32"
+            height="43"
+          >
+            <path fill="#60C1AF" d="M1 1.334h30v40H1z" />
+            <path
+              fill="#000"
+              d="M25.265 14.586a1 1 0 01.082 1.412l-10.666 12a1 1 0 01-1.495 0l-5.333-6a1 1 0 111.495-1.33l4.585 5.16 9.92-11.16a1 1 0 011.412-.082z"
+            />
+            <path stroke="#000" d="M.5.834h31v41H.5z" />
+          </svg>
+          <span>ผ่าน</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 32 43"
+            width="32"
+            height="43"
+          >
+            <path fill="#F92D46" d="M1 1.334h30v40H1z" />
+            <path
+              fill="#000"
+              d="M9.893 15.027a1 1 0 011.414 0L16.6 20.32l5.293-5.293a1 1 0 011.414 1.414l-5.293 5.293 5.293 5.293a1 1 0 01-1.414 1.414L16.6 23.148l-5.293 5.293a1 1 0 01-1.414-1.414l5.293-5.293-5.293-5.293a1 1 0 010-1.414z"
+            />
+            <path stroke="#000" d="M.5.834h31v41H.5z" />
+          </svg>
+          <span>ไม่ผ่าน</span>
+        </div>
+      </div>
+      <div class="mb-20 flex flex-col items-center justify-center gap-10 md:mb-30 lg:flex-row">
         <span class="wv-b2 nobr font-bold">ประเภทการลงคะแนนเสียง</span>
         <div class="flex flex-wrap items-center justify-center gap-10">
           <span class="wv-b4 flex items-center gap-4">
