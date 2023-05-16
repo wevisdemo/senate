@@ -156,6 +156,11 @@ a {
   display: none;
 }
 
+.text-center {
+  /* Experimental 🤞 */
+  text-wrap: balance;
+}
+
 .pill-input:checked + .pill-label {
   @apply border-black bg-black text-white;
 }
