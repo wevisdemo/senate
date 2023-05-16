@@ -462,7 +462,7 @@ const Chapter2 = (
       โดยสามารถแยกกลุ่มมติที่เอื้อประโยชน์ได้ 2 กลุ่ม ได้แก่{" "}
       <strong>มติในที่ประชุมวุฒิสภา และ มติในที่ประชุมรัฐสภา</strong>
     </p>
-    <div class="con flex flex-col gap-10 text-center lg:mb-60 lg:flex-row">
+    <div class="con mb-60 flex flex-col gap-10 text-center lg:flex-row">
       <div class="flex-1">
         <p class="wv-h5 mb-[12px] font-kondolar font-black">มติในที่ประชุมวุฒิสภา</p>
         <div
@@ -537,7 +537,7 @@ const Chapter2 = (
           </div>
         </div>
       </div>
-      <div class="mb-60 flex-1">
+      <div class="flex-1">
         <p class="wv-h5 mb-[12px] font-kondolar font-black">
           มติในที่ประชุมร่วมของรัฐสภา
         </p>
@@ -641,6 +641,16 @@ const Chapter2 = (
         </div>
       </div>
     </div>
+    <p class="wv-b2 con mb-60 text-center">
+      ผลการลงมติที่แสดงในงานนี้ แสดงถึงอำนาจพิเศษของ ส.ว. ในการติดตามและเร่งรัด
+      แผนการปฏิรูปประเทศและยุทธศาสตร์ชาติ 20 ปีที่ คสช. เขียนขึ้น
+      รวมถึงอำนาจในการพิจารณาแต่งตั้งบุคคลในองค์กรอิสระ
+      ซึ่งส่วนใหญ่ยังเป็นผลมาจากการสรรหา-แต่งตั้งของ คสช.
+      <br />
+      <br />
+      ขณะที่มติร่างแก้รัฐธรรมนูญในรัฐสภาสมัยที่ผ่านมา จะมีประเด็นเรื่องที่มาและอำนาจของ
+      ส.ว. ในการพิจารณาเป็นส่วนมาก
+    </p>
     <div
       class="mb-60 flex flex-col items-center justify-center gap-20 lg:flex-row lg:items-start lg:gap-60"
       aria-hidden="true"
