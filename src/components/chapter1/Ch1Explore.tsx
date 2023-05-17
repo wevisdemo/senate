@@ -383,6 +383,13 @@ export const Ch1Explore = component$(() => {
 
   return (
     <div class="con mb-60">
+      <a
+        id="before-ch1explore"
+        href="#after-ch1explore"
+        class="sr-only focus:not-sr-only"
+      >
+        ส่วนต้นของเครื่องมือสำรวจ ส.ว. แตะเพื่อข้ามไปยังเนื้อหาส่วนถัดไป
+      </a>
       <TabSelect
         id="senate"
         secondBtnText="ดูรายชื่อ ก&ndash;ฮ"
@@ -601,6 +608,13 @@ export const Ch1Explore = component$(() => {
         <Overview show={!tabIndex.value} />
         <Details show={!!tabIndex.value} />
       </div>
+      <a
+        id="after-ch1explore"
+        href="#before-ch1explore"
+        class="sr-only focus:not-sr-only"
+      >
+        ส่วนท้ายของเครื่องมือสำรวจ ส.ว. แตะเพื่อย้อนกลับไปยังเนื้อหาก่อนหน้า
+      </a>
     </div>
   );
 });

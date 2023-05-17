@@ -572,6 +572,13 @@ export const Ch2Explore = component$(() => {
 
   return (
     <div class="con mb-60">
+      <a
+        id="before-ch2explore"
+        href="#after-ch2explore"
+        class="sr-only focus:not-sr-only"
+      >
+        ส่วนต้นของเครื่องมือสำรวจผลการลงมติของ ส.ว. แตะเพื่อข้ามไปยังเนื้อหาส่วนถัดไป
+      </a>
       <TabSelect
         id="votelog"
         secondBtnText="ดูรายชื่อมติ"
@@ -676,6 +683,13 @@ export const Ch2Explore = component$(() => {
       </div>
       <Overview show={!tabIndex.value} />
       <Details show={!!tabIndex.value} />
+      <a
+        id="after-ch2explore"
+        href="#before-ch2explore"
+        class="sr-only focus:not-sr-only"
+      >
+        ส่วนท้ายของเครื่องมือสำรวจผลการลงมติของ ส.ว. แตะเพื่อย้อนกลับไปยังเนื้อหาก่อนหน้า
+      </a>
     </div>
   );
 });
