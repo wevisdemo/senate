@@ -12,7 +12,8 @@ export default extendConfig(baseConfig, () => {
     },
     plugins: [
       staticAdapter({
-        origin: 'https://wevisdemo.github.io',
+        // origin: 'https://wevisdemo.github.io',
+        origin: 'https://wevis.info',
         base: '/senate/',
       }),
     ],
