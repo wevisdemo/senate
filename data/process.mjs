@@ -61,7 +61,7 @@ const compilePeople = () => {
       ...e,
       IsActive: +!!e.IsActive,
       NcpoType: e.NcpoType ?? undefined,
-      Images: e.Images?.[0].title ?? undefined,
+      Images: e.Images?.[0].path?.split("/")?.at(-1) ?? e.Images?.[0].title ?? undefined,
     };
   });
   data.fetch.imgBase = list[0].Images[0].url.replace(list[0].Images[0].title, "");
